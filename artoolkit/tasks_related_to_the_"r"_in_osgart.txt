@@ -1,0 +1,27 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+osgART helps place ARToolKit tracking into a higher-level graphics
+framework, but careful attention to the real-world part of your AR
+application is essential for correct and optimal performance of the
+ARToolKit tracking. This includes calibrating the camera (or other video
+source) and training the markers. Generally, these tasks are performed
+using utilities which come with ARToolKit, or any alternate tracking
+library you may be using with osgART.
+
+Camera calibration
+------------------
+
+Please see [Calibrating your
+camera](/Calibrating_your_camera "wikilink") in the [ARToolKit
+Professional](/ARToolKit_Professional "wikilink") documention.
+
+Marker training
+---------------
+
+Please see [Creating and training new ARToolKit
+markers](/Creating_and_training_new_ARToolKit_markers "wikilink") in the
+[ARToolKit Professional](/ARToolKit_Professional "wikilink")
+documention.
+
+[Category:osgART Professional
+Edition](/Category:osgART_Professional_Edition "wikilink")

@@ -1,0 +1,2 @@
+Full-resolution source file for documentation of ARToolKit NFT training
+procedure, and demos.

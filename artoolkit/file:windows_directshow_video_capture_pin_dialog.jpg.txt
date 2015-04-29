@@ -1,0 +1,2 @@
+Screen shot of Windows DirectShow video capture PIN dialog, showing
+typical settings.

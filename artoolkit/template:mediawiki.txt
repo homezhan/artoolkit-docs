@@ -1,0 +1,26 @@
+{{ \#ifeq:
+
+` `
+
+| www.mediawiki.org | [}}}](/{{{1}}} "wikilink") |
+[<http://www.mediawiki.org/wiki/> }}}] }}<noinclude>
+
+------------------------------------------------------------------------
+
+This template links to a page on mediawiki.org from the [Help
+pages](/Help:Contents "wikilink"). The template has two parameters:
+
+1.  Pagename
+2.  (optional) Link description
+
+{{ \#ifeq: | www.mediawiki.org | This is so that the public domain help
+pages - which can be freely copied and included in other sites - have
+correct links to Mediawiki:
+
+-   on external sites, it creates an external link
+-   on Mediawiki, it creates an internal link
+
+**All** links from the Help namespace to other parts of the
+mediawiki.org wiki should use this template.}}
+
+[MediaWiki](/Category:Info_templates "wikilink") </noinclude>

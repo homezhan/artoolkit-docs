@@ -1,0 +1,97 @@
+[Main Page](/Main_Page "wikilink") \>
+[Conjurare](/Conjurare "wikilink") \>
+
+Content that is to be loaded by Conjurare, including 3D models, and 2D
+images and movies, is specified in the file `Data/objects.dat`. This
+file is a text file, which should be edited using a text editor such as
+Wordpad (Windows) or Textedit (Mac).
+
+The file consists of a list of model specifications, each followed by a
+blank line. The very first line of the file specifies the number of
+model specifications to read from the file.
+
+The format of each individual model specification is as follows:
+
+-   Line 1: the path to model, relative to the "bin" directory. The
+    appropriate OpenSceneGraph plugin(s) required to open the file must
+    be available to the application. An image or movie file format may
+    also be specified, in which case the image or movie file will be
+    added into the scene on the x-y plane, with the lower-lefthand
+    corner of the image or movie at the origin, and with the movie
+    scaled such that the width and/or height of the movie do not exceed
+    80.0 units.
+-   Line 2: the offset from the center of the marker to the model file's
+    origin, in the same units as the camera calibration (usually
+    millimeters).
+-   Line 3: static orientation of the model, expressed as rotation of a
+    specified angle about a specified axis. The first number is a value
+    in degrees expressing the angle of rotation. The remaining three
+    numbers define the x, y, and z values of a vector defining the axis
+    of rotation. So, for example, to rotate a model by 90 degrees on the
+    horizontal marker axis (x axis, or the vector {1.0, 0.0, 0.0}), the
+    values would be `90.0 1.0 0.0 0.0`.
+-   Line 4: the scaling of the model (from its native size) in the x, y,
+    and z dimensions.
+-   Optional lines (line 5+)
+
+    MARKER n
+    :   specifies that this model should be attached to marker 'n'. More
+        than one model may be attached to a single marker.
+
+    SCENE n
+    :   specifies that this model should be added to the specified
+        "scene" (default value of 'n' is 1). When the "active scene" is
+        changed (using controls in the application, by default the '\<'
+        and '\>' keys on the keyboard) then all models on all markers
+        attached to the current scene will be swapped out and replaced
+        by the models attached to the new scene.
+
+    CUES_AT time1 [time 2 [... time256]]
+    :   specifies times (in decimal seconds) of cue points in the model
+        animation. The last cue point defines the end of the animation.
+        The token CHAPTERS_AT is an alias for CUES_AT, retained for
+        reasons of backwards compatibility.
+
+    LIGHTING n
+    :   specifies this model should be lit normally ('n' = 1, default),
+        or not lit (model colours will be applied without shading) 'n' =
+        0.
+
+    LOOP_MODE n
+    :   specifies that any animation loop mode set in the object should
+        be overridden. 'n' = 0 is NO_LOOP (i.e. one shot), 'n' = 1 is
+        LOOP, 'n' = 2 is SWING (i.e. loop backwards and forwards).
+
+    CAPTION color text
+    :   Use 'text' as a caption, displayed when the model is visible on
+        screen. 'text' may include spaces. Valid values for 'color'
+        include WHITE (the default), BLACK, RED, GREEN, BLUE, CYAN,
+        MAGENTA, YELLOW, or an HTML-1.0-style color specification
+        consisting of the \# character followed by 3 pairs of
+        hexidecimal digits indicating the red, green and blue color
+        values (e.g. \#00ff00 for GREEN).
+
+    OVERLAY time1 time2 x y filename
+    :   Show image file 'filename' (filename is a relative path from the
+        "bin" directory) at position 'x','y' (relative to top-left of
+        display) between 'time1' and 'time2' (decimal seconds). If the
+        overlay should be showed always, specify 0.0 for both 'time1'
+        and 'time2'. Multiple overlays are supported.
+
+-   A blank line
+
+So an example of an entry in the objects.dat file:
+
+`models/animated.osg`\
+`0.0 0.0 0.0`\
+`90.0 1.0 0.0 0.0`\
+`1.0 1.0 1.0`\
+`MARKER 1`\
+`CUES_AT 0.0 5.0 29.9`
+
+specifies the model "animated.osg" in the folder "models", with offset
+of zero, orientation of plus 90 degrees about the x axis, 1.0 scale,
+attached to the first marker, and with two cue points at 0.0 and 5.0
+seconds into the model's 29.9 second-long animation.
+
+[Category:Conjurare](/Category:Conjurare "wikilink")

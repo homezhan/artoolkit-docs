@@ -1,0 +1,2 @@
+1.  REDIRECT [Using ARToolKit NFT with fiducial markers (version
+    3.x)](/Using_ARToolKit_NFT_with_fiducial_markers_(version_3.x) "wikilink")

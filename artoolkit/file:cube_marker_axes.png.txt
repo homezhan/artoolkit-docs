@@ -1,0 +1,2 @@
+Photo of ARToolKit's example cube marker marked with axes on sub-markers
+0 and 1.

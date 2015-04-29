@@ -1,0 +1,36 @@
+[Main Page](/Main_Page "wikilink") \> [ARToolKit for
+Unity](/ARToolKit_for_Unity "wikilink") \>
+
+ARToolKit for Unity v5.1.3
+--------------------------
+
+In this version, a number of the script classes were renamed to improve
+clarity in project layout and to avoid naming clashes with other
+plugins.
+
+-   ARToolKit -\> ARController
+-   Marker -\> ARMarker
+-   TrackedCamera -\> ARCamera
+-   TransitionalTrackedCamera -\> ARTransitionalCamera
+
+Additionally, the corresponding Unity Editor classes have been renamed,
+and some internal classes.
+
+When opening a project created with a previous version of ARToolKit for
+Unity, the Unity Editor will be unable to locate the renamed scripts,
+and you will have to manually relink the scripts as follows.
+
+1.  On the missing script, click the "Object locator" button,
+    highlighted in red in the image below. [<File:ARToolKit> for Unity
+    5.1.3 - missing
+    scripts.png](/File:ARToolKit_for_Unity_5.1.3_-_missing_scripts.png "wikilink")
+2.  From the popup list, select the appropriate replacement, as
+    indicated in this example by the highlighted red object.
+    [<File:ARToolKit> for Unity 5.1.3 - selecting new
+    script.png](/File:ARToolKit_for_Unity_5.1.3_-_selecting_new_script.png "wikilink")
+3.  Repeat for the remaining missing script objects. For missing
+    "ARToolKit" scripts, choose "ARController". For missing "Marker"
+    scripts, choose "ARMarker". For missing "TrackedCamera" scripts,
+    choose "ARCamera".
+
+[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")

@@ -1,0 +1,7 @@
+[Category:osgART Glossary](/Category:osgART_Glossary "wikilink")
+
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+[osgART Glossary](/:Category:osgART_Glossary "wikilink") \>
+
+Registration refers to the process of accurately aligning virtual
+objects with the real world.

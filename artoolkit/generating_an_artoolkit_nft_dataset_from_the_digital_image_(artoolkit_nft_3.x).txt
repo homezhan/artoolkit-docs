@@ -1,0 +1,397 @@
+[Main Page](/Main_Page "wikilink") \> [ARToolKit
+NFT](/ARToolKit_NFT "wikilink") \>
+
+*Note that the directions on this page apply to a previous version of
+ARToolKit NFT, version 3.x. For instructions on performing this
+procedure for ARToolKit for Desktop version 4.6 or later, or ARToolKit
+for Mobile, see [Training ARToolKit NFT to a new
+surface](/Training_ARToolKit_NFT_to_a_new_surface "wikilink")*
+
+Generating an ARToolKit NFT dataset from the digital image
+----------------------------------------------------------
+
+The inputs to the NFT tracking process are
+
+1.  a live image stream from a camera
+2.  data (produced by the training tools) about the features of the
+    tracked surface
+3.  a digital image of the tracked surface itself
+
+This section will help you in producing the second of these, the trained
+data sets.
+
+Surface training uses a set of utilities included in the ARToolKit NFT
+package. These utilities must be run from the command line. On windows,
+this means you must open a “cmd” console and cd to the ARToolKitNFT\\bin
+directory. On Unix systems (Linux and Mac OS X) open a terminal window
+and cd to the ARToolKitNFT/bin directory.
+
+### 1. Create an image set
+
+In the first step, the source image is resampled at multiple
+resolutions, generating an image set (.iset) file. This contains raw
+uncompressed data which will be loaded into the app at runtime for
+tracking.
+
+Run genImageSet.exe providing the image as command line argument. E.g.:
+Windows: genImageSet.exe mycoolimage.jpg Linux / Mac OS X: ./genImageSet
+mycoolimage.jpg
+
+You will be prompted for the resolutions you wish to use. (See the
+preceding section for advice on how to choose a good set of resolutions
+to use.) For each resolution, enter the value using the keyboard, then
+press return. The system will then prompt again for the next resolution.
+When all resolutions have been entered, just press return to end and
+move onto the image set generation.
+
+Once the image set has been generated, the various image resolutions
+will be displayed on screen (shrunk/zoomed as necessary to fit on
+screen). Press spacebar to view the images, or esc when you're done.
+
+### 2. Train the system to image features
+
+In this step, the system trains itself to the features of the image at
+the various resolutions. This is the most time-consuming step in the
+process, and may take up to an hour for larger images with multiple
+resolutions. The output of this step is a set of featuremap (.fmap-xx)
+files.
+
+Run genFeatureMap.exe providing the imageset as command line argument.
+E,g,: Windows: genFeatureMap.exe mycoolimage.iset Linux / Mac OS X: ./
+genFeatureMap mycoolimage.iset
+
+### 3. Combine trained features into a set
+
+In this step, a configuration file is generated combining the feature
+maps generated in the previous step. The output of this step is a
+feature set (.fset) file.
+
+Run genFeatureSet.exe providing the imageset as command line argument.
+E.g.: Windows: genFeatureSet.exe mycoolimage.iset Linux / Mac OS X: ./
+genFeatureSet mycoolimage.iset
+
+This application selects and saves good features for tracking. The
+result is saved in filename.fset. The output window displays features
+extracted from different image sizes. All selected features are shown
+inside red squares. Press space to view next image sizes.
+
+### 4. write a config.dat file to specify position, orientation and scale of image's coordinate system
+
+In this step, a config.dat file is created in a text editor. This file
+specifies the number of images per coordinate system, (usually one,
+although if using NFT images on a cube or paddle, may be more than one),
+their image sets, and the transformation between the image and the
+coordinate system used for graphics to be overlaid.
+
+The file format is very simple.
+
+1.  The first line should be the number of textures to track.
+2.  Then follow groups of lines, one per texture.
+    1.  The relative path to the iset file.
+    2.  A matrix, specifying the homogenous coordinate transform (HCT)
+        matrix to apply to go from the image coordinates to world
+        (graphics overlay) coordinates.
+
+A config file for one image set can be made in any text editor by
+copying the text below:
+
+    1
+
+    mycoolimage.iset
+     1.0000  0.0000  0.0000  0.0000
+     0.0000  1.0000  0.0000  0.0000
+     0.0000  0.0000  1.0000  0.0000
+
+This will use the image set, feature maps, and feature set you have just
+generated.
+
+If you wish to move these files from the bin directory, be sure to edit
+the pathnames in config.dat. Look at the **pinball** sample for an
+example.
+
+### 5. Interactively generate KPM template files
+
+As well as the feature set and feature map training, an additional **key
+point matching (KPM)** data set must be interactively generated.
+
+#### Before you begin
+
+-   Connect your webcam.
+-   Work out any webcam configuration required. Generally, if your
+    webcam produces images greater than 800x600 resolution, it is
+    recommended to either use the dialog box (where applicable) or set
+    an ARToolKit video configuration environment variable to choose a
+    resolution no greater than 800x600. A resolution of 640x480 is
+    perfectly acceptable for NFT, and the greater frame rate achievable
+    by using this resolution rather than a higher resolution is of more
+    advantage than a larger frame size. You can see an example of
+    setting the environment variable to adjust the webcam resolution in
+    the example below.
+-   Carefully calibrate your camera (see the procedure
+    [here](/Calibrating_your_camera "wikilink")) and copy the
+    calibration data into the
+        ARToolKitNFT/bin/Data
+
+    directory, overwriting the file
+
+        camera_para.dat
+
+-   Obtain a physical print of the surface you intend to use for
+    tracking. See [\#Physical print
+    properties](/#Physical_print_properties "wikilink") above.
+
+#### Launching the makeKpmTemplate tool
+
+Like the other NFT toolkit tools, the makeKpmTemplate tool is a utility
+which should be run from a command line window (cmd on Windows, terminal
+on Mac OS X/Linux).
+
+Open a command line window, and navigate to the bin directory of your
+ARToolKitNFT install.
+
+After setting any required video configuration, launch the
+makeKpmTemplate tool: Windows:<dos>makeKpmTemplate.exe</dos> Mac OS
+X/Linux:<bash>./makeKpmTemplate</bash>
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_invocation.jpg "wikilink")
+
+#### Entering image size
+
+The first prompt required by the tool is the size (in millimetres) of
+the area to be tracked. You can measure this with a rule, or if you
+printed at 1:1 scale from digital artwork at a known resolution (dpi),
+you can use the values from that artwork.
+
+See [\#Producing a digital image to be supplied to the training
+tools](/#Producing_a_digital_image_to_be_supplied_to_the_training_tools "wikilink")
+above.
+
+Type the values in at the terminal prompt. You can enter decimal values
+(numbers with a '.').
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_marker_size_entry.jpg "wikilink")
+
+Once you have entered both width and height, the program will load your
+camera calibration data and open the video window. It is worth
+emphasising here: from this point on, it is important that you are using
+a calibrated camera. If you are not, the data produced won't show
+errors, but it potentially won't work with other cameras, even if those
+cameras are calibrated.
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_running.jpg "wikilink")
+
+#### Capturing images
+
+In the next few steps, you will acquire images of your tracked surface
+with your webcam, and identify the corners of it. As much as possible,
+you should aim to capture the images of the surface from the same
+distances and angles as will later occur when using the finished data.
+This will help the tracking software perform better even when lighting,
+camera focus, and surface properties of the printed image are not ideal.
+
+Place your image flat on a neutral-coloured surface, and point the
+webcam at it, using a typical distance and angle as you would later use
+for tracking.
+
+[thumb|600px|none](/File:NFT_example_KPM_holding_webcam.jpg "wikilink")
+
+The program's main window shows the live video and/or captured video in
+the left-half, and in the right half, up to four captured and trained
+images.
+
+Aim the webcam so that you have the whole surface in the camera frame.
+Feature points in the image are marked with green "X" figures. The
+number of these points is shown (in green writing) at the top of the
+window, along with a value called the "Harris threshold". The Harris
+threshold is a value that when higher, selects fewer better-quality
+feature points. The maximum number of feature points per frame is 2000,
+but you should aim to have half or less than this number. **Use the '1'
+and '2' keys on the keyboard to increase or decrease the Harris
+threshold value until the number of points is low enough.**
+
+[frame|none](/File:NFT_example_KPM_display_grab.jpg "wikilink")
+
+You can immediately see a number of things about the image used:
+
+-   Flat areas with no texture provide no features to track. You should
+    use source material with plenty of edges and fine surface detail.
+-   Blurry areas (such as the blurry face at the bottom of the printed
+    image) are also poor areas for tracking.
+-   Some areas with fine detail but low contrast will be quite "noisy",
+    with the green crosses flickering in and out; make sure you're doing
+    this procedure in a well-lit area, and with a nice still webcam (use
+    a tripod if available), and adjust the Harris threshold to produce
+    the least amount of flickering from the largest number of points.
+
+When you are happy with the camera image, click the left mouse button.
+The current video frame is captured and frozen. If you are not happy
+with the capture, you can press the right mouse button to return to the
+interactive display.
+
+**Clicking right mouse from the interactive capture display quits the
+program** (at this stage, without saving any data thus far captured).
+
+#### Marking the corners
+
+The next phase requires you to carefully and precisely click on the
+corners of the rectangular area to be tracked. This tells the program
+which parts of the video image contains meaningful data and which parts
+(outside the rectangle) are irrelevant background texture.
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_click_corner_prompt.jpg "wikilink")
+
+Move the mouse to the top-left of your image, and click the left mouse
+button once. Aim as close as possible to the corner. If it hard to
+precisely identify the corner, aim one or two pixels inside the corner
+rather than the outside. A blue cross will appear at the point clicked.
+
+[thumb|600px|none](/File:NFT_example_KPM_corner_placed.jpg "wikilink")
+
+In the console window, you will see the coordinates of the clicked
+point, and a prompt to click the next corner.
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_corner_clicked_next_corner.jpg "wikilink")
+
+It is critical that the corners are identified in the exact same order
+every time. The correct order begins with the top-left, and proceeds
+anti-clockwise to bottom-left, bottom-right, and finally top-right.
+
+Top / bottom / left / right refers to the actual printed image, not the
+position onscreen. It might help to write "top-left" etc. on the actual
+printed image (outside the border of course!) so that you don't
+inadvertently make a mistake when the onscreen image is rotated.
+
+If at any stage you are unhappy with a corner placement, you can click
+the right mouse button to cancel all corners placed so far and return to
+the capture screen.
+
+#### Entering the page number
+
+Once the last corner has been identified, the data inside the
+rectangular area you have identified will be processed. If the data is
+internally-consistent, you will be prompted to enter a page number. *If
+the data is not internally consistent (e.g. the corners you have clicked
+cannot be mapped with sufficient accuracy to a plane, or your camera
+calibration data is vastly different from the camera in use) then the
+data set will not be added, and you will be returned to the capture
+screen. Try again.*
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_all_corners_clicked_page_number.jpg "wikilink")
+
+The page number must be the same for all images from the same printed
+page. So if producing a KPM dataset for use with an application which
+tracks only one printed page, you would enter **0** each time you finish
+capturing an image, and when you have finished, save the resulting
+dataset.
+
+If you are training pages for a multi-page book, e.g. for use with the
+mrDemo application, you should enter a different page number
+corresponding to the number of the printed page you are training,
+beginning with 0.
+
+E.g., suppose you were training 3 pages for a multi-page book, and for
+each page, you want to capture from 6 different camera angles. To do
+this, you would run makeKpmTemplate 3 times (once for each printed
+page).
+
+1.  During the first run, you would capture six images, and enter the
+    page number **0** for all six images, and then save the dataset.
+2.  Then you would swap the printed page and begin the second run, this
+    time entering **1** for the page number for each six images.
+3.  Finally, you would swap to the third printed page, run
+    makeKpmTemplate a third time, entering **2** for the page number.
+
+#### Onscreen display of dataset matching
+
+Once the data set has been processed, the display changes. The captured
+image is placed in the right-hand side of the window, and a live camera
+image in the left. Lines are drawn between features identified in the
+live image, and matching features in the saved data set. The lines are
+green for no match, and red for a good match. So long as 4 good matches
+can be made, a reference frame will be found and tracking will run -- in
+this case, a set of red cubes is overlaid over the image, and a green
+rectangle of A4-paper size (210 mm wide and 297 mm tall) is also drawn.
+
+[thumb|600px|none](/File:NFT_example_KPM_display_online_with_1_template.jpg "wikilink")
+
+This view allows you to see how well the data set you've acquired tracks
+when using actual live camera images. Move the webcam and the printed
+image around, and you will see that the tracking works better from some
+angles and distances than others. Try to identify a region where
+tracking is poor, as indicated in this image:
+
+[thumb|600px|none](/File:NFT_example_KPM_display_online_bad_tracking_with_1_template.jpg "wikilink")
+
+This would then be a good relative position to acquire another image for
+a second lot of data in the set.
+
+#### Adding more images
+
+Once you have had enough of examining the tracking, click the right
+mouse button to return to the online capture screen. You should now
+continue to add more images to the dataset. It is recommended that you
+add at least 6 and up to 10 images to each data set. The more images you
+add, the more robust the tracking will be, at the expense of speed and
+data set size in memory when running live.
+
+Be sure to try to get images from a number of orientations and angles.
+
+[thumb|600px|none](/File:NFT_example_KPM_holding_webcam_2.jpg "wikilink")
+[thumb|600px|none](/File:NFT_example_KPM_display_next_grab.jpg "wikilink")
+
+Once you have mapped out the corners of the second image, it will be
+added to the second space on the right-hand side of the window. Now you
+can compare the tracking performance of the two different data sets.
+
+[thumb|600px|none](/File:NFT_example_KPM_display_online_with_2_templates.jpg "wikilink")
+
+The first four images will be displayed in this way.
+
+#### Saving the final result
+
+Once you have acquired several good images, it's time to save them.
+**Press the s key to save the dataset.**
+
+In the console window, you will be prompted to enter a filename.
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_save_prompt.jpg "wikilink")
+
+The suffix ".kpm" will be added to the name you enter, and the dataset
+saved into the resulting filename in the current working directory
+(usually the same directory as the makeKpmTemplate application).
+
+[thumb|600px|none](/File:NFT_example_KPM_terminal_saving.jpg "wikilink")
+
+From here you are ready to use the .kpm file with the other data to run
+a complete tracking example.
+
+Testing the completed dataset
+-----------------------------
+
+The easiest means of testing NFT datasets you have trained is to run
+them using the **simpleNFT2** example program. Open a console window and
+change to the ARToolKitNFT bin directory.
+
+Run simpleNFT2.exe providing the relative path to the datasets as
+command line argument. E.g, to launch simpleNFT2 with the pinball sample
+dataset.:
+
+-   Windows: <dos>simpleNFT2.exe Data/pinball</dos>
+-   Mac OS X: <bash>./simpleNFT2.app/Contents/MacOS/simpleNFT2
+    Data/pinball</bash>
+-   Linux: <bash>./simpleNFT2 Data/pinball</bash>
+
+The tracking in this application is initialized by the KPM dataset. Once
+the reference frame is established detected, tracking is switched to
+feature based mode. Red 3D boxes are drawn on the images. If feature
+tracking fails, it is changed back to KPM-based tracking and yellow 3D
+boxes are drawn.
+
+Moving on
+---------
+
+Once you have generated a few marker sets, and seen the tracking
+response, you're ready to gain a deeper understanding of NFT tracking.
+You can read the reference documentation for more information.
+
+[Category:ARToolKit NFT](/Category:ARToolKit_NFT "wikilink")

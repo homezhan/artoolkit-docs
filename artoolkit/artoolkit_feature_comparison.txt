@@ -1,0 +1,156 @@
+[Main Page](/Main_Page "wikilink") \> [ARToolKit
+Professional](/ARToolKit_Professional "wikilink") \>
+
+  ------------------------------------------------------------------- ---------------------- ------------------------------------- -------------------------- ------------------------------
+                                                                      **ARToolKit v2.x**     **ARToolKit v5.x (Desktop)**          **ARToolKit v5.x (iOS)**   **ARToolKit v5.x (Android)**
+
+  Platform support                                                    Windows, Linux, OS X   Windows XP SP 3-, Linux, OS X 10.5-   iOS v4.3-                  Android 2.2-
+
+  Â
+
+  **64-bit support**
+
+  x86-64                                                              x                      x                                     .                          .
+
+  PowerPC G5                                                          x                      x                                     .                          .
+
+  IA64                                                                .                      .                                     .                          .
+
+  ARM64 (ARM AArch64)                                                 .                      .                                     x                          x
+
+  Â
+
+  USB webcam input                                                    x                      x                                     .                          .
+
+  DV video input                                                      x                      x                                     .                          .
+
+  IIDC firewire video input                                           x                      x                                     .                          .
+
+  AVI file video streaming                                            x                      x                                     .                          .
+
+  QuickTime/MP4 video streaming from file                             .                      x                                     x                          x
+
+  QuickTime/MP4 video streaming from network                          .                      x                                     .                          .
+
+  Multiple video streams supported                                    x                      x                                     x                          .
+
+  Video input type able to be changed at runtime                      .                      x                                     x                          .
+
+  Multiple video streams from different sources                       .                      x                                     x                          .
+
+  Â
+
+  RGB pixel format support                                            x                      x                                     x                          x
+
+  Grayscale pixel format                                              .                      x                                     x                          x
+
+  YUV pixel formats                                                   x                      x                                     x                          x
+
+  Packed pixel formats                                                .                      x                                     x                          x
+
+  Â
+
+  Kato's heuristic pose estimator                                     x                      .                                     .                          .
+
+  Pose estimate optimization using non-linear refinement              .                      x                                     x                          x
+
+  Robust pose estimator using M-estimation                            .                      x                                     x                          x
+
+  Support for stereo pose estimation                                  .                      x                                     x                          x
+
+  Filtering of continuous pose estimates                              x (1)                  x                                     x                          x
+
+  Â
+
+  Pinhole lens model                                                  x                      x                                     x                          x
+
+  Pinhole lens model with pixel aspect ratio                          .                      x                                     x                          x
+
+  OpenCV lens models with scale factor supported                      .                      x                                     x                          x
+
+  Rapid OpenCV-based camera calibration                               .                      x                                     .                          x
+
+  Stereo video calibration                                            .                      x                                     .                          .
+
+  Â
+
+  Automatic binarization threshold selection                          .                      x                                     x                          x
+
+  Tracking from interlaced sources                                    x                      x                                     x                          x
+
+  Simultaneous tracking of multiple camera views                      x (1)                  x                                     x                          x
+
+  Pictorial (template) markers                                        x                      x                                     x                          x
+
+  2D-barcode markers                                                  .                      x                                     x                          x
+
+  Marker border width variable at runtime                             .                      x                                     x                          x
+
+  Barcode marker error detection and correction                       .                      x                                     x                          x
+
+  Â
+
+  **Rendering support**
+
+  OpenGL                                                              x                      x                                     .                          .
+
+  OpenGL ES                                                           .                      .                                     x                          x
+
+  OpenGL ES 2.0                                                       .                      .                                     x                          x
+
+  OpenVRML                                                            x                      x                                     .                          .
+
+  OpenSceneGraph                                                      x (2)                  x                                     x                          x
+
+  DirectX                                                             .                      .                                     .                          .
+
+  Unity 3D                                                            .                      x                                     x                          x
+
+  Â
+
+  **Language bindings**
+
+  C                                                                   x                      x                                     x                          x
+
+  C (OO)/C++                                                          .                      x                                     x                          x
+
+  Objective-C                                                         .                      x                                     x                          .
+
+  Java                                                                x                      x (3)                                 .                          x
+
+  C\#                                                                 .                      x (3)(4)                              . (4)                      . (4)
+
+  Flash AS3                                                           .                      x (3)                                 .                          .
+
+  Proce55ing                                                          .                      x (3)                                 .                          .
+
+  MATLAB                                                              x                      .                                     .                          .
+
+  SilverLight                                                         .                      x (3)                                 .                          .
+
+  Â
+
+  **Licensing**
+
+  Open source license, GPLv2 compatible                               x                      .                                     .                          .
+
+  Commercial license possible                                         .                      x                                     x                          x
+
+  Â
+
+  **Notes**
+
+  \(1) Multiple tracking instances possible only when pose estimate
+  filtering is disabled.
+
+  \(2) Via osgART
+
+  \(3) Via FLARToolKit/NyARToolKit/SLARToolKit
+
+  \(4) Also supported via ARToolKit for Unity
+  ------------------------------------------------------------------- ---------------------- ------------------------------------- -------------------------- ------------------------------
+
+  : ARToolKit v2.x vs ARToolKit Professional v4.x feature comparison
+
+[Category:ARToolKit
+Professional](/Category:ARToolKit_Professional "wikilink")
