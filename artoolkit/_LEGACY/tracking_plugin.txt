@@ -1,0 +1,24 @@
+[Category:osgART Standard
+Edition](/Category:osgART_Standard_Edition "wikilink") [Category:osgART
+Professional Edition](/Category:osgART_Professional_Edition "wikilink")
+
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+Tracking plugins are compiled libraries that interface with particular
+computer-vision based tracking library to provide
+[registration](/Registration_(definition) "wikilink") within osgART.
+
+Currently Supported Tracking Plugins
+------------------------------------
+
+-   ARToolKit 2.7
+
+Creating a Tracking Plugin
+--------------------------
+
+-   What it must provide...
+
+See Also
+--------
+
+-   [Video Plugin](/Video_Plugin "wikilink")

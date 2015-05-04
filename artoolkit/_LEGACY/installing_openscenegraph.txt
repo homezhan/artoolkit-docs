@@ -1,0 +1,97 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+OpenSceneGraph (OSG) is an essential prerequsite for osgART.
+
+osgART version 1.1.3
+--------------------
+
+OSG version 2.8 or later is required, with OSG version 2.8.2
+recommended.
+
+Using a binary release of OSG is recommended. Binary installers are
+available from <http://www.artoolworks.com/dist/openscenegraph/2.8.2/> .
+
+osgART version 1.1.2
+--------------------
+
+OSG version 2.5 or later is required, with OSG version 2.6.1
+recommended.
+
+Using a binary release of OSG is recommended. Binary installers are
+available from <http://www.artoolworks.com/dist/openscenegraph/2.6.1/> .
+
+osgART version 1.1
+------------------
+
+OSG version 2.2 or later is required, with OSG version 2.2 recommended.
+
+Using a binary release of OSG is recommended. Binary installers are
+available from
+<http://www.openscenegraph.org/projects/osg/wiki/Downloads> .
+
+osgART version 1.0
+------------------
+
+OSG version 1.1 or later is required, with OSG version 1.2 recommended.
+
+Using a binary installation of OSG is recommended. Binary installers for
+Windows (32 bit), Mac OS X, and Fedora Core 4 Linux are available
+directly from the OSG web site. [OSG 1.2 download
+page](http://www.openscenegraph.org/projects/osg/wiki/Downloads/PreviousReleases).
+For other platforms, you should download and build OSG from source,
+following instructions on the OSG website.
+
+### Windows
+
+A binary installer for OSG 1.2, with binaries built against MS Visual
+Studio .NET 2003 is distributed from the OSG website, and can be
+downloaded at
+[1](http://www.openscenegraph.ORG/downloads/binaries/old/osg1.2_setup_2006-09-13.exe).
+
+For users who wish to link applications built with MS Visual Studio 2005
+with OSG, we have built a binary installer for OSG which links
+correctly. This can be downloaded at
+[2](http://www.artoolworks.com/dist/osgart/release/1.1/osg1.2_setup_2007-03-30_vs80.exe).
+
+By default, the installer places the root of the OSG install in the
+directory C:\\Program Files\\OpenSceneGraph. This value is then added to
+an environment variable \$(OSG_ROOT), and this variable can be used in
+Visual Studio project files.
+
+It is highly recommended that you add the actual OSG header and libary
+directories to the Visual Studio default search paths for all projects.
+This proceeds thus:
+
+1.  From the "Tools" menu, choose "Options".
+2.  The options window: In the left-hand pane, click on "Projects".
+3.  Two groups are revealed: Click on the "VC++ Directories" group.The
+    right-hand pane shows directories.
+4.  Under the menu item "Show directories for:" choose "Include files".\
+5.  The box shows currently configured global include paths. Five
+    buttons are shown above it. Click on the button marked with a shiny
+    folder ("new"). Space to add a new path is added.
+6.  In the box, type C:\\Program Files\\OpenSceneGraph\\include
+7.  Under the menu item "Show directories for:" choose "Library files".\
+8.  The box shows currently configured global include paths. Five
+    buttons are shown above it. Click on the button marked with a shiny
+    folder ("new"). Space to add a new path is added.
+9.  In the box, type C:\\Program Files\\OpenSceneGraph\\lib
+
+Additionally, you should add the OSG binaries directory to the system
+path if you want it to automatically find the OSG plugins and DLLs.
+
+### Mac OS X
+
+The OSG 1.2 Disk image is at
+[3](http://www.openscenegraph.org/downloads/binaries/old/OpenSceneGraph-1.2-2.dmg).
+
+The Disk image doesn't actually install the OSG files to any particular
+location, but it is recommended that you place the OSG Frameworks and
+Plugins onto a default system path. These are /Library/Frameworks and
+/Library/Plug-ins (for all users) or \~/Library/Frameworks and
+\~/Library/Plug-ins for only the current user.
+
+### Linux
+
+The Fedora Core 4 binary packages are at
+[hhttp://www.openscenegraph.org/projects/osg/wiki/Downloads/FedoraCore4].

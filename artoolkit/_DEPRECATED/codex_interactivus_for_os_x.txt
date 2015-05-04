@@ -1,0 +1,36 @@
+[Main Page](/Main_Page "wikilink") \> [Codex
+Interactivus](/Codex_Interactivus "wikilink") \>
+
+About the application
+---------------------
+
+This application displays models of the inventions of Leonardo da Vinci
+on your Mac.
+
+-   **[Click here to download the Codex Interactivus demo for OS X (as a
+    disk
+    image)](http://www.artoolworks.com/dist/codexinteractivus/1.0/Codex%20Interactivus%20demo%20v1.0.dmg)**
+
+Requirements
+------------
+
+-   The application requires OS X 10.6 or later.
+-   A printer is required to print the page images.
+
+How do I use it?
+----------------
+
+1.  Before the app can be used, you will need a physical print of the
+    page images. You can either [download a PDF file of the pages
+    here](http://www.artoolworks.com/support/attachments/Codex%20Interactivus-r3-print.pdf)
+    or use the PDF supplied with the application disk image.
+2.  Once the page images are printed, point the camera at the pages.
+
+What information is collected when I use this app?
+--------------------------------------------------
+
+This app does not store or transmit any personally identifying
+information.
+
+[Category:Desktop](/Category:Desktop "wikilink") [Category:OS
+X](/Category:OS_X "wikilink")

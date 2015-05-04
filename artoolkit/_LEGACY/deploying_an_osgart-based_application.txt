@@ -1,0 +1,36 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+Packaging
+---------
+
+Packaing refers to the process of taking the built binaries of your
+application, finding and collecting any prerequisites for your
+application to run, collecting all data files used by your application,
+and archiving them together in a format suitable for distribution to end
+users.
+
+On some operating systems, it is also advantageous to create an
+installer package which the user can run to unpack the archive and set
+up your application ready for use on their system.
+
+### Windows
+
+### Mac OS X
+
+#### Building your osgART-based application to run on a machine without OpenSceneGraph installed
+
+If you want to build a drag-installable application (i.e. one that can
+be relocated and run from anywhere) you will need to copy the OSG
+frameworks and plugins into your application bundle.
+
+To do this, in Xcode select the target for your application. Choose "new
+build phase-\>new copy files build phase", and for target choose
+"Frameworks". Then, into this build item in the target drag the OSG
+frameworks. Similarly, for plugins: choose "new build phase-\>new copy
+files build phase", and for target choose "PlugIns". Into this folder,
+add the OSG plugins.
+
+### Linux
+
+[Category:osgART Professional
+Edition](/Category:osgART_Professional_Edition "wikilink")

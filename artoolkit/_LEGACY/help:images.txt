@@ -1,0 +1,207 @@
+This page explains the **image** syntax when editing the wiki. Before
+using images in your page, your wiki must have file uploads enabled (see
+the for details) and you have to [upload a
+file](/Help:Managing_files "wikilink").
+
+Syntax
+------
+
+The full syntax for displaying an image is:
+
+[`{options}`](/{{ns:image}}:{filename} "wikilink")
+
+Where options can be zero or more of the following, separated by pipes:
+
+-   `border`, `frame`, `thumb`, or `frameless`: Controls how the image
+    is formatted
+-   `left`, `right`, `center`, `none`: Controls the alignment of the
+    image within a text
+-   `baseline`, `sub`, `super`, `top`, `text-top`, `middle`, `bottom`,
+    `text-bottom`: Controls the vertical alignment of the image within a
+    text
+-   `{width}px`: Resizes the image to the given width in pixels
+-   `{width}x{height}px`: Resizes the image to fit within the given
+    width and height in pixels; it is possible to specify only the
+    height by writing `x{height}px`
+-   Special cases:
+    -   `page=1`: Displays the specified page when showing a djvu file
+-   `link={destination}`: Allows to link to an arbitrary title, URL or
+    just nowhere ([1.14+](/rev:41727 "wikilink"))
+-   `alt={alternative text}`: For changing the alternative text
+    (`alt=""`) of an image ([1.14+](/rev:41837 "wikilink"))
+
+The options can be given in any order. If the given options conflict
+each other, the latter is applied, except for the format options, where
+the options take the priority in the order of `frame`, `thumb`, and
+`frameless` and/or `border`. If a given option does not match any of the
+other possibilities, it is assumed to be the caption text. Caption text
+can contain wiki links or other formatting.
+
+Format
+------
+
+The following table shows the effect of all available formats.
+
+  Description   You type   You get {{/frame|frame=|ex=no format specified}} {{/frame|frame=border|ex=border results in a very small gray border}} {{/frame|frame=frame}} {{/frame|frame=thumb}} {{/frame|frame=frameless|ex=frameless, like thumbnail, respect user preferences for image width but without border and no right float}} {{/frame|frame=frameless|2=border|ex=frameless and border}}
+  ------------- ---------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+When the hight of an image in thumbnail is bigger than its width and you
+find it too outstanding, you may try the option `upright`, which will
+try to adjust its size to more desirable size.
+
+Note that by writing `thumb={filename}`, you can use a different image
+for the thumbnail.
+
+Alignment
+---------
+
+Note that when using `frame` or `thumb`, the default alignment will be
+`right`.
+
+  Description   You type   You get {{/frame|frame=|ex=**no alignment specified**, or default alignment}} {{/frame|frame=none|ex=specify alignment as **none**}} {{/frame|frame=center}} {{/frame|frame=left}} {{/frame|frame=right}}
+  ------------- ---------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Vertical alignment
+
+`text text [[/``:``|20px]]`\
+`text text [[/``:``|20px|baseline]]`\
+`text text [[/``:``|20px|sub]]`\
+`text text [[/``:``|20px|super]]`\
+`text text [[/``:``|20px|text-top]]`\
+`text text [[/``:``|20px|middle]]`\
+`text text [[/``:``|20px|bottom]]`\
+`text text [[/``:``|20px|text-bottom]]`
+
+results in (the text is underlined to show the result more clearly)
+
+<u>text text [20px](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+text text
+[20px|baseline](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+text text
+[20px|sub](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink") text
+text [20px|super](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+text text
+[20px|text-top](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+text text
+[20px|middle](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink") text
+text [20px|bottom](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+text text
+[20px|text-bottom](/{{ns:image}}:{{mediawiki:image_sample}} "wikilink")</u>
+
+Size and Frame
+--------------
+
+Among different formats, the effect of the size parameter may be
+different, as shown below.
+
+-   When the format is not specified, or only `border`ed, the size can
+    be both reduced and enlarged.
+-   A image with `frame` always ignores the size specification.
+-   The size of an image with `thumb` and `frameless` can be reduced,
+    but can not be enlarged beyond the original size of the image.
+
+For how it appears when its size is not specified, see
+[Format](/#Format "wikilink") section above.
+
+  Format   Reduced   Enlarged {{/size|frame=}} {{/size|frame=border}} {{/size|frame=frame}} {{/size|frame=thumb}} {{/size|frame=frameless}}
+  -------- --------- ------------------------------------------------------------------------------------------------------------------------
+
+Gallery of images
+-----------------
+
+It's easy to make a gallery of **thumbnails only**, not other images,
+with the `<nowiki><gallery></nowiki>` tag. The syntax is:
+
+`<gallery>`\
+`:{filename}|{caption}`\
+`:{filename}|{caption}`\
+`{...}`\
+
+</gallery>
+Note that the image code is not enclosed in brackets when enclosed in
+gallery tags.
+
+Captions are optional, and may contain wiki links or other formatting.
+
+for example:
+
+`<gallery>`\
+`:``|Item 1`\
+`:``|a link to [[/Help:Contents|`</nowiki>`Help:Contents]]`\
+`:`\
+`:`\
+`:``| ''italic caption''`\
+`:``|on page "{{PAGENAME}}"`\
+
+</gallery>
+is formatted as:
+
+Image:Example.jpg|Item 1 Image:Example.jpg|a link to
+[Help:Contents](/Help:Contents "wikilink") Image:Example.jpg
+Image:Example.jpg Image:Example.jpg|*italic caption*
+Image:Example.jpg|on page ""
+
+### Parameters
+
+The gallery tag itself takes several additional parameters:
+
+    <gallery {parameters}>
+    {images}
+    </gallery>
+
+-   `caption={caption}`: sets a caption on the gallery.
+-   `widths={width}px`: sets the widths of the images.
+-   `heights={heights}px`: sets the (max) heights of the images.
+-   `perrow={integer}`: sets the number of images per row.
+
+Link to description page
+------------------------
+
+If you put a colon (`:`) before `{{ns:image}}:`, the image will not be
+embedded and the link will lead to the description page of the file.
+
+`[[/:``:``|`</nowiki>`:``:``]]`\
+`[[/:``:``|Sunflowers]]`
+
+results in
+
+[::](/:{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+[Sunflowers](/:{{ns:image}}:{{mediawiki:image_sample}} "wikilink")
+
+Link directly to file
+---------------------
+
+You can use the pseudo-namespace “” to link directly to a file,
+bypassing the description page.
+
+`[[/``:``|`</nowiki>`:``]]`\
+`[[/``:``|Sunflowers]]`
+
+results in
+
+[:](/{{ns:media}}:{{mediawiki:image_sample}} "wikilink")
+[Sunflowers](/{{ns:media}}:{{mediawiki:image_sample}} "wikilink")
+
+Files at other websites
+-----------------------
+
+You can link to an external file using the same syntax used for linking
+to an external web page.
+
+    [http://url.for/some/image.png]
+
+Or with different text:
+
+    [http://url.for/some/image.png link text here]
+
+If it is enabled on your wiki, you can also embed external images. To do
+that, simply insert the image's url:
+
+    http://url.for/some/image.png
+
+See also
+--------
+
+-   [Linked images](/Help:Linked_images "wikilink")
+
+[Images](/Category:Help "wikilink")

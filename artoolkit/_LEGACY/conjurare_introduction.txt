@@ -1,0 +1,58 @@
+[Main Page](/Main_Page "wikilink") \>
+[Conjurare](/Conjurare "wikilink") \>
+
+What is Conjurare and what can I do with it?
+--------------------------------------------
+
+CONJURARE is an application which enables rapid configuration and
+presentation of 3D content and 2D content in an augmented reality (AR)
+environment. To create the AR environment, Conjurare uses [ARToolKit
+Professional](/ARToolKit_Professional "wikilink"), acquiring live video
+from a webcam or other camera, and tracking markers in front of the
+camera. The markers are squares with black and white borders. The number
+and size of the markers, and the picture or barcode on the marker can
+all be varied. Conjurare includes the command line tools from ARToolKit
+to [create pattern files for new picture-based markers you
+create](/Creating_and_training_new_ARToolKit_markers "wikilink"), and to
+[calibrate the system to your camera’s lens
+parameters](/Calibrating_your_camera "wikilink").
+
+Conjurare uses the [OpenSceneGraph](http://www.openscenegraph.org/)
+libraries and plugins to load and render your 3D objects. Thus, any
+content that can be viewed in OpenSceneGraph’s osgviewer application
+(included with the Conjurare application) can be displayed by Conjurare.
+Loadable models include the native .osg and .ive formats (exported from
+your modelling program, e.g. 3D Studio Max, or Maya), as well as .3ds,
+COLLLADA .dae, Wavefront .obj, and many many more. Conjurare also allows
+2D video and static images to be loaded into the AR environment (via the
+Apple QuickTime libraries) and be manipulated just like other 3D
+content.
+
+Conjurare includes some simple presentation controls, which allow
+content to be presented in “scenes”, which can be dynamically swapped in
+and out. Animated content (e.g. animations exported from 3D Studio Max
+using the osgexp Max plugin) can be paused and restarted, either live or
+at preset “cue” points. Finally, Conjurare allows captions and 2D
+overlays (including transparent overlays) to be associated with your
+content, and shown when your content is in view in the AR environment.
+
+What can’t Conjurare do?
+------------------------
+
+-   Conjurare is not a 3D modelling application. It can’t create new 3D
+    models or animations. You create 3D (or 2D) content using other
+    tools, e.g. 3D Studio Max.
+-   Conjurare does not currently support interaction within the AR
+    environment. While content can be shown, moved or hidden by moving
+    the marker with which the content is associated, the content can’t
+    be modified in real-time within Conjurare. For now, interactive AR
+    applications should be programmed in C and C++ languages using
+    ARToolworks’ [ARToolKit
+    Professional](/ARToolKit_Professional "wikilink") and [osgART
+    Professional Edition tools](/osgART "wikilink").
+-   Conjurare can’t load any content which isn’t loadable by
+    OpenSceneGraph or QuickTime. E.g skeletally-animated characters are
+    not at present supported in OSG, and therefore not supported in
+    Conjurare.
+
+[Category:Conjurare](/Category:Conjurare "wikilink")

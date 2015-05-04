@@ -1,0 +1,28 @@
+About the support library
+-------------------------
+
+The ARToolworks support library is a dynamically-updating resource, put
+together using the [MediaWiki](http://www.mediawiki.org) software. This
+allows additions and corrections to the documentation to be much more
+rapid. It also means that documentation that you have used before may
+have moved or changed, but you can view the history of any page to see
+an earlier version if you like.
+
+The library is organised into categories, based on product names. The
+main category pages are accessible from the [Main
+Page](/Main_Page "wikilink"). You can also see an list of all categories
+and view each category's index from the
+[Special:Categories](/Special:Categories "wikilink") page.
+
+Navigating around the support library
+-------------------------------------
+
+At the left of the page is a navigation bar.
+
+Clicking on [Main Page](/Main_Page "wikilink") will always take you back
+to the top of the support library.
+
+For contributors to the support library
+---------------------------------------
+
+[Editing help](/Help:Editing "wikilink")

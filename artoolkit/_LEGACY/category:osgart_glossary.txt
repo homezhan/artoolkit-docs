@@ -1,0 +1,5 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+[osgART Glossary](/:Category:osgART_Glossary "wikilink")
+
+This category is a reference for the terms relating to augmented
+reality, and osgART in particular.
