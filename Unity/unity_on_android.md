@@ -41,8 +41,7 @@ First, ensure that the project correctly references the locations of "android.ja
 `/Applications/Unity/Unity.app/Contents/PlaybackEngines/AndroidPlayer/bin/classes.jar`
 and on Windows at path
 `C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\bin\classes.jar`.
-
-[Compiling][compile_setup]
+![Compiling][compile_setup]
 
 Next, invoke an export jar operation in Eclipse (File-\>Export...)
 
@@ -55,8 +54,7 @@ com/artoolworks/ar/unity/CameraSurface.class
 com/artoolworks/ar/unity/UnityARPlayerActivity.class`
 
 See the following image for how to select the classes.
-
-[Selecting Classes for Export][unity_export_3]
+![Selecting Classes for Export][unity_export_3]
 
 Once the jar has been exported, place it in your Unity project at path
 `Assets/Plugins/Android/UnityARPlayer.jar`
@@ -78,4 +76,5 @@ limitation was removed in Android OS 2.3.
 [unity_export_1]:/File:UnityARPlayer_export_1.png "wikilink"
 [unity_export_2]:/File:UnityARPlayer_export_2.png "wikilink"
 [unity_export_3]:/File:UnityARPlayer_export_3.png "wikilink"
+
 [Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
