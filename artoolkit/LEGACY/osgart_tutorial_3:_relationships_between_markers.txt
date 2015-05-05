@@ -1,8 +1,0 @@
-[Category:osgART Tutorials](/Category:osgART_Tutorials "wikilink") [Main
-Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \> [osgART
-Tutorials](/osgART_Tutorials "wikilink") \>
-
-In this tutorial we will look at how the relationships between markers
-can be used to add interactivity.
-
--   Proximity
