@@ -38,4 +38,6 @@ Users of the MovieVideo class can listen for the NSNotification MovieVideoPlayBa
 
 Video input via libARvideo requires frames to be fetched via polling. A new parameter AR_VIDEO_PARAM_IOS_ASYNC can be queried to find out if frames are delivered asynchronously (CameraVideo) or must be fetched by polling (MovieVideo).
 
-See <http://www.artoolworks.com/support/library/Configuring_video_capture_in_ARToolKit_Professional#AR_VIDEO_DEVICE_IPHONE> for more info.
+See [Configuring video capture in ARToolkit Professional][1] for more info.
+
+[1]: http://www.artoolworks.com/support/library/Configuring_video_capture_in_ARToolKit_Professional#AR_VIDEO_DEVICE_IPHONE

@@ -6,13 +6,13 @@ Using the included ARToolKitWrapper native library and ARBaseLib Android library
 
 ARWrapper is a native C++ shared library that exposes a small set of functions for managing the lifecycle of an ARToolKit application, including initialization, adding markers, getting the projection matrix, querying transformations, and cleaning up at the end. Using JNI, these functions are mapped to a class within the ARBaseLib Android library so that they can be called from Java. The diagram below illustrates this.
 
-[<File:artoolkitwrapper_arbaselib.png>](/File:artoolkitwrapper_arbaselib.png "wikilink")
+![artoolkitwrapper_arbaselib][artoolkitwrapper_arbaselib]
 
 The API documentation for ARWrapper can be found in the doc\\apiref-ARWrapper\\html directory. Open the index.html file inside that directory.
 
 Assuming you start with a new Android application project in Eclipse, you will need to copy the built ARWrapper shared library into the project directory. Note that this step is performed automatically for the supplied ARToolKit for Android example projects.
 
-[250px](/File:libs_directory.png "wikilink")
+![250px][libs_directory]
 
 You can copy the entire libs directory from: android/libs
 
@@ -22,7 +22,7 @@ You can copy the entire libs directory from: android/libs
 
 ARBaseLib provides additional classes to simplify development. ARBaseLib is an Android library, meaning that it isn't an Android application itself, but can make use of the Android framework. Android applications can reference the library, and Eclipse will take care of including the necessary files when the APK is built and deployed. This allows reusable components to be placed in the library and used in many different examples and applications. To use ARBaseLib, add the ARBaseLib project to your Eclipse workspace, and in the Android properties of your application, add a library reference, as shown below:
 
-[<File:arbaselib_dialog.png>](/File:arbaselib_dialog.png "wikilink")
+![arbaselib_dialog][arbaselib_dialog]
 
 API documentation for the classes in ARBaseLib can be found in the EclipseProjects\\ARBaseLib\\doc directory.
 
@@ -38,7 +38,7 @@ ARActivity takes care of setting up the view hierarchy that will display the liv
 
 A FrameLayout is used to hold the views because children of a FrameLayout are stacked on top of each other – precisely the arrangement required. The following diagram illustrates how the user interface is composed to produce an AR view.
 
-[<File:view_layers.png>](/File:view_layers.png "wikilink")
+![view_layers][view_layers]
 
 ARActivity must be subclassed to be used. Abstract methods need to be overridden in the subclass to provide ARActivity with the objects it needs to work with. The first object is a FrameLayout, mentioned above, which will contain the camera and OpenGL views.
 
@@ -194,7 +194,7 @@ Data files used by ARToolKit include camera parameters, files with lists of mark
 
 **One rule needs to be observed: if the application's assets are changed, the "VersionCode" field (an integer) in the application's AndroidManifest.xml MUST be changed (usually incremented).**
 
-The [ARToolKit for Android examples](/ARToolKit_for_Android_examples "wikilink") provide working example code. The following code (from ARSimple's ARSimpleApplication.java class) demonstrates the unpacking of one folder, "Data" into the cache on the filesystem.
+The [ARToolKit for Android examples][1] provide working example code. The following code (from ARSimple's ARSimpleApplication.java class) demonstrates the unpacking of one folder, "Data" into the cache on the filesystem.
 
 <pre>
 
@@ -265,10 +265,18 @@ By referencing these static libraries, a native Android shared library can be cr
 
 Note that the entire ARToolKit API is not exposed to Java. Instead, implement ARToolKit functions in C/C++ and call these functions as needed from Java. The following diagram illustrates this approach.
 
-[<File:artoolkit_direct.png>](/File:artoolkit_direct.png "wikilink")
+![artoolkit_direct][artoolkit_direct]
 
 ### ARNative Example
 
 The ARNative example (and its accompanying native library libARNative) demonstrate how to create a shared library, expose functions via JNI, and call them from an Android activity. It does not use either ARToolKitWrapper or ARBaseLib, so is the closest example to a “standard” ARToolKit application in the SDK.
 
 Rather than combining Android camera and OpenGL views to synthesize an AR view, ARNative uses texture mapping to display the video background, using standard ARToolKit functions. However, the camera preview surface must still be placed in the activity’s view hierarchy to permit video capture. The preview can be hidden from view under the OpenGL surface however.
+
+[1]: /ARToolKit_for_Android_examples
+
+[artoolkitwrapper_arbaselib]: /artoolkitwrapper_arbaselib.png
+[libs_directory]: /libs_directory.png
+[arbaselib_dialog]: /arbaselib_dialog.png
+[view_layers]: /view_layers.png
+[artoolkit_direct]: /artoolkit_direct.png

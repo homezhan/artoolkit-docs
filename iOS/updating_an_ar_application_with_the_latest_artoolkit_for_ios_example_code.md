@@ -142,7 +142,7 @@ return UIInterfaceOrientationMaskPortrait;
 
 Ensure that all UIWindow instances in .nib files have the "Fullscreen at launch" attribute selected to allow them to resize for different size devices.
 
-[<File:ARToolKit4iOS> - UIWindow fullscreen at launch.png](/File:ARToolKit4iOS_-_UIWindow_fullscreen_at_launch.png "wikilink")
+![ARToolkit4iOS UIWindow fullscreen at launch][ARToolKit4iOS_-_UIWindow_fullscreen_at_launch]
 
 ## Upgrading to ARToolKit for iOS release 12
 
@@ -314,8 +314,14 @@ Next, open a new "Compare files" window, and enlarge the window to show the extr
 
 Here is an example for a comparison of the ARViewController.m class between ARToolKit for iOS release 1.0, ARToolKit for iOS beta 2.1, and the ARViewController.m file in a fictional project called MyARProject.
 
-[<File:Compare> files with ancestor example.png](/File:Compare_files_with_ancestor_example.png "wikilink")
+![Files with ancestor example][files_with_ancestor_example]
 
 The resulting compare files window allows you to see what changes were made in this file in the latest release, and to merge them into your own code. For example, here is the first change found. This shows that between beta 2.1 and release 1.0 of ARToolKit, the line "usingCoreVideo = FALSE;" was removed from the "-viewDidLoad" method of the ARViewController class. You would want to make the same change in your own version of this file.
 
-[<File:Compare> files with ancestor example - result1.png](/File:Compare_files_with_ancestor_example_-_result_1.png "wikilink")
+![files with ancestor example - result][files_with_ancestor_example_result]
+
+
+
+[ARToolKit4iOS_-_UIWindow_fullscreen_at_launch]: /ARToolKit4iOS_-_UIWindow_fullscreen_at_launch.png
+[files_with_ancestor_example]: /Compare_files_with_ancestor_example.png
+[files_with_ancestor_example_result]: /Compare_files_with_ancestor_example_-_result_1.png
