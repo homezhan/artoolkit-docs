@@ -1,10 +1,6 @@
-[Main Page](/Main_Page "wikilink") \> [ARToolKit
-Professional](/ARToolKit_Professional "wikilink") \> [ARToolKit for
-iOS](/ARToolKit_for_iOS "wikilink") \>
+# ARToolkit Professional for iOS Release Notes
 
 Latest release: 24.
-
-__TOC__
 
 README
 ------
