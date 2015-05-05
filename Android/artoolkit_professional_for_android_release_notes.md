@@ -1,10 +1,6 @@
-[Main Page](/Main_Page "wikilink") \> [ARToolKit
-Professional](/ARToolKit_Professional "wikilink") \> [ARToolKit for
-Android](/ARToolKit_for_Android "wikilink") \>
+# ARToolkit Professional for Android Release Notes
 
 Latest release: 17.
-
-__TOC__
 
 README
 ------
