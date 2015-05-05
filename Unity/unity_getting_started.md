@@ -7,9 +7,9 @@ The ARToolKit for Unity package is available for download from ARToolworks. Down
 
 You can import the package into a fresh or existing project. Select menu `Assets -\> Import Package -\> Custom Package...` and browse to the location where you have stored the ARToolKit package. Select the package, and Unity will ask which files to import. Simply import all files at this stage.
 
-[Assets -\> Import Package -\> Custom Package...][menu_screenshot]
+![Assets -\> Import Package -\> Custom Package...][menu_screenshot]
 
-[Use the default (Import all)][import_all]
+![Use the default (Import all)][import_all]
 
 Your Unity project now contains the necessary files for augmented reality with ARToolKit.
 
@@ -22,22 +22,22 @@ The package contains:
 -   Android Activity: A customised version of the Unity player for Android (packaged as a JAR file). Also required is a custom Manifest.xml file, and Android resources in the "res" subdirectory.
 -   Simple examples: A set of very basic example scenes which you can use as starting points for various AR techniques are found in `Example scenes`.
 
-[Unity scripts are revealed by turning down the reveal arrow on the "ARToolKit5-Unity" object][editor_screenshot]
+![Unity scripts are revealed by turning down the reveal arrow on the "ARToolKit5-Unity" object.][editor_screenshot]
 
 ##Scene Setup
 
 ### Basic Setup
 The key script inside the package is named `ARController`, and it manages the overall initialisation, setup, running and shutdown of ARToolKit. One instance of this script should be added to the scene. For simplicity, it is recommended to add it to an empty GameObject in the root of the scene.
 
-[Dragging an instance of the "ARController" script from the Asset browser onto an empty GameObject.][arcontroller_setup]
+![Dragging an instance of the "ARController" script from the Asset browser onto an empty GameObject.][arcontroller_setup]
 
 The ARController script will handle the creation and management of the AR tracking, including the video background. All the developer needs to provide is the Unity [layer][layer] in which to display the video. Layers are used to separate out parts of
 the scene so only certain parts are visible to certain cameras. In this case, the video background will be in its own background layer. In the same way, each marker's content will also have its own layer.
 
 To start with, create a new layer *Background* and one for a single marker *Foreground*.
 
-[Choose "Edit layers..." in Unity.][edit_layers]
-[Choose two of the User layers and give them appropriate names.][name_layers]
+![Choose "Edit layers..." in Unity.][edit_layers]
+![Choose two of the User layers and give them appropriate names.][name_layers]
 
 Set the "Layer" property on the "ARController" object to "AR background" (or whatever you named it).
 
@@ -51,7 +51,7 @@ At this point you can run the scene again. Although no content appears on the ma
 To add content to the marker, add a new GameObject to the root. This object will act as a group to contain the sub-scene that will appear on the marker. By default, markers appear in the scene standing vertically (like a billboard) at the origin. Usually however, you want the marker to lie flat on the ground, and this is what we'll do in this case. Select the GameObject you just added, and in the Inspector, change its "Rotation: X" value to 90. This will rotate the child objects of this
 GameObject by 90 degrees about the X axis (in a left-hand sense).
 
-[Setting the rotation on the scene root to orient the marker flat on the ground layer.][rotating]
+![Setting the rotation on the scene root to orient the marker flat on the ground layer.][rotating]
 
 Next, into this group, add:
 -   A Unity Camera object: This camera will actually render the sub-scene. (You can reuse the default camera if it exists, or otherwise delete it).
