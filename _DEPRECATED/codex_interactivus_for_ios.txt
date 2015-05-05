@@ -1,0 +1,47 @@
+[Main Page](/Main_Page "wikilink") \> [Codex
+Interactivus](/Codex_Interactivus "wikilink") \>
+
+About the application
+---------------------
+
+This application displays models of the inventions of Leonardo da Vinci
+on your iPhone, iPad, or iPod touch device.
+
+-   **[Click here to view Codex Interactivus for iOS on the iOS App
+    Store](https://itunes.apple.com/app/codex-interactivus/id844635297)**
+
+Requirements
+------------
+
+-   The application requires iOS v5.1.1 or later.
+-   A printer is required to print the page images.
+
+How do I use it?
+----------------
+
+1.  Before the app can be used, you will need a physical print of the
+    page images. You can either [download a PDF file of the pages
+    here](http://www.artoolworks.com/support/attachments/Codex%20Interactivus-r3-print.pdf)
+    and print it from a desktop computer, or use in-app printing options
+    screen to print directly from your device. To print from within the
+    app, tap the "info" button on the display, then tap the picture of
+    the printer. You can print directly to an ["AirPrint"-enabled
+    printer](http://support.apple.com/kb/HT4356), or use other options
+    including emailing the PDF, saving it to iCloud, or printing via
+    third-party printing apps, e.g. printing applications from
+    [HP](https://itunes.apple.com/app/hp-eprint/id299531647),
+    [Canon](https://itunes.apple.com/app/canon-mobile-printing/id576292561),
+    [Brother](https://itunes.apple.com/app/brother-iprint-scan/id382775642),
+    [Lexmark](https://itunes.apple.com/app/lexmark-mobile-printing/id469415392),
+    [Epson](https://itunes.apple.com/app/epson-iprint/id326876192) and
+    others.
+2.  Once the page images are printed, point the camera at the pages.
+
+What information is collected when I use this app?
+--------------------------------------------------
+
+This app does not store or transmit any personally identifying
+information.
+
+[Category:Mobile](/Category:Mobile "wikilink")
+[Category:iOS](/Category:iOS "wikilink")

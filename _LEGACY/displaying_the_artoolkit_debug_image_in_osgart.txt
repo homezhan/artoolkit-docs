@@ -1,0 +1,149 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+[osgART HowTo](/osgART_HowTo "wikilink") \>
+
+About the debug image
+---------------------
+
+ARToolKit includes a debug mode, in which it saves each binarized image
+(the "debug image") produced during its processing for later (optional)
+display. osgART also makes this image available, allowing the user to
+display it, and potentially use it to adjust ARToolKit's binarization
+threshhold.
+
+The debug image is made available by the tracking plugin, rather than
+the video plugin, since it is actually an output of the tracking pass
+performed by ARToolKit.
+
+The debug image has a standand osg::Image type, and thus once retrieved
+from the tracker plugin (via osgART's field mechanism) it can be
+displayed in your program in any way you wish, by using standard OSG
+calls to draw images.
+
+Retrieving the debug image
+--------------------------
+
+The debug image is obtained via a field. It is also necessary to use a
+field to enable ARToolKit's debug mode. First, declare the field
+pointers in a header: <cpp>
+
+`   osg::ref_ptr`<osgART::TypedField<bool>` > m_Debug;`\
+`   osg::ref_ptr`<osgART::TypedField<osg::ref_ptr<osg::Image>` > > m_Debug_Image;`
+
+</cpp>
+
+A pointer to the two fields must be set up. This is easiest done just
+after the tracker is initialized. (I.e., place it *after* the call to
+ARSceneNode-\>connect() in your application.) m_Tracker is a pointer to
+the tracker plugin instance. <cpp>
+
+`   m_Debug = reinterpret_cast< osgART::TypedField`<bool>`* >(m_Tracker->get("debug"));`\
+`   if (!(m_Debug.valid()))  {          `\
+`       osg::notify(osg::WARN) << "Field 'debug' not supported for this tracker" << std::endl;`\
+`   }`
+
+`   m_Debug_Image = reinterpret_cast< osgART::TypedField`<osg::ref_ptr<osg::Image>` >* >(m_Tracker->get("debug_image"));`\
+`   if (!(m_Debug_Image.valid()))  {            `\
+`       osg::notify(osg::WARN) << "Field 'debug_image' not supported for this tracker" << std::endl;`\
+`   }`
+
+</cpp>
+
+Once the field pointer is set up, how to get the actual image? First,
+enable ARToolKit's debug mode. (This code toggles debug mode on and
+off.) <cpp>
+
+`           if (m_Debug.valid()) {`\
+`               m_Debug->set(!m_Debug->get());`\
+`           }`
+
+</cpp>
+
+Next, if debug mode is on, make sure that the tracker has a valid image.
+(The following code includes a workaround for the fact that the tracker
+may require that a tracking pass has been performed with debug mode
+enabled, by forcing a tracking pass.) m_Tracker is a pointer to the
+tracker plugin instance, and m_Video a pointer to the video plugin
+instance which is connected to the tracker.
+
+<cpp>
+
+`           if (m_Debug.valid()) {`\
+`               if (m_Debug->get()) {`
+
+`                   if (m_Debug_Image.valid())  { // Check for valid ref_ptr.`\
+`                       `\
+`                       // Check that image is valid (i.e. correctly initialized).`\
+`                       if (!(m_Debug_Image->get())->valid()) {`\
+`                           // One valid reason that debug image might not be valid`\
+`                           // is that the tracker may require that at least one tracking pass`\
+`                           // has been performed with debug mode enabled. So we will force the tracker`\
+`                           // to repeat the last tracking pass, and then recheck the image's validity.`\
+`                           m_Video.get()->setModifiedCount(m_Video.get()->getModifiedCount() + 1);`\
+`                           m_Tracker->update();`\
+`                       }`\
+`                       if (!(m_Debug_Image->get())->valid()) {`\
+`                           osg::notify(osg::FATAL) << "Could not initialize debug image!" << std::endl;`\
+`                      } else {`\
+`                          // At this point, you can do something with the image.`\
+`                          // You can dereference the pointer to get the actual osg::Image`\
+`                          // using this syntax: (m_Debug_Image->get()).get()`\
+`                       }`\
+`                   }`\
+`               }`\
+`           }`
+
+</cpp>
+
+Displaying the debug image
+--------------------------
+
+As the debug image is updated each time the tracker is update, the
+simplest way to display the image is to treat it as an osg::ImageStream
+and use osgART::VideoLayer to overlay it on the viewing plane.
+
+First, declare a VideoLayer in a header file: <cpp>
+
+`   osg::ref_ptr`<osgART::VideoLayer>` m_Debug_VideoLayer;`
+
+</cpp>
+
+Then the following snippet would be inserted into the above code
+immediately after the comment "At this point, you can do something with
+the image." m_ForegroundGroup is an active group in the scenegraph.
+<cpp>
+
+`                       // Create the video layer if required.`\
+`                       if (!m_Debug_VideoLayer.valid()) {`\
+`                           m_Debug_VideoLayer = new osgART::VideoLayer((m_Debug_Image->get()).get(), 1);`\
+`                           if (!m_Debug_VideoLayer.valid()) {`\
+`                               osg::notify(osg::FATAL) << "Could not create video layer for debug image!" << std::endl;`\
+`                           } else {`\
+`                               m_Debug_VideoLayer->init();`\
+`                               m_ForegroundGroup->addChild(m_Debug_VideoLayer.get());`\
+`                          }`\
+`                      }`\
+`                       `\
+`                       // Show the video layer.`\
+`                       if (m_Debug_VideoLayer.valid()) {`\
+`                           m_Debug_VideoLayer.get()->setNodeMask(0xFFFFFFFF);  // Visible`\
+`                      }`
+
+</cpp>
+
+What about hiding the video layer once debug mode has been disabled?
+<cpp>
+
+`           if (m_Debug.valid()) {`\
+`               if (!m_Debug->get()) {`\
+`                   // Hide the video image.`\
+`                   if (m_Debug_VideoLayer.valid()) {`\
+`                       m_Debug_VideoLayer.get()->setNodeMask(0x0);         // Hidden`\
+`                   }`\
+`               }`\
+`           }`
+
+</cpp>
+
+[Category:osgART Standard
+Edition](/Category:osgART_Standard_Edition "wikilink") [Category:osgART
+Professional Edition](/Category:osgART_Professional_Edition "wikilink")

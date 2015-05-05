@@ -1,0 +1,172 @@
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+Introduction
+------------
+
+osgART brings ARToolKit tracking to the OpenSceneGraph graphics
+frameworks. Because OpenSceneGraph wraps OpenGL's underlying power in
+high-level contructs, building an AR-based application using osgART
+allows you to achieve higher-level interaction more rapidly. Most of the
+code in your application will be interacting with OpenSceneGraph, and so
+you will need to understand OpenSceneGraph's programming metaphors.
+
+A good way to learn about OpenSceneGraph is to read the free
+introductory text by Paul Martz. It is available for free download.
+
+[OpenSceneGraph Quick Start Guide](http://www.lulu.com/content/767629)
+
+The remainder of this article will introduce you to some of the concepts
+and features of OpenSceneGraph. Almost anything that can be done in a
+piece regular OpenSceneGraph code can be done in AR using osgART, as
+well as opening up a whole new class of interaction paradigms through
+ARToolKit.
+
+The basic OpenSceneGraph boilerplate
+------------------------------------
+
+Creating a window and rendering a model into it using OpenSceneGraph
+requires a very small amount of code. Because most OpenSceneGraph
+programs build on this code, it is often referred to as
+[boilerplate](http://en.wikipedia.org/wiki/Boilerplate_%28text%29).
+
+This first tutorial simple explains how to create a window in which to
+draw your 3D graphics using . All other tutorials will build on this
+one.
+
+In OSG you have several options for window management. You can use one
+of the inbuilt classes to create the window for you, you can use another
+library to do it, or your can create the window yourself using whatever
+mechanisms your operating supports.
+
+In this case we will use the osgProducer Viewer class to create the
+window for us.
+
+[Image:Osg window with
+cow.png](/Image:Osg_window_with_cow.png "wikilink")
+
+<cpp>
+
+1.  include <osgProducer/Viewer>
+2.  include <osgDB/ReadFile>
+
+int main( int argc, char \*\*argv ) {
+
+`   osg::ArgumentParser arguments(&argc,argv);`\
+`   osgProducer::Viewer viewer(arguments);`\
+`   viewer.setUpViewer(osgProducer::Viewer::STANDARD_SETTINGS);`\
+\
+`   osg::Node* _cow = osgDB::readNodeFile("cow.osg");`\
+\
+`   viewer.setSceneData( _cow );`\
+`   viewer.realize();`\
+`   while( !viewer.done() )`\
+`   {`\
+`       // wait for all cull and draw threads to complete.`\
+`       viewer.sync();`\
+`       viewer.update();`\
+`       viewer.frame();`\
+`   }   `\
+`   viewer.sync();`\
+`   viewer.cleanup_frame();`\
+`   viewer.sync();`\
+`   return 0;`
+
+} </cpp>
+
+All our osgART examples build on this code by adding sections to connect
+to a camera, initialise an AR tracker, and load in pattern files, as
+well as any interaction logic.
+
+Loading models
+--------------
+
+OSG is supplied with plugins that load many different file formats. The
+most useful currently supported formats are:
+
+-   3D Studio (.3ds)
+-   Lightwave (.lwo)
+-   Wavefront (.obj)
+-   OSG native ASCII (.osg)
+-   OSG native binary (.ive)
+
+[OSGExp](http://www.openscenegraph.com/osgwiki/pmwiki.php/OSGExp/OSGExp)
+is a plugin for 3D Studio Max that saves scenes from Max directly into
+the OSG native formats (OSG and IVE). IVE is a binary format that loads
+very quickly, can store textures internally, and is the recommended
+format. Something to watch out for is that binary IVE files may not
+necessarily be compatible with new versions of OSG, so keep you source
+Max files.
+
+  ----------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------
+  [none|thumb|250px|A model in 3D Studio Max.](/image:skel3ds.jpg "wikilink")   [none|thumb|250px|The same model exported and viewed in the OSG viewer.](/image:skelosg.jpg "wikilink")
+  ----------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------
+
+If you have existing models in a format that OSG supports and want to
+convert it to the native OSG format, you can use the osgconv utility
+included with OSG.
+
+### Terrain rendering
+
+OSG has built-in support for terrain rendering. It is possible to
+generate databases of high-detail terrain tiles that are loaded in when
+needed. This is known as paged LOD (level of detail).
+
+[osgdem](http://www.openscenegraph.com/index.php?page=UserGuides.Osgdem)
+is a utility that comes with OSG which can generate these databases.
+
+Using sound
+-----------
+
+OpenSceneGraph does not have built in support for sound (it's primarily
+a renderer, not a full-featured game engine). However, it is quite
+straightforward to add sound support using one of the many available
+sound libraries. Some possibilities are
+[DirectSound](http://www.microsoft.com/windows/directx/default.mspx),
+[fmod](http://fmod.org) and [OpenAL](http://www.openal.org).
+
+A wrapper has been written of OpenGL that makes it easy to use with
+OpenSceneGraph. The wrapper is called
+[osgAL](http://www.vrlab.umu.se/research/osgAL) and it allows SoundNodes
+to be added to the scene graph.
+
+Animation
+---------
+
+There are several types of animation that a 3D application can use.
+
+The most basic is simply movement over time, achieved by incrementally
+translating, rotating and scaling an object.
+
+Then there is showing a series of frames.
+
+Keyframe animation interpolates between frames to give smooth movement.
+
+Skeletal animation uses a mesh rigged to a skeleton. As the skeleton
+moves the mesh moves realistically with it.
+
+OSG has support for:
+
+-   Interpolating movement over time (osg::AnimationPath)
+-   Series of frames (osg::Sequence)
+
+There is no official support for keyframe or skeletal animation. There
+is work being done on a nodekit called osgCharacter that provides
+skeletal animation. Currently there is only a Maya exporter.
+
+Render to texture
+-----------------
+
+Many graphical effects nowadays are created using render-to-texture
+(RTT) techniques.
+
+RTT is achieved using the osg::CameraNode class. The subgraph below the
+camera node in the scene graph is “seen” by the camera. A texture can be
+attached to the camera node so that the camera’s view is rendered into
+the texture, rather than the frame buffer. This happens before the main
+scene is rendered, making the texture available for use within the
+scene. For example, you could use this technique to render the view from
+a security camera into a texture, then use that texture on the surface
+of a television monitor.
+
+[Category:osgART Professional
+Edition](/Category:osgART_Professional_Edition "wikilink")

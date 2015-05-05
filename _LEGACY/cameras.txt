@@ -1,0 +1,29 @@
+This page catalogs video cameras that can be used with ARToolKit and
+[osgART](/osgART "wikilink").
+
+Creative
+--------
+
+-   Webcam 5: USB
+
+Logitech
+--------
+
+-   Notebook Pro: USB, 640x480, 30FPS
+-   Quickcam Pro 4000
+-   Quickcam Pro 5000
+
+Phillips
+--------
+
+Point Grey
+----------
+
+-   Flea: firewire
+-   Dragonfly
+-   Bumblebee
+
+Sony
+----
+
+-   EyeToy: USB

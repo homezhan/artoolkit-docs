@@ -1,0 +1,2 @@
+1.  REDIRECT [Installing ARToolKit NFT (version
+    3.x)](/Installing_ARToolKit_NFT_(version_3.x) "wikilink")

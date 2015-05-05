@@ -1,0 +1,2 @@
+1.  REDIRECT [ARToolKit NFT Utilities:
+    checkResolution](/ARToolKit_NFT_Utilities:_checkResolution "wikilink")

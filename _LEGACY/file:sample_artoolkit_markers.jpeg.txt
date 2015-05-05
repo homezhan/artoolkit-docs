@@ -1,0 +1,2 @@
+Image of the four primary sample markers included with ARToolKit,
+printed 80 millimeters size, arrayed on a desk surface.

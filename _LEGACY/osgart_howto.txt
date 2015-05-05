@@ -1,0 +1,311 @@
+[Category:osgART Standard
+Edition](/Category:osgART_Standard_Edition "wikilink") [Category:osgART
+Professional Edition](/Category:osgART_Professional_Edition "wikilink")
+
+[Main Page](/Main_Page "wikilink") \> [osgART](/osgART "wikilink") \>
+
+This page presents quick solutions to frequently encountered problems
+with OSG and osgART.
+
+Building
+--------
+
+### What is RTTI and why do I need to enable it?
+
+RTTI stands for [Run-Time Type
+Information](http://en.wikipedia.org/wiki/Run-time_type_information).
+
+Rendering
+---------
+
+### How do I draw a cube/sphere/cone?
+
+OSG has built in classes for primitive shapes. See the [Basic
+Shapes](/Basic_Shapes "wikilink") page.
+
+### How do I draw a height field (terrain)?
+
+See the [HeightField](/HeightField "wikilink") page.
+
+### How do I hide an object?
+
+Either use an osg::Switch object:
+
+<cpp> osg::Switch\* switch = new osg::Switch(); switch-\>addChild(node,
+false); </cpp>
+
+or use the node's NodeMask:
+
+<cpp> node-\>setNodeMask(0xFFFFFFFF); // Visible
+node-\>setNodeMask(0x0); // Hidden </cpp>
+
+### How do I make an object display in wireframe?
+
+<cpp> osg::PolygonMode\* polygonMode = new osg::PolygonMode();
+
+// Wireframe polygonMode-\>setMode(osg::PolygonMode::FRONT_AND_BACK,
+osg::PolygonMode::LINE);
+
+// Filled polygons
+polygonMode-\>setMode(osg::PolygonMode::FRONT_AND_BACK,
+osg::PolygonMode::FILL);
+
+// Points polygonMode-\>setMode(osg::PolygonMode::FRONT_AND_BACK,
+osg::PolygonMode::POINTS);
+
+node-\>getOrCreateStateSet()-\>setAttributeAndModes(polygonMode,
+osg::StateAttribute::ON);
+
+</cpp>
+
+### How do I display text?
+
+<cpp> osg::Geode\* textGeode = new osg::Geode(); osgText::Text\* text =
+new osgText::Text(); text-\>setFont("tahoma.ttf");
+text-\>setCharacterSize(16.0f); text-\>setPosition(osg::Vec3(4, 4, 0));
+text-\>setAlignment(osgText::Text::LEFT_BASE_LINE);
+text-\>setColor(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f)); text-\>setText("Your
+text here"); textGeode-\>addDrawable(text); </cpp>
+
+Video
+-----
+
+### How do I change a video plugin's configuration ?
+
+After getting an instance of the video plugin, but before calling the
+open() method on the plugin, get a pointer to the plugin's
+videoConfiguration structure. Change the settings in the structure as
+desired. When open() is called, the modified config will be used.
+
+This example shows changing the video configuration for the ARToolKit
+Professional v4 video plugin to load a QuickTime movie from a file.
+<cpp>
+
+`   if (!osgART::PluginManager::instance()->load("osgart_video_artoolkit4")) exit(-1);`\
+`   osg::ref_ptr`<osgART::GenericVideo>` video = `<osgART::GenericVideo*>`(osgART::PluginManager::instance()->get("video_artoolkit4"));`\
+`   if (!video.valid()) {   `\
+`       osg::notify(osg::FATAL) << "Could not initialize video plugin!" << std::endl;`\
+`       exit(-1);`\
+`   }`
+
+`   // found video - configure now`\
+`   osgART::VideoConfiguration* _config = video->getVideoConfiguration();`\
+`   // Check if the Video Device is configurable.`\
+`   if (_config) {`
+
+1.  ifdef _WINDOWS
+
+`       _config->deviceconfig = "-device=QUICKTIME -movie="`[`file:///C:/Program%20Files/QuickTime/Sample.mov`](file:///C:/Program%20Files/QuickTime/Sample.mov)`";`
+
+1.  elif defined(__APPLE__);
+
+`       _config->deviceconfig = "-device=QUICKTIME -movie="`[`file:///Developer/Examples/WebKit/WebKitMoviePlugin/Sample.mov`](file:///Developer/Examples/WebKit/WebKitMoviePlugin/Sample.mov)`";`
+
+1.  endif
+
+`   }`
+
+`   video->open();`
+
+</cpp>
+
+### How do I open two video streams using the same video plugin?
+
+After getting the plugin instance, but before opening the video stream,
+call clone() on the instance. E.g.
+
+<cpp>
+
+`   if (!osgART::PluginManager::instance()->load("osgart_video_artoolkit4")) exit(-1);`\
+`   osg::ref_ptr`<osgART::GenericVideo>` video = `<osgART::GenericVideo*>`(osgART::PluginManager::instance()->get("video_artoolkit4"));`\
+`   if (!video.valid()) {   `\
+`       osg::notify(osg::FATAL) << "Could not initialize video plugin!" << std::endl;`\
+`       exit(-1);`\
+`   }`
+
+`   // Clone the video plugin.`\
+`   osg::ref_ptr`<osgART::GenericVideo>` video2 = dynamic_cast`<osgART::GenericVideo*>`(video->clone(osg::CopyOp::DEEP_COPY_ALL));`\
+`   if (!video2.valid()) {   `\
+`       osg::notify(osg::FATAL) << "Could not clone video plugin!" << std::endl;`\
+`       exit(-1);`\
+`   }`
+
+</cpp>
+
+After the clone operation, you will most likely want to configure the
+two instances with different configuration strings, before calling
+open() on both. Also critically: **unless a video stream is being used
+in an ARSceneNode, you will have to call the video stream's update()
+method manually yourself**.
+
+Tracking
+--------
+
+### How can I reduce tracking jitter?
+
+In osgART, one way is to smooth the tracking transformations using
+[filtering](/Filtering "wikilink").
+
+### How can I adjust the ARToolKit tracker(s)' (binarization) threshhold?
+
+Tracker parameters cannot be adjusted directly (because trackers are
+actually plugins), so instead are adjusted through a flexible 'field'
+mechanism.
+
+As the snippet below shows, before getting or setting a value in a
+tracker, a ref_ptr to the value must be constructed. Don't forget to
+check the .valid member of the ref_ptr to see if the construction
+worked.
+
+After that, the ref_ptr can be dereferenced (using the -\> operator) to
+call get and set methods, and more.
+
+<cpp>
+
+`   // Tracker parameters are read and written via a field mechanism.`\
+`   // Init access to a field within the tracker, in this case, the binarization threshhold.`\
+`   osg::ref_ptr< osgART::TypedField`<int>` > _threshold = `\
+`       reinterpret_cast< osgART::TypedField`<int>`* >(tracker->get("threshold"));`\
+`   `\
+`   // Values are be accessed through a get()/set() mechanism on the field pointer.`\
+`   if (_threshold.valid())  {          `\
+`       // Set the threshold, and read back.`\
+`       _threshold->set(100);`\
+`       osg::notify(osg::WARN) << "Field 'threshold' = " << _threshold->get() << std::endl;`\
+`   } else {`\
+`       osg::notify(osg::WARN) << "Field 'threshold' not supported for this tracker" << std::endl;`\
+`   }`
+
+</cpp>
+
+### How do I show the ARToolKit debug image?
+
+See the page [Displaying the ARToolKit debug image in
+osgART](/Displaying_the_ARToolKit_debug_image_in_osgART "wikilink").
+
+### How do I change what happens when a marker appears or disappears?
+
+See the page [Modifying the behavior of
+osgART::ARTTransform](/Modifying_the_behavior_of_osgART::ARTTransform "wikilink").
+
+Application
+-----------
+
+### How do I configure what screens/windows an OSG application uses?
+
+To open up fullscreen on screen 1,
+
+using environment variables:
+
+    set OSG_SCREEN=1
+    osgviewer cow.osg
+
+or using command line:
+
+    osgviewer cow.osg --screen 1
+
+To open in windowed mode (640x480 at 100, 100) :
+
+    set OSG_WINDOW="100 100 640 480"
+    osgviewer cow.osg
+
+    osgviewer cow.osg --window 100 100 500 500
+
+Or just use a osgViewer .view config file
+
+    osgviewer cow.osg -c OpenSceneGaph-Data/Configuration/SmallWindow.view
+
+Or using a Producer .cfg (with OpenSceneGraph 2.4.x)
+
+    osgviewer cow.osg -c myconfig.cfg
+
+Or using environment variables:
+
+    export OSG_CONFIG_FILE=OpenSceneGaph-Data/Configuration/SmallWindow.view
+    osgviewer cow.osg
+
+### How do I get the time?
+
+<cpp> osg::Timer_t = osg::Timer::instance()-\>tick(); </cpp>
+
+### How do I tell OSG to quit?
+
+<cpp> viewer-\>setDone(true); </cpp>
+
+### How do I handle command line arguments?
+
+Use the osg::ArgumentParser class.
+
+<cpp> int main( int argc, char \*\*argv ) {
+
+`   // Use an ArgumentParser object to manage the program arguments`\
+`   osg::ArgumentParser arguments(&argc, argv);`\
+\
+`   std::string stringArgument = "defaultValue";`\
+`   while(arguments.read("-myStringArgument", stringArgument));`\
+\
+`   double doubleArgument = 0.0f;`\
+`   while(arguments.read("-myDoubleArgument", doubleArgument));`\
+\
+`   // And so on for other data types...`\
+\
+`   // Rest of main...    `\
+
+} </cpp>
+
+### How do I find out what is going on/wrong in my program?
+
+Errors are usually reported using osg::notify. This allows control of
+the grain of error reporting.
+
+Possible levels for message notifications:
+
+-   ALWAYS - Consume all messages (e.g. for release builds)
+-   FATAL - Notify about errors that cannot be recovered from
+-   WARN - Warn about errors that may affect correct operation
+-   NOTICE - (Default level) Also notify about non-error notices.
+-   INFO - Get more non-error info.
+-   DEBUG_INFO or DEBUG - Get heaps of non-error info.
+-   DEBUG_FP
+
+#### Changing debug level from within an OSG application
+
+To change the level of reporting you see when an OSG-based application
+is running, you can globally change the notify level by making a call in
+the application: <cpp> osg::setNotifyLevel(osg::NOTICE); // Change
+NOTICE to your desired level. </cpp>
+
+#### Changing debug level from outside an OSG application
+
+To change the level of reporting you see when an OSG-based application
+is running, you can globally change the notify level by setting the
+environment variable OSGNOTIFYLEVEL.
+
+Unix sh/bash shell: <bash>export OSGNOTIFYLEVEL=NOTICE</bash> Unix
+csh/tcsh shell: <bash>setenv OSGNOTIFYLEVEL NOTICE</bash> Windows
+cmd-shell: <dos>set OSG_NOTIFY_LEVEL=NOTICE</dos>
+
+See
+<http://www.openscenegraph.org/documentation/OpenSceneGraphReferenceDocs/a01555.html#32e50146c0f96ef6dc821cbc3c0e41d3>
+for the list of allowable values. The default is WARN.
+
+#### Reporting errors from within your own OSG code
+
+To report errors and/or supply information to the user in your own code,
+make a call to osg::notify. If the message should have a level of
+interest other than the default, supply that as a parameter. E.g. to
+report some information of minor interest: <cpp> osg::notify(osg::INFO)
+\<\< "Dude, you may be interested to know that the fribbles have been
+wibbled." \<\< std::endl; </cpp>
+
+or to notify of a serious non-recoverable error: <cpp>
+osg::notify(osg::FATAL) \<\< "Dude, things have gone pear-shaped. We're
+bailing out." \<\< std::endl; //throw(); </cpp>
+
+### How can I monitor my application's performance?
+
+Use the osgViewer::StatsHandler to get onscreen performance counters.
+
+### Where do I put code to update the scene?
+
+One way is to use a [Node Callback](/Node_Callback "wikilink").

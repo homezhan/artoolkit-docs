@@ -1,0 +1,60 @@
+[Main Page](/Main_Page "wikilink") \>
+
+FLARManager Online Resources
+----------------------------
+
+FLARManager is a lightweight framework developed by Eric Socolofsky that
+makes it easier to build augmented reality applications for Flash. It is
+compatible with a variety of tracking libraries and 3D frameworks, such
+as FLARToolKit, and provides a more robust event-based system for
+managing marker addition, update, and removal. It supports detection and
+management of multiple patterns, and multiple markers of a given
+pattern.
+
+FLARManager is provided under a dual license model (GPL and commercial)
+and so there is a large community of developers. Many of these
+developers have produced online resources to help teach people how to
+use FLARManager, or examples showing different programming tricks. In
+this section we provide links to some of the best online resources.
+
+The main FLARManager download site is
+<http://words.transmote.com/wp/flarmanager/>
+
+A good introduction to FLARManager written by Eric Socolofsky, the
+developer can be found at
+<http://insideria.com/2009/07/flartoolkit-and-flarmanager.html>
+
+### Tutorials
+
+-   Japanese documentation for FLARMananger
+    <http://sixwish.jp/FLARManager/>
+-   Video tutorial on how to use FLARManager
+    <http://www.gotoandlearn.com/play.php?id=114>
+-   Video tutorial on using FLARManager and Papervision3D – Part 1
+    <http://developer.practicalecommerce.com/articles/1750-Augmented-Reality-Using-FLARManager-and-Papervision>
+-   Video tutorial on using FLARManager and Papervision3D – Part 2
+    <http://developer.practicalecommerce.com/articles/1769-Augmented-Reality-Using-FLARManager-and-Papervision-Part-2>
+-   Video tutorial on using FLARmanager with Adobe Air
+    <http://tutorialvid.com/viewVideo.php?video_id=MjI0Mw>==&title=FLARManager_library_for_AiR_applications&timer=1
+
+### Example Applications
+
+-   Sample FLARManager applications from Jim Alliban:
+    <http://vimeo.com/jamesalliban/videos>
+-   Scouting for Girls Kit Kat AR campaign
+    <http://www.augmentedplanet.com/2010/08/scouting-for-girls-with-a-kit-kat/>
+-   Sample FLARManager applications from Patrick O'shaughnessy:
+    -   5 Lives of Criss Angel AR Game - <http://bit.ly/5LivesAR>,
+        <http://bit.ly/5LivesARVideo>
+    -   Cisco Borderless Networks AR Game - <http://bit.ly/CiscoARVideo>
+    -   J. Paul Getty Museum Augsburg Cabinet in AR -
+        <http://bit.ly/TheGettyAugsburgAR>
+    -   Carl's Junior Ultimate Lunch Date with Kim Kardashian AR
+        Invitation - <http://bit.ly/CarlsJrKimKARVideo>
+-   Smith & Nephew AR - <http://bit.ly/SmithNephewAR>
+-   Other example AR applications using FLARManager
+    -   <http://www.wired.com/underwire/2009/07/blink-182-rocks-augmented-reality-show-in-doritos-bag/>
+    -   <http://www.youtube.com/symphony?x=makemusic>
+    -   <http://www.guardian.co.uk/technology/blog/2010/oct/08/augmented-reality-cv>
+
+[Category:Web-based AR](/Category:Web-based_AR "wikilink")
