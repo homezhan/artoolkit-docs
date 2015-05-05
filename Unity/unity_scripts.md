@@ -51,4 +51,9 @@ The ARCamera generates the following events, using Unity's SendMessage command. 
 [marker_panel]:/File:MarkerPanel.png "wikilink"
 [camera_panel]:/File:TrackedCameraPanel.png "wikilink"
 
+##Gizmos
+Markers are visually represented within the Unity editor so that you can scale and position your content accordingly.
+[Marker Gizmo][gizmo]
+
+[gizmo]:/File:MarkerGizmo.png "wikilink"
 [Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")

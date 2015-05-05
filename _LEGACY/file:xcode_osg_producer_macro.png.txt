@@ -1,1 +1,0 @@
-Content of cpp macro for an OSG app on Xcode

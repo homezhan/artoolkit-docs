@@ -1,2 +1,0 @@
-Pages relating to ARToolworks products running on Apple's OS X operating
-system.

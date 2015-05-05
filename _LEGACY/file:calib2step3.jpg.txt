@@ -1,1 +1,0 @@
-Dragging a rectangle over a dot in the calibration pattern.

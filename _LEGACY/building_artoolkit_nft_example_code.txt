@@ -1,2 +1,0 @@
-1.  REDIRECT [Building ARToolKit NFT example code (version
-    3.x)](/Building_ARToolKit_NFT_example_code_(version_3.x) "wikilink")

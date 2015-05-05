@@ -1,2 +1,0 @@
-Pages relating to ARToolworks products running on Microsoft's Windows
-operating system.

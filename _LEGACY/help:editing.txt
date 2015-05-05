@@ -1,7 +1,0 @@
-For complete help on using the support library, please refer to the help
-for the wiki software used here: [Mediawiki
-help](http://www.mediawiki.org/wiki/Help:Contents).
-
-Help on specific aspects of use:
-
--   [Help:Formatting](/Help:Formatting "wikilink")

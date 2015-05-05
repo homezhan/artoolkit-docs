@@ -1,2 +1,0 @@
-1.  REDIRECT [ARToolKit NFT examples (version
-    3.x)](/ARToolKit_NFT_examples_(version_3.x) "wikilink")
