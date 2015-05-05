@@ -22,7 +22,7 @@ With these components, several development strategies are possible, ranging in c
 
 Note: Regardless of the approach, all applications require some Java components in order to operate as an Android application. For example, the main Activity class, and video capture classes, must be implemented in Java.
 
-Examples that demonstrate basic operation of the SDK, and the various development approaches available, are included. See [ARToolKit for Android examples](/ARToolKit_for_Android_examples "wikilink").
+Examples that demonstrate basic operation of the SDK, and the various development approaches available, are included. See [ARToolKit for Android examples][1].
 
 ## Video Capture on Android
 
@@ -43,3 +43,5 @@ The SDK is currently tested predominantly on the Windows platform, and some buil
 A printer is required to print out markers.
 
 Currently the libraries assume data files are present on the mobile device. Please copy the contents of the directory “Misc/copy to device SD card” to the device before running the examples. The SD card will need to be mounted to perform the copy, but needs to be unmounted before running the examples.
+
+[1]: /ARToolKit_for_Android_examples

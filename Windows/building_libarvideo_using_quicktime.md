@@ -6,7 +6,7 @@ QuickTime is Apple's media-handling library, available on both Mac OS X and the 
 
 ## Why do I need to know about QuickTime?
 
-While the QuickTime libraries and SDK are in every release of Mac OS X, and can be used right away, they are not installed by default on Windows. Every user who wants to run an ARToolKit application that uses QuickTime for video capture on Windows will need to install QuickTime. This is not onerous - any user who already has iTunes for Windows installed will have QuickTime installed already. Other users should [click here to be taken to the QuickTime for Windows download page](http://www.apple.com/quicktime/download/).
+While the QuickTime libraries and SDK are in every release of Mac OS X, and can be used right away, they are not installed by default on Windows. Every user who wants to run an ARToolKit application that uses QuickTime for video capture on Windows will need to install QuickTime. This is not onerous - any user who already has iTunes for Windows installed will have QuickTime installed already. Other users should visit the [QuickTime for Windows download page][1].
 
 Additionally, for customers using Windows who do wish to recompile libARvideo for their own purposes, the QuickTime SDK must be downloaded and installed.
 
@@ -14,7 +14,7 @@ Additionally, for customers using Windows who do wish to recompile libARvideo fo
 
 **Mac OS X:** The QuickTime SDK is installed by default along with XCode, and no further action should be needed.
 
-**Windows:** [Click here to be taken to the QuickTime for Windows SDK download page](http://developer.apple.com/quicktime/download/).
+**Windows:** [Download the QuickTime SDK for Windows][2].
 
 We recommend installing the SDK to the default location, C:\\Program Files\\QuickTime SDK. This is because the paths in ARToolKit Professional's build files expect this location.
 
@@ -30,4 +30,8 @@ The QuickTime module can be selected at runtime by passing -device=QUICKTIME in 
 
 From there, compiling should be just a matter of right-clicking on "ARVideo" in the solution explorer and choosing "Build."
 
-If you are having difficulty with these instructions, please post a message on the forum <http://www.artoolworks.com/support/forum>) or contact an ARToolworks support person.
+If you are having difficulty with these instructions, please post a message on the [forum][3]) or contact an ARToolworks support person.
+
+[1]: http://www.apple.com/quicktime/download/       "Download QuickTime For Windows"
+[2]: http://developer.apple.com/quicktime/download/ "Download QuickTime SDK For Windows"
+[3]: http://www.artoolworks.com/support/forum       "ARToolworks Forum"

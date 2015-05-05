@@ -2,7 +2,7 @@
 
 These release notes apply to version: ARToolKit Professional v4.5.1 for iOS release 2
 
-An iOS port of OpenSceneGraph's 2.9.x development branch is bundled with the current ARToolKit for iOS release. The source code from which the OSG libraries were compiled is available publicly at <http://www.artoolworks.com/dist/OpenSceneGraph/2.9.x/>.
+An iOS port of OpenSceneGraph's 2.9.x development branch is bundled with the current ARToolKit for iOS release. The source code from which the OSG libraries were compiled is available publicly [here][1].
 
 ## Usage
 
@@ -16,3 +16,5 @@ The following limitations apply to the bundled version of OpenSceneGraph:
 
 -   TexGen nodes are not supported (since OpenGL ES does not support the glTexGen() functions). Therefore, models such as cow.osg (supplied with OSG) will not render their textures correctly.
 -   Streaming textures are not supported, meaning that textures embedded in .ive files will not load. It is recommended that either external texture references are used in .ive files, or you can use the "osgconv" utility to convert .ive files with embedded textures to .osg files.
+
+[1]: http://www.artoolworks.com/dist/OpenSceneGraph/2.9.x/
