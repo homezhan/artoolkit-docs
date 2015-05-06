@@ -1,8 +1,8 @@
 # Calibrating Your Camera
 
-[thumb|right](/File:Beginning_calibration_with_the_chessboard.JPG "wikilink")
+![Beginning calibration with the chessboard][Beginning_calibration_with_the_chessboard]
 
-*Note: This page refers to the camera calibration procedure introduced with ARToolKit Professional v4.3. If you wish to refer to the procedure for previous versions, please see the page [Calibrating your camera (versions 4.0-4.1)](/Calibrating_your_camera_(versions_4.0-4.1) "wikilink")*
+*Note: This page refers to the camera calibration procedure introduced with ARToolKit Professional v4.3. If you wish to refer to the procedure for previous versions, please see the page [Calibrating your camera (versions 4.0-4.1)][1]*
 
 ## Introduction
 
@@ -14,14 +14,14 @@ Using a very simple camera calibration technique it is possible to generate a se
 
 Calibration works by capturing images of the pre-prepared calibration pattern with the camera. The calibration pattern is in the file "Calibration chessboard.pdf" contained in the doc/patterns directory inside your ARToolKit Pro distribution. This PDF is designed to be printed on A4 paper. If printing on US Letter paper, you should choose to crop the PDF rather than scale it to fit the smaller paper size.
 
-[thumb|right|Chessboard pattern affixed to board ready for calibration](/File:Chessboard_ready_for_calibration.JPG "wikilink")
+![Chessboard pattern affixed to board ready for calibration][Chessboard_ready_for_calibration]
 Once printed, the pattern must be affixed to a flat surface. The easiest means of doing this is to use a piece of thin very flat board (as might be obtained from a hardware store) and a dry glue. Using a millimeter rule, measure the size of the edges of the squares. If printed without scaling, this distance will be exactly 30 mm. Other sizes can be used, as long as they are accurately known.
 
 Finally, set up your camera. A calibration file is only valid for one focus setting of the camera (although it will still work at other focal lengths), so choose in advance the focus setting for the camera which will be used most often.
 
 ## How it works
 
-[Download Calibration chessboard.pdf](/File:Calibration_chessboard.pdf "wikilink")
+[Download Calibration chessboard][2]
 
 The "Calibration pattern.pdf" image consists of a grid of black and white squares surrounded by a white border. When viewed through the camera lens, lens distortion causes the straight lines at the edges of the squares to appear curved. The calib_camera program uses the OpenCV library to locate the corners of the squares and then measures the spacing between the corners and uses this information to calculate the lens distortion. The more images captured, and the more angles they are captured from, the lower the error in the distortion measurement.
 
@@ -98,22 +98,22 @@ If you use the video configuration to select a video size different from that wh
 
 Calibration requires the capturing of a series of images. In the top-left corner of the capture window is displayed the number of images captured so far. Point the camera at the chessboard grid, and the inner corners of the squares will be highlighted with "X" marks and numbered. When the camera can clearly see all the intermediate corners, the X marks turn RED, and a calibration image can be captured:
 
-[thumb|320px|center|**Figure 1:** A good view of the calibration board, ready to capture](/Image:Calibration_example_OK_1.jpg "wikilink")
+![A good view of the calibration board, ready to capture][Calibration_example_OK_1]
 
 If some of the corners are obscured by the edges of the camera frame, or poor lighting or reflection, the crosses will be GREEN, and no calibration image can be captured until the optical conditions are changed.
 
-[thumb |320px|center|**Figure 2:** A poor view of the calibration board, NOT ready to capture](/Image:Calibration_example_not_OK.jpg "wikilink")
+![A poor view of the calibration board, NOT ready to capture][Calibration_example_not_OK]
 
 Once you have an image with all red crosses, you can press the space bar on the keyboard. The image will be captured, and the locations of the X points will be printed to the terminal window, and the counter will increment.
 
 In order to obtain a good calibration for the camera, it is important to obtain images of the calibration board at a variety of angles to the camera lens. The images below give examples of the configurations of the calibration board you should try to obtain. Note that these involve holding the camera at different angles to the board, including upside-down.
 
-<File:Calibration> example OK 1.jpg
-<File:Calibration> example OK 2.jpg
-<File:Calibration> example OK 3.jpg
-<File:Calibration> example OK 4.jpg
-<File:Calibration> example OK 5.jpg
-<File:Calibration> example OK 6.jpg
+![Calibration example OK 1][example OK 1]
+![Calibration example OK 2][example OK 2]
+![Calibration example OK 3][example OK 3]
+![Calibration example OK 4][example OK 4]
+![Calibration example OK 5][example OK 5]
+![Calibration example OK 6][example OK 6]
 
 Once all the calibration images have been captured (10 by default), the calibration data will be output to the terminal window, and you will be prompted for a file name for the calibration data:
 
@@ -155,4 +155,19 @@ That's all there is to it. This new calibration procedure takes only a minute, a
 
 ## Stereo camera calibration
 
-If calibrating a stereo camera, calibrate each eye separtely first, saving the parameters, then run the program calib_stereo to perform the final step of inter-occular calibration. More information can be found in the article [Using stereo tracking](/Using_stereo_tracking "wikilink").
+If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of inter-occular calibration. More information can be found in the article [Using stereo tracking][3].
+
+[1]: /Calibrating_your_camera_(versions_4.0-4.1)
+[2]: /Calibration_chessboard.pdf
+[3]: /Using_stereo_tracking
+
+[Beginning_calibration_with_the_chessboard]: /Beginning_calibration_with_the_chessboard.JPG
+[Chessboard_ready_for_calibration]: /Chessboard_ready_for_calibration.JPG
+[Calibration_example_OK_1]: /Calibration_example_OK_1.jpg
+[Calibration_example_not_OK]: /Calibration_example_not_OK.jpg
+[example OK 1]: /example OK 1.jpg
+[example OK 2]: /example OK 2.jpg
+[example OK 3]: /example OK 3.jpg
+[example OK 4]: /example OK 4.jpg
+[example OK 5]: /example OK 5.jpg
+[example OK 6]: /example OK 6.jpg

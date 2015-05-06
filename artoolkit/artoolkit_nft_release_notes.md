@@ -1,5 +1,4 @@
-[Main Page](/Main_Page "wikilink") \> [ARToolKit
-NFT](/ARToolKit_NFT "wikilink") \>
+# ARToolkit NFT Release Notes
 
 Latest release: 3.49.0
 
