@@ -10,24 +10,24 @@ While the DirectShow libraries are in every release of Windows, and can be used 
 
 Because the process of installing the DirectShow SDK is tiresome, we supply compiled binaries of ARToolKit Professional to customers - unless customers want to recompile libARvideo on Windows, installing the DirectShow SDK is unnecessary. For customers who do wish to recompiled libARvideo for their own purposes, the following guide should be of help.
 
-## How to install the DirectShow SDK
+#### How to install the DirectShow SDK
 
-### Visual Studio 2013
+##### Visual Studio 2013
 
-Visual Studio 2013 is supplied with Windows SDK 8.1, which includes the required DirectShow link libraries, and some of the required headers. Interestingly, it also includes strmbase.lib, the library implementing the DirectShow base classes, but unfortunately neither the Debug version of this library (strmbasd.lib) nor the header files. These would normally be required to be manually installed from the Windows SDK 7.1 samples package, however we have made a package which includes the DirectShow base classes source and compiled libraries for 32-bit and 64-bit architectures.
+Visual Studio 2013 is supplied with Windows SDK 8.1, which includes the required DirectShow link libraries, and some of the required headers. Interestingly, it also includes strmbase.lib, the library implementing the DirectShow base classes, but unfortunately does not include ether the Debug version of this library (strmbasd.lib) or the header files. These would normally be required to be manually installed from the Windows SDK 7.1 samples package, however we have made a package which includes the DirectShow base classes source and compiled libraries for 32-bit and 64-bit architectures.
 
 [Download the DirectShow base classes package][3].
 
 If the package is un-rared retaining the absolute paths, the final package path will be something similar to: <pre>C:\Program Files\Microsoft SDKs\Windows\v7.1\Samples\multimedia\directshow\baseclasses\</pre>. No further configuration is required.
 
-### Visual Studio 2010 SP1 and earlier
+##### Visual Studio 2010 SP1 and earlier
 
 Depending on which version of the Microsoft developer tools and/or SDK version you are using, the components of the DirectShow SDK may be split across two packages. These instructions are targeted at the simplest way to get the SDK working.
 
 -   Download the latest DirectX SDK. At the time of writing, this is the August 2007 release. [DirectX SDK download page][4]. Install the DirectX SDK.
 -   **If you are using Microsoft Visual Studio 2005** or later, download the Microsoft Platform SDK. *N.B.: In June 2006, the Platform SDK was renamed "Windows SDK".* A version of the Platform SDK is included in Microsoft's Visual Studio 2005, but without the DirectShow SDK included. So all we need from the platform SDK is the DirectShow SDK, and this can be most easily obtained by using the "Microsoft ® Windows Server® 2003 R2 Platform SDK Web Install". Don't be put off by the name, this is the valid SDK for targeting Windows XP SP2. [Platform SDK download page][5]. Install the Platform SDK, but do a custom install and deactivate everything except the DirectShow SDK.
 
-#### Setting up Microsoft Visual Studio 2010 SP1 and earlier to use the DirectShow SDK
+##### Setting up Microsoft Visual Studio 2010 SP1 and earlier to use the DirectShow SDK
 
 You can only use the "Standard" or above version of Microsoft Visual Studio to compile libARvideo's DirectShow modules. Visual Studio "Express Edition" will not work, since the Express Edition does not support ATL (which is used by the DirectShow code) [1][6]
 
