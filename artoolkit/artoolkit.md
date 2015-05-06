@@ -51,6 +51,35 @@ Related documentation (off-site)
 - *[Inside ARToolKit][29]* (Tutorial given at ART 02 by Hirokazu Kato)
 - *[Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System][30]* by Hirokazu Kato and Mark Billinghurst.
 
+# ARToolkit NFT
+
+## Introduction
+
+- [About ARToolKit NFT][31]
+- [Running the nftSimple example][32]
+
+## Using ARToolKit NFT
+
+- [Training ARToolKit NFT to a new surface][33]
+- [Using ARToolKit NFT with fiducial markers][34]
+
+**Detail on using specific ARToolKit NFT tools:**
+
+- [ARToolKit NFT Utilities: checkResolution][35]
+- [ARToolKit NFT Utilities: genTexData][36]
+- [ARToolKit NFT Utilities: dispImageSet][37]
+- [ARToolKit NFT Utilities: dispFeatureSet][38]
+
+## Advanced topics
+
+### Reference documentation
+
+- [ARToolKit NFT Release Notes][39]
+
+### Related documentation (off-site)
+
+*[A Registration Method based on Texture Tracking using ARToolKit][40]* by Hirokazu Kato, Keihachiro Tachibana, Mark Billinghurst, and Michael Grafe.
+
 [1]: /About_ARToolKit
 [2]: /How_ARToolKit_works
 [3]: /ARToolKit_feature_comparison
@@ -81,3 +110,13 @@ Related documentation (off-site)
 [28]: http://www.hitl.washington.edu/artoolkit/documentation/
 [29]: http://www.hitl.washington.edu/artoolkit/Papers/ART02-Tutorial.pdf
 [30]: http://www.hitl.washington.edu/artoolkit/Papers/IWAR99.kato.pdf
+[31]: /About_ARToolKit_NFT
+[32]: /Running_the_nftSimple_example
+[33]: /Training_ARToolKit_NFT_to_a_new_surface
+[34]: /Using_ARToolKit_NFT_with_fiducial_markers
+[35]: /ARToolKit_NFT_Utilities:_checkResolution
+[36]: /ARToolKit_NFT_Utilities:_genTexData
+[37]: /ARToolKit_NFT_Utilities:_dispImageSet
+[38]: /ARToolKit_NFT_Utilities:_dispFeatureSet
+[39]: /ARToolKit_NFT_Release_Notes
+[40]: http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1320435
