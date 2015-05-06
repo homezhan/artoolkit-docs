@@ -10,6 +10,16 @@ ARToolKit is multi-platform, running on the Windows, Mac OS X, Linux, iOS and An
 
 ARToolKit supports both video and optical see-through augmented reality. Video see-through AR is where virtual images are overlaid on live video of the real world. The alternative is optical see-through augmented reality, where computer graphics are overlaid directly on a view of the real world. Optical see-through augmented reality typically requires a see-through head mounted display and has more complicated camera calibration and registration requirements.
 
+# About ARToolkit NFT
+
+## Why track natural features?
+
+The move to natural feature tracking is motivated by the simple observation that when using ARToolKit's fiducial tracking, it is very easy for the user to go outside the bounds of the tracking. Perhaps the user tries to touch an augmented object, and inadvertently obscures one of the markers being used for tracking. Or perhaps the user tries to get up close to an object, resulting in the marker straying outside the limited frame of the camera. In both cases, tracking will be lost and the augmented environment with it. In these cases, it would be much nicer to track natural features of objects in the scene. Of course, at present, such general tracking of the environment is too computationally intensive for real-time tracking, so in ARToolKit NFT, we make some simplifications to enable this tracking. Firstly, we track features only of flat (planar) surfaces, and the features we track are points in the image. We choose the points in advance through a training step (similar to training a pictorial marker in ARToolKit) and select the best set of features to track at a number of resolutions.
+
+## ARToolKit NFT
+
+ARToolKit NFT is the name of our SDK (software development kit) that works with ARToolKit Professional to implement tracking of natural features of textured planar surfaces. That is, is uses the texture in a flat surface for tracking, largely replacing the black-and-white markers on the surface. This provides a number of exciting new capabilities to AR applications, including the possibility to add a hidden dimension to otherwise innocuous pictures or illustrations, to provide increased robustness to occlusion of the image by objects in the environment, and improved tracking accuracy.
+
 ## ARToolKit Professional v4.1 Features
 
 - Tracking of fiducial markers (black and white marker squares with user-definable patterns) in video streams, and compositing of computer-generated content to produce video-overlay or see-through augmented reality objects.
