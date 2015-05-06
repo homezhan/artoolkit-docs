@@ -1,84 +1,61 @@
-# ARToolkit Professional
+# ARToolkit Documentation
+ARToolKit is software that lets programmers easily develop Augmented Reality applications. Augmented Reality (AR) is the embedding of computer generated content into the natural environment, and has many potential applications in entertainment, media, advertising, industry, and academic research.
 
-## Introduction
+One of the most difficult parts of developing an augmented reality application is precisely calculating the user's viewpoint in real time so that the virtual images are exactly aligned with real world objects. ARToolKit uses computer vision techniques to calculate the real camera position and orientation relative to square shapes or flat textured surfaces, allowing the programmer to overlay virtual objects. ARToolKit currently supports classical square marker, 2D barcode, multimarker, and natural feature tracking. Furthermore, ARToolKit supports any combination of the above together. The fast, precise tracking provided by ARToolKit has enabled the rapid development of thousands of new and interesting AR applications.
 
-- [About ARToolKit][1]
-- [How ARToolKit works][2]
-- [ARToolKit feature comparison][3]
-- [Installing ARToolKit Professional][4]
-- [ARToolKit tutorial 1: First simple ARToolKit scene][5]
+The documentation contains a complete description of the ARToolKit library, how to install it, and how to use its functionality in AR applications. Several simple sample applications are provided with ARToolKit to enable the programmer to get started immediately. ARToolKit includes the tracking libraries and complete source code for these libraries enabling programming to port the code to a variety of platforms or customize it for their own applications.
 
-## Using ARToolKit
+ARToolKit is multi-platform, running on the Windows, Mac OS X, Linux, iOS and Android operating systems. The functionality of each version of the toolkit is the same, but the performance may vary depending on the different hardware configurations. ARToolKit can be easily ported to other new and experimental platforms.
 
-- [Calibrating your camera][6]
-- [Creating and training new ARToolKit markers][7]
-- [Using an optical see-through display][8]
-- [Graphics, models, and advanced rendering][9]
-- [Using 2D-barcode markers][10]
-- [Multimarker tracking][11]
-- [Adjusting ARToolKit for lighting conditions][12]
-- [<File:Converting> to ARToolKit 4 - Part 1 - simpleLite.pdf][13]
+ARToolKit supports both video and optical see-through augmented reality. Video see-through AR is where virtual images are overlaid on live video of the real world. The alternative is optical see-through augmented reality, where computer graphics are overlaid directly on a view of the real world. Optical see-through augmented reality typically requires a see-through head mounted display and has more complicated camera calibration and registration requirements.
 
-## Advanced topics
+##Introduction
 
-- [Configuring video capture in ARToolKit Professional][14]
-- [Hardware selection and configuration for ARToolKit][15]
-- [Building ARToolKit Professional from source][16]
-- [Customising other aspects of ARToolKit][17]
-- [ARToolKit FAQs][18]
-- [Debugging marker recognition problems][19]
-- [Using stereo tracking][20]
-- [Deploying an application using ARToolKit Professional][21]
+-   [How ARToolKit works][2]
+-   [ARToolKit feature comparison][3]
+-   [Installing ARToolKit][4]
+-   [Frequently Asked Questions][about_faq]
+-   [Tutorial: Hello, World! First simple ARToolKit scene.][5]
 
-Special versions of ARToolKit
------------------------------
+###Further Reading
+-   [Hardware Selection][about_hardware]
+-   [Building from Source][build_artoolkit]
+-   [Customising the ToolKit][about_customising]
+-   [Deploying for Windows / OS X][]
 
-- [ARToolKit for iOS][22]
-- [ARToolKit for Android][23]
 
-Reference documentation
------------------------
+##Configuring ARToolKit
+-   [Setting Environmental Variables][config_evnironment_variables]
+-   [Setting up a Video Capture Device][config_video_capture]
+-   [Calibrating your Camera][camera_calibration]
+-   []
+-   []
 
-- [ARToolKit Professional v5.x API reference (documentation of structures, functions etc.)][24]
-- [ARToolKit Professional v5.x ARWrapper API reference (documentation of structures, functions etc.)][25]
-- [ARToolKit v2.x API reference][26]
-- [ARToolKit Professional Release Notes][27]
+###Advanced Configuration
+-   [Using an Optical See-Through Display][config_advanced_optical_see-through]
+-   [Configuring ARToolKit for Stereo Tracking][camera_advanced_stereo_tracking]
+-   [Adjusting ARToolKit for lighting conditions][camera_adjusting_for_lighting]
+-   [Building libARvideo on Windows][windows_building_libarvideo]
 
-Related documentation (off-site)
---------------------------------
+##Marker Types
+-   [Markers][marker_training]
+-   [2D-Barcode Markers][marker_barcode]
+-   [Multimarkers][marker_multi]
+-   [NFT Markers][nft_training]
 
-- [ARToolKit v2.x documentation][28]
-- *[Inside ARToolKit][29]* (Tutorial given at ART 02 by Hirokazu Kato)
-- *[Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System][30]* by Hirokazu Kato and Mark Billinghurst.
+###Advanced Marker Topics
+-   [Troubleshooting Marker Recognition Issues][marker_troubleshooting]
 
-# ARToolkit NFT
+##Using NFT Markers
+-   [ARToolKit NFT Utilities][35]
+-   [Running the nftSimple example][32]
+-   [Graphics, models, and advanced rendering][9]
 
-## Introduction
-
-- [About ARToolKit NFT][31]
-- [Running the nftSimple example][32]
-
-## Using ARToolKit NFT
-
-- [Training ARToolKit NFT to a new surface][33]
-- [Using ARToolKit NFT with fiducial markers][34]
-
-**Detail on using specific ARToolKit NFT tools:**
-
-- [ARToolKit NFT Utilities: checkResolution][35]
-- [ARToolKit NFT Utilities: genTexData][36]
-- [ARToolKit NFT Utilities: dispImageSet][37]
-- [ARToolKit NFT Utilities: dispFeatureSet][38]
-
-## Advanced topics
-
-### Reference documentation
-
-- [ARToolKit NFT Release Notes][39]
-
-### Related documentation (off-site)
-
-*[A Registration Method based on Texture Tracking using ARToolKit][40]* by Hirokazu Kato, Keihachiro Tachibana, Mark Billinghurst, and Michael Grafe.
+###Related Documentation (Off-Site)
+-   [ARToolKit v2.x documentation][28]
+-   [Inside ARToolKit][29]* (Tutorial given at ART 02 by Hirokazu Kato)
+-   [Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System][30] by Hirokazu Kato and Mark Billinghurst.
+-   [A Registration Method based on Texture Tracking using ARToolKit][40] by Hirokazu Kato, Keihachiro Tachibana, Mark Billinghurst, and Michael Grafe.
 
 [1]: /About_ARToolKit
 [2]: /How_ARToolKit_works
