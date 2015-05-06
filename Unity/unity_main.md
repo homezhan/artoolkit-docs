@@ -1,10 +1,9 @@
 #ARToolKit for Unity
-ARToolKit for Unity is a plugin for the [Unity][unity] game engine, which integrates the existing ARToolKit4 augmented reality
+ARToolKit for Unity is a plugin for the [Unity][unity] game engine, which integrates the existing ARToolKit augmented reality
 tracking library with Unity's graphics and game development features.
 
 ##User Guide
 -   [Introduction][introduction]
--   [Requirements][requirements]
 -   [Getting Started][getting_started]
 -   [Script Reference][script_reference]
 -   [Editor Enhancements][editor_enhancements]
@@ -12,6 +11,12 @@ tracking library with Unity's graphics and game development features.
 -   [Using NFT][using_nft]
 -   [Upgrading to the latest version][upgrading]
 -   [Scripting and low-level API][low_api]
+
+###Requirements
+-   Unity Pro v3.5.2f2 or later, for Mac OS X or Windows.
+-   If deploying to Android, Unity Pro for Android.
+-   If deploying to iOS, Unity Pro for iOS plus Apple's Xcode v4.2 or later.
+-   A webcam or other video source supported by ARToolKit.
 
 ###Platform Specific Information
 -   [Windows][windows]

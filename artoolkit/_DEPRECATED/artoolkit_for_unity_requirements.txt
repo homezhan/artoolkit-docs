@@ -2,11 +2,9 @@
 Unity](/ARToolKit_for_Unity "wikilink") \>
 
 The following are requirements of ARToolKit for Unity:
-
 -   Unity Pro v3.5.2f2 or later, for Mac OS X or Windows.
 -   If deploying to Android, Unity Pro for Android.
--   If deploying to iOS, Unity Pro for iOS plus Apple's Xcode v4.2 or
-    later.
--   A webcam or other video source supported by ARToolKit Professional.
+-   If deploying to iOS, Unity Pro for iOS plus Apple's Xcode v4.2 or later.
+-   A webcam or other video source supported by ARToolKit.
 
 [Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
