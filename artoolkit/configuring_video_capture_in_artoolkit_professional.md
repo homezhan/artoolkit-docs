@@ -14,7 +14,7 @@ Video configurations are passed to libARvideo in a standard way; as a c-string c
 
 *The contents of the string are different for different capture sources because although libARvideo presents a standard API for passing video to other code (e.g. libAR, libARgsub_lite and libARgsub), there is custom code inside libARvideo for each capture source (e.g. QuickTime, DirectShow, libdc1394). The capture sources generally implement a variety of different approaches to video stream acquisition. So, the configuration parameters are different depending on the underlying capture module being used.*
 
-The simplest way to specify the video configuration (without recompiling the example applications) is to create an environment variable "ARTOOLKIT5_CONFIG" with the video configuration you wish to use. See [Setting an environment variable](/Setting_an_environment_variable "wikilink") for more information on how to set environment variables.
+The simplest way to specify the video configuration (without recompiling the example applications) is to create an environment variable "ARTOOLKIT5_CONFIG" with the video configuration you wish to use. See [Setting an environment variable][1] for more information on how to set environment variables.
 
 #### ARToolKit Utilities
 
@@ -179,3 +179,5 @@ This table lists the capture sources available on each platform. (N.B. if you ha
 </td><td>5.1.7
 </td><td>
 </td></tr></tbody></table>
+
+[1]: /Setting_an_environment_variable 

@@ -13,7 +13,7 @@ ARToolKit applications allow virtual imagery to be superimposed over live video 
 
 The figure below summarizes these steps. ARToolKit is able to perform this camera tracking in real time, ensuring that the virtual objects always appear overlaid on the tracking markers.
 
-[The ARToolKit tracking process](/Image:Diagram.jpg "wikilink")
+![The ARToolKit tracking process][diagram]
 
 ## Limitations
 
@@ -40,7 +40,7 @@ Pattern Size (inches)   Usable Range (inches)
 
 In order to increase the usable range, choosing patterns with lower complexity will help. Patterns with large black and white regions (i.e. low frequency patterns) are the most effective. Replacing the 4.25 inch square pattern used above, with a pattern of the same size but much more complexity, reduced the tracking range from 34 to 15 inches.
 
-An alternative to using template markers (markers with user-defined tracking patterns in the interior) is available in ARToolKit Professional; 2D-barcode markers. These markers have a matrix of black and white squares in the interior of the marker, and this barcode can have much lower optical frequency than templates. [Using 2D-barcode markers](/Using_2D-barcode_markers "wikilink").
+An alternative to using template markers (markers with user-defined tracking patterns in the interior) is available in ARToolKit Professional; 2D-barcode markers. These markers have a matrix of black and white squares in the interior of the marker, and this barcode can have much lower optical frequency than templates. [Using 2D-barcode markers][1].
 
 ### Marker orientation
 
@@ -53,3 +53,7 @@ Finally, the tracking results are also affected by lighting conditions. Overhead
 To reduce the glare patterns can be made from more non-reflective material. For example, by gluing black velvet fabric to a white base. The 'fuzzy' velvet paper available at craft shops also works very well.
 
 To reduce shadows, use omnidirectional lighting (lighting conditions where light falls on the patterns from all directions.)
+
+[1]: /Using_2D-barcode_markers
+
+[diagram]: /Diagram.jpg

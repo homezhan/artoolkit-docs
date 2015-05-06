@@ -16,8 +16,8 @@ The NFT data set loaded by nftSimple is specified in the file "bin/Data2/markers
 > If instead you wish to print the image on smaller paper, the image will can either be cropped top and bottom, or scaled to fit. Cropping will maintain correct distance measurements in ARToolKit NFT, at the cost of perhaps losing some of the tracking points, whereas scaling will result in measurements returned by ARToolKit being scaled by the same amount.
 
 -   Connect your webcam.
--   Work out any webcam configuration required. Generally, if your webcam produces images greater than 800x600 resolution, it is recommended to either use the dialog box (where applicable) or set an ARToolKit video configuration environment variable to choose a resolution no greater than 800x600. A resolution of 640x480 is perfectly acceptable for NFT, and the greater frame rate achievable by using this resolution rather than a higher resolution is of more advantage than a larger frame size. See [Configuring video capture in ARToolKit Professional](/Configuring_video_capture_in_ARToolKit_Professional "wikilink") for details on this.
--   Carefully calibrate your camera (see the procedure [here](/Calibrating_your_camera "wikilink")) and copy the calibration data into the ARToolKit/bin/Data2 directory, overwriting the file camera_para.dat
+-   Work out any webcam configuration required. Generally, if your webcam produces images greater than 800x600 resolution, it is recommended to either use the dialog box (where applicable) or set an ARToolKit video configuration environment variable to choose a resolution no greater than 800x600. A resolution of 640x480 is perfectly acceptable for NFT, and the greater frame rate achievable by using this resolution rather than a higher resolution is of more advantage than a larger frame size. See [Configuring video capture in ARToolKit Professional][1] for details on this.
+-   Carefully calibrate your camera (see the procedure [here][2]) and copy the calibration data into the ARToolKit/bin/Data2 directory, overwriting the file camera_para.dat
 
 ## Launch nftSimple
 
@@ -27,6 +27,11 @@ Windows/Mac OS X: Double click the "nftSimple" application in ARToolKit's "bin" 
 
 Once the application is running, point the camera at the image.
 
-[thumb|600px|none](/File:NFT_example_KPM_holding_webcam.jpg "wikilink")
+![KPM example][NFT_example_KPM_holding_webcam]
 
 The tracking should rapidly pick up the image. Once the image is recognised, the colourcube will be drawn at the origin of the page's coordinate system.
+
+[1]: /Configuring_video_capture_in_ARToolKit_Professional
+[2]: /Calibrating_your_camera
+
+[NFT_example_KPM_holding_webcam]: /NFT_example_KPM_holding_webcam.jpg

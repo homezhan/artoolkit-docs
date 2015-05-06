@@ -41,7 +41,7 @@ ARToolKit Professional includes a variety of examples demonstrating ARToolKit pr
 
 The simpleLite example is the most straightforward example. It can be run to test your ARToolKit installation is functioning correctly.
 
-*An explanation of the sourcecode of this example can be found on the page [ARToolKit tutorial 1: First simple ARToolKit scene](/ARToolKit_tutorial_1:_First_simple_ARToolKit_scene "wikilink"). More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Professional examples](/ARToolKit_Professional_examples "wikilink").*
+*An explanation of the sourcecode of this example can be found on the page [ARToolKit tutorial 1: First simple ARToolKit scene][1]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Professional examples][2].*
 
 ### Windows:
 
@@ -69,7 +69,7 @@ In beginning your own development, it is recommended that you create your own pr
 
 -   A supported compiler or IDE is required to use ARToolKit Professional:
     -   Windows: Microsoft Visual Studio 2012 and Microsoft Visual Studio 2010 SP1 are supported. The free Microsoft Visual Studio Express Edition will also work.
-    -   Mac OS X: Xcode tools v5.1 under Mac OS X 10.9 or later is required. Xcode 6 under Mac OS X 10.10 is recommended. Xcode may be obtained free from Apple at <http://developer.apple.com/xcode/>.
+    -   Mac OS X: Xcode tools v5.1 under Mac OS X 10.9 or later is required. Xcode 6 under Mac OS X 10.10 is recommended. Xcode may be obtained free from [Apple][3].
     -   Linux: GCC 4.4 is required. GCC 4.8 or later is recommended.
 
 Where ARToolKit libraries require external DLLs, these are generally supplied with ARToolKit. Exceptions are listed below.
@@ -77,23 +77,23 @@ Where ARToolKit libraries require external DLLs, these are generally supplied wi
 #### Windows
 
 -   The optional video capture sources require some external software:
-    -   QuickTime movie files as video source: QuickTIme 6.4 or later must be installed. Download from <http://www.apple.com/quicktime/download/>.
+    -   QuickTime movie files as video source: QuickTIme 6.4 or later must be installed. [Download here][4].
     -   Point Grey camera: The Flycapture SDK (distributed with Point Grey Cameras) must be installed.
     -   Canon HDCam64 cameras: The Canon HDCam64 camera control library must be installed.
 
 #### Mac OS X
 
--   OpenSceneGraph (optional; The ARToolKit OSG renderer requires OpenSceneGraph). Use the installer provided at <http://www.artoolworks.com/dist/openscenegraph/>.
+-   OpenSceneGraph (optional; The ARToolKit OSG renderer requires OpenSceneGraph). Use the installer provided [here][5].
 
 #### Linux
 
 ARToolKit follows the Linux model whereby required software is externally installed. The following packages are required to be installed in your package manager to **run** the ARToolKit examples. (Additional packages required to build ARToolKit from source are listed on that help page.)
 
 -   OpenGL: Package 'xorg'
--   GLUT: Package 'freeglut3'. *Alternatively, GLUT can be built from source and is also included in the MESA 3D libraries: [1](http://mesa3d.sourceforge.net/)*
+-   GLUT: Package 'freeglut3'. *Alternatively, GLUT can be built from source and is also included in the MESA 3D libraries: [1][6]*
 -   Video4Linux, lib1394dc, or GStreamer. Packages: 'libv4l2-0", 'libdc1394-22' (for lib1394 version 2.x) or 'libdc1394-13' (for lib1394 version 1.x), and 'libgstreamer0.10'.
 -   OpenSceneGraph (optional; The ARToolKit OSG renderer requires OpenSceneGraph). Package 'openscenegraph'.
--   OpenVRML (optional; the ARToolKit VRML renderer requires OpenVRML): Binary deb packages are available from <http://www.openvrml.org/>.
+-   OpenVRML (optional; the ARToolKit VRML renderer requires OpenVRML): Binary deb packages are available [here][7].
 
 ### Opening the project files
 
@@ -108,3 +108,11 @@ Open the ARToolKit5.xcodeproj, found inside the Xcode folder.
 #### Linux
 
 The SDK build system uses a Configure script and makefiles.
+
+[1]: /ARToolKit_tutorial_1:_First_simple_ARToolKit_scene
+[2]: /ARToolKit_Professional_examples
+[3]: http://developer.apple.com/xcode/
+[4]: http://www.apple.com/quicktime/download/
+[5]: http://www.artoolworks.com/dist/openscenegraph/
+[6]: http://mesa3d.sourceforge.net/
+[7]: http://www.openvrml.org/

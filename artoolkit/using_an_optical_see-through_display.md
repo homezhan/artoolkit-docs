@@ -10,7 +10,7 @@ The ARToolKit programs shown so far have used video see-through augmented realit
 
 There are advantages and disadvantages of optical versus video see-through AR. When used with a stereo headset, optical see-through AR allows you to see virtual objects stereoscopically, rather than with bi-occular viewing as with a single camera video see-through system. The real world is also perceived naturally rather than at the resolution of the display. The main drawback with optical see-through AR is the lag in the system. In a video see-through application the video frame of the real world that is shown in the HMD is the same video frame that is used to calculate the head position and orientation so the virtual image will appear exactly overlaid on the real world scene. This is achieved by not showing the video frame until the image processing is completed. However in an optical see-through application the view of the real world cannot be delayed, so the delay introduced into the system by the graphics and image processing is perceived by the user. This results in virtual images that may not appear attached to the real objects they are supposed to be registered with, or that “swim” around. These lag effects are particularly noticeable with rapid head motions or moving the object the virtual image is supposed to be attached to.
 
-For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to Ron Azuma's course notes on Augmented Reality; available on the web at <http://www.cs.unc.edu/~azuma/azuma_AR.html>
+For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to Ron Azuma's course notes on Augmented Reality; available on the web [here][1]
 
 ## Optical see-through calibration
 
@@ -22,20 +22,20 @@ Although the procedure below is written for a monocular display, optical see-thr
 
 ### The calibration pattern
 
-The calibration pattern used is shown below, and can be found in the pdf file Optical calibration pattern.pdf in the patterns folder inside the doc folder in your ARToolKit distribution.This should be printed out and mounted on a piece of cardboard with enough white space around it so that it can be easily held in one hand. Note that the length of each side of black square of the calibration pattern must be exactly 80mm. [center|frame|Optical calibration pattern](/Image:Optical_calibration_pattern.png "wikilink")
+The calibration pattern used is shown below, and can be found in the pdf file Optical calibration pattern.pdf in the patterns folder inside the doc folder in your ARToolKit distribution.This should be printed out and mounted on a piece of cardboard with enough white space around it so that it can be easily held in one hand. Note that the length of each side of black square of the calibration pattern must be exactly 80mm. ![Optical calibration pattern][optical_calibration_pattern]
 
 ### Running calib_optical
 
-Prior to calibrating for the user’s eye position, it is necessary to calibrate for the optical properties of the camera. The method for doing this is detailed in the section [Calibrating your camera](/Calibrating_your_camera "wikilink").
+Prior to calibrating for the user’s eye position, it is necessary to calibrate for the optical properties of the camera. The method for doing this is detailed in the section [Calibrating your camera][2].
 
 The calib_optical utility program contains code for calibration so using this as an example the calibration steps are as follows:
 
 1.  Place the HMD firmly on your head.
 2.  While calib_optical is running press the space bar. A white cross should appear on-screen.
 3.  If you need to see the video-image (temporarily, e.g. to see if the camera is correctly focussed or has correct brightness or contrast) press the "o" key. While in this mode, you can press "d" to see the debug (binarized image) and "-" and "+" to adjust the binarization threshhold to get nice black and white borders on the pattern.
-4.  Looking only through the eye being calibrated (i.e. with the other closed or covered), hold the calibration card in your hand **at arms length** and use your other hand to press the spacebar when required. [center|frame|A user performing optical calibration by lining up their eye position with the pattern](/Image:Performing_optical_calibration.png "wikilink")
+4.  Looking only through the eye being calibrated (i.e. with the other closed or covered), hold the calibration card in your hand **at arms length** and use your other hand to press the spacebar when required. ![A user performing optical calibration by lining up their eye position with the pattern][performing_optical_calibration]
 5.  Move the calibration card until a red or green square appears at the intersection of the white cross hairs. This means that the calibration card is in view of the head mounted camera and it’s pattern has been recognized.
-6.  Keeping the unused eye shut and the red or green square active move the calibration card and move your head to line up the white cross hairs with the intersection of the squares on the card. [center|frame|View in headset during optical calibration procedure](/Image:Optical_calibration_view.png "wikilink")
+6.  Keeping the unused eye shut and the red or green square active move the calibration card and move your head to line up the white cross hairs with the intersection of the squares on the card. ![View in headset during optical calibration procedure][optical_calibration_view]
 7.  Press the space bar. If the calibration parameters are captured the red or green square will change to the opposite color.
 8.  Keeping the unused eye shut, move the calibration card **as close as possible to your viewpoint** while keeping the red or green square active and repeat steps 5 and 6.
 9.  After capturing a calibration point at arms length and close to the body, the cross hairs should change position – keeping your right eye shut repeat steps 3 through 7. There are 5 calibration positions so ten measurements are taken in total for one eye.
@@ -150,13 +150,13 @@ If you want to change the markers, you can edit the file Data/markers.dat. If yo
 
 To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. The file name must end with the suffix ".bytes", so if (for example) your parameters file is named "optical_param.dat", rename it to "optical_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
 
-[<File:ARToolKit> for Unity optical parameters file location.png](/File:ARToolKit_for_Unity_optical_parameters_file_location.png "wikilink")
+![ARToolkit for Unity optical parameters file location][ARToolKit_for_Unity_optical_parameters_file_location]
 
 Once the parameters file is in this location, optical mode should be enabled in the "ARCamera" component in your Unity project. A popup will show a list of all available ".bytes" files in the `Assets/Resources/ardata/optical` folder. Select the preferred parameters file.
 
-[<File:ARToolKit> for Unity optical mode enabled.png](/File:ARToolKit_for_Unity_optical_mode_enabled.png "wikilink")
+![ARToolKit for Unity optical mode enabled][ARToolKit_for_Unity_optical_mode_enabled]
 
-By default, when using optical mode, the video background is initially turned off. If you want to see the video image, press [Enter] (desktop platforms) or [Menu] (Android) and use the on-screen control to toggle the video background on or off.
+By default, when using optical mode, the video background is initially turned off. If you want to see the video image, press *Enter* (desktop platforms) or *Menu* (Android) and use the on-screen control to toggle the video background on or off.
 
 ### Stereo see-through
 
@@ -195,7 +195,7 @@ As with mono optical see-through in Unity (see above), to use the optical calibr
 
 Stereo optical see-through is set up in Unity by taking an existing Camera object with an ARCamera script attached, and duplicating it (in the Unity Editor, select the Camera game object, then choose "Edit-\>Duplicate" from the menu bar). You can rename the cameras to make clear which camera corresponds to which eye, as in this example:
 
-[<File:ARToolKit> for Unity stereo optical cameraL.png](/File:ARToolKit_for_Unity_stereo_optical_cameraL.png "wikilink")
+![ARToolKit for Unity stereo optical camera][ARToolKit_for_Unity_stereo_optical_cameraL.png]
 
 On each camera, tick the boxes “Part of a stereo pair” and “Optical see-through mode”. On the desired “left” camera, choose “Stereo eye: left” and select the calibrated optical parameters file for the left eye from the "Optical parameters file" popup. Repeat step 4 for the right eye.
 
@@ -212,3 +212,13 @@ While optical see-through AR is an attractive ideal, in practice it is very diff
 Optical see-through calibration depends on accurately knowing the precise relationship of two optical apertures: the iris of the camera imaging the scene, and the iris of the eye of the user viewing the scene. We can estimate the relationship between the two by measuring the distance between the display being used to produce the imagery and the lens of the camera, but the position of the iris of the eye of the user and the display is not fixed. We can attempt to control this relationship by fixing the display very tightly in place on the user's head, but its position will differ by small amounts between sessions and between users. Even when accurate calibration has been achieved, a tiny shift in the position of the display relative to the user's eye can produce a significant offset in registration of objects in the scene. Unless using a headset which includes eye-tracking, accuracy of registration is limited.
 
 Of course, alignment between virtual and real objects is desirable for video see-through too, but in video see-through the users sees the virtual objects overlaid on the source image being used for tracking. There is minimal registration error between the video stream and the overlaid objects, and the misalignment of the video stream and the real scene behind and around it is much less noticeable to the user. This is one of the key reasons why video see-through display has become so widely used in AR research.
+
+[1]: http://www.cs.unc.edu/~azuma/azuma_AR.html
+[2]: /Calibrating_your_camera
+
+[optical_calibration_pattern]: /Optical_calibration_pattern.png
+[performing_optical_calibration]: /Performing_optical_calibration.png
+[optical_calibration_view]: /Optical_calibration_view.png
+[ARToolKit_for_Unity_optical_parameters_file_location]: /ARToolKit_for_Unity_optical_parameters_file_location.png
+[ARToolKit_for_Unity_optical_mode_enabled]: /ARToolKit_for_Unity_optical_mode_enabled.png
+[ARToolKit_for_Unity_stereo_optical_cameraL]: /ARToolKit_for_Unity_stereo_optical_cameraL.png

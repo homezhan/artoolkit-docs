@@ -30,7 +30,7 @@ In some of the examples below, to illustrate ARToolKit's flexibility in this reg
 
 ## Stereo calibration
 
-Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides a utility calib_stereo to perform this task. calib_stereo works by knowing in advance the calibrated lens parameters of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately. See [Calibrating your camera](/Calibrating_your_camera "wikilink") for directions on this step.
+Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides a utility calib_stereo to perform this task. calib_stereo works by knowing in advance the calibrated lens parameters of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately. See [Calibrating your camera][1] for directions on this step.
 
 ### A note about "left" and "right"
 
@@ -67,7 +67,7 @@ Similar options apply to calib_stereo, except the parameters are named with **L*
 calib_camera --vconfL "left config" --vconfR "right config"
 </pre>
 
-See [Configuring video capture in ARToolKit Professional](/Configuring_video_capture_in_ARToolKit_Professional "wikilink") for complete lists of video configuration options for each platform and video input module.
+See [Configuring video capture in ARToolKit Professional][2] for complete lists of video configuration options for each platform and video input module.
 
 ### Once you have calibrated each camera lens
 
@@ -132,7 +132,7 @@ Scaling 2880x1200 window by 0.600 to fit onto 1920x1080 screen (with 10% margin)
 
 At this point, if everything has loaded OK and the cameras can be opened, you should see the images from the camera appear (side by side in a single window).
 
-[thumb|600px|center|Both cameras with a good view of the calibration board, ready to capture](/Image:Calib_stereo_screen.png "wikilink")
+![Both cameras with a good view of the calibration board, ready to capture][calib_stereo_screen]
 
 ### Capturing calibration images
 
@@ -176,3 +176,8 @@ Usage: ./calib_stereo [options]
 --vconfR <video parameter for the Right camera>
 -h -help --help: show this message
 </pre>
+
+[1]: /Calibrating_your_camera
+[2]: /Configuring_video_capture_in_ARToolKit_Professional
+
+[calib_stereo_screen]: /Calib_stereo_screen.png

@@ -8,11 +8,11 @@ Multimarker tracking has special support in the ARToolKit API and allows for a n
 
 In multimarker tracking, the markers can have arbitrary relationships to each other, but these relationships must remain fixed. In practise, the most common multimarker arrangement is multiple markers on a single flat sheet, as in the examples provided with ARToolKit:
 
-[400px|thumb|none|4x3 (lower) and 8x6 (upper) barcode multimarker examples](/File:Example_multimarker_barcode.jpg "wikilink")
+![4x3 (lower) and 8x6 (upper) barcode multimarker examples][Example_multimarker_barcode]
 
 but many other useful arrangements are possible, e.g. the cube example also provided with ARToolKit:
 
-[400px|thumb|none|The printed, and assembled cube example. This cube works with the multiCube example in ARToolKit for Desktop](/File:Example_multimarker_cube.jpg "wikilink")
+![The printed, and assembled cube example. This cube works with the multiCube example in ARToolKit for Desktop][Example_multimarker_cube]
 
 Some of the benefits of multimarkers include:
 
@@ -26,7 +26,7 @@ Note that these are the same advantages of using NFT (texture) tracking. The adv
 
 The examples shown above all use barcode (matrix) markers. Pictorial (template) markers can also be used, and ARToolKit has included an example since version 2.0:
 
-[400px|thumb|none|This example, provided since ARToolKit v2.0, uses six pattern (template) markers. The multimarker config and its pattern files can be found in the bin/Data/multi directory of the SDK. This works with the multi example in ARToolKit for Desktop](/File:Example_multimarker_template.jpg "wikilink")
+![This example, provided since ARToolKit v2.0, uses six pattern (template) markers. The multimarker config and its pattern files can be found in the bin/Data/multi directory of the SDK. This works with the multi example in ARToolKit for Desktop][Example_multimarker_template]
 
 Barcode markers do have the advantage over pictorial markers of speed, setup simplicity (no need to make pattern files) and improved rejection of false matches when using markers with error detection and correction (e.g. the marker sets with Hamming codes).
 
@@ -124,4 +124,9 @@ n[z] o[z] a[z] p[z]
 
 Compare this to the example above, and it can be seen that for marker 01 on the cube, **ˆn** is aligned with the x axis (no change), **ô** points completely in the direction of -z, and **â** points completely in the direction of +y.
 
-[400px](/File:Cube_marker_axes.png "wikilink")
+![Cube marker axes][Cube_marker_axes]
+
+[Example_multimarker_barcode]: /Example_multimarker_barcode.jpg
+[Example_multimarker_cube]: /Example_multimarker_cube.jpg
+[Example_multimarker_template]: /Example_multimarker_template.jpg
+[Cube_marker_axes]: /Cube_marker_axes.png
