@@ -1,4 +1,4 @@
-# ARToolkit Tutorial 4: Fancy Rendering
+# ARToolkit Tutorial 2: Fancy Rendering
 
 ## Introduction
 

@@ -11,29 +11,27 @@ Where images have poor contrast, or are over- or under-exposed, the default bina
 <pre>
 static void Keyboard(unsigned char key, int x, int y)
 {
-
-int threshChange = 0;
-switch (key) {
-    case '-':
-        threshChange = -5;
-        break;
-    case '+':
-    case '=':
-        threshChange = +5;
-        break;
-    default:
-        break;
-}
-if (threshChange) {
-    int threshhold;
-    arGetLabelingThresh(gARHandle, &threshhold);
-    threshhold += threshChange;
-    if (threshhold < 0) threshhold = 0;
-    if (threshhold > 255) threshhold = 255;
-    arSetLabelingThresh(gARHandle, threshhold);
-    printf("Threshhold changed to %d.\n", threshhold);
-}
-
+    int threshChange = 0;
+    switch (key) {
+        case '-':
+            threshChange = -5;
+            break;
+        case '+':
+        case '=':
+            threshChange = +5;
+            break;
+        default:
+            break;
+    }
+    if (threshChange) {
+        int threshhold;
+        arGetLabelingThresh(gARHandle, &threshhold);
+        threshhold += threshChange;
+        if (threshhold < 0) threshhold = 0;
+        if (threshhold > 255) threshhold = 255;
+        arSetLabelingThresh(gARHandle, threshhold);
+        printf("Threshhold changed to %d.\n", threshhold);
+    }
 }
 </pre>
 
@@ -43,19 +41,16 @@ The debug mode can be toggled on and off easily, as seen in this snippet from th
 <pre>
 static void Keyboard(unsigned char key, int x, int y) 
 {
-
-int mode;
-
-switch (key) {
-    case 'D':
-    case 'd':
-        arGetDebugMode(gARHandle, &mode);
-        arSetDebugMode(gARHandle, !mode);
-        break;
-    default:
-        break;
-}
-
+    int mode;
+    switch (key) {
+        case 'D':
+        case 'd':
+            arGetDebugMode(gARHandle, &mode);
+            arSetDebugMode(gARHandle, !mode);
+            break;
+        default:
+            break;
+    }
 }
 </pre>
 
