@@ -81,7 +81,7 @@ check_id begins processing each frame by performing the thresholding and square-
 
 When a square-like region fails to pass some critical cut-off in the ARToolKit processing, check_id outlines that region in a different colour. The meaning of the colours can be seen while the program is running by pressing the '?' key twice. The colour of the outline gives an indication of what point of ARToolKit's processing the square-like region was discarded as a marker candidate (the "cutoff phase").
 
-[Image:Check_id_cutoff_phases_v4.5.0.png](/Image:Check_id_cutoff_phases_v4.5.0.png "wikilink")
+![Check ID Cutoff Phases][Check_id_cutoff_phases_v4.5.0]
 
 Not all cutoff phases are applicable to all markers. For example, the phases whose descriptions refer to "barcode..." are not applicable to pattern-based markers. The phases with "pose error" in the description apply only if a multi-marker configuration file has been correctly defined and loaded.
 
@@ -118,3 +118,5 @@ Options:
              AR_TEMPLATE_MATCHING_MONO_AND_MATRIX
   -h -help --help: show this message
 </pre>
+
+[Check_id_cutoff_phases_v4]: /Check_id_cutoff_phases_v4.5.0.png

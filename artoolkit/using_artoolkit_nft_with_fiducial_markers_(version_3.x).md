@@ -16,20 +16,20 @@ Once the image is in digital form, you should add the fiducial marker to it. The
 
 A black-bordered marker must sit on a white or near-white background. Where the background is not white, as in the example MagicLand3 image below, an extra area of white background must be added around the marker
 
-[Image:MagicLand3 embedded fiducial.png](/Image:MagicLand3_embedded_fiducial.png "wikilink")
+![MagicLand3 embedded fiducial][magicland3_embedded_fiducial]
 
 The marker does not have to be inside the portion of the image which is used as the NFT surface. It can be outside it, as these two examples demonstrate:
 
-<File:NFT> example 2.JPG|In this NFT surface, fiducial markers have been placed around the textured portion, in a "filmstrip" arrangement".]]
-<File:NFT> example 3.JPG|In this NFT surface, 2 large and 4 small fiducial markers have been placed at right of the textured portion.]]
+![In this NFT surface, fiducial markers have been placed around the textured portion, in a "filmstrip" arrangement".][example_2]
+![In this NFT surface, 2 large and 4 small fiducial markers have been placed at right of the textured portion.][example_3]
 
-We can revisit the bottle-label image from the [Training ARToolKit NFT to a new surface](/Training_ARToolKit_NFT_to_a_new_surface "wikilink") tutorial with the aim of embedding a marker into the label image. If we choose the pattern (the inner-part of the marker) so that it contains some of the background, then the marker will be even less intrusive.
+We can revisit the bottle-label image from the [Training ARToolKit NFT to a new surface][1] tutorial with the aim of embedding a marker into the label image. If we choose the pattern (the inner-part of the marker) so that it contains some of the background, then the marker will be even less intrusive.
 
-<File:NFT> example Mrs Butterworths modified for marker.jpg|The bottle and label design to be tracked, modified to create some space to place the marker.
-<File:NFT> example Mrs Butterworths marker.jpg|The marker design. The marker border is white, so it must sit on a dark background.
-<File:NFT> example Mrs Butterworths with marker.jpg|The label with the fiducial marker embedded. A black background has been added around the marker.
-<File:NFT> example Mrs Butterworths modified for marker area highlighted.jpg|The new rectangular area to be used for NFT data
-<File:NFT> example Mrs Butterworths modified for marker tracked area.jpg|Close-up of the new area to be used for NFT data. Note that in this case, part of the fiducial marker also forms part of the NFT dataset.
+![The bottle and label design to be tracked, modified to create some space to place the marker.][butterworth_modified_for_marker]
+![The marker design. The marker border is white, so it must sit on a dark background.][butterworth_marker]
+![The label with the fiducial marker embedded. A black background has been added around the marker.][butterworth_with_marker]
+![The new rectangular area to be used for NFT data][butterworth_modified_highlighted]
+![Close-up of the new area to be used for NFT data. Note that in this case, part of the fiducial marker also forms part of the NFT dataset.][butterworth_modified_tracked]
 
 ## Training the system to the embedded fiducial marker(s)
 
@@ -55,11 +55,23 @@ Run simpleNFT.exe providing the relative path to the config.dat file as command 
 
 The tracking in this application is initialized by the appearance of a marker. Once a marker is detected, tracking is switched to feature based and marker is no longer necessary. Red 3D boxes are drawn on the images. If feature tracking failed, it is changed back to marker based tracking and yellow 3D boxes are drawn.
 
-For more information continue to the page [Running the simpleNFT example](/Running_the_simpleNFT_example "wikilink").
+For more information continue to the page [Running the simpleNFT example][2]
 
 ## Example NFT with fiducial marker dataset
 
 A working example of an NFT dataset with an embedded fiducial marker is included with ARToolKit NFT, named "MagicLand3".
 
-A more complex example, showing the use of 2D barcode markers outside the NFT surface can be downloaded here:
-<http://www.artoolworks.com/support/attachments/ARToolKikt%20NFTv1%20sample%20dataset%20(map%20of%20Christchurch%2C%20NZ).zip>
+A more complex example, showing the use of 2D barcode markers outside the NFT surface can be downloaded [here][3].
+
+[1]: /Training_ARToolKit_NFT_to_a_new_surface
+[2]: /Running_the_simpleNFT_example
+[3]: http://www.artoolworks.com/support/attachments/ARToolKikt%20NFTv1%20sample%20dataset%20(map%20of%20Christchurch%2C%20NZ).zip
+
+[magicland3_embedded_fiducial]: /MagicLand3_embedded_fiducial.png
+[example_2]: /example 2.JPG
+[example_3]: /example 3.JPG
+[butterworth_modified_for_marker]: /example Mrs Butterworths modified for marker.jpg
+[butterworth_marker]: /example Mrs Butterworths marker.jpg
+[butterworth_with_marker]: /example Mrs Butterworths with marker.jpg
+[butterworth_modified_highlighted]: /example Mrs Butterworths modified for marker area highlighted.jpg
+[butterworth_modified_tracked]: /example Mrs Butterworths modified for marker tracked area.jpg

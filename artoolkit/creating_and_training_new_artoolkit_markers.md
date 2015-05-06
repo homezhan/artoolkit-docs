@@ -6,13 +6,13 @@
 
 Markers are the squares that ARToolKit recognises and tracks in a video stream. That is, markers are the physical patterns that you've created or printed out. ARToolKit comes with PDF files for some pre-made markers, e.g. the Hiro marker, which you can print out and affix to card or board (so that they stay flat). Markers are the optical inputs to ARToolKit.
 
-[right|The Hiro marker](/Image:Hiro_marker.png "wikilink")
+![The Hiro marker][Hiro_marker]
 
 Markers have only a few constraints.
 
 -   They must be square.
 -   They must have a continuous border (generally either full black or pure white) and they must sit on a background of contrasting colour (generally the opposite of the border colour). By default, the border thickness is 25% of the length of an edge of the marker.
--   The final constraint is that the area inside the border, which we refer to as the *marker image*, must not be [rotationally symmetric](http://en.wikipedia.org/wiki/Rotational_symmetry) (specifically, it must not have rotational symmetry of an even order). The area inside the border can be black and white, or coloured (and ARToolKit provides a means to track with greater accuracy when the marker image is coloured).
+-   The final constraint is that the area inside the border, which we refer to as the *marker image*, must not be [rotationally symmetric][1] (specifically, it must not have rotational symmetry of an even order). The area inside the border can be black and white, or coloured (and ARToolKit provides a means to track with greater accuracy when the marker image is coloured).
 
 ARToolKit Professional v4.x has an additional feature (not found in ARToolKit v2.x), which is to use markers which contain a special two-dimensional grid of black and white squares (a little like a 2D-barcode) in place of the usual marker image. Use of these markers can speed up tracking when there are lots of markers in the scene.
 
@@ -26,13 +26,13 @@ If you choose to use ARToolKit Professional v4.x's 2D-barcode markers, you won't
 
 ## Creating new markers
 
-[right|top](/Image:Markerdimensions.png "wikilink")
+![Marker Dimensions][Markerdimensions]
 
 You can create a new marker by editing the template provided in your ARToolKit distribution, in the file doc/patterns/Blank pattern.png. You can create the marker any size you wish, and you can mix different marker sizes. When you use the marker in ARToolKit, you can tell ARToolKit how big the marker actually is through a configuration file.
 
 The inner 50% of the marker is interpreted as the marker image by ARToolKit, as per the image at right. Note that the image can be colour, white on black or black on white, and it can extend into the border region. Remember that the part of the image outside the inner 50% will be ignored by ARToolKit though, and also be sure not to extend too far into the border, or else ARToolKit might not recognise the marker at all when its at a very oblique angle to the camera.
 
-Even easier to use is Julian Looser's web-based marker generator. See <http://www.roarmot.co.nz/ar/>
+Even easier to use is [Julian Looser][2]'s web-based marker generator.
 
 If you are using 2D-barcode markers, you can find the marker images in your ARToolKit distribution, in the folder doc/patterns/Matrix code 3x3/
 
@@ -65,7 +65,7 @@ Enter camera parameter filename(Data/camera_para.dat):
 
 mk_patt wants to know which camera calibration file to use. If you want to use the default calibration file, just press enter. If you've got a calibration file saved elsewhere, enter the path to it instead. At this point, you should see the image from the camera appear.
 
-[right|top](/Image:Mkpatt.jpeg "wikilink")
+![mk_patt][Mkpatt]
 
 Point the camera directly at your marker. Try to align the camera so that the marker appears square on the screen, and as large as possible. If ARToolKit has identified the marker, it will outline it with a red/green square.
 
@@ -107,7 +107,7 @@ Usage: ./mk_patt [options]
 
 ### Training using the online marker generator
 
-Go to the website <http://flash.tarotaro.org/blog/2009/07/12/mgo2/> and follow the instructions.
+Go to the [Tarotaro website][3] and follow the instructions.
 
 ## Using the pattern file
 
@@ -115,6 +115,15 @@ You can change simpleLite or simple applications to use your new pattern by edit
 
 ## Ensuring the best results
 
--   The markers will work best if they're trained on the same camera that is used for the actual application. The camera should be accurately [calibrated](/Calibrating_your_camera "wikilink") prior to running mk_patt.
--   Don't forget that markers can be colour! Let's see some non-boring markers out there people!!
--   A common mistake is to try and use markers with much too-fine detail in the marker image. ARToolKit samples the marker image at only a resolution of 16x16 pixels, so if you're getting markers mistaken for each other, check whether your markers look too similar to each other when the marker image is downsampled to 16x16 pixels.
+- The markers will work best if they're trained on the same camera that is used for the actual application. The camera should be accurately [calibrated][4] prior to running mk_patt.
+- Don't forget that markers can be colour! Let's see some non-boring markers out there people!!
+- A common mistake is to try and use markers with much too-fine detail in the marker image. ARToolKit samples the marker image at only a resolution of 16x16 pixels, so if you're getting markers mistaken for each other, check whether your markers look too similar to each other when the marker image is downsampled to 16x16 pixels.
+
+[1]: http://en.wikipedia.org/wiki/Rotational_symmetry
+[2]: http://www.roarmot.co.nz/ar/
+[3]: http://flash.tarotaro.org/blog/2009/07/12/mgo2/
+[4]: /Calibrating_your_camera
+
+[Hiro_marker]: /Hiro_marker.png
+[Markerdimensions]: /Markerdimensions.png
+[Mkpatt]: Mkpatt.jpeg

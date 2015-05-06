@@ -20,9 +20,9 @@ Logitech's cameras are a popular choice because of their relatively good quality
 
 This is ARToolworks' recommended consumer level webcam. It has good imaging quality, a small form-factor, and acceptable field-of-view for AR applications.
 
-[100px|left|thumb](/Image:Logitech_QuickCam_Pro_for_Notebooks_(960-000057)_front.png "wikilink")
+![thumb][logitech_quickcam]
 
-<http://www.logitech.com/index.cfm/notebook_products/webcams/devices/3055&cl=hk,en>
+[View more on Logitech][1]
 
 ## Professional imaging cameras
 
@@ -61,24 +61,38 @@ The range of industrial cameras by Point Grey has become the de-facto standard f
 -   Windows: The Point Grey WDM driver allows use of Point Grey cameras with the default WinDS video module, and the WinDSVL video input module, albeit without programmatic control of the parameters.
 -   Windows: The ARToolKit WinDF video module connects directly to the FlyCapture SDK allowing complete control over all camera parameters.
 -   Linux: The ARToolKit Linux Linux1394Cam video module has a variety of configuration options which support advanced features of Firewire (IEEE1394) cameras.'
--   Mac OS X: With a self-install install of [libdc1394](http://damien.douxchamps.net/ieee1394/libdc1394/) and a rebuild of the ARToolKit's libARvideo, the Linux1394Cam module can be used on Mac OS X.
+-   Mac OS X: With a self-install install of [libdc1394][2] and a rebuild of the ARToolKit's libARvideo, the Linux1394Cam module can be used on Mac OS X.
 
 #### Point Grey Firefly 2
 
 This is an IEEE-1394 camera mounted in a steel housing, which accepts a variety of standard mini-mount lenses.
 
-Image:Point Grey Firefly 2 (housing removed) - front.JPG Image:Point Grey Firefly 2 (housing removed) - rear.JPG
+![Point Grey Firefly 2 (housing removed) - front][point_grey_housing_removed_front]
+![Point Grey Firefly 2 (housing removed) - rear][point_grey_housing_removed_rear]
 
 #### Point Grey Flea
 
 This is an IEEE-1394 camera mounted in a steel housing, which accepts a variety of standard C-mount lenses.
 
-Image:Point Grey Flea - front, no lens.JPG
-Image:Point Grey Flea – rear, no lens.JPG
-Image:Point Grey Flea - side view, no lens.JPG
-Image:Point Grey Flea with manual focus variable aperture C-mount lens.JPG
-Image:Point Grey Flea with manual focus variable aperture telephoto C-mount lens.JPG
+![Point Grey Flea - front, no lens][point_grey_flea_front_no_lens]
+![Point Grey Flea - rear, no lens][point_grey_flea_rear_no_lens]
+![Point Grey Flea - side view, no lens][point_grey_flea_side_no_lens]
+![Point Grey Flea with manual focus variable aperture C-mount lens][point_grey_flea_manual_variable]
+![Point Grey Flea with manual focus variable aperture telephoto C-mount lens][point_grey_flea_manual_telephoto]
 
 ## Further reading
 
-Imaging systems are a fascinating and complex area. We highly recommend Edmund Industrial Optics' guide for background information and further reading in this area. <http://www.edmundoptics.com/technical-support/imaging/electronic-imaging-resource-guide/>
+Imaging systems are a fascinating and complex area. We highly recommend [Edmund Industrial Optics'][3] guide for background information and further reading in this area.
+
+[1]: http://www.logitech.com/index.cfm/notebook_products/webcams/devices/3055&cl=hk,en
+[2]: http://damien.douxchamps.net/ieee1394/libdc1394/
+[3]: http://www.edmundoptics.com/technical-support/imaging/electronic-imaging-resource-guide/
+
+[logitech_quickcam]: /Logitech_QuickCam_Pro_for_Notebooks_(960-000057)_front.png
+[point_grey_housing_removed_front]: /Point Grey Firefly 2 (housing removed) - front.JPG
+[point_grey_housing_removed_rear]: /Point Grey Firefly 2 (housing removed) - rear.JPG
+[point_grey_flea_front_no_lens]: /Point Grey Flea - front, no lens.JPG
+[point_grey_flea_rear_no_lens]: /Point Grey Flea – rear, no lens.JPG
+[point_grey_flea_side_no_lens]: /Point Grey Flea - side view, no lens.JPG
+[point_grey_flea_manual_variable]: /Point Grey Flea with manual focus variable aperture C-mount lens.JPG
+[point_grey_flea_manual_telephoto]: /Point Grey Flea with manual focus variable aperture telephoto C-mount lens.JPG

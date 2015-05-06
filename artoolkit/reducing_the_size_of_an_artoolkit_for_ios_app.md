@@ -4,7 +4,7 @@ It is always desirable to minimize the size of any binary distribution of an ART
 
 First, determine what is actually taking up space in your final application. Locate the built app, and right-click on it and choose "Show package contents".
 
-[Image:ARApp - Show package contents.png](/Image:ARApp_-_Show_package_contents.png "wikilink")
+![ARApp - Show package contents][show_package_contents]
 
 Look at the file sizes in the resulting directory, and particularly at the size of the compiled executable and your data files (models etc.)
 
@@ -20,3 +20,5 @@ If trying to reduce the size of data files included with your application, pay p
 -   Keep textures as small as possible. Some textures can be resized down to quite small sizes (e.g. 64x64 pixels) and still look acceptable. If your model format supports it, convert textures to compressed PVRTC format. (Not supported by the glm model loader).
 -   Compress all sound files.
 -   Reduce number of polygons in models.
+
+[show_package_contents]: /ARApp_-_Show_package_contents.png
