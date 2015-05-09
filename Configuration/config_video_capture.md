@@ -1,27 +1,22 @@
-# Configuring Video Capture in ARToolkit Professional
+#Configuring Video Capture in ARToolkit
 
-## About libARvideo's configuration options
-
-ARToolKit Professional includes libARvideo, a cross-platform library which captures video from a variety of different sources. In general, most users of ARToolKit Professional who have a single webcam attached to their system will never delve into the workings of this library. However, the module or modules inside this library generally allow for a degree of configuration to control parameters of the capture sources with which they interface.
+##About libARvideo's Configuration Options
+ARToolKit Professional includes libARvideo, a cross-platform library which captures video from a variety of different sources. In general, most users of ARToolKit who have a single webcam attached to their system will never delve into the workings of this library. However, the module or modules inside this library generally allow for a degree of configuration to control parameters of the capture sources with which they interface.
 
 This section of the manual details some of the configuration options available with libARvideo.
 
-## How to change the video configuration in your program, or in an ARToolKit Professional example
-
-### Setting the configuration at run-time
-
+##Changing Video Configuration
+### Setting Configuration at Run Time
 Video configurations are passed to libARvideo in a standard way; as a c-string containing text. What to put in the *contents* of the string depends on your capture source.
 
-*The contents of the string are different for different capture sources because although libARvideo presents a standard API for passing video to other code (e.g. libAR, libARgsub_lite and libARgsub), there is custom code inside libARvideo for each capture source (e.g. QuickTime, DirectShow, libdc1394). The capture sources generally implement a variety of different approaches to video stream acquisition. So, the configuration parameters are different depending on the underlying capture module being used.*
+The contents of the string are different for different capture sources because although libARvideo presents a standard API for passing video to other code (e.g. libAR, libARgsub_lite and libARgsub), there is custom code inside libARvideo for each capture source (e.g. QuickTime, DirectShow, libdc1394). The capture sources generally implement a variety of different approaches to video stream acquisition. So, the configuration parameters are different depending on the underlying capture module being used.
 
-The simplest way to specify the video configuration (without recompiling the example applications) is to create an environment variable "ARTOOLKIT5_CONFIG" with the video configuration you wish to use. See [Setting an environment variable][1] for more information on how to set environment variables.
+The simplest way to specify the video configuration (without recompiling the example applications) is to create an [environment variable][1] "ARTOOLKIT5_CONFIG" with the video configuration you wish to use.
 
-#### ARToolKit Utilities
-
+####ARToolKit Utilities
 Some of the ARToolKit utilities (including calib_camera, calib_stereo and check_id) accept video configuration(s) as command-line parameters. The desired configuration is passed after a parameter "--vconf" (or --vconfL or --vconfR for calib_stereo). Note that if the video configuration string includes spaces, it must be quoted to prevent the shell passing it as multiple parameters.
 
-### Setting the configuration programmatically
-
+### Setting Configuration Programmatically
 Video configuration can also be passed to libARvideo programmatically (as the sole parameter to the arVideoOpen() call). When no string (NULL) or an empty string ("") is passed, libARvideo looks for an environment variable "ARTOOLKIT5_CONFIG" (as mentioned above) for the string. If this environment variable is not found, the video module will use a default configuration.
 
 In most of the ARToolKit Professional examples, the video config is specified in a string named "vconf". Do a search in your source editor for "vconf" to see this. So in most of the examples, editing the vconf string in the sourcecode will change the video configuration being used.
@@ -29,14 +24,12 @@ In most of the ARToolKit Professional examples, the video config is specified in
 Of course, editing sourcecode requires recompiling for the changes to take effect, so a few of the examples accept a command-line parameter and use this as vconf. You can look at the sourcecode to see if a given example does so.
 
 #### ARToolKit for Unity
-
 ARToolKit for Unity allows you to specify video configuration separately for each supported platform directly in the Unity Editor.
 
-## Available capture sources and switching between them
+##Capture Sources and Switching Them
+Where more than one capture source has been compiled into libARvideo on a given platform, you are allowed to switch between the options.
 
-There is **one** standard configuration option (which is new to ARToolKit Professional, and not found in any version of ARToolKit v2.x). Where more than one capture source has been compiled into libARvideo on a given platform, this option allows switching between the options.
-
-This table lists the capture sources available on each platform. (N.B. if you have a binary release of ARToolKit Professional, not all of these capture sources may have been compiled into your copy):
+This table lists the capture sources available on each platform. *Note: If you have a binary release of ARToolKit, not all of these capture sources may have been compiled into your copy!*:
 
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 
@@ -180,4 +173,4 @@ This table lists the capture sources available on each platform. (N.B. if you ha
 </td><td>
 </td></tr></tbody></table>
 
-[1]: /Setting_an_environment_variable 
+[1]: general_environment_variables
