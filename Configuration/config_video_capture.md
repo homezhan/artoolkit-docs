@@ -1,20 +1,18 @@
 #Configuring Video Capture in ARToolkit
-
-##About libARvideo's Configuration Options
-ARToolKit Professional includes libARvideo, a cross-platform library which captures video from a variety of different sources. In general, most users of ARToolKit who have a single webcam attached to their system will never delve into the workings of this library. However, the module or modules inside this library generally allow for a degree of configuration to control parameters of the capture sources with which they interface.
-
-This section of the manual details some of the configuration options available with libARvideo.
+ARToolKit includes libARvideo, a cross-platform library which captures video from a variety of different sources. In general, most users of ARToolKit who have a single webcam attached to their system will never delve into the workings of this library. However, the module or modules inside this library generally allow for a degree of configuration to control parameters of the capture sources with which they interface.
 
 ##Changing Video Configuration
+This section of the manual details some of the configuration options available with libARvideo.
+
 ### Setting Configuration at Run Time
 Video configurations are passed to libARvideo in a standard way; as a c-string containing text. What to put in the *contents* of the string depends on your capture source.
 
 The contents of the string are different for different capture sources because although libARvideo presents a standard API for passing video to other code (e.g. libAR, libARgsub_lite and libARgsub), there is custom code inside libARvideo for each capture source (e.g. QuickTime, DirectShow, libdc1394). The capture sources generally implement a variety of different approaches to video stream acquisition. So, the configuration parameters are different depending on the underlying capture module being used.
 
-The simplest way to specify the video configuration (without recompiling the example applications) is to create an [environment variable][1] "ARTOOLKIT5_CONFIG" with the video configuration you wish to use.
+The simplest way to specify the video configuration (without recompiling the example applications) is to create an [environment variable][general_environment_variables] `ARTOOLKIT5_CONFIG` with the video configuration you wish to use.
 
 ####ARToolKit Utilities
-Some of the ARToolKit utilities (including calib_camera, calib_stereo and check_id) accept video configuration(s) as command-line parameters. The desired configuration is passed after a parameter "--vconf" (or --vconfL or --vconfR for calib_stereo). Note that if the video configuration string includes spaces, it must be quoted to prevent the shell passing it as multiple parameters.
+Some of the ARToolKit utilities (including [calib_camera][config_camera_calibration], [calib_stereo][config_camera_stereo_tracking] and check_id) accept video configuration(s) as command-line parameters. The desired configuration is passed after a parameter "--vconf" (or --vconfL or --vconfR for calib_stereo). Note that if the video configuration string includes spaces, it must be quoted to prevent the shell passing it as multiple parameters.
 
 ### Setting Configuration Programmatically
 Video configuration can also be passed to libARvideo programmatically (as the sole parameter to the arVideoOpen() call). When no string (NULL) or an empty string ("") is passed, libARvideo looks for an environment variable "ARTOOLKIT5_CONFIG" (as mentioned above) for the string. If this environment variable is not found, the video module will use a default configuration.
@@ -30,9 +28,7 @@ ARToolKit for Unity allows you to specify video configuration separately for eac
 Where more than one capture source has been compiled into libARvideo on a given platform, you are allowed to switch between the options.
 
 This table lists the capture sources available on each platform. *Note: If you have a binary release of ARToolKit, not all of these capture sources may have been compiled into your copy!*:
-
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-
 <tbody><tr>
 <th>Platform </th><th> Capture source (descriptive name) </th><th> Constant required in &lt;AR/config.h&gt; for this source to be compiled into libARvideo </th><th>  video config string to select this capture source </th><th> Avail.: (1) </th><th> Unavail.: (2)
 </th></tr>
@@ -173,4 +169,6 @@ This table lists the capture sources available on each platform. *Note: If you h
 </td><td>
 </td></tr></tbody></table>
 
-[1]: general_environment_variables
+[general_environment_variables]: general_environment_variables
+[config_camera_calibration]: Configuration:config_camera_calibration
+[config_camera_stereo_tracking]: Advanced_Topics:config_camera_stereo_tracking
