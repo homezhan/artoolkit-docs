@@ -35,29 +35,25 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows / Mac OS X: ARToolworks supplies binaries of [OSG][11]. ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation.
     -   Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).
 
-## Compiling ARToolKit
+##Compiling ARToolKit
 
-### Windows
--   After unpacking ARToolKit, run the configure-win32 script. This generates AR/config.h for Windows builds. If you wish to change the default video library, or enable extra video libraries such as QuickTime, see [building libARvideo][12].
+###Windows
+-   After unpacking ARToolKit, run the configure-win32 script. This generates AR/config.h for Windows builds. If you wish to change the default video library, or enable extra video libraries such as QuickTime, see [building libARvideo][4].
 -   Open the ARToolKit5.sln file inside the appropriate directory inside of the "VisualStudio" directory.
 -   Build the ToolKit and the sample applications. The VRML and OSG renderers are not built by default, but can be manually selected and built.
 
-### Mac OS X
+###Mac OS X
 -   Open the ARToolKit5.xcodeproj, found inside the Xcode folder.
 -   The configure step (which creates AR/config.h) will be run automatically during the build process. If you wish to override the defaults, you may manually edit AR/config.h after this.
 -   Select a target to build. The default target builds the complete toolkit with the exception of the OpenVRML and OSG-dependent projects, which can be manually selected and built.
 
-### Linux
+###Linux
 -   Building proceeds with the usual steps `./configure; make` During the configure process, you will be asked to select video libraries to build against.
 
-## Post-Compilation Steps
+##Post-Compilation Steps
 
-### Running the simpleLite example
-ARToolKit Professional includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory.
-
-The simpleLite example is the most straightforward example. It can be run to test your ARToolKit installation is functioning correctly.
-
-*An explanation of the sourcecode of this example can be found on the page [ARToolKit tutorial 1: First simple ARToolKit scene][14]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Professional examples][15].*
+###Verifying the Compilation
+ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its sourcecode can be found on the page [ARToolkit Tutorial 1: First Simple ARToolkit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
 
 #### Windows:
 simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin directory. Alternately, you can run it from the command line:
@@ -79,6 +75,9 @@ simpleLite can be launched from a terminal window thus:
 kljhlkjh
 
 [about_installing]: about_installing
+[tutorial_1_first_scene]: tutorial_1_first_scene
+[setting_env]: general_environment_variables
+[examples]: asdfalkjdhfalkjsdfhalksdjhf
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
 [4]: Advanced_Topics:windows_building_libarvideo
@@ -88,8 +87,3 @@ kljhlkjh
 [9]: http://www.artoolworks.com/dist/openvrml/
 [10]: http://www.openvrml.org/
 [11]: http://www.artoolworks.com/dist/openscenegraph/
-[12]: /Building_libARvideo_using_DirectShow
-[13]: /Building_libARvideo_using_QuickTime
-[14]: /ARToolKit_tutorial_1:_First_simple_ARToolKit_scene
-[15]: /ARToolKit_Professional_examples
-[setting_env]:asdf
