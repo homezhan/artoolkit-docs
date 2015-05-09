@@ -1,5 +1,5 @@
 #ARToolkit Tutorial 1: First Simple ARToolkit Scene
-Among the variety of example applications which are bundled with ARToolKit, simpleLight is the most straight-forward example. When you [install ARToolKit][about_installing], you can find it with the other example applications in the `bin` directory. More examples, and explination of their techniques can be found on the page [ARToolKit Examples][2].
+Among the variety of example applications which are bundled with ARToolKit, simpleLight is the most straight-forward example. When you [install ARToolKit][about_installing], you can find it with the other example applications in the `bin` directory. More examples, and explination of their techniques can be found from the sidebar category "Examples".
 
 ##Running simpleLite
 Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. It is recommended you do this when you install a new version of ARToolKit.
@@ -53,7 +53,6 @@ We will not cover every piece of code in simpleLite.c, but it is well commented 
 One final piece of explanation before we begin.. in simpleLite, we use just one other libraruy, GLUT, to handle the interaction with the operating system. We use GLUT, the OpenGL utility toolkit, to do things like open a window, and handle keypresses. However, GLUT is not required, and can be replaced with any library you like, e.g. MFC on Windows, Cocoa on Mac OS X, or QT (cross platform). It is highly recommended that you become familiar with the basics of a GLUT-based OpenGL application **before** studying the code of simpleLite.c. The most effective way to do this is to read chapter 1 of the OpenGL Programming Guide, also known as the "Red Book". In particular, the hello.c sample code given in chapter 1 of the [Red Book][1] is the basis for the simpleLite.c code.
 
 ##main
-
 The main routine of simpleLite performs a number of setup tasks for the applicaton. We will step through its code explaining the AR-specific functionality. The code in main() plus two setup functions called by main corresponds to step 1 in the table above.
 
 The first piece of AR specific code is near the top of main, where we declare some variables that will be used to set up the application:
@@ -63,7 +62,7 @@ The first piece of AR specific code is near the top of main, where we declare so
     char *patt_name  = "Data/patt.hiro";
 </pre>
 
-In this block, we define the pathname of the camera parameter file the application will use (see [Calibrating your camera][2]), the video capture library configuration string (see [Configuring video capture in ARToolKit Professional][3]), and the name of the marker pattern file the application will load and try to recognise.
+In this block, we define the pathname of the [camera parameter file][config_camera_calibration] the application will use, the [video capture library configuration string][config_video_capture], and the name of the marker pattern file the application will load and try to recognise.
 
 Next, we see the first AR-specific function call:
 <pre>
@@ -363,7 +362,7 @@ That's it! With these few simple function calls, you can create a fully-function
 At this stage, have a play with the simpleLite code. When you are ready, come back and read on to the next tutorial, in which we will cover drawing on top of multiple markers, and working out the relationships between markers.
 
 [1]: http://www.opengl.org/documentation/red_book/
-[2]: camera_calibration
-[3]: config_video_capture
+[config_camera_calibration]: Configuration:config_camera_calibration
+[config_video_capture]: Configuration:config_video_capture
 
 [SimpleLite320x240Mac]: /SimpleLite320x240Mac.png
