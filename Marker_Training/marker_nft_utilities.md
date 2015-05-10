@@ -1,4 +1,5 @@
 #NFT Utilities for ARToolKit
+This page is a description of the tools used along with [NFT tracking][marker_nft_training].
 
 ##checkResolution
 The checkResolution tool supplied with ARToolKit NFT can help in determining the required resolution of source image data used in creating an NFT dataset.
@@ -22,13 +23,12 @@ You will be prompted to enter the size of the Hiro marker. E.g. if printed at 40
 ![This screen shot displays the output when the camera has been moved as far away from the tracked image as likely to be required in normal use - image resolution is around 25 dpi][CheckResolution_pinball_marker_far-distance]
 
 ### Using the Output
-Moving the camera around and observing the DPI values should give you an idea of the maximum resolution required when producing the digital version of the printed material to be tracked (although as mentioned [here][1], it is not recommended to produce imagery at a higher resolution than the printed version, which is typically 150dpi). Additionally, the output helps determine the range of resolutions required when running the genImageSet tool as the first step in training a new NFT data set.
+Moving the camera around and observing the DPI values should give you an idea of the [maximum resolution][marker_nft_training] required when producing the digital version of the printed material to be tracked (it is not recommended to produce imagery at a higher resolution than the printed version, which is typically 150dpi). Additionally, the output helps determine the range of resolutions required when running the genImageSet tool as the first step in training a new NFT data set.
 
-### Solving problems
-
+###Tips for Best Use
 Be sure to use a camera running at the same frame size as will be used in the online tracking process; the DPI values produced depend on the camera image size. In spite of megapixel webcams being the norm, it is actually better to use a lower resolution camera with a higher frame rate; 640x480 is perfectly adequate for most NFT tracking situations.
 
-### Keyboard / Mouse Controls
+###Keyboard / Mouse Controls
 Below is a table of keyboard / mouse controls for using checkResolution:
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 <tbody><tr>
@@ -114,10 +114,9 @@ E_UNABLE_TO_DETACH_FROM_CONTROLLING_TERMINAL = 71
 E_GENERIC_ERROR = 255
 </pre>
 
-See [Training ARToolKit NFT to a new surface][2]
+See [Training NFT to a new surface][marker_nft_training] for more information on NFT datasets.
 
-[1]: /Training_ARToolKit_NFT_to_a_new_surface#Decide_on_the_image_set_resolutions
-[2]: /Training_ARToolKit_NFT_to_a_new_surface
+[marker_nft_training]: Marker_Training:marker_nft_training
 
 [Pinball_NFT_sample_printed_with_hand]: /Pinball_NFT_sample_printed_with_hand.JPG
 [Hiro_marker_on_paddle_40mm]: /Hiro_marker_on_paddle_40mm.jpg 
