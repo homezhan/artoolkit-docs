@@ -75,7 +75,7 @@ simpleLite can be launched from a terminal window thus:
 kljhlkjh
 
 [about_installing]: about_installing
-[tutorial_1_first_scene]: tutorial_1_first_scene
+[tutorial_1_first_scene]: Examples:example_simplelite
 [setting_env]: general_environment_variables
 [examples]: asdfalkjdhfalkjsdfhalksdjhf
 [2]: http://developer.apple.com/xcode/

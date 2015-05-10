@@ -1,4 +1,4 @@
-# Training ARToolkit NFT to a New Surface 
+# Training NFT to a New Surface 
 
 ## About surfaces we can use with ARToolKit NFT
 

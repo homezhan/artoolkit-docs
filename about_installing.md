@@ -32,7 +32,7 @@ In beginning your own development, it is recommended that you create your own pr
 [repo]:asdf
 [building]: Advanced_Topics:build_artoolkit
 [setting_env]: general_environment_variables
-[tutorial_1_first_scene]: tutorial_1_first_scene
+[tutorial_1_first_scene]: Examples:example_simplelite
 [examples]: asdfalkjdhfalkjsdfhalksdjhf
 [3]: http://developer.apple.com/xcode/
 [4]: http://www.apple.com/quicktime/download/
