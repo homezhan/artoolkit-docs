@@ -33,12 +33,12 @@ http://www.artoolworks.com/support/forum/
 Done directories:
 Examples
 Configuration
+Training
 
 In Progress:
-Training
+Advanced
 
 Undone:
 Unity
 iOS
 Android
-Advanced

@@ -1,14 +1,14 @@
 # Using Stereo Tracking
-
-## About Stereo Tracking
-
-ARToolKit is one of the few augmented reality tracking libraries with support for stereo tracking. What do we mean by stereo tracking? We mean that video streams from more than one camera can be simultaneously input into ARToolKit, and ARToolKit will extract tracking data from both video streams. When a tracked surface (a marker, a multimarker set, or a textured NFT surface) is in view of both cameras, the accuracy of tracking is potentially improved over the same tracking performed with a single camera.
+ARToolKit is one of the few augmented reality tracking libraries with support for stereo tracking. What do we mean by stereo tracking? We mean that video streams from more than one camera can be simultaneously input into ARToolKit, and ARToolKit will extract tracking data from both video streams. When a tracked surface (a [marker][marker_about], a [barcode marker][marker_barcode] a [multimarker set][marker_multi], or a [textured NFT surface][marker_nft_training]) is in view of both cameras, the accuracy of tracking is potentially improved over the same tracking performed with a single camera.
 
 Input from two cameras also provides the potential to display two images to the user, should that be appropriate, although it is perfectly permissible to display just one of the video streams while tracking from both.
 
-## Potential pitfalls
+Throughout this document, we will be referring to "left" and "right" cameras. We think of these cameras viewing a scene in the same sense as our eyes viewing the scene. That is, when looking at the scene in the same direction as the cameras are looking, we refer to the camera on our left as "left" and on our right as "right". Note, however, that the camera relationship need not actually be left and right. We could just as well name them "camera A" and "camera B" and use a stereo rig in which the cameras are offset vertically rather than horizontally, or even opposite each other! The only practical constraint is that both cameras will need to be able to see the tracked surface (marker or NFT texture) simultaneously for stereo tracking to be of advantage in improving accuracy. If only one camera can see the marker at once, the tracking quality will be the same for monocular tracking by that camera alone.
 
-In order to get improved tracking data from stereo camera input, each camera must be accurately calibrated (the *lens calibrations*) and the relationship between the two cameras (the *stereo calibration*) must be precisely known. Fortunately, ARToolKit provides easy-to-use utilities to help with these tasks, calib_camera and calib_stereo, respectively. However, it is generally not possible to use stereo tracking in situations where the cameras can move relative to each other during use. The expected scenario is a camera rig where the cameras are permanently mounted relative to each other, or are combined into a single physical housing.
+The following sections will help advise on the best stereo system setup.
+
+##General Rules on Stereo Tracking
+In order to get improved tracking data from stereo camera input, [each camera must be accurately calibrated][config_camera_calibration] (the lens calibrations) and the relationship between the two cameras (the *stereo calibration*) must be precisely known. Fortunately, ARToolKit provides easy-to-use utilities to help with these tasks, `calib_camera` and `calib_stereo`, respectively. However, it is generally not possible to use stereo tracking in situations where the cameras can move relative to each other during use. The expected scenario is a camera rig where the cameras are permanently mounted relative to each other, or are combined into a single physical housing.
 
 Stereo tracking will likely at least double the data being processed by ARToolKit, at all stages of the tracking pipeline. This requires careful consideration of the system used for the tracking. Here are some questions to consider:
 
@@ -18,81 +18,59 @@ Stereo tracking will likely at least double the data being processed by ARToolKi
 -   Is sufficient system memory available for ARToolKit's buffers and data structures?
 -   If you wish to present both video streams to the user, is OpenGL texturing speed sufficient?
 
-The following sections will help advise on the best stereo system setup.
-
 ## Hardware Selection
-
-There are a variety of professional-level stereo cameras available in the market, or depending on your needs, you might wish to build your own stereo rig. Cameras such as the "Bumblebee" range from Point Grey which contain two matched cameras in a single housing with a single I/O bus are very convenient, and might even allow for stereo presentation to the user (using a stereo display). However, for some tracking applications, an even greater degree of stereo disparity (the distance between the cameras) may be desirable, justifying a custom mount for two separate cameras. This comes at an increased cost in setup, plus the need to accommodate two I/O buses.
+[Hardware selection][about_hardware_selection] is important in choosing a stereo rig. There are a variety of professional-level stereo cameras available in the market, or depending on your needs, you might wish to build your own stereo rig. Cameras such as the "Bumblebee" range from Point Grey which contain two matched cameras in a single housing with a single I/O bus are very convenient, and might even allow for stereo presentation to the user (using a stereo display). However, for some tracking applications, an even greater degree of stereo disparity (the distance between the cameras) may be desirable, justifying a custom mount for two separate cameras. This comes at an increased cost in setup, plus the need to accommodate two I/O buses.
 
 It is not necessary that both cameras be identical in terms of lenses, sensors, or quality. However, if the aim of the stereo rig is to increase accuracy, it is advisable to make sure the two cameras are similar in terms of optical pathway quality (lens, sensor etc) as the achievable accuracy will be limited by the worser of the two cameras.
 
 In some of the examples below, to illustrate ARToolKit's flexibility in this regard, you can see tracking from two consumer-level cameras (one a 4:3 ratio 1600x1200 sensor and the other a 5:4 1280x1024 sensor).
 
-## Stereo calibration
+## Stereo Calibration
+Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides the utility "calib_stereo" to perform this task. calib_stereo works by knowing in advance the [calibrated lens parameters][config_camera_calibration] of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately.
 
-Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides a utility calib_stereo to perform this task. calib_stereo works by knowing in advance the calibrated lens parameters of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately. See [Calibrating your camera][1] for directions on this step.
-
-### A note about "left" and "right"
-
-Throughout this document, we will be referring to left and right cameras. We think of these cameras viewing a scene in the same sense as our eyes viewing the scene. That is, when looking at the scene in the same direction as the cameras are looking, we refer to the camera on our left as "left" and on our right as "right".
-
-Note however, that to ARToolKit, left and right don't actually matter at all! In fact, "L" and "R" (where ARToolKit refers to them) are really just labels to make sure we associate the right data with each camera consistently. We could just as well name them "camera A" and "camera B". In fact, you are perfectly allowed to create a stereo rig in which the cameras are offset vertically rather than horizontally, or even opposite each other! The only practical constraint is that both cameras will need to be able to see the tracked surface (marker or NFT texture) simultaneously for stereo tracking to be of advantage in improving accuracy. If only one camera can see the marker at once, the tracking quality will be the same for monocular tracking by that camera alone.
-
-### Video configuration, or: How do I choose which camera to grab from?
-
+### Video Configuration
 Using more than one camera simultaneously may require you to grapple with a problem you haven't encountered previously: how to get ARToolKit to choose the correct camera for use with an operation such as lens calibration with calib_camera. This is performed by using ARToolKit's video configuration capabilities. The exact video configuration options required to choose a particular camera vary between platforms, but can generally be specified to allow you to choose between cameras.
 
 In the utilities calib_camera and calib_stereo, you will find command-line options allow you to specify strings to use as video configurations.
 
 E.g. to select the second video device on your system for use with calib_camera:
-
-Mac OS X:
+On Linux, type:
 <pre>
-./calib_camera --vconf "-device=QuickTime7 -source=1"
+    ./calib_camera --vconf "-device=GStreamer v4l2src device=/dev/video1 use-fixed-fps=false ! ffmpegcolorspace ! video/x-raw-rgb,bpp=24 ! identity name=artoolkit sync=true ! fakesink"
+</pre>
+On OS X, type:
+<pre>
+    ./calib_camera --vconf "-device=QuickTime7 -source=1"
+</pre>
+On Windows, type:
+<pre>
+    calib_camera.exe --vconf "-device=WinDS -devNum=2"
 </pre>
 
-Windows:
+Similar options apply to calib_stereo, except the parameters are named with L and R suffixes:
 <pre>
-calib_camera.exe --vconf "-device=WinDS -devNum=2"
+    ./calib_camera --vconfL "left config" --vconfR "right config"
 </pre>
 
-Linux:
-<pre>
-./calib_camera --vconf "-device=GStreamer v4l2src device=/dev/video1 use-fixed-fps=false ! ffmpegcolorspace ! video/x-raw-rgb,bpp=24 ! identity name=artoolkit sync=true ! fakesink"
-</pre>
+See [Configuring video capture][config_video_capture] for complete lists of video configuration options for each platform and video input module.
 
-Similar options apply to calib_stereo, except the parameters are named with **L** and **R** suffixes:
-
-<pre>
-calib_camera --vconfL "left config" --vconfR "right config"
-</pre>
-
-See [Configuring video capture in ARToolKit Professional][2] for complete lists of video configuration options for each platform and video input module.
-
-### Once you have calibrated each camera lens
-
+###Using calib_stereo
 calib_stereo looks for the calibration information for each lens in the files Data/cparaL.dat and Data/cparaR.dat, for left and right cameras respectively. However, you can name these files as you wish, and just supply the pathnames to each using calib_stereo's command-line parameters:
-
 <pre>
-calib_stereo -cparaL=left calibration file -cparaR=right calibration file
+    ./calib_stereo -cparaL=left calibration file -cparaR=right calibration file
 </pre>
 
-### How to launch the calib_stereo program
-
-Open a command prompt (on Windows, choose "Run" from the Start menu, type "cmd", or on Mac OS X / Linux, open a Terminal window). Run the calib_stereo program from the command prompt. Type
-
+Open a terminal / command prompt (on Mac OS X / Linux, open a Terminal window; on Windows, choose "Run" from the Start menu, type "cmd"). Then run the calib_stereo program from that window..
+On Linux / OS X, type:
 <pre>
-calib_stereo.exe
+    ./calib_stereo
+</pre>
+On Windows, type:
+<pre>
+    calib_stereo.exe
 </pre>
 
-on Windows, or
-
-<pre>
-./calib_stereo
-</pre>
-
-on Mac OS X / Linux. Also supply any required video config and camera calibration file names. You will see output similar to this in your terminal:
-
+Also supply any required video config and camera calibration file names. You will see output similar to this in your terminal:
 <pre>
 ./calib_stereo --vconfL "-source=0" --vconfR "-source=1" -cparaL=quickcamvisionpromac.dat -cparaR=creativelivecamoptiapro.dat
 CHESSBOARD_CORNER_NUM_X = 7
@@ -132,11 +110,9 @@ Scaling 2880x1200 window by 0.600 to fit onto 1920x1080 screen (with 10% margin)
 
 At this point, if everything has loaded OK and the cameras can be opened, you should see the images from the camera appear (side by side in a single window).
 
+Calibration requires the capturing of a series of images with both cameras. In the top-left corner of the capture window is displayed the number of images captured so far. Position the chessboard grid so that it is visible to both cameras, and the inner corners of the squares will be highlighted with "X" marks and numbered. *When the cameras can clearly see all the intermediate corners, the X marks turn RED, and a calibration image can be captured*:
+
 ![Both cameras with a good view of the calibration board, ready to capture][calib_stereo_screen]
-
-### Capturing calibration images
-
-Calibration requires the capturing of a series of images with both cameras. In the top-left corner of the capture window is displayed the number of images captured so far. Position the chessboard grid so that it is visible to both cameras, and the inner corners of the squares will be highlighted with "X" marks and numbered. When the cameras can clearly see all the intermediate corners, the X marks turn RED, and a calibration image can be captured:
 
 If some of the corners are obscured by the edges of the camera frame, or poor lighting or reflection, the crosses will be GREEN, and no calibration image can be captured until the optical conditions are changed.
 
@@ -146,38 +122,40 @@ In order to obtain a good calibration for the cameras, it is important to obtain
 
 Once all the calibration images have been captured (10 by default), the stereo calibration data will be calculated and output to the terminal window, and you will be prompted for a file name for the calibration data.
 
-### If you need to change the default calibration pattern settings
+###Optional - Changing the Default Calibration Pattern Settings
+If you need to, the size of the calibration squares, the number of intermediate corners in horizontal and vertical directions (i.e. the number of rows minus 1 and the number of columns minus 1), and the number of calibration images captured can all be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default calibration settings.
 
-The size of the calibration squares, the number of intermediate corners in horizontal and vertical directions (i.e. the number of rows minus 1 and the number of columns minus 1), and the number of calibration images captured can all be adjusted from the command line. Running the utility with the --help option will show the various command-line options for adjusting the default calibration settings. e.g.
-
-(Mac OS X/Linux):
+On Linux / OS X, type:
 <pre>
-./calib_stereo --help
+    ./calib_stereo --help
 </pre>
-
-or (Windows)
+On Windows, type:
 <pre>
-calib_stereo.exe --help
+    calib_stereo.exe --help
 </pre>
 
 The help text is reproduced here:
-
 <pre>
-Usage: ./calib_stereo [options]
--cornerx=n: specify the number of corners on chessboard in X direction.
--cornery=n: specify the number of corners on chessboard in Y direction.
--imagenum=n: specify the number of images captured for calibration.
--pattwidth=n: specify the square width in the chessbaord.
---cparaL <camera parameter file for the Left camera>
---cparaR <camera parameter file for the Right camera>
--cparaL=<camera parameter file for the Left camera>
--cparaR=<camera parameter file for the Right camera>
---vconfL <video parameter for the Left camera>
---vconfR <video parameter for the Right camera>
--h -help --help: show this message
+    Usage: ./calib_stereo [options]
+    -cornerx=n: specify the number of corners on chessboard in X direction.
+    -cornery=n: specify the number of corners on chessboard in Y direction.
+    -imagenum=n: specify the number of images captured for calibration.
+    -pattwidth=n: specify the square width in the chessbaord.
+    --cparaL <camera parameter file for the Left camera>
+    --cparaR <camera parameter file for the Right camera>
+    -cparaL=<camera parameter file for the Left camera>
+    -cparaR=<camera parameter file for the Right camera>
+    --vconfL <video parameter for the Left camera>
+    --vconfR <video parameter for the Right camera>
+    -h -help --help: show this message
 </pre>
 
-[1]: /Calibrating_your_camera
-[2]: /Configuring_video_capture_in_ARToolKit_Professional
+[marker_about]: Marker_Training:marker_about
+[marker_barcode]: Marker_Training:marker_barcode
+[marker_multi]: Marker_Training:marker_multi
+[marker_nft_training]: Marker_Training:marker_nft_training
+[about_hardware_selection]: Advanced:about_hardware_selection
+[config_camera_calibration]: Configuration:config_camera_calibration
+[config_video_capture]: Configuration:config_video_capture
 
 [calib_stereo_screen]: /Calib_stereo_screen.png
