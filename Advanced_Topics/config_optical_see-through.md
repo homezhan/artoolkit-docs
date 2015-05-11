@@ -1,19 +1,13 @@
 # Usng an Optical See-Through Display
+Traditionally, applications built on ARToolKit use a video feed which augmentations are overlaid. ARToolKit also supports using optical see-through displays for augmented reality. In this case, a HMD (head-mounted device) is used to render the augmentations, with the background being what you see natrually, instead of a separate render-pass for the video feed. Higher end devices with see-though HMDs include the DAQRI Smart Helmet and the Epson Moverio.
 
-## About optical see-through AR
+The general advatages to using an optical see-through display are the ability to render stereoscopically (providing depth), and that there is no separation from the real world.
 
-ARToolKit uses computer vision techniques for image-based recognition and tracking. Since it uses only a single camera, a self-contained head tracking system can be developed if this camera is fixed to a head mounted display (HMD). In this way AR applications can be developed which use head mounted displays.
+Be aware, however, that there will always be some lag between the augmentation and the real world. Nowadays it is less noticible, but older devices will struggle with this issue.
 
-It is not necessary to have a head mounted display to use the ARToolKit, a camera connected to a computer is the only requirement. Without an HMD ARToolKit applications can be viewed on a computer monitor, with an HMD a more immersive experience can be created.
+For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to [Ron Azuma's course notes on Augmented Reality][1].
 
-The ARToolKit programs shown so far have used video see-through augmented reality where the computer graphics are overlaid on video of the real world. This is achieved by using OpenGL to draw the video frame as a background before drawing any other graphics on top. ARToolKit also supports optical see-through augmented reality. In this case an optical see-through HMD is used and only the virtual images are shown in the HMD. Since the HMD is see-through the effect is that the virtual images are overlaid directly on the real world. An example of a see-through HMD is the Virtual iO i-glasses. These are semi-transparent and so can be used for optical see-through AR. Higher end see-though HMDs include the range of displays by Microvision, such as the Nomad.
-
-There are advantages and disadvantages of optical versus video see-through AR. When used with a stereo headset, optical see-through AR allows you to see virtual objects stereoscopically, rather than with bi-occular viewing as with a single camera video see-through system. The real world is also perceived naturally rather than at the resolution of the display. The main drawback with optical see-through AR is the lag in the system. In a video see-through application the video frame of the real world that is shown in the HMD is the same video frame that is used to calculate the head position and orientation so the virtual image will appear exactly overlaid on the real world scene. This is achieved by not showing the video frame until the image processing is completed. However in an optical see-through application the view of the real world cannot be delayed, so the delay introduced into the system by the graphics and image processing is perceived by the user. This results in virtual images that may not appear attached to the real objects they are supposed to be registered with, or that “swim” around. These lag effects are particularly noticeable with rapid head motions or moving the object the virtual image is supposed to be attached to.
-
-For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to Ron Azuma's course notes on Augmented Reality; available on the web [here][1]
-
-## Optical see-through calibration
-
+##Calibration
 When using an optical see-thorugh display, In order to achieve good registration of the tracked object with its rendered position in the display it is necessary to measure the exact position of the of the user’s eye relative to the head worn camera. This is achieved by a simple self-calibration method in which the user holds a calibration pattern in front of the eye and lines up the pattern with a virtual cross hair shown in the see-through display. To achieve good optical see-through viewing, eye position calibration should be done each time a user starts the AR application.
 
 ### Calibration for stereo optical displays
