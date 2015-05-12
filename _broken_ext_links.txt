@@ -1,9 +1,5 @@
 Here are broken external links, or links pointing to ARToolworks (which will need to migrate):
 
-about_customising.md
-http://www.artoolworks.com/support/doc/artoolkit4/apiref/ar_h/index.html#//apple_ref/c/func/arSetPattRatio
-^ This one is both needing migration AND broken.
-
 about_rendering.md
 http://www.artoolworks.com/dist/openscenegraph/
 http://pdb.finkproject.org/pdb/search.php?summary=openvrml
@@ -25,6 +21,8 @@ http://www.roarmot.co.nz/ar/
 ^ Do we want to support his marker generator? Do we want to see if he wants us/will let us host it? External links like to break.
 http://flash.tarotaro.org/blog/2009/07/12/mgo2/
 ^ Do we want to support this? If we want a web-generator solution, can we do something not Flash?
+http://www.artoolworks.com/support/doc/artoolkit4/apiref/ar_h/index.html#//apple_ref/c/func/arSetPattRatio
+^ This one is both needing migration AND broken.
 
 marker_nft_training.md
 http://www.artoolworks.com/support/library/images/f/f8/pinball.jpg
@@ -34,11 +32,11 @@ Done directories:
 Examples
 Configuration
 Training
+Advanced
 
 In Progress:
-Advanced
+iOS
 
 Undone:
 Unity
-iOS
 Android

@@ -72,7 +72,7 @@ simpleLite can be launched from a terminal window thus:
 </pre>
 
 ### Setting up the ARTOOLKIT5_ROOT environment variable
-[Click here to see how to set an environment variable.][setting_env]
+[Click here to see how to set an environment variable.]
 
 [about_installing]: about_installing
 [tutorial_1_first_scene]: Examples:example_simplelite
