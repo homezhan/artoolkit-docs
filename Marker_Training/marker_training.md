@@ -77,6 +77,17 @@ Usage: ./mk_patt [options]
 ###Testing the Pattern File
 You can change [simpleLite][example_simplelite] or simple applications to use your new pattern by editing the source code and recompiling. First drop your pattern file into the bin/Data directory. Then, in your source code editor, locate the code `char *patt_name = "Data/patt.hiro";` and replace `patt.hiro` with the name of your pattern. Recompile, and voila!
 
+##Marker Customisations
+
+###Changing Marker Border Width
+The border width can be set at run time. See the documentation for [arSetPattRatio][arsetpattratio]
+
+###Changing Marker Template Size
+The maker template size (the number of pixels sampled in the marker image) IS editable, in `include/AR/config.h` (or config.h.in if you want to make the change permanent). The values in question are `AR_PATT_SIZE_X` and `AR_PATT_SIZE_Y` and `AR_PATT_SAMPLE_NUM` *which must be an integer multiple of the pattern size*.
+
+### Using Really Large Images
+If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAIN_MAX`, and `AR_PATT_NUM_MAX` in config.h. These influence memory use so are usually set to a conservative minimum.
+
 ##Tips for Best Results
 - The markers will work best if they're trained on the same camera that is used for the actual application. The camera should be [accurately calibrated][config_camera_calibration] prior to running mk_patt.
 - Don't forget that markers can be colour! Let's see some non-boring markers out there people!
@@ -86,6 +97,7 @@ You can change [simpleLite][example_simplelite] or simple applications to use yo
 [marker_barcode]: Training_Markers:marker_barcode
 [config_camera_calibration]: Configuration:config_camera_calibration
 [example_simplelite]: Examples:example_simplelite
+[arsetpattratio]: http://www.artoolworks.com/support/doc/artoolkit4/apiref/ar_h/index.html#//apple_ref/c/func/arSetPattRatio
 
 [1]: http://en.wikipedia.org/wiki/Rotational_symmetry
 [2]: http://www.roarmot.co.nz/ar/
