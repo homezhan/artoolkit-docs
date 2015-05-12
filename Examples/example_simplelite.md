@@ -1,4 +1,4 @@
-#ARToolkit Tutorial 1: First Simple ARToolkit Scene
+#simpleLite - First Example
 Among the variety of example applications which are bundled with ARToolKit, simpleLight is the most straight-forward example. When you [install ARToolKit][about_installing], you can find it with the other example applications in the `bin` directory. More examples, and explination of their techniques can be found from the sidebar category "Examples".
 
 ##Running simpleLite

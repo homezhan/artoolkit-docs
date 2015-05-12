@@ -1,4 +1,4 @@
-#Codex Interactivus
+#Codex Interactivus - Downloadable Example
 This application displays models of the inventions of Leonardo da Vinci on your device.
 
 ##Download the Application

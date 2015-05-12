@@ -1,7 +1,5 @@
-# ARToolkit for iOS Device & OS Version Support
-
+#iOS Device & OS Version Support
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-
 <caption> Device support
 </caption><tbody><tr>
 <th>Device </th><th> First supported <br>(ARToolKit for iOS release) </th><th> Last supported <br>(ARToolKit for iOS release) </th><th> Notes

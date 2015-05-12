@@ -1,4 +1,4 @@
-#Optical Display Example Application
+#Optical - Optical See-Though Example
 The applications "optical" and "opticalStereo" are example applications demonstrating *monocular* and *stereo optical see-through with a [calibrated camera][config_camera_calibration] and display, respectively.
 
 -   It expects to load calibrated camera parameters from the file `Data/camera_para.dat` and [calibrated optical see-through parameters][config_optical_see-through] from the file Data/optical_param.dat, so be sure that you have run the calibration programs (calib_camera and calib_optical) and moved the results of your calibration into the Data directory.

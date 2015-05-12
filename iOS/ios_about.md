@@ -1,37 +1,25 @@
-# ARToolkit for iOS
+#ARToolkit for iOS
+ARToolKit for iOS runs under [several modern versions][ios_system_support] of Apple's iOS operating system, including iPhone, iPad, and iPod Touch devices. This page holds links to resources of special interest for developers working with ARToolKit on the iOS operating system and devices.
 
-ARToolKit Professional for iOS is a version of ARToolKit which to runs under Apple's iOS operating system, including iPhone, iPad, and iPod Touch devices.
+This document is meant to be a supplement to the existing configuration documentation, such as [calibrating your camera][config_camera_calibration], [configuring video capture][config_video_capture], as well as training [NFT][marker_nft_training] and [traditional][marker_training] markers.
 
-This page holds links to resources of special interest for developers working with ARToolKit on the iOS operating system and devices.
+There are [additional functions availible to the iOS camera][ios_camera] in ARToolKit, including high-res image capture. Additionally, it is easy to [include movies in your AR scene][ios_movie_textures]. For more general information, you can read about [reducing your iOS app size][ios_reducing_size], or see [how ARToolKit can integrate with iOS with the ARApp example][example_arapp].
 
-## Help articles
+##Index
 
-- [Updating an AR application with the latest ARToolKit for iOS example code][1]
-- [ARToolKit for iOS libARosg Release Notes][2]
-- [Reducing the size of an ARToolKit for iOS app][3]
-- [Advanced iOS video_configuration][4]
-- [Movie textures on iOS][5]
-- [About the ARApp app design][6]
-- [Using the camera on iOS][7]
+-   [Using the Camera on iOS][ios_camera]
+-   [Movie Textures on iOS][ios_movie_textures]
+-   [Reducing the Size of an iOS App][ios_reducing_size]
+-   [iOS Device & OS Version Support][ios_system_support]
+-   [ARApp - iOS Example][example_arapp]
 
-## Pointers to iOS-specific info in the main ARToolKit documentation
+[config_camera_calibration]: Configuration:config_camera_calibration
+[config_video_capture]: Configuration:config_video_capture
+[marker_nft_training]: Marker_Training:marker_nft_training
+[marker_training]: Marker_Training:marker_training
 
-- [iOS video configuration options][8]
-
-## iOS-specific reference documentation
-
-- [ARToolKit Professional for iOS release notes][9]
-- [ARToolKit for iOS - device & OS version support][10]
-- [ARToolKit for iOS - release numbers and version numbers][11]
-
-[1]: /Updating_an_AR_application_with_the_latest_ARToolKit_for_iOS_example_code
-[2]: /ARToolKit_for_iOS_libARosg_Release_Notes
-[3]: /Reducing_the_size_of_an_ARToolKit_for_iOS_app
-[4]: /Advanced_iOS_video_configuration
-[5]: /Movie_textures_on_iOS
-[6]: /About_the_ARApp_app_design
-[7]: /Using_the_camera_on_iOS
-[8]: /Configuring_video_capture_in_ARToolKit_Professional#AR_VIDEO_DEVICE_IPHONE
-[9]: /ARToolKit_Professional_for_iOS_release_notes
-[10]: /ARToolKit_for_iOS_-_device_&_OS_version_support
-[11]: /ARToolKit_for_iOS_-_release_numbers_and_version_numbers
+[ios_camera]: iOS:ios_camera
+[ios_movie_textures]: iOS:ios_movie_textures
+[ios_reducing_size]: iOS:ios_reducing_size
+[ios_system_support]: iOS:ios_system_support
+[example_arapp]: Examples:example_arapp

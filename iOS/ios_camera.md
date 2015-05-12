@@ -1,4 +1,4 @@
-# Using the Camera on iOS
+#Using the Camera on iOS
 ARToolKit for iOS offers a wide variety of options for control of the cameras on the device, and the stream coming from them.
 
 You can choose between rear (main) and front cameras, on devices which have more than one camera, and additionally, can request different resolution image data from the cameras. Configuration of these options is performed by use of named parameters to the `arVideoOpen()` function (in the `-start` method of the ARViewController class). See how to [configure video capture in ARToolKit][config_video_capture] for more information.
@@ -7,7 +7,7 @@ You can choose between rear (main) and front cameras, on devices which have more
 
 The best guide to camera usage is to examine the example applications carefully, particulary ARViewController, as it is the class which handles most of the interaction with libARvideo. Additional helpful information can be found in the header files `<AR/sys/videoiPhone>`, `<AR/sys/CameraVideo.h>` and `<AR/sys/MovieVideo.h>`.
 
-## Advanced - High-Resolution Image Capture
+##Advanced - High-Resolution Image Capture
 It is possible to capture a high-resolution image from the camera without closing the live video stream in ARToolKit. The photo that is captured uses the full photo resolution of the camera in use, and the size of this varies from device to device. The photo is always captured in portrait mode (taller than wide). Here are some example sizes:
 -------------------------------- ------------------
 iPad 3 (rear), iPhone 4 (rear)   1936x2592 pixels
