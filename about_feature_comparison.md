@@ -1,232 +1,84 @@
 # ARToolkit Feature Comparison
+ARToolKit v2.x and ARToolKit v5.x, while sharing a small subset of features, are vastly different. The latter represents nearly 8 years of further development of the former.
 
-<table border="1" cellspacing="0">
-<caption>ARToolKit v2.x vs ARToolKit Professional v4.x feature comparison
-</caption>
-<tbody><tr>
-<td>
-</td><td><b>ARToolKit v2.x</b>
-</td><td><b>ARToolKit v5.x (Desktop)</b>
-</td><td><b>ARToolKit v5.x (iOS)</b>
-</td><td><b>ARToolKit v5.x (Android)</b>
-</td></tr>
-<tr>
-<td>Platform support
-</td><td>Windows, Linux, OS X
-</td><td>Windows XP SP 3-, Linux, OS X 10.5-
-</td><td>iOS v4.3-
-</td><td>Android 2.2-
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td colspan="5"><b>64-bit support</b>
-</td></tr>
-<tr>
-<td>x86-64	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>PowerPC G5	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>IA64	</td><td>.	</td><td>.	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>ARM64 (ARM AArch64)	</td><td>.	</td><td>.	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<th colspan="5">&nbsp;
-</th></tr>
-<tr>
-<td>USB webcam input	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>DV video input	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>IIDC firewire video input	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>AVI file video streaming	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>QuickTime/MP4 video streaming from file	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>QuickTime/MP4 video streaming from network	</td><td>.	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>Multiple video streams supported	</td><td>x	</td><td>x	</td><td>x	</td><td>.
-</td></tr>
-<tr>
-<td>Video input type able to be changed at runtime	</td><td>.	</td><td>x	</td><td>x	</td><td>.
-</td></tr>
-<tr>
-<td>Multiple video streams from different sources	</td><td>.	</td><td>x	</td><td>x	</td><td>.
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td>RGB pixel format support	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Grayscale pixel format	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>YUV pixel formats	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Packed pixel formats	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td>Kato's heuristic pose estimator	</td><td>x	</td><td>.	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>Pose estimate optimization using non-linear refinement	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Robust pose estimator using M-estimation	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Support for stereo pose estimation	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Filtering of continuous pose estimates	</td><td>x (1)	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td>Pinhole lens model	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Pinhole lens model with pixel aspect ratio	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>OpenCV lens models with scale factor supported	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Rapid OpenCV-based camera calibration	</td><td>.	</td><td>x	</td><td>.	</td><td>x
-</td></tr>
-<tr>
-<td>Stereo video calibration	</td><td>.	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td>Automatic binarization threshold selection	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Tracking from interlaced sources	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Simultaneous tracking of multiple camera views	</td><td>x (1)	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Pictorial (template) markers	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>2D-barcode markers	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Marker border width variable at runtime	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Barcode marker error detection and correction </td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td colspan="5"><b>Rendering support</b>
-</td></tr>
-<tr>
-<td>OpenGL	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>OpenGL ES	</td><td>.	</td><td>.	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>OpenGL ES 2.0	</td><td>.	</td><td>.	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>OpenVRML	</td><td>x	</td><td>x	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>OpenSceneGraph	</td><td>x (2)	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>DirectX	</td><td>.	</td><td>.	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>Unity 3D	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td colspan="5"><b>Language bindings</b>
-</td></tr>
-<tr>
-<td>C	</td><td>x	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>C (OO)/C++	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td>Objective-C	</td><td>.	</td><td>x	</td><td>x	</td><td>.
-</td></tr>
-<tr>
-<td>Java	</td><td>x	</td><td>x (3)	</td><td>.	</td><td>x
-</td></tr>
-<tr>
-<td>C#	</td><td>.	</td><td>x (3)(4)	</td><td>. (4)	</td><td>. (4)
-</td></tr>
-<tr>
-<td>Flash AS3 </td><td>.	</td><td>x (3)	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>Proce55ing </td><td>.	</td><td>x (3)	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>MATLAB	</td><td>x	</td><td>.	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>SilverLight	</td><td>.	</td><td>x (3)	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td colspan="5"><b>Licensing</b>
-</td></tr>
-<tr>
-<td>Open source license, GPLv2 compatible	</td><td>x	</td><td>.	</td><td>.	</td><td>.
-</td></tr>
-<tr>
-<td>Commercial license possible	</td><td>.	</td><td>x	</td><td>x	</td><td>x
-</td></tr>
-<tr>
-<td colspan="5">&nbsp;
-</td></tr>
-<tr>
-<td colspan="5"><b>Notes</b>
-</td></tr>
-<tr>
-<td colspan="5">(1) Multiple tracking instances possible only when pose estimate filtering is disabled.
-</td></tr>
-<tr>
-<td colspan="5">(2) Via osgART
-</td></tr>
-<tr>
-<td colspan="5">(3) Via FLARToolKit/NyARToolKit/SLARToolKit
-</td></tr>
-<tr>
-<td colspan="5">(4) Also supported via ARToolKit for Unity
-</td></tr></tbody></table>
+As well as obvious feature differences, the changes cover a wide variety of less obvious areas, including fundamental algorithms, internal design (modularity, reuse), optimisation, external API design, connections to third-party systems, documentation and developer experience
+
+##Natural Feature Tracking
+Natural feature tracking is a major feature present in ARToolKit v5.x that is not present in v2.x
+
+-   Patented high-speed multi-resolution template-based tracker (libAR2)
+-   Feature-detector based surface recognition and tracking initializer (libKPM)
+-   Full suite of command-line tools, libraries, examples
+
+##Tracking
+-   ICP pose estimator (vs. heuristic pose estimator in v2.x) with similar accuracy but 100x speed improvement.
+-   Variable square marker borders
+-   Variable square pictorial marker (template) resolution
+-   2D barcode marker support
+-   Error detection and correction in barcode markers (BCH coding)
+-   Automatic binarisation threshold selection for square tracking
+-   Pose estimate optimization using non-linear refinement
+-   Robust pose estimator using M-estimation
+-   Robust pose estimation from multi-square markers
+-   Pose filtering
+
+##Tools Support
+-   Simple camera calibration based on OpenCV
+-   Web-based tools for barcode and NFT marker generation
+-   On-device camera calibration app for Android which feeds into a distributed camera calibration database
+-   Cloud-based distributed camera calibration database
+-   On-device optical/stereo-optical calibration app for Android.
+-   New tools for square marker testing
+
+##Stereo and Optical See-Through Support
+-   Support for simultaneous tracking from multiple video sources, e.g. stereo cameras
+-   Stereo camera calibration
+-   Robust pose estimation from calibrated stereo camera pairs
+-   Stereo rendering support
+-   Support for optical and stereo optical see-through displays on all platforms
+
+##Video Input Focus
+-   Modular video input system (multiple video sources per platform, able to be selected at runtime)
+-   iOS video support
+-   Windows MediaFoundation support
+-   Windows DirectShow support
+-   Windows FlyCapture SDK support (for Point Grey cameras)
+-   Windows DVCam support
+-   Windows QuickTime file/streaming support
+-   OS X QTKit support
+-   OS X QuickTime video file/streaming support
+-   JPEG sequence input module (e.g. from M-JPEG stream, or high-resolution images) support
+-   Linux/OSX lib1394 input support
+-   Android video support
+-   Support for high-resolution still-image capture during live tracking on iOS.
+
+##Mobile Focus
+-   Mobile-optimised (register size, memory usage)
+-   OpenGL ES and ES 2.x support
+-   Multi-platform mobile support
+-   Automatic provision of camera calibration for Apple iOS devices.
+-   Automatic provision of camera calibration data for Android devices via distributed camera calibration system.
+-   Integration with GPS and compass (iOS)
+
+##Optimisation and Internals
+-   Full 64-bit support
+-   User-selectable floating point precision
+-   Hand-tuned ARM assembly in performance critical sections
+-   Optimised pathway for YUV video streams
+-   Multi-threading used throughout.
+
+##New Languages and APIs
+-   C++
+-   Java (Android)
+-   Objective C (iOS, OS X)
+-   C#
+
+##Graphics and Rendering
+-   Full support on all platforms for Unity 3D
+-   Full OpenSceneGraph support for advanced rendering
+-   Rendering of video from file or stream in-scene
+-   Support for chroma-keying of video streams
+
+##Developer Experience
+-   Full support for latest developer environments, including Xcode 6.x for iOS and OS X, Visual Studio 2013 for Windows, and Eclipse for Android.
+-   Vastly improved documentation, including new and improved reference documentation for over 350 API calls, as well as detailed guides and tutorials
