@@ -17,9 +17,9 @@ Some of the ARToolKit utilities (including [calib_camera][config_camera_calibrat
 ### Setting Configuration Programmatically
 Video configuration can also be passed to libARvideo programmatically (as the sole parameter to the arVideoOpen() call). When no string (NULL) or an empty string ("") is passed, libARvideo looks for an environment variable "ARTOOLKIT5_CONFIG" (as mentioned above) for the string. If this environment variable is not found, the video module will use a default configuration.
 
-In most of the ARToolKit Professional examples, the video config is specified in a string named "vconf". Do a search in your source editor for "vconf" to see this. So in most of the examples, editing the vconf string in the sourcecode will change the video configuration being used.
+In most of the ARToolKit examples, the video configuration is specified in a string named "vconf". Do a search in your source editor for "vconf" to see this. So in most of the examples, editing the vconf string in the source code will change the video configuration being used.
 
-Of course, editing sourcecode requires recompiling for the changes to take effect, so a few of the examples accept a command-line parameter and use this as vconf. You can look at the sourcecode to see if a given example does so.
+Of course, editing source code requires recompiling for the changes to take effect, so a few of the examples accept a command-line parameter and use this as vconf. You can look at the source code to see if a given example does so.
 
 #### ARToolKit for Unity
 ARToolKit for Unity allows you to specify video configuration separately for each supported platform directly in the Unity Editor.

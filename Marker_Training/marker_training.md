@@ -1,13 +1,13 @@
 # Creating and Training New Markers
-[Markers][marker_about] are the squares that ARToolKit recognises and tracks in a video stream. That is, markers are the physical patterns that you've created or printed out. ARToolKit comes with PDF files for some pre-made markers, e.g. the Hiro marker, which you can print out and affix to card or board (so that they stay flat). Markers are the optical inputs to ARToolKit.
+[Markers][marker_about] are the squares that ARToolKit recognizes and tracks in a video stream. That is, markers are the physical patterns that you've created or printed out. ARToolKit comes with PDF files for some pre-made markers, e.g. the Hiro marker, which you can print out and affix to card or board (so that they stay flat). Markers are the optical inputs to ARToolKit.
 
 ![The Hiro marker][Hiro_marker]
 
 Markers have only a few constraints.
 
 -   They must be square.
--   They must have a continuous border (generally either full black or pure white) and they must sit on a background of contrasting colour (generally the opposite of the border colour). By default, the border thickness is 25% of the length of an edge of the marker.
--   The final constraint is that the area inside the border, which we refer to as the *marker image*, must not be [rotationally symmetric][1] (specifically, it must not have rotational symmetry of an even order). The area inside the border can be black and white, or coloured (and ARToolKit provides a means to track with greater accuracy when the marker image is coloured).
+-   They must have a continuous border (generally either full black or pure white) and they must sit on a background of contrasting color (generally the opposite of the border color). By default, the border thickness is 25% of the length of an edge of the marker.
+-   The final constraint is that the area inside the border, which we refer to as the *marker image*, must not be [rotationally symmetric][1] (specifically, it must not have rotational symmetry of an even order). The area inside the border can be black and white, or colored (and ARToolKit provides a means to track with greater accuracy when the marker image is colored).
 
 ARToolKit has an additional feature to use markers which contain a [special two-dimensional grid of black and white squares][marker_barcode] (a little like a 2D-barcode) in place of the usual marker image. Use of these markers can speed up tracking when there are lots of markers in the scene.
 
@@ -16,7 +16,7 @@ You can design a new marker by editing the template provided in your ARToolKit d
 
 ![Marker Dimensions][Markerdimensions]
 
-The inner 50% of the marker is interpreted as the marker image by ARToolKit, as per the image at right. Note that the image can be colour, white on black or black on white, and it can extend into the border region. Remember that the part of the image outside the inner 50% will be ignored by ARToolKit though, and also be sure not to extend too far into the border, or else ARToolKit might not recognise the marker at all when its at a very oblique angle to the camera.
+The inner 50% of the marker is interpreted as the marker image by ARToolKit, as per the image at right. Note that the image can be color, white on black or black on white, and it can extend into the border region. Remember that the part of the image outside the inner 50% will be ignored by ARToolKit though, and also be sure not to extend too far into the border, or else ARToolKit might not recognize the marker at all when its at a very oblique angle to the camera.
 
 Even easier to use is [Julian Looser's web-based marker generator][2].
 
@@ -60,7 +60,7 @@ Enter filename:
 
 Type a name for your pattern file (usually something ending in ".patt") and press return. If you don't want to save it, just press return to restart the video. That's it! You can train more patterns, or click the right mouse button to exit the program.
 
-There are more options you can customise when training markers (such as size of the marker border). Running the utility with the `--help` option will show the various command-line options for adjusting the default settings. The help text is reproduced here:
+There are more options that you can customize when training markers (such as size of the marker border). Running the utility with the `--help` option will show the various command-line options for adjusting the default settings. The help text is reproduced here:
 <pre>
 Options:
 Usage: ./mk_patt [options]
@@ -90,7 +90,7 @@ If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAI
 
 ##Tips for Best Results
 - The markers will work best if they're trained on the same camera that is used for the actual application. The camera should be [accurately calibrated][config_camera_calibration] prior to running mk_patt.
-- Don't forget that markers can be colour! Let's see some non-boring markers out there people!
+- Don't forget that markers can be color! Let's see some non-boring markers out there people!
 - A common mistake is to try and use markers with much too-fine detail in the marker image. ARToolKit samples the marker image at only a resolution of 16x16 pixels, so if you're getting markers mistaken for each other, check whether your markers look too similar to each other when the marker image is downsampled to 16x16 pixels.
 
 [marker_about]: Training_Markers:marker_about

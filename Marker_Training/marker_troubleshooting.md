@@ -3,7 +3,7 @@ ARToolKit has a flexible recognition pipeline, which allows it to work relativel
 
 This article focusses on the issue of marker recognition, particularly marker recognition when using [barcode markers][marker_barcode], or larger numbers of markers in a [multi-marker set][marker_multi].
 
-To help you achieve the best tracking results with multimarker sets and barcode markers and to see where and why ARToolKit cannot track in certain conditions, a new tool is provided with ARToolKit. The tool is named simply "check_id". check_id allows you to see the output of different stages of ARToolKit's tracking, and to determine visually why markers are not being tracked in certain circumstances. It also allows you to see the ID codes of barcode markers.
+To help you achieve the best tracking results with multimarker sets and barcode markers and to see where and why ARToolKit cannot track in certain conditions, a tool is provided with ARToolKit, named simply "check_id". check_id allows you to see the output of different stages of ARToolKit's tracking, and to determine visually why markers are not being tracked in certain circumstances. It also allows you to see the ID codes of barcode markers.
 
 check_id does not solve problems with camera calibration. You still need to have a set of calibrated camera parameters for your camera.
 
@@ -33,7 +33,7 @@ On Windows, type:
 check_id reads standard multi-marker configuration files, which can be edited with a text editor. In such a file, you declare the names of attern files and/or barcode ID numbers, the size of each marker, and the offset and orientation of the marker relative to the origin of the multi-marker set. If you specify only template (pattern) markers in the config file, check_id will automatically select command-line option `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR`. Similarly, only barcode markers will result in use of `--patternDetectionMode AR_MATRIX_CODE_DETECTION`, or a mix of template and barcode markers (usually an undesirable mode) will result in use of `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR_AND_MATRIX`.
 
 ### Using check_id
-The initial mode is to display the distortion-corrected normal colour camera image. In the top-left of the window, the current thresholding mode (and threshold, if applicable) is displayed. Also, if a valid multi-marker set was loaded from Data/checkidMarkerConfig.dat, then additional indication will show whether robust multi-marker tracking is on or off.
+The initial mode is to display the distortion-corrected normal color camera image. In the top-left of the window, the current thresholding mode (and threshold, if applicable) is displayed. Also, if a valid multi-marker set was loaded from Data/checkidMarkerConfig.dat, then additional indication will show whether robust multi-marker tracking is on or off.
 
 check_id has a few modes which can be selected from the keyboard.
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
@@ -70,7 +70,7 @@ check_id has a few modes which can be selected from the keyboard.
 
 check_id begins processing each frame by performing the thresholding and square-recognition steps of ARToolKit's processing. These are the first and most basic steps in the detection of a marker and calculation of marker pose. We refer to "square-like" regions because at the earliest stages of ARToolKit processing, many regions in the incoming camera image can have shapes that approximate that of a marker. ARToolKit examines each of these shapes, performing various tests to check contrast, match the region to a pattern or to a barcode, to check that the region is planar, and so on. Only when all these tests have passed is the a marker ID returned and a pose-estimate calculated. check_id outlines all fully-identified markers with a red outline, and draws the pattern ID near the centre of the marker.
 
-When a square-like region fails to pass some critical cut-off in the ARToolKit processing, check_id outlines that region in a different colour. The meaning of the colours can be seen while the program is running by pressing the '?' key twice. The colour of the outline gives an indication of what point of ARToolKit's processing the square-like region was discarded as a marker candidate (the "cutoff phase").
+When a square-like region fails to pass some critical cut-off in the ARToolKit processing, check_id outlines that region in a different color. The meaning of the colors can be seen while the program is running by pressing the '?' key twice. The color of the outline gives an indication of what point of ARToolKit's processing the square-like region was discarded as a marker candidate (the "cutoff phase").
 
 ![Check ID Cutoff Phases][Check_id_cutoff_phases_v4.5.0]
 

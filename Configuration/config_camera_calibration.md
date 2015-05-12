@@ -1,12 +1,12 @@
 #Calibrating Your Camera
-In the ARToolKit software, default camera properties are contained in the camera parameter file camera_para.dat, that is read in each time an application is started. These parameters are sufficient for basic tracking for a wide range of different cameras. However, to get best tracking accuracy, particularly when looking directly onto a flat marker, it is important to calibrate your camera. As well as helping tracking accuracy and reducing jitter, in a video-see through AR interface the video image can be warped to remove the camera's lens distortion.
+In the ARToolKit software, default camera properties are contained in the camera parameter file camera_para.dat, that is read in each time an application is started. These parameters are sufficient for basic tracking for a wide range of different cameras. However, to get best tracking accuracy, particularly when looking directly onto a flat marker, it is important to calibrate your camera. As well as helping tracking accuracy and reducing jitter, in a video-see through AR interface, the video image can be warped to remove the camera's lens distortion.
 
 ![Beginning calibration with the chessboard][Beginning_calibration_with_the_chessboard]
 
-Using a very simple camera calibration technique it is possible to generate a separate parameter file for the specific camera(s) that are being used. This page presents how use utility programs included with ARToolKit to calibrate your video camera.
+Using a very simple camera calibration technique it is possible to generate a separate parameter file for the specific camera(s) that are being used. This page presents how to use the utility programs included with ARToolKit to calibrate your video camera.
 
 ##Set-Up
-Calibration works by capturing images of the pre-prepared calibration pattern with the camera. The calibration pattern is in the file "Calibration chessboard.pdf" contained in the `doc/patterns` directory inside your ARToolKit Pro distribution. This PDF is designed to be printed on A4 paper. If printing on US Letter paper, you should choose to crop the PDF rather than scale it to fit the smaller paper size.
+Calibration works by capturing images of the pre-prepared calibration pattern with the camera. The calibration pattern is in the file "Calibration chessboard.pdf" contained in the `doc/patterns` directory inside your ARToolKit distribution. This PDF is designed to be printed on A4 paper. If printing on US Letter paper, you should choose to crop the PDF rather than scale it to fit the smaller paper size.
 
 ![Chessboard pattern affixed to board ready for calibration][Chessboard_ready_for_calibration]
 
@@ -18,7 +18,7 @@ Finally, set up your camera. A calibration file is only valid for one focus sett
 The ["Calibration pattern.pdf"][2] image consists of a grid of black and white squares surrounded by a white border. When viewed through the camera lens, lens distortion causes the straight lines at the edges of the squares to appear curved. The calib_camera program uses the OpenCV library to locate the corners of the squares and then measures the spacing between the corners and uses this information to calculate the lens distortion. The more images captured, and the more angles they are captured from, the lower the error in the distortion measurement.
 
 ## Running calib_camera
-Open a command promp (on Mac OS X / Linux, open a Terminal window, or on Windows choose "Run" from the Start menu, type "cmd"). Run the calib_camera program from the command prompt.
+Open a command prompt (on Mac OS X / Linux, open a Terminal window, or on Windows choose "Run" from the Start menu, type "cmd"). Run the calib_camera program from the command prompt.
 
 On OS X / Linux, type:
 <pre>
@@ -130,7 +130,7 @@ That's all there is to it. This new calibration procedure takes only a minute, a
 To use your new calibration file, just replace the default camera_para.dat file in ARToolKit's `bin/Data` directory with your newly saved data. It can be helpful to keep a collection of camera_para.dat files for cameras you commonly use.
 
 ## Further Reading - Stereo Camera Calibration
-If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of [inter-occular calibration][3].
+If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of [inter-ocular calibration][3].
 
 [2]: /Calibration_chessboard.pdf
 [3]: Advanced_Topics:config_camera_stereo_tracking

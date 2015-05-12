@@ -4,7 +4,7 @@ about_rendering.md
 http://www.artoolworks.com/dist/openscenegraph/
 http://pdb.finkproject.org/pdb/search.php?summary=openvrml
 
-example_arsimple.md
+example_arsimple.md / example_simplelite
 http://www.opengl.org/documentation/red_book/
 
 example_codex_interactivus.md
@@ -33,9 +33,9 @@ Examples
 Configuration
 Training
 Advanced
+iOS
 
 In Progress:
-iOS
 
 Undone:
 Unity

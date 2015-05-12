@@ -2,7 +2,7 @@
 This page is a description of the tools used along with [NFT tracking][marker_nft_training].
 
 ##checkResolution
-The checkResolution tool supplied with ARToolKit NFT can help in determining the required resolution of source image data used in creating an NFT dataset.
+The checkResolution tool supplied with ARToolKit can help in determining the required resolution of source image data used in creating an NFT dataset.
 
 ###Operational summary
 1.  Obtain the NFT image to be tracked in printed form. ![Pinball NFT Sample][Pinball_NFT_sample_printed_with_hand]
@@ -18,7 +18,7 @@ You will be prompted to enter the size of the Hiro marker. E.g. if printed at 40
 -   The camera is pointed towards the printed image to be tracked, and the Hiro marker is positioned so that it is on top of the other marker, positioned in the middle of the camera frame. The display indicates the tracked marker in green, with a red cross at the centre of the marker, and below, the vertical and horizontal resolution of the printed image directly under that point.
 ![This screen shot displays the output when the camera is at a typical user distance - image resolution is around 50 dpi.][CheckResolution_pinball_marker_mid-distance]
 
--   The camera is moved around (with the Hiro marker moved each time so that it remains roughly in the centre of the camera frame) including to the maximum and minimum distances the tracked marker is likely to be seen from:
+-   The camera is moved around (with the Hiro marker moved each time so that it remains roughly in the centre of the camera frame) to the maximum and minimum distances the tracked marker is likely to be seen from:
 ![This screen shot displays the output when the camera has been moved as close as likely to be required to the tracked image - image resolution is around 150 dpi][CheckResolution_pinball_marker_close-distance]
 ![This screen shot displays the output when the camera has been moved as far away from the tracked image as likely to be required in normal use - image resolution is around 25 dpi][CheckResolution_pinball_marker_far-distance]
 
@@ -57,7 +57,7 @@ Usage:
       -fset2    Show fset2 features.
 </pre>
 
-After launching dispFeatureSet, the various image resolutions will be displayed on screen with the tracking features overlaid. The features used in continuous tracking are outlined by red boxes, and the features used in identifying the pages and initialising tracking are marked by green crosses.
+After launching dispFeatureSet, the various image resolutions will be displayed on screen with the tracking features overlaid. The features used in continuous tracking are outlined by red boxes, and the features used in identifying the pages and initializing tracking are marked by green crosses.
 
 ![ARToolKit NFT - dispFeatureSet terminal][ARToolKit_NFT_-_dispFeatureSet_terminal]
 ![ARToolKit NFT - dispFeatureSet][ARToolKit_NFT_-_dispFeatureSet]
