@@ -9,50 +9,62 @@ ARToolKit is multi-platform, running on the Windows, Mac OS X, Linux, iOS and An
 
 ARToolKit supports both video and optical see-through augmented reality. Video see-through AR is where virtual images are overlaid on live video of the real world. The alternative is optical see-through augmented reality, where computer graphics are overlaid directly on a view of the real world. Optical see-through augmented reality typically requires a see-through head mounted display and has more complicated camera calibration and registration requirements.
 
-##Introduction
--   [ARToolKit Feature Comparison][3]
--   [Installing ARToolKit][4]
--   [Introduction to Template Markers][]
--   [Introduction to Natrual Feature Markers][]
--   [Frequently Asked Questions][about_faq]
-
 ##Getting Started
--   [Tutorial: Hello, World! First simple ARToolKit scene.][5]
-
-##Configuring ARToolKit
+-   [Installing ARToolKit][about_installing]
 -   [Setting up a Video Capture Device][config_video_capture]
 -   [Calibrating your Camera][camera_calibration]
+-   [Training Markers][marker_training]
+-   [Training NFT Markers][marker_nft_training]
 
-##Marker Types, Training and Usage
--   [Markers][marker_training]
--   [2D-Barcode Markers][marker_barcode]
--   [Multimarkers][marker_multi]
--   [NFT Markers][nft_training]
+##Marker Types and Usage
+-   [About Markers][marker_about]
+-   [About 2D-Barcode Markers][marker_barcode]
+-   [About Multimarkers][marker_multi]
 -   [Troubleshooting Marker Recognition Issues][marker_troubleshooting]
-
-##Using NFT Markers
--   [ARToolKit NFT Utilities][35]
--   [Running the nftSimple example][32]
--   [Graphics, models, and advanced rendering][9]
+-   [ARToolKit NFT Utilities][marker_nft_utilities]
 
 ##Advanced Topics
--   [Using an Optical See-Through Display][config_advanced_optical_see-through]
--   [Configuring ARToolKit for Stereo Tracking][camera_advanced_stereo_tracking]
--   [Adjusting ARToolKit for lighting conditions][camera_adjusting_for_lighting]
+-   [Using an Optical See-Through Display][config_optical_see-through]
+-   [Configuring ARToolKit for Stereo Tracking][config_camera_stereo_tracking]
+-   [Adjusting ARToolKit for lighting conditions][config_adjusting_exposure]
 -   [Building libARvideo on Windows][windows_building_libarvideo]
 -   [Hardware Selection][about_hardware_selection]
 -   [Building from Source][build_artoolkit]
--   [Customising the ToolKit][about_customising]
+-   [Advanced FAQ][about_faq]
 
 ##General Topics
+-   [Feature Comparison - *What's new?*][about_feature_comparison]
 -   [Setting an Environment Variable][general_environment_variables]
 -   [Deploying an Application on Windows/OS X][general_deploy_application]
+-   [Graphics, Models, and Rendering][about_rendering]
 
 ##Related Documentation (Off-Site)
 -   [ARToolKit v2.x documentation][external_2x_docs]
 -   [Inside ARToolKit][external_inside_artoolkit] Tutorial given at ART 02 by Hirokazu Kato
 -   [Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System][external_hmd_conferencing] by Hirokazu Kato and Mark Billinghurst.
 -   [A Registration Method based on Texture Tracking using ARToolKit][external_registration_method] by Hirokazu Kato, Keihachiro Tachibana, Mark Billinghurst, and Michael Grafe.
+
+[about_installing]: about_installing
+[config_video_capture]: Configuration:
+[camera_calibration]: Configuration:
+[marker_training]: Marker_Training:
+[marker_nft_training]: Marker_Training:
+[marker_about]: Marker_Training:
+[marker_barcode]: Marker_Training:
+[marker_multi]: Marker_Training:
+[marker_troubleshooting]: Marker_Training:
+[marker_nft_utilities]: Marker_Training:
+[config_optical_see-through]: Advanced_Topics:
+[config_camera_stereo_tracking]: Advanced_Topics:
+[config_adjusting_exposure]: Configuration:
+[windows_building_libarvideo]: Advanced_Topics:
+[about_hardware_selection]: Advanced_Topics:
+[build_artoolkit]: Advanced_Topics:
+[about_faq]: about_faq
+[about_feature_comparison]: about_feature_comparison
+[general_environment_variables]: general_environment_variables
+[general_deploy_application]: general_deploy_application
+[about_rendering]: about_rendering
 
 [external_2x_docs]: http://www.hitl.washington.edu/artoolkit/documentation/
 [external_inside_artoolkit]: http://www.hitl.washington.edu/artoolkit/Papers/ART02-Tutorial.pdf
