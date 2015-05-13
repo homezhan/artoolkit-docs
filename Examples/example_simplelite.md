@@ -364,5 +364,6 @@ At this stage, have a play with the simpleLite code. When you are ready, come ba
 [1]: http://www.opengl.org/documentation/red_book/
 [config_camera_calibration]: Configuration:config_camera_calibration
 [config_video_capture]: Configuration:config_video_capture
+[about_installing]: Getting_Started:about_installing
 
 [SimpleLite320x240Mac]: :simplelite320x240mac_1.png

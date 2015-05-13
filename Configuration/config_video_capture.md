@@ -28,7 +28,6 @@ ARToolKit for Unity allows you to specify video configuration separately for eac
 Where more than one capture source has been compiled into libARvideo on a given platform, you are allowed to switch between the options.
 
 This table lists the capture sources available on each platform. _Note: If you have a binary release of ARToolKit, not all of these capture sources may have been compiled into your copy!_:
-
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 <tbody>
 <tr>
@@ -171,6 +170,6 @@ This table lists the capture sources available on each platform. _Note: If you h
 </td><td>
 </td></tr></tbody></table>
 
-[general_environment_variables]: general_environment_variables
+[general_environment_variables]: Getting_Started:general_environment_variables
 [config_camera_calibration]: Configuration:config_camera_calibration
 [config_camera_stereo_tracking]: Advanced_Topics:config_camera_stereo_tracking

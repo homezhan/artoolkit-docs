@@ -71,7 +71,7 @@ ARToolKit supports both video and optical see-through augmented reality. Video s
 * [Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System][external_hmd_conferencing] by Hirokazu Kato and Mark Billinghurst.
 * [A Registration Method based on Texture Tracking using ARToolKit][external_registration_method] by Hirokazu Kato, Keihachiro Tachibana, Mark Billinghurst, and Michael Grafe.
 
-[about_installing]: about_installing
+[about_installing]: Getting_Started:about_installing
 [config_video_capture]: Configuration:config_video_capture
 [camera_calibration]: Configuration:camera_calibration
 [marker_training]: Marker_Training:marker_training
@@ -87,11 +87,11 @@ ARToolKit supports both video and optical see-through augmented reality. Video s
 [windows_building_libarvideo]: Advanced_Topics:windows_building_libarvideo
 [about_hardware_selection]: Advanced_Topics:about_hardware_selection
 [build_artoolkit]: Advanced_Topics:build_artoolkit
-[about_faq]: about_faq
-[about_feature_comparison]: about_feature_comparison
-[general_environment_variables]: general_environment_variables
-[general_deploy_application]: general_deploy_application
-[about_rendering]: about_rendering
+[about_faq]: Advanced_Topics:about_faq
+[about_feature_comparison]: Getting_Started:about_feature_comparison
+[general_environment_variables]: Getting_Started:general_environment_variables
+[general_deploy_application]: Getting_Started:general_deploy_application
+[about_rendering]: Getting_Started:about_rendering
 [android_examples]: Android:android_examples
 [example_arapp]: Examples:example_arapp
 [codex_interactivus]: Examples:example_codex_interactivus
