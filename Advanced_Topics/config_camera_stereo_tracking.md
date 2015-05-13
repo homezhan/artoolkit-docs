@@ -26,14 +26,14 @@ It is not necessary that both cameras be identical in terms of lenses, sensors, 
 In some of the examples below, to illustrate ARToolKit's flexibility in this regard, you can see tracking from two consumer-level cameras (one a 4:3 ratio 1600x1200 sensor and the other a 5:4 1280x1024 sensor).
 
 ## Stereo Calibration
-Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides the utility "calib_stereo" to perform this task. calib_stereo works by knowing in advance the [calibrated lens parameters][config_camera_calibration] of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately.
+Stereo calibration is an essential step in stereo tracking. This is the step where the relationship between the two cameras (the precise offset and orientation from the sensor of one camera to the sensor of the other) is determined. ARToolKit provides the utility "calib\_stereo" to perform this task. calib\_stereo works by knowing in advance the [calibrated lens parameters][config_camera_calibration] of each separate camera, and then tracking the calibration chessboard pattern simultaneously with both cameras to infer the relative offset and orientation of each camera. Thus, before performing stereo calibration, you must have carefully calibrated each camera separately.
 
 ### Video Configuration
 Using more than one camera simultaneously may require you to grapple with a problem you haven't encountered previously: how to get ARToolKit to choose the correct camera for use with an operation such as lens calibration with calib_camera. This is performed by using ARToolKit's video configuration capabilities. The exact video configuration options required to choose a particular camera vary between platforms, but can generally be specified to allow you to choose between cameras.
 
-In the utilities calib_camera and calib_stereo, you will find command-line options allow you to specify strings to use as video configurations.
+In the utilities calib\_camera and calib\_stereo, you will find command-line options allow you to specify strings to use as video configurations.
 
-E.g. to select the second video device on your system for use with calib_camera:
+E.g. to select the second video device on your system for use with calib\_camera:
 On Linux, type:
 <pre>
     ./calib_camera --vconf "-device=GStreamer v4l2src device=/dev/video1 use-fixed-fps=false ! ffmpegcolorspace ! video/x-raw-rgb,bpp=24 ! identity name=artoolkit sync=true ! fakesink"
@@ -47,7 +47,7 @@ On Windows, type:
     calib_camera.exe --vconf "-device=WinDS -devNum=2"
 </pre>
 
-Similar options apply to calib_stereo, except the parameters are named with L and R suffixes:
+Similar options apply to calib\_stereo, except the parameters are named with L and R suffixes:
 <pre>
     ./calib_camera --vconfL "left config" --vconfR "right config"
 </pre>
@@ -55,12 +55,12 @@ Similar options apply to calib_stereo, except the parameters are named with L an
 See [Configuring video capture][config_video_capture] for complete lists of video configuration options for each platform and video input module.
 
 ###Using calib_stereo
-calib_stereo looks for the calibration information for each lens in the files Data/cparaL.dat and Data/cparaR.dat, for left and right cameras respectively. However, you can name these files as you wish, and just supply the pathnames to each using calib_stereo's command-line parameters:
+calib\_stereo looks for the calibration information for each lens in the files Data/cparaL.dat and Data/cparaR.dat, for left and right cameras respectively. However, you can name these files as you wish, and just supply the pathnames to each using calib\_stereo's command-line parameters:
 <pre>
     ./calib_stereo -cparaL=left calibration file -cparaR=right calibration file
 </pre>
 
-Open a terminal / command prompt (on Mac OS X / Linux, open a Terminal window; on Windows, choose "Run" from the Start menu, type "cmd"). Then run the calib_stereo program from that window..
+Open a terminal / command prompt (on Mac OS X / Linux, open a Terminal window; on Windows, choose "Run" from the Start menu, type "cmd"). Then run the calib\_stereo program from that window..
 On Linux / OS X, type:
 <pre>
     ./calib_stereo
@@ -154,7 +154,7 @@ The help text is reproduced here:
 [marker_barcode]: Marker_Training:marker_barcode
 [marker_multi]: Marker_Training:marker_multi
 [marker_nft_training]: Marker_Training:marker_nft_training
-[about_hardware_selection]: Advanced:about_hardware_selection
+[about_hardware_selection]: about_hardware_selection
 [config_camera_calibration]: Configuration:config_camera_calibration
 [config_video_capture]: Configuration:config_video_capture
 

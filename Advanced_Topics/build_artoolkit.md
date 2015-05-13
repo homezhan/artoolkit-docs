@@ -74,10 +74,10 @@ simpleLite can be launched from a terminal window thus:
 ### Setting up the ARTOOLKIT5_ROOT environment variable
 [Click here to see how to set an environment variable.]
 
-[about_installing]: about_installing
+[about_installing]: :about_installing
 [tutorial_1_first_scene]: Examples:example_simplelite
-[setting_env]: general_environment_variables
-[examples]: asdfalkjdhfalkjsdfhalksdjhf
+[setting_env]: :general_environment_variables
+[examples]: 
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
 [4]: Advanced_Topics:windows_building_libarvideo
