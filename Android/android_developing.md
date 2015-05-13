@@ -51,13 +51,13 @@ main.xml from ARSimple:
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-        
+
         <FrameLayout
             android:id="@+id/mainLayout"
             android:orientation="vertical"
             android:layout_width="640px"
             android:layout_height="480px"/>
-        
+
     </LinearLayout>
 </pre>
 
@@ -69,35 +69,35 @@ The second required object is a renderer for displaying the AR scene. The render
 The source code from the ARSimple example activity is shown below. It implements both the necessary functions.
 <pre>
     package org.artoolkit.ar.samples.ARSimple;
-    
+
     import org.artoolkit.ar.base.ARActivity; import
     com.artoolworks.ar.base.rendering.ARRenderer; import android.os.Bundle;
     import android.widget.FrameLayout;
-    
+
     /**
     * A simple example of extending ARActivity to create a new AR application.
     */
-    
+
     public class ARSimple extends ARActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);      
             setContentView(R.layout.main);                      
         }
-        
+
         /**
          * Provide our own SimpleRenderer.
          */
-        
+
         @Override
         protected ARRenderer supplyRenderer() {
             return new SimpleRenderer();
         }
-        
+
         /**
          * Use the FrameLayout in this Activity's UI.
          */
-        
+
         @Override
         protected FrameLayout supplyFrameLayout() {
             return (FrameLayout)this.findViewById(R.id.mainLayout);     
@@ -120,45 +120,45 @@ This method is called when the rendering should be updated. ARActivity automatic
 The source code from the SimpleRenderer used in the ARSimple example is shown below. When the configuration method is called, it adds a marker, recording its ID for later use. When the draw method is called, the ARToolKit object is used to retrieve the projection matrix, and query and retrieve tracking information for the loaded marker. OpenGL functions are then used to apply the matrices and display a cube on the marker (using a Cube utility class from ARBaseLib).
 <pre>
     package org.artoolkit.ar.samples.ARSimple;
-    
+
     import javax.microedition.khronos.opengles.GL10; import
     org.artoolkit.ar.base.ARToolKit; import
     org.artoolkit.ar.base.rendering.ARRenderer; import
     org.artoolkit.ar.base.rendering.Cube;
-    
+
     /**
     * A very simple Renderer that adds a marker and draws a cube on it.
     */
-    
+
     public class SimpleRenderer extends ARRenderer {
         private int markerID = -1;
         private Cube cube = new Cube(80.0f, 0.0f, 0.0f, 40.0f);
-        
+
         /**
          * Markers can be configured here.
          */
-        
+
         @Override
         public boolean configureARScene() {
-        
+
             markerID = ARToolKit.getInstance().addMarker("single;/sdcard/AR/Data/patt.hiro;80");
             if (markerID < 0) return false;`
-        
+
             return true;
         }
-        
+
         /**
          * Override the draw function from ARRenderer.
          */
-        
+
         @Override
         public void draw(GL10 gl) {
             gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
-        
+
             // Apply the ARToolKit projection matrix
             gl.glMatrixMode(GL10.GL_PROJECTION);
             gl.glLoadMatrixf(ARToolKit.getInstance().getProjectionMatrix(), 0);
-        
+
             // If the marker is visible, apply its transformation, and draw a cube
             if (ARToolKit.getInstance().queryMarkerVisible(markerID)) {
                 gl.glMatrixMode(GL10.GL_MODELVIEW);
@@ -255,8 +255,8 @@ Rather than combining Android camera and OpenGL views to synthesize an AR view, 
 [marker_training]: Marker_Training:marker_training
 [marker_nft_training]: Marker_Training:marker_nft_training
 
-[artoolkitwrapper_arbaselib]: /artoolkitwrapper_arbaselib.png
-[libs_directory]: /libs_directory.png
-[arbaselib_dialog]: /arbaselib_dialog.png
-[view_layers]: /view_layers.png
-[artoolkit_direct]: /artoolkit_direct.png
+[artoolkitwrapper_arbaselib]: :artoolkitwrapper_arbaselib.png
+[libs_directory]: :libs_directory.png
+[arbaselib_dialog]: :arbaselib_dialog.png
+[view_layers]: :view_layers.png
+[artoolkit_direct]: :artoolkit_direct.png

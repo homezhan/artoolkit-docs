@@ -9,6 +9,7 @@ This guide covers the [structure][2] of ARToolKit and how to use it to develop y
 
 
 ##Index
+
 - [ARToolKit's SDK Structure][android_sdk]
 - [Example Applications][android_examples]
 - [Developing with ARToolKitWrapper and ARBaseLib][android_developing]

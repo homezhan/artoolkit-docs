@@ -15,6 +15,7 @@ If you need more than 64 barcodes, you can change the size of the barcode templa
 The barcode dimension is set by the values `AR_PATT_SIZE2` and `AR_PATT_SAMPLE_NUM2` in the file `include/AR/arConfig.h`. Set the first value to the number of squares in each dimension, and the second to an integer multiple of the first. The default values are 3 and 9, respectively.
 
 In general, it is better to use the smallest pattern size possible, as this helps the patterns to be recognized more easily at a greater distance. This table shows the number of barcodes possible with each pattern size:
+
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 <tbody><tr>
 <th> AR_PATT_SIZE2 </th><th> Number of barcodes possible

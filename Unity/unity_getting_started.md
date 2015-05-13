@@ -66,7 +66,7 @@ The SDK includes an example dataset (file names: gibraltar.iset, gibraltar.fset,
 Next, decide on the point in your scene graph which you would like to be the root of your AR scene. All dynamic AR scene content will live under this root, and its transform will be the origin for AR calculations. Normally, this will be an empty GameObject at the root of your scene, but it can be any GameObject. In the examples, this object is named "Scene root". Drag an AROrigin script onto this object. It's also useful to put this object and all children into its own layer, e.g. create a new user layer and name it "AR foreground".
 
 ###4 - ARTrackedObjects
-Now, add a child GameObject beneath the scene root you created in the previous step. This object will hold the AR content for the first AR marker, so you could rename it to (for example) "Marker Scene 1". Attach an `ARTrackedObject`, and configure its "Tag" property to the same name you used on its corresponding ARMarker earlier. This associates the ARTrackedObject with the ARMarker. The object to which the ARTrackedObjec` is attached will have its position and rotation changed at runtime depending on the pose of the marker, and its child objects will be enabled/disabled depending on the visibility of the marker. Be sure that all ARTrackedObjects have an AROrigin attached to one of their parents, or else they won't display any content.
+Now, add a child GameObject beneath the scene root you created in the previous step. This object will hold the AR content for the first AR marker, so you could rename it to (for example) "Marker Scene 1". Attach an `ARTrackedObject`, and configure its "Tag" property to the same name you used on its corresponding ARMarker earlier. This associates the ARTrackedObject with the ARMarker. The object to which the ARTrackedObject is attached will have its position and rotation changed at runtime depending on the pose of the marker, and its child objects will be enabled/disabled depending on the visibility of the marker. Be sure that all ARTrackedObjects have an AROrigin attached to one of their parents, or else they won't display any content.
 
 ###5 - ARCamera
 The last thing you need to add before content can be viewed is a Unity Camera object. This must be a child object of the AR scene root. Set its culling mask to the layer you chose earlier (We suggest "AR Foreground", and be sure that the "AR Background" is not selected). Attach an ARCamera script to this camera.
@@ -104,18 +104,18 @@ If you are not using NFT markers, be sure to remove any NFT datasets from the St
 Read up on [the scripts of ARToolKit][unity_scripts] in Unity. Also check out our [low-level API][unity_low_level_api].
 
 [marker_about]: Marker_Training:marker_about
-[marker_train]: Marker_Training:marker_train
+[marker_train]: Marker_Training:marker_training
 [config_camera_calibration]: Configuration:config_camera_calibration
 [marker_nft_train]: Marker_Training:marker_nft_train
 [unity_scripts]: Unity:unity_scripts
 [unity_low_level_api]: Unity:unity_low_level_api
 
-[menu_screenshot]:/File:Unity_import_package.png "wikilink"
-[import_all]:/File:Unity_import_ARToolKit_2012-06.png "wikilink"
-[editor_screenshot]:/File:ARToolKit_for_Unity_scripts.png "wikilink"
-[arcontroller_setup]:/File:Unity_drag_ARToolKit_script_onto_empty_gameobject.png "wikilink"
+[menu_screenshot]: :unity_import_package_1.png
+[import_all]: :unity_import_artoolkit_2012-06_1.png
+[editor_screenshot]: :artoolkit_for_unity_scripts_1.png
+[arcontroller_setup]: :unity_drag_artoolkit_script_onto_empty_gameobject_1.png
 [layer]:http://unity3d.com/support/documentation/Components/Layers.html
-[edit_layers]:/File:Unity_-_Edit_layers.jpg "wikilink"
-[name_layers]:/File:Unity_-_AR_layers.jpg "wikilink"
-[rotating]:/File:ARToolKit_for_Unity_-_Setting_scene_root_rotation.png "wikilink"
-[nft_options]:/File:ARToolKit_for_Unity_-_NFT_options.png "wikilink"
+[edit_layers]: :unity_-_edit_layers_1.jpg
+[name_layers]: :unity_-_ar_layers_1.jpg
+[rotating]: :artoolkit_for_unity_-_setting_scene_root_rotation_1.png
+[nft_options]: :artoolkit_for_unity_-_nft_options_1.png

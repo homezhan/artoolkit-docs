@@ -11,6 +11,7 @@ The plugin also manages all aspect of communicating with the camera and presenti
 You do not need to do a single line of scripting to begin working with ARToolKit. It includes [extensions to the Unity editor][unity_scripts] that allow you to configure the required AR objects directly, as well as live in-editor previewing of your AR scene. However for those who want to tightly integrate ARToolKit with their Unity project, full script control is available over all aspects of the functionality, allowing you to dynamically add markers, start and stop tracking, and change parameters.
 
 ##Requirements
+
 -   A webcam or other video source supported by ARToolKit.
 -   Unity Pro v3.5.2f2 or later, for Mac OS X or Windows (development platform).
 -   If deploying to Android, Unity Pro for Android.
@@ -19,17 +20,20 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 ##Index
 
 ###User Guide
+
 -   [Getting Started][unity_getting_started]
 -   [Script Reference][unity_scripts]
 -   [Scripting and Low-Level API][unity_low_level_api]
 
 ###Platform-Specific Information
+
 -   [OS X][unity_on_osx]
 -   [Windows][unity_on_windows]
 -   [Android][unity_on_android]
 -   [iOS][unity_on_ios]
 
 ###General Information
+
 -   [Unity][unity] website. Get Unity here.
 -   [Official Unity Forum][unity_forums] and [Unity Answers][unity_answers] are excellent places to ask questions.
 
@@ -46,6 +50,4 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 [unity_scripts]: Unity:unity_scripts
 [marker_about]: Marker_Training:marker_about
 
-[helicopter]:/File:UnityHelicopter.png "wikilink"
-
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[helicopter]: :unityhelicopter_1.png

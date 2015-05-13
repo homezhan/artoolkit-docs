@@ -27,9 +27,11 @@ ARToolKit for Unity allows you to specify video configuration separately for eac
 ##Capture Sources and Switching Them
 Where more than one capture source has been compiled into libARvideo on a given platform, you are allowed to switch between the options.
 
-This table lists the capture sources available on each platform. *Note: If you have a binary release of ARToolKit, not all of these capture sources may have been compiled into your copy!*:
+This table lists the capture sources available on each platform. _Note: If you have a binary release of ARToolKit, not all of these capture sources may have been compiled into your copy!_:
+
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-<tbody><tr>
+<tbody>
+<tr>
 <th>Platform </th><th> Capture source (descriptive name) </th><th> Constant required in &lt;AR/config.h&gt; for this source to be compiled into libARvideo </th><th>  video config string to select this capture source </th><th> Avail.: (1) </th><th> Unavail.: (2)
 </th></tr>
 <tr>

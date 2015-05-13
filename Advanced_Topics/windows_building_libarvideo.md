@@ -1,5 +1,5 @@
 # Building libARvideo
- 
+
 ## What is the relationship between libARvideo and a Video Library?
 ARToolKit uses video libraries as a standardized way of accessing video capture hardware (like webcams) on your computer. On Windows, you have the option of using QuickTime or DirectShow. On OS X, we use QuickTime.
 
@@ -53,7 +53,7 @@ ARToolKit's build files expect to find QuickTime at `C:\\Program Files\\QuickTim
 ## How to Recompile libARvideo under Microsoft Visual Studio
 libARvideo will include the video interface defined in `AR/config.h`. To use DirectShow (default), define `AR_INPUT_WINDOWS_DIRECTSHOW`. To use QuickTime, define `AR_INPUT_QUICKTIME`. To define a constant, open `AR/config.h', locate the desired constant block, and change the `\#undef` in front of the variable to `\#define`.
 
-*Note: Defining `AR_INPUT_QUICKTIME` enables the use of QuickTime, but does not make it the default video interface.* If you also wish to have the QuickTime module used by default, locate the constant AR_DEFAULT_INPUT_QUICKTIME in `AR/config.h` and enable it as described above. The QuickTime module can be selected at runtime by passing `-device=QUICKTIME` in the video config string (the parameter to `arVideoOpen()`). 
+*Note: Defining `AR_INPUT_QUICKTIME` enables the use of QuickTime, but does not make it the default video interface.* If you also wish to have the QuickTime module used by default, locate the constant AR_DEFAULT_INPUT_QUICKTIME in `AR/config.h` and enable it as described above. The QuickTime module can be selected at runtime by passing `-device=QUICKTIME` in the video config string (the parameter to `arVideoOpen()`).
 
 From there, compiling should be just a matter of right-clicking on "ARVideo" in the solution explorer and choosing "Build."
 
@@ -68,6 +68,6 @@ If you are having difficulty with these instructions, please post a message on t
 [4a]: http://msdn.microsoft.com/en-us/xna/aa937788.aspx
 [5a]: http://www.microsoft.com/downloads/details.aspx?FamilyID=0baf2b35-c656-4969-ace8-e4c0c0716adb&DisplayLang=en
 [6a]: http://www.microsoft.com/express/support/support-faq.aspx
-[Adding_DirectShow_SDK_to_Visual_Studio_path_1.png]: Adding_DirectShow_SDK_to_Visual_Studio_path_1.png
-[Adding_DirectShow_SDK_to_Visual_Studio_path_2.png]: Adding_DirectShow_SDK_to_Visual_Studio_path_2.png
-[Adding_DirectShow_SDK_to_Visual_Studio_path_3.png]: Adding_DirectShow_SDK_to_Visual_Studio_path_3.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_1]: :adding_directshow_sdk_to_visual_studio_path_1_1.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_2]: :adding_directshow_sdk_to_visual_studio_path_2_1.png
+[Adding_DirectShow_SDK_to_Visual_Studio_path_3]: :adding_directshow_sdk_to_visual_studio_path_3_1.png

@@ -51,3 +51,11 @@ On the left hand side of the window, you will see the environment variable name,
 </pre>
 
 The first line sets the environment for users with users with sh or bash as their shell, the second for users with csh or tcsh as their shell, and the third for programs launched by the Finder (including Xcode).
+
+
+[windows_system_control_panel]: :windows_system_control_panel_1.png
+[windows_env_vars_button.png]: :windows_env_vars_button_1.png
+[windows_7_system_control_panel_1]: :windows_7_system_control_panel_1_1.png
+[windows_7_system_control_panel_2]: :windows_7_system_control_panel_2_1.png
+[windows_7_system_control_panel_3]: :windows_7_system_control_panel_3_1.png
+[windows_7_system_control_panel_4]: :windows_7_system_control_panel_4_1.png

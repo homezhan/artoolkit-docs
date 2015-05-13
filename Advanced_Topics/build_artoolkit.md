@@ -38,16 +38,19 @@ External dependencies for building ARToolKit from source include all the depende
 ##Compiling ARToolKit
 
 ###Windows
+
 -   After unpacking ARToolKit, run the configure-win32 script. This generates AR/config.h for Windows builds. If you wish to change the default video library, or enable extra video libraries such as QuickTime, see [building libARvideo][4].
 -   Open the ARToolKit5.sln file inside the appropriate directory inside of the "VisualStudio" directory.
 -   Build the ToolKit and the sample applications. The VRML and OSG renderers are not built by default, but can be manually selected and built.
 
 ###Mac OS X
+
 -   Open the ARToolKit5.xcodeproj, found inside the Xcode folder.
 -   The configure step (which creates AR/config.h) will be run automatically during the build process. If you wish to override the defaults, you may manually edit AR/config.h after this.
 -   Select a target to build. The default target builds the complete toolkit with the exception of the OpenVRML and OSG-dependent projects, which can be manually selected and built.
 
 ###Linux
+
 -   Building proceeds with the usual steps `./configure; make` During the configure process, you will be asked to select video libraries to build against.
 
 ##Post-Compilation Steps
@@ -63,6 +66,7 @@ simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin dire
 -   Type: simpleLite.exe
 
 #### Mac OS X:
+
 -   Bundled applications are generated for the examples. The utilities are generated as command-line tools. Both can be run in the Finder (with output in Console) or from within Xcode or a Terminal window.
 
 #### Linux:
@@ -76,8 +80,8 @@ simpleLite can be launched from a terminal window thus:
 
 [about_installing]: about_installing
 [tutorial_1_first_scene]: Examples:example_simplelite
-[setting_env]: general_environment_variables
-[examples]: asdfalkjdhfalkjsdfhalksdjhf
+[setting_env]: :general_environment_variables
+[examples]:
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
 [4]: Advanced_Topics:windows_building_libarvideo

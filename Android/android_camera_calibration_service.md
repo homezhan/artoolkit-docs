@@ -1,5 +1,5 @@
 #Camera Calibration Service
-Every device uses a different camera, and each of these cameras have variables which effect the ability of ARToolKit (and all computer vision) to work properly. The camera calibration service is a cloud-and-crowd-based solution to generating and retreiving these camera-specific variables. 
+Every device uses a different camera, and each of these cameras have variables which effect the ability of ARToolKit (and all computer vision) to work properly. The camera calibration service is a cloud-and-crowd-based solution to generating and retreiving these camera-specific variables.
 
 ##What Information is Collected?
 This service does not store or transmit any personally identifying information.
@@ -34,7 +34,6 @@ All apps running the camera calibration service depend on native library libcurl
 </pre>
 
 ##How do I Contribute to the Service?
-Currently, the service is used exclusively on the Android platform through the [Camera Calibration App for Android][calib_app]. 
+Currently, the service is used exclusively on the Android platform through the [Camera Calibration App for Android][calib_app].
 
 [calib_app]: Android:android_camera_calibration
-[Category:Tools](/Category:Tools "wikilink")

@@ -44,7 +44,7 @@ To this delegate method will be vended any user data set with `setTookPictureDel
 or could be saved to the user's photo library:
 <pre>
     import <AssetsLibrary/AssetsLibrary.h>
-    
+
     - (void) cameravideoTookPictureHires:(id)sender userData:(void \*)data jpegData:(NSData \*)jpegData
     {
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
@@ -71,6 +71,7 @@ or can be registered (under an alternative name) as the receiver of an NSNotific
 </pre>
 
 ###Notes on Image Capture
+
 -   Photo capture will result in an interruption to video stream capture while the photo is captured and compressed to JPEG.
 -   Photo capture may disrupt focus, exposure and white balance of the video stream capture.
 -   A shutter sound plays during photo capture. This sound is played by the operating system, and cannot be disabled, although it will be silent if the device is muted.

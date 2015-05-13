@@ -2,6 +2,7 @@
 To get started with using ARToolKit for Unity on Android, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
+
 -   You must have a Unity Pro with Android Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
 -   Limited to devices "Android 2.3.1 'Gingerbread' (API Level 9)" or higher, or if using only square tracking "Android 2.2 'Froyo' (API Level 8)" or higher.
 
@@ -64,12 +65,10 @@ Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a de
 
 [unity_getting_started]: Unity:unity_getting_started
 [android_player_settings]:http://docs.unity3d.com/Manual/class-PlayerSettingsAndroid.html "Unity - Manual: Android Player Settings"
-[player_settings]:/File:Unity_Player_settings_menu.png "wikilink"
-[player_settings_id]:/File:Unity_Player_settings_Android_bundle_ID.png "wikilink"
-[android_manifest_id]:/File:ARToolKit_for_Unity_Android_manifest_bundle_ID.png "wikilink"
-[compile_setup]:/File:UnityARPlayer_compile_setup.png "wikilink"
-[unity_export_1]:/File:UnityARPlayer_export_1.png "wikilink"
-[unity_export_2]:/File:UnityARPlayer_export_2.png "wikilink"
-[unity_export_3]:/File:UnityARPlayer_export_3.png "wikilink"
-
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[player_settings]: :unity_player_settings_menu_1.png
+[player_settings_id]: :unity_player_settings_android_bundle_id_1.png
+[android_manifest_id]: :artoolkit_for_unity_android_manifest_bundle_id_1.png
+[compile_setup]: :unityarplayer_compile_setup_1.png
+[unity_export_1]: :unityarplayer_export_1_1.png
+[unity_export_2]: :unityarplayer_export_2_1.png
+[unity_export_3]: :unityarplayer_export_3_1.png

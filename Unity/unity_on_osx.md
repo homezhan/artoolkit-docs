@@ -2,6 +2,7 @@
 To get started with using ARToolKit for Unity on OS X, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
+
 -   You must have a Unity Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
 
 ##Troubleshooting
@@ -18,8 +19,6 @@ A workaround is to manually copy the StreamingAssets folder into the bundle. To 
 
 
 [unity_getting_started]: Unity:unity_getting_started
-[show_pacakge_contents]:/File:Unity_Player_OS_X_show_pacakge_contents.png "wikilink"
-[streamingassets_folder]:/File:Unity_OS_X_StreamingAssets_folder.png "wikilink"
-[dragging_streamingassets_folder]:/File:Unity_OS_X_dragging_StreamingAssets_folder.png "wikilink"
-
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[show_pacakge_contents]: :unity_player_os_x_show_pacakge_contents_1.png
+[streamingassets_folder]: :unity_os_x_streamingassets_folder_1.png
+[dragging_streamingassets_folder]: :unity_os_x_dragging_streamingassets_folder_1.png

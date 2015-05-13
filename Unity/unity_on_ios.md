@@ -2,10 +2,12 @@
 To get started with using ARToolKit for Unity on iOS, first visit our [Getting Started][unity_getting_started] guide. Also, look [here][ios_about] for iOS specific documentation.
 
 ##Requirements
+
 -   You must have a Unity Pro with iOS Pro license to be able to export projects from Unity that use the ARToolKit plugin.
 -   You must be using a [iOS device listed on our supported systems page][ios_supported_systems].
 
 ##Player Settings
+
 -   Resolution and Presentation
     -   Use 32-bit Display Buffer: ticked (yes)
 -   Other Settings
@@ -39,6 +41,4 @@ For reference, the complete list of iOS frameworks and libraries required for co
 [ios_supported_systems]: iOS:ios_supported_systems
 [unity_getting_started]: Unity:unity_getting_started
 
-[accelerate_screenshot]:/File:Unity_iOS_-_add_Accelerate.framework.png "wikilink"
-
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[accelerate_screenshot]: :unity_ios_-_add_accelerate.framework_1.png

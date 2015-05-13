@@ -16,7 +16,7 @@ Before calibrating the displays themselves, you must first [calibrate your camer
 ###calib_optical
 The calib_optical utility is used to calibrate the displays tot he camera position. Calibration is done monocularly (one eye, one perspective at a time), and as such should be conducted for each eye in turn (run first for one eye with the other closed, and then vice-versa). You will use spacebar when required for most configuration actions. It is used as follows:
 
-1.  With the HMD placed firmly on your head, run the calib_optical application.
+1.  With the HMD placed firmly on your head, run the calib\_optical application.
 2.  Press the space bar. A white crosshair should appear on-screen.
 3.  Looking only through the eye being calibrated (i.e. with the other closed or covered), view calibration card roughly at arms length. ![A user performing optical calibration by lining up their eye position with the pattern][performing_optical_calibration]
 4.  Move the calibration card until a red or green square appears at the intersection of the white cross hairs. This means that the calibration card is in view of the head mounted camera and it’s pattern has been recognized.
@@ -103,7 +103,7 @@ You will want to move the newly-generated calibration files into the `Data/` dir
 ###Unity
 The ARToolKit Unity plugin supports both monocular and stereo see-through rendering out-of-the-box. For stereo, only half-width side-by-side stereo mode is supported currently, as used in e.g. the Epson Moverio BT-200 display.
 
-To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognize it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
+To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognize it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical\_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
 
 ![ARToolkit for Unity optical parameters file location.][ARToolKit_for_Unity_optical_parameters_file_location]
 
@@ -116,7 +116,7 @@ By default, when using optical mode, the video background is initially turned of
 ####Converting to Stereo
 Stereo optical see-through is set up in Unity by taking an existing Camera object with an ARCamera script attached, and duplicating it (in the Unity Editor, select the Camera game object, then choose "Edit-\>Duplicate" from the menu bar). You can rename the cameras to make clear which camera corresponds to which eye, as in this example:
 
-![ARToolKit for Unity stereo optical camera][ARToolKit_for_Unity_stereo_optical_cameraL.png]
+![ARToolKit for Unity stereo optical camera][ARToolKit_for_Unity_stereo_optical_cameraL]
 
 On each camera, tick the boxes “Part of a stereo pair” and “Optical see-through mode”. On the desired “left” camera, choose “Stereo eye: left” and select the calibrated optical parameters file for the left eye from the "Optical parameters file" popup. Repeat step 4 for the right eye.
 
@@ -137,9 +137,9 @@ Of course, alignment between virtual and real objects is desirable for video see
 [example_optical]: Examples:example_optical
 [interpupillary_distance]: https://en.wikipedia.org/wiki/Interpupillary_distance
 
-[optical_calibration_pattern]: /Optical_calibration_pattern.png
-[performing_optical_calibration]: /Performing_optical_calibration.png
-[optical_calibration_view]: /Optical_calibration_view.png
-[ARToolKit_for_Unity_optical_parameters_file_location]: /ARToolKit_for_Unity_optical_parameters_file_location.png
-[ARToolKit_for_Unity_optical_mode_enabled]: /ARToolKit_for_Unity_optical_mode_enabled.png
-[ARToolKit_for_Unity_stereo_optical_cameraL]: /ARToolKit_for_Unity_stereo_optical_cameraL.png
+[optical_calibration_pattern]: :optical_calibration_pattern_1.png
+[performing_optical_calibration]: :performing_optical_calibration_1.png
+[optical_calibration_view]: :Ootical_calibration_view_1.png
+[ARToolKit_for_Unity_optical_parameters_file_location]: :artoolkit_for_unity_optical_parameters_file_location_1.png
+[ARToolKit_for_Unity_optical_mode_enabled]: :artoolkit_for_unity_optical_mode_enabled_1.png
+[ARToolKit_for_Unity_stereo_optical_cameraL]: :artoolkit_for_unity_stereo_optical_cameral_1.png
