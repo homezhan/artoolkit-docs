@@ -1,9 +1,9 @@
-#Getting Started with ARToolKit in Unity
+#Getting Started with ARToolKit for Unity
 
 ##Installation
 ARToolKit for Unity is distributed as a Unity package. A package is an archive of files which can be imported and unpacked into your Unity project. In this case, the package contains the plugin, scripts and resources necessary to integrate ARToolKit with your Unity application.
 
-The ARToolKit for Unity package is available for download from ARToolworks. Download and store this package on your machine.
+The ARToolKit for Unity package is available for download from ARToolKit. Download and store this package on your machine.
 
 You can import the package into a fresh or existing project. Select menu `Assets -\> Import Package -\> Custom Package...` and browse to the location where you have stored the ARToolKit package. Select the package, and Unity will ask which files to import. Simply import all files at this stage.
 
@@ -17,10 +17,10 @@ Your Unity project now contains the necessary files for augmented reality with A
 The package contains:
 
 -   Unity scripts: A set of C\# scripts that handle communication between Unity and the native plugin. These are the scripts that developers will use to access ARToolKit functionality. They are contained inside the file `ARToolKit5-Unity.dll`.
--   Unity Editor scripts: A second set of C\# scripts that extend the Unity editor itself to simplify development with customised editor panels and 3D gizmos. These are contained inside the file `Editor/ARToolKit5-UnityEditor`.
+-   Unity Editor scripts: A second set of C\# scripts that extend the Unity editor itself to simplify development with customized editor panels and 3D gizmos. These are contained inside the file `Editor/ARToolKit5-UnityEditor`.
 -   ARToolKit plugins: The native plugin implementation. There are various versions for different supported platforms, such as Windows, Mac OS X, Android and iOS. This is stored in the `Assets/Plugins` directory (and subdirectories).
 -   ARToolKit data files: The default [camera parameters][config_camera_calibration] file and two sample patterns are included in the `Resources/ardata directory`. A sample [NFT dataset][marker_nft_train] is included in the `Assets/StreamingAssets` directory.
--   Android Activity: A customised version of the Unity player for Android (packaged as a JAR file). Also required is a custom Manifest.xml file, and Android resources in the "res" subdirectory.
+-   Android Activity: A customized version of the Unity player for Android (packaged as a JAR file). Also required is a custom Manifest.xml file, and Android resources in the "res" subdirectory.
 -   Simple examples: A set of very basic example scenes which you can use as starting points for various AR techniques are found in `Example scenes`.
 
 ![Unity scripts are revealed by turning down the reveal arrow on the "ARToolKit5-Unity" object.][editor_screenshot]
@@ -28,7 +28,7 @@ The package contains:
 ##Scene Setup
 ARToolKit allows for dynamic AR scenes with more than one marker in Unity. All marker content can live in the same layer, and relations between content attached to different markers (e.g. physics) is easy to understand. The following three components work together to create an AR scene:
 
--   ARController - Manages the overall initialisation, setup, running and shutdown of ARToolKit. Singleton.
+-   ARController - Manages the overall initialization, setup, running and shutdown of ARToolKit. Singleton.
 -   AROrigin - Represents the center of the ARToolKit world and is the root of the scene. Normally can be placed at {0, 0, 0}.
 -   ARTrackedObject - Represents the marker as tracked in space. Content relevant to the marker will be attached to this parent.
 -   ARCamera - Associates a Unity Camera to the AR content. Allows it to be rendered.
@@ -66,7 +66,7 @@ The SDK includes an example dataset (file names: gibraltar.iset, gibraltar.fset,
 Next, decide on the point in your scene graph which you would like to be the root of your AR scene. All dynamic AR scene content will live under this root, and its transform will be the origin for AR calculations. Normally, this will be an empty GameObject at the root of your scene, but it can be any GameObject. In the examples, this object is named "Scene root". Drag an AROrigin script onto this object. It's also useful to put this object and all children into its own layer, e.g. create a new user layer and name it "AR foreground".
 
 ###4 - ARTrackedObjects
-Now, add a child GameObject beneath the scene root you created in the previous step. This object will hold the AR content for the first AR marker, so you could rename it to (for example) "Marker Scene 1". Attach an `ARTrackedObject`, and configure its "Tag" property to the same name you used on its corrosponding ARMarker earlier. This associates the ARTrackedObject with the ARMarker. The object to which the ARTrackedObjec` is attached will have its position and rotation changed at runtime depending on the pose of the marker, and its child objects will be enabled/disabled depending on the visibility of the marker. Be sure that all ARTrackedObjects have an AROrigin attached to one of their parents, or else they won't display any content.
+Now, add a child GameObject beneath the scene root you created in the previous step. This object will hold the AR content for the first AR marker, so you could rename it to (for example) "Marker Scene 1". Attach an `ARTrackedObject`, and configure its "Tag" property to the same name you used on its corresponding ARMarker earlier. This associates the ARTrackedObject with the ARMarker. The object to which the ARTrackedObjec` is attached will have its position and rotation changed at runtime depending on the pose of the marker, and its child objects will be enabled/disabled depending on the visibility of the marker. Be sure that all ARTrackedObjects have an AROrigin attached to one of their parents, or else they won't display any content.
 
 ###5 - ARCamera
 The last thing you need to add before content can be viewed is a Unity Camera object. This must be a child object of the AR scene root. Set its culling mask to the layer you chose earlier (We suggest "AR Foreground", and be sure that the "AR Background" is not selected). Attach an ARCamera script to this camera.
@@ -87,12 +87,12 @@ Press "Play" again, and you should now be able to see the cube on the marker. Co
 ##Notes
 
 ###Required Data Files
-In a standard ARToolKit application, there are several data files required, such as [camera calibrations][config_camera_calibration] and [patterns][marker_train]. When working with the Unity plugin, these files are included in the projects Assets directory, under the `Resources/ardata` directory. In order to be recognised by Unity, the files must follow a particular naming scheme:
+In a standard ARToolKit application, there are several data files required, such as [camera calibrations][config_camera_calibration] and [patterns][marker_train]. When working with the Unity plugin, these files are included in the projects Assets directory, under the `Resources/ardata` directory. In order to be recognized by Unity, the files must follow a particular naming scheme:
 
 -   The camera parameters file, `camera_para.dat`, should be stored in `Assets/Resources/ardata/` as `camera_para.bytes`.
 -   Pattern files should be stored in Assets/Resources/ardata/ with a .txt extension (e.g. `patt.hiro.txt`).
 
-These files can still be generated using the standard ARToolKit utilities, it is simply the filenames and locations that are important for the Unity plugin.
+These files can still be generated using the standard ARToolKit utilities; it is simply the filenames and locations that are important for the Unity plugin.
 
 ###Units in Unity World Space
 By default the plugin operates in meters. The default marker size is therefore 0.08 (8cm) and the camera has near and far planes of 0.1 and 5.0 respectively (10cm - 5m). These can be changed in the ARController and ARMarker properties.

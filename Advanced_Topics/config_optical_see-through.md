@@ -1,9 +1,9 @@
 # Usng an Optical See-Through Display
-Traditionally, applications built on ARToolKit use a video feed on which augmentations are overlaid. ARToolKit also supports using optical see-through displays for augmented reality. Instead of rendering both the background camera feed and the augmentations, the opitical see-through display renders the augmentations, and background is the world around you. Examples of higher-end devices see-though HMDs (head-mounted devices) include the DAQRI Smart Helmet and the Epson Moverio.
+Traditionally, applications built on ARToolKit use a video feed on which augmentations are overlaid. ARToolKit also supports using optical see-through displays for augmented reality. Instead of rendering both the background camera feed and the augmentations, the optical see-through display renders the augmentations, and background is the world around you. Examples of higher-end see-though HMDs (head-mounted devices) include the DAQRI Smart Helmet and the Epson Moverio.
 
-If your see-through display is a stereo display (one display for each eye), you are able to render stereoscopically (providing depth) with an optical see-through display, rendering a different perspective for each eye. Regardless of whether using a monocular or stereo display, there is the benefit is that there is no separation from the real world- You're not looking at the world around you put up on a screen..
+If your see-through display is a stereo display (one display for each eye), you are able to render stereoscopically (providing depth) with an optical see-through display, rendering a different perspective for each eye. Regardless of whether you are using a monocular or stereo display, there is the benefit that there is no separation from the real world - You're not looking at the world around you put up on a screen..
 
-Be aware, however, that benefit can also cause issues- There will always be some lag between the augmentations displayed on the optics and the real world passing by behind them. Nowadays, with higher-end devices it is much less noticible, but older devices will struggle with this lag, or "swimming" effect.
+Be aware, however, that benefit can also cause issues - There will always be some lag between the augmentations displayed on the optics and the real world passing by behind them. Nowadays, with higher-end devices it is much less noticeable, but older devices will struggle with this lag, or "swimming" effect.
 
 For a full discussion of the advantages and disadvantages of optical and video see-through AR, you can refer to [Ron Azuma's course notes on Augmented Reality][1].
 
@@ -11,7 +11,7 @@ For a full discussion of the advantages and disadvantages of optical and video s
 For the most accurate registration, that is, alignment between your eyes, the augmentations, and the world, it is necessary to know the position of the user's eyes relative to the display optics, and the camera which tracks the world. With ARToolKit, this is achieved by a simple self-calibration method in which the user holds a calibration pattern in front of the eye and lines up the pattern with a virtual cross hair shown in the see-through display. In an ideal world, the eye position calibration should be done each time a user starts the AR application, especially if it is a different user.
 
 ##Calibration
-Before calibrating the displays themselves, you must first [calibrate your camera][2]. This is extra important when using a stereo display- Any registration error (any offset in position between the real world object and its viewed position in the display) will be much more obvious when viewing stereoscopically, and will normally be percieved as the depth of the augmentation being incorrect.
+Before calibrating the displays themselves, you must first [calibrate your camera][2]. This is extra important when using a stereo display as any registration error (any offset in position between the real world object and its viewed position in the display) will be much more obvious when viewing stereoscopically, and will normally be perceived as the depth of the augmentation being incorrect.
 
 ###calib_optical
 The calib_optical utility is used to calibrate the displays tot he camera position. Calibration is done monocularly (one eye, one perspective at a time), and as such should be conducted for each eye in turn (run first for one eye with the other closed, and then vice-versa). You will use spacebar when required for most configuration actions. It is used as follows:
@@ -88,7 +88,7 @@ After taking ten measurements, the white cross hairs will disappear and the cali
     Optical display parameters and eye to camera transformation matrix saved to file optical_param.dat.
 </pre>
 
-You will note that a measurement of the calibration error is generated. The lower this value, the more accurate your calibration was.
+You will note that a measurement of the calibration error is generated. The lower this value, the more accurate the calibration.
 
 At this point you will be prompted for the name of the file in which to save the calibration results. If you are calibrating a stereo display, switch eyes and repeat steps 3 through 8 to capture ten measurements for the other eye. Although the calibration process may appear quite time consuming, with practice it can be completed in just a couple of minutes and should produce good optical viewing results.
 
@@ -103,7 +103,7 @@ You will want to move the newly-generated calibration files into the `Data/` dir
 ###Unity
 The ARToolKit Unity plugin supports both monocular and stereo see-through rendering out-of-the-box. For stereo, only half-width side-by-side stereo mode is supported currently, as used in e.g. the Epson Moverio BT-200 display.
 
-To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognise it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
+To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognize it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
 
 ![ARToolkit for Unity optical parameters file location.][ARToolKit_for_Unity_optical_parameters_file_location]
 

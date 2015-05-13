@@ -13,7 +13,7 @@ The example applications which inherit from ARActivity are:
 -  ARSimpleNative
 -  ARSimpleNativeCars
 
-If your application falls into this category, you need add only the essential lines of code to register the CameraPreferencesActivity in your manifest. The behaviour of providing the settings menu in response to the menu button is automatically provided by the ARActivity class. The preferences chosen by the user are automatically used in the CameraPreview class.
+If your application falls into this category, you need add only the essential lines of code to register the CameraPreferencesActivity in your manifest. The behavior of providing the settings menu in response to the menu button is automatically provided by the ARActivity class. The preferences chosen by the user are automatically used in the CameraPreview class.
 
 Just add the following to your AndroidManifest.xml file:
 <pre>
@@ -29,9 +29,9 @@ The example applications which use their own Activity and CameraSurface classes 
 - nftBook
 - ARMovie
 
-If your application is based on one of these applications, a handful of changes need to be made to initialise the preferences the first time the application is run after being freshly installed, to invoke the preferences activity, and to use the actual preferences in setting up the camera.
+If your application is based on one of these applications, a handful of changes need to be made to initialize the preferences the first time the application is run after being freshly installed, to invoke the preferences activity, and to use the actual preferences in setting up the camera.
 
-###Initialise Preference Defaults
+###Initialize Preference Defaults
 Add the following code where it will be run once per install of Application, and prior to using any of the camera preferences. If you are subclassing `Application.onCreate()` (as all the examples do), put it into `Application.onCreate()`. If not subclassing Application, put it in your `Activity.onCreate()` method.
 <pre>
     import android.preference.PreferenceManager;

@@ -29,7 +29,7 @@ The ARMarker script represents one tracked marker in the system. Add one for eac
 -   Type: The type of marker.
 -   Marker: The marker to use. This list is populated by the marker
     files placed in the Assets/Resources/ardata/markers directory.
--   Width: The width of the marker in metres.
+-   Width: The width of the marker in meters.
 
 ##ARTrackedObject
 Represents the marker as tracked in space. Content relevant to the marker will be attached to this object.
@@ -40,7 +40,7 @@ Represents the marker as tracked in space. Content relevant to the marker will b
 -   Marker ID: The ID of the marker that is linked to this camera via the tag. May be -1 until the pattern is actually loaded.
 
 ###Events
-The ARTrackedObject generates the following events, using Unity's SendMessage command. To handle these events, implement the matching event handler in a script, and attach it to the ARCamera.
+The ARTrackedObject generates the following events using Unity's SendMessage command. To handle these events, implement the matching event handler in a script, and attach it to the ARCamera.
 
 -   void OnMarkerLost(ARMarker marker)
 -   void OnMarkerFound(ARMarker marker)

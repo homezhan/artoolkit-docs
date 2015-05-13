@@ -5,7 +5,7 @@ Unity provides a rich scripting interface for developing interactive application
 
 Unity’s C\# support is possible through the Mono framework, which provides a cross-platform implementation of Microsoft’s .NET framework. C\# is a modern object-oriented language, and due to its general popularity, there is abundant information and sets of tutorials on its use. The Mono implementation does not provide all the feature of .NET on Windows but the core language features are present.
 
-An additional feature of the Mono runtime is its support for native code, that is, compiled CPU-specific code which communicates directly with the operating system application programming interfaces (APIs) on the platform. Communication between code running in the Mono managed C\# environment communicates with the native unmanaged code via Platform Invocation Services (P/Invoke). This permits a C\# script, running within Unity, to call a native function implemented in C/C++. This is
+An additional feature of the Mono runtime is its support for native code; that is, compiled CPU-specific code which communicates directly with the operating system application programming interfaces (APIs) on the platform. Communication between code running in the Mono managed C\# environment communicates with the native unmanaged code via Platform Invocation Services (P/Invoke). This permits a C\# script, running within Unity, to call a native function implemented in C/C++. This is
 the mechanism by which plugins are supported in Unity, and this is how ARToolKit for Unity is implemented. ARToolKit communicates with the OS to retrieve images from the camera, perform the compute-intensive tasks associated with marker tracking, and even push the camera image to a native texture, all in native code. Then, a simplified set of simple function calls to configure, run, and shutdown the library are exposed externally. These function calls are mapped across to DllImport definitions in a C\# script, and can then be directly called from Unity.
 
 On Windows, OS X, and Android, libARWrapper is implemented as a dynamic library (packaged as a .dll, a bundled .dylib, and a .so file respectively). On iOS which does not allow dynamic linking in user code, libARWrapper is provided as a static library (.a file) which is linked into the final application.
@@ -113,7 +113,7 @@ Configuring the ARTrackedObject:
     // As set in example above.
 </csharp>
 
-To allow control other aspects of GameObjects than their visibility, you can connect your GameObject to the ARTrackedObject's eventReceiver property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
+To allow control over aspects of GameObjects other than their visibility, you can connect your GameObject to the ARTrackedObject's eventReceiver property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
 <csharp>
     // All optional. OnMarkerFound(ARMarker marker);
     OnMarkerTracked(ARMarker marker);
@@ -123,7 +123,7 @@ To allow control other aspects of GameObjects than their visibility, you can con
 The ARCamera's projection and viewport are set during AR startup. At present, it is not possible to add an ARCamera after `StartAR()` has been called, unless you modify ARController.
 
 ##Using the Low-Level Plugin Interface
-Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call API defined by the native plugin, libARWrapper. You are free to make calls to this API too.
+Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call the API defined by the native plugin, libARWrapper. You are free to make calls to this API too.
 
 Full API documentation for libARWrapper's simplified C-based API is available on our website][c_docs].
 

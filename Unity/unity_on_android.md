@@ -1,5 +1,5 @@
 #ARToolKit for Unity on Android
-To get started with using ARToolKit on Android, first visit our [Getting Started][unity_getting_started] guide.
+To get started with using ARToolKit for Unity on Android, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
 -   You must have a Unity Pro with Android Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
@@ -26,11 +26,11 @@ Note that when using ARToolKit for Unity, the bundle ID has to be set in two pla
 First set the bundle ID in Unity (replacing com.mycompany.myapp with your chosen ID):
 ![Screenshot of Player Settings and Bundle ID Field][player_settings_id]
 
-Secondly, the bundle ID must be manually changed in the Android manifest which ARToolKit provides. To do this, look inside your Unity project folder, for the file "Assets/Plugins/Android/AndroidManifest.xml". Open the file in a text editor and locate the text `package="com.mycompany.myapp"`, editing the "com.mycompany.myapp" to match the bundle identifier set in Unity.
+Secondly, the bundle ID must be manually changed in the Android manifest that ARToolKit provides. To do this, look inside your Unity project folder, for the file "Assets/Plugins/Android/AndroidManifest.xml". Open the file in a text editor and locate the text `package="com.mycompany.myapp"`, editing the "com.mycompany.myapp" to match the bundle identifier set in Unity.
 ![Screenshot of AndroidManifest.xml and Bundle ID Field][android_manifest_id]
 
 ##Using ARToolKit for Unity in a Larger Android Project
-It is possible to modify the Android Java portion of ARToolKit for Unity to allow for incorporation into a larger Android application, or any other type of conceivable customisation.
+It is possible to modify the Android Java portion of ARToolKit for Unity to allow for incorporation into a larger Android application, or any other type of conceivable customization.
 
 Unity for Android comes bundled with the source code for its outermost Activity subclass (UnityPlayerActivity). ARToolKit for Unity subclasses this in a new class UnityARPlayerActivity. This class is packaged as a .jar file and provided in ARToolKit for Unity at path Assets/Plugins/Android/UnityARPlayer.jar. It is linked into the final product by Unity. Source for UnityARPlayerActivity is also supplied. You can find it in ARToolKit for Unity at path extras/Android UnityARPlayer source/.
 
@@ -50,9 +50,9 @@ Next, invoke an export jar operation in Eclipse (File-\>Export...)
 ![Exporting a JAR 2][unity_export_2]
 
 The correct classes must be exported. This includes:
-`org/artoolkot/ar/base/NativeInterface.class
-org/artoolkot/ar/unity/CameraSurface.class
-org/artoolkot/ar/unity/UnityARPlayerActivity.class`
+`org/artoolkit/ar/base/NativeInterface.class
+org/artoolkit/ar/unity/CameraSurface.class
+org/artoolkit/ar/unity/UnityARPlayerActivity.class`
 
 See the following image for how to select the classes.
 ![Selecting Classes for Export][unity_export_3]

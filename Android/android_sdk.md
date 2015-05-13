@@ -33,7 +33,7 @@ This SDK targets devices running Android 2.1 (Eclair) or later.
 
 A working Android development environment is required, including the Eclipse IDE and Android SDK. For native development, the Android NDK is also needed.
 
-The SDK is currently tested predominantly on the Windows platform, and some build scripts are currently only provided as Windows batch files. However, these scripts are basic and should their function should be clear and easy to replicate on other platforms.
+The SDK is currently tested predominantly on the Windows platform, and some build scripts are currently only provided as Windows batch files. However, these scripts are basic and their function should be clear and easy to replicate on other platforms.
 
 A printer is required to print out markers.
 

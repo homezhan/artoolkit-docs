@@ -17,9 +17,9 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows: GLUT 3.7.6 is included with ARToolKit.
     -   Mac OS X: included in OS.
     -   Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the MESA 3D libraries: [1][3]
--   OpenCV - Required to build calib_camera. OpenCV headers and libraries are provided with ARToolKit Professional.
+-   OpenCV - Required to build calib_camera. OpenCV headers and libraries are provided with ARToolKit.
 -   Video capture libraries.
-    -   Windows: By default, on Windows ARToolKit Professional's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
+    -   Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
         -   QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
         -   [Thomas Pintaric's DSVideoLib][6], which was the default video source for ARToolKit v2.x, is now LGPL licensed and may be used in proprietary software.
         -   Point Grey's flycapture SDK (only for use with Point Grey Cameras).
@@ -32,7 +32,7 @@ External dependencies for building ARToolKit from source include all the depende
     -   Linux: Binary deb packages are available from [here][10].
 -   OpenSceneGraph (optional) - The ARToolKit OSG renderer requires OpenSceneGraph.
     -   OSG version 2.6 or later is required, version 2.8.2 is recommended.
-    -   Windows / Mac OS X: ARToolworks supplies binaries of [OSG][11]. ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation.
+    -   Windows / Mac OS X: ARToolKit supplies binaries of [OSG][11]. ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation.
     -   Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).
 
 ##Compiling ARToolKit
@@ -53,7 +53,7 @@ External dependencies for building ARToolKit from source include all the depende
 ##Post-Compilation Steps
 
 ###Verifying the Compilation
-ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its sourcecode can be found on the page [ARToolkit Tutorial 1: First Simple ARToolkit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
+ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its source code can be found on the page [ARToolkit Tutorial 1: First Simple ARToolKit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
 
 #### Windows:
 simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin directory. Alternately, you can run it from the command line:

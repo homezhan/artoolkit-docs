@@ -1,8 +1,8 @@
 #ARToolKit for Unity on Windows
-To get started with using ARToolKit on Windows, first visit our [Getting Started][unity_getting_started] guide.
+To get started with using ARToolKit for Unity on Windows, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
--   You must have a Unity Pro license to be able to the ARToolKit plugin..
+-   You must have a Unity Pro license to be able to use the ARToolKit plugin.
 -   ARToolKit for Unity has a set of dependent DLLs which you must include along with any standalone app built for Windows. Please see below under "Deployment" for more detail.
 
 ##Setup

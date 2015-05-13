@@ -182,7 +182,7 @@ Data files used by ARToolKit include [camera parameters][android_camera_calibrat
 
 The [ARToolKit for Android examples][1] provide working example code. The following code (from ARSimple's ARSimpleApplication.java class) demonstrates the unpacking of one folder, "Data" into the cache on the filesystem.
 <pre>
-    // Here we do one-off initialisation which should apply to all activities
+    // Here we do one-off initialization which should apply to all activities
     // in the application.
     protected void initializeInstance() {
         

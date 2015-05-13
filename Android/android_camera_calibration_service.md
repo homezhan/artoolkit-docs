@@ -9,13 +9,13 @@ If a network connection is available, the following information may be transmitt
 -   The make and model of device (e.g. Samsung Galaxy S).
 -   Which camera on the device is being used.
 
-No personally identifying data is transmitted or stored during as part of the process. Additionally, the data is transferred via a secure HTTPS connection.
+No personally identifying data is transmitted or stored during any part of the process. Additionally, the data is transferred via a secure HTTPS connection.
 
 ##Requirements
-The camera calibration service has a rew requirements to use. Namely, internet.
+The camera calibration service has a few requirements to use. Namely, internet.
 
 ###Library Linkage
-All apps running the camera calibration service depend on native library libcurl, and its dependencies libcrypto and libssl. Applications which link to ARBaseLib will automatically load these dependencies, but other examples not based on ARBaseLib must now add these loadLibrary calls, ideally in a subclass of Android.Application or Android.Activity:
+All apps running the camera calibration service depend on native library libcurl, and its dependencies libcrypto and libssl. Applications that link to ARBaseLib will automatically load these dependencies, but other examples not based on ARBaseLib must now add these loadLibrary calls, ideally in a subclass of Android.Application or Android.Activity:
 <pre>
     System.loadLibrary("crypto");
     System.loadLibrary("ssl");

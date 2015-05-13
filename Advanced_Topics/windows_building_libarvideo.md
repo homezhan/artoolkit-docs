@@ -4,12 +4,12 @@
 ARToolKit uses video libraries as a standardized way of accessing video capture hardware (like webcams) on your computer. On Windows, you have the option of using QuickTime or DirectShow. On OS X, we use QuickTime.
 
 ###What is DirectShow
-DirectShow is Microsoft's media-handling library on the Windows Platform. While the DirectShow libraries are in every release of Windows, and can be used right away, compiling applications that use the DirectShow [SDK][1a] is difficult. This is mostly due to Microsoft's determination to force all users of video into using its [digital rights management][2a] model (as found in Windows Vista's MediaFoundation library) and the consequent withdrawl of the DirectShow SDK from the larger DirectX SDK and Visual Studio SDKs.
+DirectShow is Microsoft's media-handling library on the Windows Platform. While the DirectShow libraries are in every release of Windows, and can be used right away, compiling applications that use the DirectShow [SDK][1a] is difficult. This is mostly due to Microsoft's determination to force all users of video into using its [digital rights management][2a] model (as found in Windows Vista's MediaFoundation library) and the consequent withdrawal of the DirectShow SDK from the larger DirectX SDK and Visual Studio SDKs.
 
-Because the process of installing the DirectShow SDK is tiresome, we supply compiled binaries of ARToolKit Professional to customers - unless customers want to recompile libARvideo on Windows, installing the DirectShow SDK is unnecessary. For customers who do wish to recompiled libARvideo for their own purposes, the following guide should be of help.
+Because the process of installing the DirectShow SDK is tiresome, we supply compiled binaries of ARToolKit to customers - unless customers want to recompile libARvideo on Windows, installing the DirectShow SDK is unnecessary. For customers who do wish to recompile libARvideo for their own purposes, the following guide should be of help.
 
 ###What is QuickTime?
-QuickTime is Apple's media-handling library, available on both Mac OS X and the Windows platforms. One benefit QuickTime has over DirectShow is the ability read pre-recorded video from files on disk or via network streaming (for uses such as calibrating a camera on a device which the tools do not run).
+QuickTime is Apple's media-handling library, available on both Mac OS X and the Windows platforms. One benefit QuickTime has over DirectShow is the ability to read pre-recorded video from files on disk or via network streaming (for uses such as calibrating a camera on a device which the tools do not run).
 
 While the QuickTime libraries and SDK are in every release of Mac OS X, and can be used right away, they are not installed by default on Windows. Every user who wants to run an ARToolKit application that uses QuickTime for video capture on Windows will need to install QuickTime. This is not onerous - any user who already has iTunes for Windows installed will have QuickTime installed already. Other users should visit the [QuickTime for Windows download page][1].
 
@@ -18,7 +18,7 @@ Additionally, for customers using Windows who do wish to recompile libARvideo fo
 ##Installing the DirectShow SDK
 
 ###Visual Studio 2013
-Visual Studio 2013 is supplied with Windows SDK 8.1, which includes the required DirectShow link libraries, and some of the required headers. Interestingly, it also includes strmbase.lib, the library implementing the DirectShow base classes, but unfortunately does not include ether the Debug version of this library (strmbasd.lib) or the header files. These would normally be required to be manually installed from the Windows SDK 7.1 samples package, however we have made a package which includes the DirectShow base classes source and compiled libraries for 32-bit and 64-bit architectures.
+Visual Studio 2013 is supplied with Windows SDK 8.1, which includes the required DirectShow link libraries, and some of the required headers. Interestingly, it also includes strmbase.lib, the library implementing the DirectShow base classes, but unfortunately does not include ether the Debug version of this library (strmbasd.lib) or the header files. These would normally be required to be manually installed from the Windows SDK 7.1 samples package. However, we have made a package which includes the DirectShow base classes source and compiled libraries for 32-bit and 64-bit architectures.
 
 [Download the DirectShow base classes package][3a].
 
@@ -44,11 +44,11 @@ Once you have installed the DirectX SDK (and Platform SDK if using VS2005), you 
 
 Mac OS X: The QuickTime SDK is installed by default along with XCode, and no further action should be needed.
 
-Windows: [Download the QuickTime SDK for Windows][2]. We recommend installing the SDK to the default location, `C:\\Program Files\\QuickTime SDK`. This is because the paths in ARToolKit Professional's build files expect this location.
+Windows: [Download the QuickTime SDK for Windows][2]. We recommend installing the SDK to the default location, `C:\\Program Files\\QuickTime SDK`. This is because the paths in ARToolKit’s build files expect this location.
 
 ### Setting up Microsoft Visual Studio to use the QuickTime SDK
 
-ARToolKit Professional's build files expect to find QuickTime at `C:\\Program Files\\QuickTime SDK`. Unless you change this location, no further setup is required.
+ARToolKit's build files expect to find QuickTime at `C:\\Program Files\\QuickTime SDK`. Unless you change this location, no further setup is required.
 
 ## How to Recompile libARvideo under Microsoft Visual Studio
 libARvideo will include the video interface defined in `AR/config.h`. To use DirectShow (default), define `AR_INPUT_WINDOWS_DIRECTSHOW`. To use QuickTime, define `AR_INPUT_QUICKTIME`. To define a constant, open `AR/config.h', locate the desired constant block, and change the `\#undef` in front of the variable to `\#define`.

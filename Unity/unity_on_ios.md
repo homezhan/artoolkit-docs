@@ -1,5 +1,5 @@
-#Unity on iOS
-To get started with using ARToolKit on iOS, first visit our [Getting Started][unity_getting_started] guide. Also, look [here][ios_about] for iOS specific documentation.
+#ARToolKit for Unity on iOS
+To get started with using ARToolKit for Unity on iOS, first visit our [Getting Started][unity_getting_started] guide. Also, look [here][ios_about] for iOS specific documentation.
 
 ##Requirements
 -   You must have a Unity Pro with iOS Pro license to be able to export projects from Unity that use the ARToolKit plugin.
@@ -23,6 +23,7 @@ Once the Xcode project has been exported from Unity, the following adjustments s
 ![Screenshot of Accelerate.framework being added.][accelerate_screenshot]
 
 For reference, the complete list of iOS frameworks and libraries required for correct linking is:
+
 -   Accelerate.framework (weak-linked)
 -   AudioToolbox.framework
 -   AVFoundation.framework
