@@ -49,6 +49,6 @@ To use this native library in your own Android application, you will need to cop
 [7]: http://www.cygwin.com
 [android_developing]: Android:android_developing
 
-[set_ndk_build_vars]: /set_ndk_build_vars.png
-[set_ndk_build]: /set_ndk_build.png
-[libs_directory]: /libs_directory.png
+[set_ndk_build_vars]: :set_ndk_build_vars.png
+[set_ndk_build]: :set_ndk_build.png
+[libs_directory]: :libs_directory.png

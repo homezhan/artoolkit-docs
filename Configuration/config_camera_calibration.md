@@ -98,7 +98,9 @@ In order to obtain a good calibration for the camera, it is important to obtain 
 ![Calibration example OK 6][example OK 6]
 
 Once all the calibration images have been captured (10 by default), the calibration data will be output to the terminal window, and you will be prompted for a file name for the calibration data:
+
 <pre>
+
 --------------------------------------
 SIZE = 640, 480
 Distortion factor: k1=-0.064153, k2=0.000674, p1=-0.003693, p2=-0.011219
@@ -135,13 +137,13 @@ If calibrating a stereo camera, calibrate each eye separately first, saving the 
 [2]: /Calibration_chessboard.pdf
 [3]: Advanced_Topics:config_camera_stereo_tracking
 
-[Beginning_calibration_with_the_chessboard]: /Beginning_calibration_with_the_chessboard.JPG
-[Chessboard_ready_for_calibration]: /Chessboard_ready_for_calibration.JPG
-[Calibration_example_OK_1]: /Calibration_example_OK_1.jpg
-[Calibration_example_not_OK]: /Calibration_example_not_OK.jpg
-[example OK 1]: /example%20OK%201.jpg
-[example OK 2]: /example%20OK%202.jpg
-[example OK 3]: /example%20OK%203.jpg
-[example OK 4]: /example%20OK%204.jpg
-[example OK 5]: /example%20OK%205.jpg
-[example OK 6]: /example%20OK%206.jpg
+[Beginning_calibration_with_the_chessboard]: :beginning_calibration_with_the_chessboard_1.jpg
+[Chessboard_ready_for_calibration]: :chessboard_ready_for_calibration_1.jpg
+[Calibration_example_OK_1]: :calibration_example_ok_1_1.jpg
+[Calibration_example_not_OK]: :calibration_example_not_ok_1.jpg
+[example OK 1]: :calibration_example_ok_1_1.jpg
+[example OK 2]: :calibration_example_ok_2_1.jpg
+[example OK 3]: :calibration_example_ok_3_1.jpg
+[example OK 4]: :calibration_example_ok_4_1.jpg
+[example OK 5]: :calibration_example_ok_5_1.jpg
+[example OK 6]: :calibration_example_ok_6_1.jpg

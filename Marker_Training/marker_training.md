@@ -93,8 +93,8 @@ If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAI
 - Don't forget that markers can be color! Let's see some non-boring markers out there people!
 - A common mistake is to try and use markers with much too-fine detail in the marker image. ARToolKit samples the marker image at only a resolution of 16x16 pixels, so if you're getting markers mistaken for each other, check whether your markers look too similar to each other when the marker image is downsampled to 16x16 pixels.
 
-[marker_about]: Training_Markers:marker_about
-[marker_barcode]: Training_Markers:marker_barcode
+[marker_about]: Marker_Training:marker_about
+[marker_barcode]: Marker_Training:marker_barcode
 [config_camera_calibration]: Configuration:config_camera_calibration
 [example_simplelite]: Examples:example_simplelite
 [arsetpattratio]: http://www.artoolworks.com/support/doc/artoolkit4/apiref/ar_h/index.html#//apple_ref/c/func/arSetPattRatio
@@ -103,6 +103,6 @@ If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAI
 [2]: http://www.roarmot.co.nz/ar/
 [3]: http://flash.tarotaro.org/blog/2009/07/12/mgo2/
 
-[Hiro_marker]: /Hiro_marker.png
-[Markerdimensions]: /Markerdimensions.png
-[Mkpatt]: Mkpatt.jpeg
+[Hiro_marker]: :hiro_marker_1.png
+[Markerdimensions]: :markerdimensions_1.png
+[Mkpatt]: :mkpatt_1.jpeg

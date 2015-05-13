@@ -3,12 +3,12 @@ ARToolKit has a flexible recognition pipeline, which allows it to work relativel
 
 This article focusses on the issue of marker recognition, particularly marker recognition when using [barcode markers][marker_barcode], or larger numbers of markers in a [multi-marker set][marker_multi].
 
-To help you achieve the best tracking results with multimarker sets and barcode markers and to see where and why ARToolKit cannot track in certain conditions, a tool is provided with ARToolKit, named simply "check_id". check_id allows you to see the output of different stages of ARToolKit's tracking, and to determine visually why markers are not being tracked in certain circumstances. It also allows you to see the ID codes of barcode markers.
+To help you achieve the best tracking results with multimarker sets and barcode markers and to see where and why ARToolKit cannot track in certain conditions, a tool is provided with ARToolKit, named simply "check\_id". check\_id allows you to see the output of different stages of ARToolKit's tracking, and to determine visually why markers are not being tracked in certain circumstances. It also allows you to see the ID codes of barcode markers.
 
-check_id does not solve problems with camera calibration. You still need to have a set of calibrated camera parameters for your camera.
+check\_id does not solve problems with camera calibration. You still need to have a set of calibrated camera parameters for your camera.
 
-### Starting check_id
-If you wish to examine only the recognition of the code on barcode markers, no configuration of check_id is necessary. check_id is launched from the command line.
+### Starting check\_id
+If you wish to examine only the recognition of the code on barcode markers, no configuration of check\_id is necessary. check\_id is launched from the command line.
 On Linux / OS X, type:
 <pre>
     ./check_id
@@ -20,7 +20,7 @@ On Windows, type:
 
 check_id should launch and open a video window.
 
-If you also wish to display pose-estimates errors, OR you wish to check recognition of template markers, you will need to define a multi-marker configuration file first. By default, check_id reads it's multimarker configuration from up to two multimarker configuration files specified on the command line. You can test (for example) using the pre-supplied file `Data/cubeMarkerConfig.dat` (which is set to track the cube marker whose image is supplied in PDF form in `doc/patterns/Cubes/cube00-05-a4.pdf` or `/doc/patterns/Cubes/cube00-05-latter.pdf`) using the following launch syntax.
+If you also wish to display pose-estimates errors, OR you wish to check recognition of template markers, you will need to define a multi-marker configuration file first. By default, check\_id reads it's multimarker configuration from up to two multimarker configuration files specified on the command line. You can test (for example) using the pre-supplied file `Data/cubeMarkerConfig.dat` (which is set to track the cube marker whose image is supplied in PDF form in `doc/patterns/Cubes/cube00-05-a4.pdf` or `/doc/patterns/Cubes/cube00-05-latter.pdf`) using the following launch syntax.
 On Linux / OS X, type:
 <pre>
     ./check_id Data/cubeMarkerConfig.dat
@@ -30,12 +30,12 @@ On Windows, type:
     check_id.exe Data/cubeMarkerConfig.dat
 </pre>
 
-check_id reads standard multi-marker configuration files, which can be edited with a text editor. In such a file, you declare the names of attern files and/or barcode ID numbers, the size of each marker, and the offset and orientation of the marker relative to the origin of the multi-marker set. If you specify only template (pattern) markers in the config file, check_id will automatically select command-line option `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR`. Similarly, only barcode markers will result in use of `--patternDetectionMode AR_MATRIX_CODE_DETECTION`, or a mix of template and barcode markers (usually an undesirable mode) will result in use of `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR_AND_MATRIX`.
+check\_id reads standard multi-marker configuration files, which can be edited with a text editor. In such a file, you declare the names of attern files and/or barcode ID numbers, the size of each marker, and the offset and orientation of the marker relative to the origin of the multi-marker set. If you specify only template (pattern) markers in the config file, check\_id will automatically select command-line option `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR`. Similarly, only barcode markers will result in use of `--patternDetectionMode AR_MATRIX_CODE_DETECTION`, or a mix of template and barcode markers (usually an undesirable mode) will result in use of `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR_AND_MATRIX`.
 
-### Using check_id
+### Using check\_id
 The initial mode is to display the distortion-corrected normal color camera image. In the top-left of the window, the current thresholding mode (and threshold, if applicable) is displayed. Also, if a valid multi-marker set was loaded from Data/checkidMarkerConfig.dat, then additional indication will show whether robust multi-marker tracking is on or off.
 
-check_id has a few modes which can be selected from the keyboard.
+check\_id has a few modes which can be selected from the keyboard.
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 <tbody><tr>
 <th>Key </th><th> Function
@@ -110,4 +110,4 @@ The help text is reproduced here:
 [marker_about]: Marker_Training:marker_about
 [marker_barcode]: Marker_Training:marker_barcode
 [marker_multi]: Marker_Training:marker_multi
-[Check_id_cutoff_phases_v4]: /Check_id_cutoff_phases_v4.5.0.png
+[Check_id_cutoff_phases_v4]: :check_id_cutoff_phases_v4.5.0_1.png

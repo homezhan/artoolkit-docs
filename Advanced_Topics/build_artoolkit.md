@@ -1,5 +1,5 @@
 #Building ARToolkit from Source
-*If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit.* Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
+_If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit._ Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
 
 ##Required Software / Source Packages
 External dependencies for building ARToolKit from source include all the dependencies for building your own ARToolKit-based applications (as listed on page [Installing ARToolKit][about_installing] but also additional dependencies required to build the utilities and libraries. Where ARToolKit libraries require external DLLs, these are generally supplied with ARToolKit. Exceptions are listed below.
@@ -13,11 +13,11 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows/Mac OS X: libjpeg headers and libraries are supplied with ARToolKit.
     -   Linux: install package libjpeg-dev.
 -   GLUT - Required to build libARgsub and the utilities and examples.
-    -   libARgsub_lite provides equivalent functionality to libARgsub without requiring GLUT.
+    -   libARgsub\_lite provides equivalent functionality to libARgsub without requiring GLUT.
     -   Windows: GLUT 3.7.6 is included with ARToolKit.
     -   Mac OS X: included in OS.
     -   Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the MESA 3D libraries: [1][3]
--   OpenCV - Required to build calib_camera. OpenCV headers and libraries are provided with ARToolKit Professional.
+-   OpenCV - Required to build calib\_camera. OpenCV headers and libraries are provided with ARToolKit Professional.
 -   Video capture libraries.
     -   Windows: By default, on Windows ARToolKit Professional's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
         -   QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
@@ -38,17 +38,19 @@ External dependencies for building ARToolKit from source include all the depende
 ##Compiling ARToolKit
 
 ###Windows
+
 -   After unpacking ARToolKit, run the configure-win32 script. This generates AR/config.h for Windows builds. If you wish to change the default video library, or enable extra video libraries such as QuickTime, see [building libARvideo][4].
 -   Open the ARToolKit5.sln file inside the appropriate directory inside of the "VisualStudio" directory.
 -   Build the ToolKit and the sample applications. The VRML and OSG renderers are not built by default, but can be manually selected and built.
 
 ###Mac OS X
+
 -   Open the ARToolKit5.xcodeproj, found inside the Xcode folder.
 -   The configure step (which creates AR/config.h) will be run automatically during the build process. If you wish to override the defaults, you may manually edit AR/config.h after this.
 -   Select a target to build. The default target builds the complete toolkit with the exception of the OpenVRML and OSG-dependent projects, which can be manually selected and built.
 
 ###Linux
--   Building proceeds with the usual steps `./configure; make` During the configure process, you will be asked to select video libraries to build against.
+Building proceeds with the usual steps `./configure; make` During the configure process, you will be asked to select video libraries to build against.
 
 ##Post-Compilation Steps
 
@@ -63,7 +65,7 @@ simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin dire
 -   Type: simpleLite.exe
 
 #### Mac OS X:
--   Bundled applications are generated for the examples. The utilities are generated as command-line tools. Both can be run in the Finder (with output in Console) or from within Xcode or a Terminal window.
+Bundled applications are generated for the examples. The utilities are generated as command-line tools. Both can be run in the Finder (with output in Console) or from within Xcode or a Terminal window.
 
 #### Linux:
 simpleLite can be launched from a terminal window thus:
@@ -77,7 +79,7 @@ simpleLite can be launched from a terminal window thus:
 [about_installing]: :about_installing
 [tutorial_1_first_scene]: Examples:example_simplelite
 [setting_env]: :general_environment_variables
-[examples]: 
+[examples]:
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
 [4]: Advanced_Topics:windows_building_libarvideo

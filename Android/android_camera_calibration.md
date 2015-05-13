@@ -4,6 +4,7 @@ This application allows you to generate calibration parameters for the lens on y
 After capture, lens calibration data that meets a certain minimum level of quality is saved on ARToolworks lens calibration data server, and may be shared with other users of the same model of device.
 
 ##Requirements
+
 -   The application requires Android v2.2 or later.
 -   A printer is required to print the calibration pattern.
 -   A network connection (e.g. wifi or cellular data) is required to upload the data. Without this, the app does not serve any useful purpose.
@@ -44,5 +45,5 @@ As well as the calibration file itself, the following information is transmitted
 No personally identifying data is transmitted or stored during as part of the process. Additionally, the data is uploaded via a secure HTTPS connection.
 
 [chessboard]:/File:Calibration_chessboard.pdf "wikilink"
-[chessboard_screen]:/File:Chessboard_ready_for_calibration.JPG "wikilink"
+[chessboard_screen]: :chessboard_ready_for_calibration_1.jpg
 [calibrating_camera]: Configuration:config_camera_calibration "wikilink"

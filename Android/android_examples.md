@@ -10,14 +10,17 @@ The examples are divided into 3 sets.
 The examples are as follows:
 
 ##Java-based
+
 -   ARSimple: An example that extends the ARActivity class in ARBaseLib to create a simple augmented reality application.
 -   ARSimpleInteraction: An example that adds simple interaction to ARSimple.
 
 ##Mixed Java/C/C++
+
 -   ARSimpleNative: An example that uses an additional native library to perform rendering in C rather than Java.
 -   ARSimpleNativeCars: An example that uses a native OBJ model loader.
 
 ##AR and rendering code in C/C++
+
 -   ARNative: An example that uses the ARToolKit libraries directly and renders with OpenGL.
 -   ARNativeOSG: An example that uses the ARToolKit libraries directly and loads and renders 3D model content using the advanced OpenSceneGraph framework.
 -   nftSimple: An example that performs NFT (texture tracking) and renders with OpenGL.
@@ -35,7 +38,7 @@ Management of OSG objects is encapsulated in a C-pseudoclass named VirtualEnviro
 ##nftSimple
 Loads NFT dataset names from a configuration file.
 
-The example uses the "Pinball.jpg" image supplied in the "Misc/patterns" folder. ARToolKit NFT requires a fast device, preferably dual-core for good operation, e.g. Samsung Galaxy SII or similar. Build/deployment for Android API 9 (Android OS v2.3) or later is recommended. 
+The example uses the "Pinball.jpg" image supplied in the "Misc/patterns" folder. ARToolKit NFT requires a fast device, preferably dual-core for good operation, e.g. Samsung Galaxy SII or similar. Build/deployment for Android API 9 (Android OS v2.3) or later is recommended.
 
 ##nftBook
 Loads NFT dataset names from a configuration file.

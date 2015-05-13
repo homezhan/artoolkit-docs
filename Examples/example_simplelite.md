@@ -69,7 +69,7 @@ Next, we see the first AR-specific function call:
     // ----------------------------------------------------------------------------
     // Hardware setup.
     //
-    
+
     if (!setupCamera(cparam_name, vconf, gARTThreshhold, &gARTCparam, &gARHandle, &gAR3DHandle)) {
         fprintf(stderr, "main(): Unable to set up AR camera.\n");
         exit(-1);
@@ -83,7 +83,7 @@ The next piece of code opens up a window for us to draw into. This code uses GLU
     // ----------------------------------------------------------------------------
     // Library setup.
     //
-    
+
     // Set up GL context(s) for OpenGL to draw into.
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
     if (!prefWindowed) {
@@ -127,17 +127,17 @@ setupCamera begins by opening a connection to the video camera from which images
         ARParam         wparam;
         int             xsize, ysize;
         int             pixFormat;
-        
+
         // Open the video path.
         if (arVideoOpen(vconf) < 0) {
             fprintf(stderr, "setupCamera(): Unable to open connection to camera.\n");
             return (FALSE);
         }
-        
+
         // Find the size of the window.
         if (arVideoGetSize(&xsize, &ysize) < 0) return (FALSE);
         fprintf(stdout, "Camera image size (x,y) = (%d,%d)\n", xsize, ysize);
-        
+
         // Get the format in which the camera is returning pixels.
         pixFormat = arVideoGetPixelFormat();
         if (pixFormat < 0 ) {
@@ -158,7 +158,7 @@ Once the camera parameters are loaded, we adjust them to match the actual video 
         arParamChangeSize(&wparam, xsize, ysize, cparam);
         fprintf(stdout, "*** Camera Parameter ***\n");
         arParamDisp(cparam);
-        
+
         if ((*arhandle = arCreateHandle(cparam)) == NULL) {
             fprintf(stderr, "setupCamera(): Error: arCreateHandle.\n");
             return (FALSE);
@@ -183,12 +183,12 @@ We complete our setupCamera by setting up some defaults related to the tracking 
             fprintf(stderr, "setupCamera(): Error: ar3DCreateHandle.\n");
             return (FALSE);
         }
-        
+
         if (arVideoCapStart() != 0) {
             fprintf(stderr, "setupCamera(): Unable to begin camera data capture.\n");
             return (FALSE);
         }
-        
+
         return (TRUE);
 
     }
@@ -198,23 +198,23 @@ The second major part of ARToolKit setup is to load pattern files for each of th
 <pre>
     static int setupMarker(const char *patt_name, int *patt_id, ARHandle *arhandle, ARPattHandle **pattHandle)
     {
-    
+
     if ((*pattHandle = arPattCreateHandle()) == NULL) {
         fprintf(stderr, "setupCamera(): Error: arPattCreateHandle.\n");
         return (FALSE);
     }
-    
+
     // Loading only 1 pattern in this example.
     if ((*patt_id = arPattLoad(*pattHandle, patt_name)) < 0) {
         fprintf(stderr, "setupMarker(): pattern load error !!\n");
         arPattDeleteHandle(*pattHandle);
         return (FALSE);
     }
-    
+
     arPattAttach(arhandle, *pattHandle);
-    
+
     return (TRUE);
-    
+
     }
 </pre>
 
@@ -286,7 +286,7 @@ Step 1: Clear the screen and draw the most recent frame from the camera as a vid
     // Select correct buffer for this context.
     glDrawBuffer(GL_BACK);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear the buffers for new frame.
-    
+
     arglDispImage(gARTImage, &gARTCparam, 1.0, gArglSettings);  // zoom = 1.0.
     gARTImage = NULL;
 </pre>
@@ -300,7 +300,7 @@ Step 2: Set up the OpenGL camera projection to match the calibrated ARToolKit ca
     glMatrixMode(GL_PROJECTION);
     glLoadMatrixd(p);
     glMatrixMode(GL_MODELVIEW);
-    
+
     // Viewing transformation.
     glLoadIdentity();
 </pre>
@@ -310,7 +310,7 @@ The call to arglCameraFrustumRH converts the camera parameters stored in gARTCpa
 Step 3: Check whether we have any active markers, and if so, position the OpenGL camera view for each one to place the coordinate system origin onto the marker.
 <pre>
     if (gPatt_found) {
-    
+
         // Calculate the camera position relative to the marker.
         // Replace VIEW_SCALEFACTOR with 1.0 to make one drawing unit equal to 1.0 ARToolKit units (usually millimeters).
         arglCameraViewRH(gPatt_trans, m, VIEW_SCALEFACTOR);
@@ -338,7 +338,7 @@ The cleanup function is called to stop ARToolKit and release resources used by i
         ar3DDeleteHandle(gAR3DHandle);
         arDeleteHandle(gARHandle);
         arVideoClose();
-    } 
+    }
 </pre>
 
 Cleanup steps are generally performed in reverse order to setup steps. NB: your application may have to perform other cleanup steps, but these are the ones required by ARToolKit.
@@ -365,4 +365,4 @@ At this stage, have a play with the simpleLite code. When you are ready, come ba
 [config_camera_calibration]: Configuration:config_camera_calibration
 [config_video_capture]: Configuration:config_video_capture
 
-[SimpleLite320x240Mac]: /SimpleLite320x240Mac.png
+[SimpleLite320x240Mac]: :simplelite320x240mac_1.png

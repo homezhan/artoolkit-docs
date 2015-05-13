@@ -56,11 +56,11 @@ A more complex example, showing the use of 2D barcode markers outside the NFT su
 [2]: Examples:example_nftsimple
 [3]: http://www.artoolworks.com/support/attachments/ARToolKikt%20NFTv1%20sample%20dataset%20(map%20of%20Christchurch%2C%20NZ).zip
 
-[magicland3_embedded_fiducial]: /MagicLand3_embedded_fiducial.png
-[example_2]: /example 2.JPG
-[example_3]: /example 3.JPG
-[butterworth_modified_for_marker]: /example Mrs Butterworths modified for marker.jpg
-[butterworth_marker]: /example Mrs Butterworths marker.jpg
-[butterworth_with_marker]: /example Mrs Butterworths with marker.jpg
-[butterworth_modified_highlighted]: /example Mrs Butterworths modified for marker area highlighted.jpg
-[butterworth_modified_tracked]: /example Mrs Butterworths modified for marker tracked area.jpg
+[magicland3_embedded_fiducial]: :magicland3_embedded_fiducial_1.png
+[example_2]: :nft_example_2_1.jpg
+[example_3]: :nft_example_3_1.jpg
+[butterworth_modified_for_marker]: :nft_example_mrs_butterworths_modified_for_marker_1.jpg
+[butterworth_marker]: :nft_example_mrs_butterworths_marker_1.jpg
+[butterworth_with_marker]: :nft_example_mrs_butterworths_with_marker_1.jpg
+[butterworth_modified_highlighted]: :nft_example_mrs_butterworths_modified_for_marker_area_highlighted_1.jpg
+[butterworth_modified_tracked]: :nft_example_mrs_butterworths_modified_for_marker_tracked_area_1.jpg
