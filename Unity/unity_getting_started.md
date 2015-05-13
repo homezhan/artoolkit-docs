@@ -26,24 +26,31 @@ The package contains:
 ![Unity scripts are revealed by turning down the reveal arrow on the "ARToolKit5-Unity" object.][editor_screenshot]
 
 ##Scene Setup
-The key script inside the package is named `ARController`, and it manages the overall initialisation, setup, running and shutdown of ARToolKit. One instance of this script should be added to the scene. For simplicity, it is recommended to add it to an empty GameObject in the root of the scene.
+ARToolKit allows for dynamic AR scenes with more than one marker in Unity. All marker content can live in the same layer, and relations between content attached to different markers (e.g. physics) is easy to understand. The following three components work together to create an AR scene:
+
+-   ARController - Manages the overall initialisation, setup, running and shutdown of ARToolKit. Singleton.
+-   AROrigin - Represents the center of the ARToolKit world and is the root of the scene. Normally can be placed at {0, 0, 0}.
+-   ARTrackedObject - Represents the marker as tracked in space. Content relevant to the marker will be attached to this parent.
+-   ARCamera
+
+###1 - ARController
+Create an object to hold the AR configuration objects, ARController and ARMarker. In the example projects, we have named this "ARToolKit". Drag an ARController onto this object.
 
 ![Dragging an instance of the "ARController" script from the Asset browser onto an empty GameObject.][arcontroller_setup]
 
-The ARController script will handle the creation and management of the AR tracking, including the video background. All the developer needs to provide is the Unity [layer][layer] in which to display the video. Layers are used to separate out parts of
-the scene so only certain parts are visible to certain cameras. In this case, the video background will be in its own background layer. In the same way, each marker's content will also have its own layer.
-
-To start with, create a new layer *Background* and one for a single marker *Foreground*.
+The ARController script will handle the creation and management of the AR tracking, including the video background. All the developer needs to provide is the Unity [layer][layer] in which to display the video; usually this is "user layer 1", which you might want to rename to e.g. "AR Background". Layers are used to separate out parts of the scene so only certain parts are visible to certain cameras. In this case, the video background will be in its own background layer. You can take a moment now to define an "AR Foreground" layer, as well. This is where every marker's content will be shown.
 
 ![Choose "Edit layers..." in Unity.][edit_layers]
 ![Choose two of the User layers and give them appropriate names.][name_layers]
 
-Set the "Layer" property on the "ARController" object to "AR background" (or whatever you named it).
+You should now be able to run the scene and see the live video. The developer can choose how the input video's aspect ratio is treated in respect to the display's aspect ratio. If they do not match, such as 4:3 video on a 16:10 screen, then the developer can choose either to stretch the video (which will introduce distortion), or use less of the screen (which will introduce empty bars). Any bars will have the color of the background clearing camera which always renders to the entire screen.
 
-You should now be able to run the scene and see the live video.
+-   Fill screen: Possibly stretch the rendering and introduce distortion.
+-   Maintain video aspect ratio (bars): Correct rendering, but bars at edges if the video is more square than display, or at top and bottom if display is more square than video.
+-   Maintain video aspect ratio (overfill screen): Unfortunately this mode is unavailable because Unity does not permit viewport rectangles outside the bounds of the screen. There are solutions to this problem coming in an update.
 
-###Setting Up Tracking
-Tracking requires markers, so drag the `ARMarker` script onto the ARController GameObject.
+###2- ARMarkers
+Tracking requires markers, so drag as many ARMarkers as you wish to track. Configure these objects, being sure to set the "Tag" field on each ARMarker to something memorable -- this will be the name used by the dynamic scene to find this marker and get its data.
 
 ####Template Markers
 The ARMarker script will automatically locate [pattern files][marker_train] that have been placed in the project's `Resources/ardata/markers` directory. The default installation will include the standard Hiro and Kanji [patterns][marker_about]. These will appear in the dropdown list in the Marker's properties. Select the pattern you want to track. Give this marker a tag (a unique name to identify it within your project).
@@ -55,21 +62,27 @@ The ARMarker script will automatically locate [pattern files][marker_train] that
 
 The SDK includes an example dataset (file names: gibraltar.iset, gibraltar.fset, gibraltar.fset2). The example NFT dataset can be enabled by entering the basename of the datafiles (in this case: gibraltar) into the "dataset" field.
 
+###3- AROrigin
+Next, decide on the point in your scene graph which you would like to be the root of your AR scene. All dynamic AR scene content will live under this root, and its transform will be the origin for AR calculations. Normally, this will be an empty GameObject at the root of your scene, but it can be any GameObject. In the examples, this object is named "Scene root". Drag an AROrigin script onto this object. It's also useful to put this object and all children into its own layer, e.g. create a new user layer and name it "AR foreground".
+
+###4 - ARTrackedObjects
+Now, add a child GameObject beneath the scene root you created in the previous step. This object will hold the AR content for the first AR marker, so you could rename it to (for example) "Marker Scene 1". Attach an `ARTrackedObject`, and configure its "Tag" property to the same name you used on its corrosponding ARMarker earlier. This associates the ARTrackedObject with the ARMarker. The object to which the ARTrackedObjec` is attached will have its position and rotation changed at runtime depending on the pose of the marker, and its child objects will be enabled/disabled depending on the visibility of the marker. Be sure that all ARTrackedObjects have an AROrigin attached to one of their parents, or else they won't display any content.
+
+###5 - ARCamera
+The last thing you need to add before content can be viewed is a Unity Camera object. This must be a child object of the AR scene root. Set its culling mask to the layer you chose earlier (We suggest "AR Foreground", and be sure that the "AR Background" is not selected). Attach an ARCamera script to this camera.
+
 ####Testing and Adding Content
 At this point you can run the scene again. Although no content appears on the marker yet, you should notice console messages appearing to notify that the marker has been found or lost.
 
-To add content to the marker, add a new GameObject to the root. This object will act as a group to contain the sub-scene that will appear on the marker. By default, markers appear in the scene standing vertically (like a billboard) at the origin. Usually however, you want the marker to lie flat on the ground, and this is what we'll do in this case. Select the GameObject you just added, and in the Inspector, change its "Rotation: X" value to 90. This will rotate the child objects of this GameObject by 90 degrees about the X axis (in a left-hand sense).
+Start with the ARTrackedObject you want to augment. This object will act as parent to the sub-scene that will appear on the marker. By default, markers appear in the scene standing vertically (like a billboard) at the origin. Usually however, you want the marker to lie flat on the ground, and this is what we'll do in this case. Add a GameObject under the ARTrackedObject you've selected, and in the Inspector, change its "Rotation: X" value to 90. This will rotate the child objects of this new GameObject by 90 degrees about the X axis (in a left-hand sense), appearing correctly to the ARCamera.
 
 ![Setting the rotation on the scene root to orient the marker flat on the ground layer.][rotating]
 
-Next, into this group, add:
+Add a cube to the rotated GameObject. This will be the initial simple scene. Set the scale to `0.08, 0.08, 0.08`, and position to `0, 0.04, 0`, to sit on the marker correctly.
 
--   A Unity Camera object: This camera will actually render the sub-scene. (You can reuse the default camera if it exists, or otherwise delete it).
--   A Cube: This will be the initial simple scene. Set the scale to `0.08, 0.08, 0.08`, and position to `0, 0.04, 0`, to sit on the marker correctly.
+Select the new group you created and ensure it is assigned to the foreground layer created earlier (applying the change to all children when prompted).
 
-In order to control the position of the Camera object we just added, drag an `ARCamera` script onto the new camera. This script will update the camera's pose to match the pose of your webcam relative to the marker, thus producing augmented reality. To link this ARCamera to the correct marker, enter the matching tag in the ARCamera's properties.
-
-Select the new group you created and assign it to the Foreground layer created earlier (applying the change to all children when prompted). Finally, select the new camera, and set its Culling Mask property to the Foreground layer also. This step will ensure that the camera only displays the sub-scene. If you add more markers later on, you would repeat this process, but using a different layer (e.g. Foreground2).
+Press "Play" again, and you should now be able to see the cube on the marker. Congratulations!
 
 ##Notes
 

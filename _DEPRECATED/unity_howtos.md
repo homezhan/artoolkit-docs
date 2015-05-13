@@ -1,6 +1,6 @@
-#ARToolKit for Unity "How Tos"
+#How To...
 
-##Control The View Layout
+##Controlling The View Layout
 The developer can choose how the input video's aspect ratio is treated in respect to the display's aspect ratio. If they do not match, such as 4:3 video on a 16:10 screen, then the developer can choose either to stretch the video (which will introduce distortion), or use less of the screen (which will introduce empty bars). Any bars will have the color of the background clearing camera which always renders to the entire screen.
 
 -   Fill screen: Possibly stretch the rendering and introduce distortion.
