@@ -10,46 +10,41 @@ The plugin also manages all aspect of communicating with the camera and presenti
 
 You do not need to do a single line of scripting to begin working with ARToolKit. It includes [extensions to the Unity editor][unity_scripts] that allow you to configure the required AR objects directly, as well as live in-editor previewing of your AR scene. However for those who want to tightly integrate ARToolKit with their Unity project, full script control is available over all aspects of the functionality, allowing you to dynamically add markers, start and stop tracking, and change parameters.
 
-##User Guide
--   [Getting Started][getting_started]
--   [Script Reference][script_reference]
--   [Editor Enhancements][editor_enhancements]
--   [How To...][how_to]
--   [Scripting and low-level API][low_api]
-
-###Requirements
+##Requirements
 -   A webcam or other video source supported by ARToolKit.
 -   Unity Pro v3.5.2f2 or later, for Mac OS X or Windows (development platform).
 -   If deploying to Android, Unity Pro for Android.
 -   If deploying to iOS, Unity Pro for iOS plus Apple's Xcode v4.2 or later.
 
+##Index
+
+###User Guide
+-   [Getting Started][unity_getting_started]
+-   [Script Reference][unity_scripts]
+-   [Scripting and Low-Level API][unity_low_level_api]
+
 ###Platform-Specific Information
--   [OS X][osx]
--   [Windows][windows]
--   [Android][android]
--   [iOS][ios]
+-   [OS X][unity_on_osx]
+-   [Windows][unity_on_windows]
+-   [Android][unity_on_android]
+-   [iOS][unity_on_ios]
 
 ###General Information
 -   [Unity][unity] website. Get Unity here.
 -   [Official Unity Forum][unity_forums] and [Unity Answers][unity_answers] are excellent places to ask questions.
 
-###Reference
--   [ARToolKit for Unity Release Notes][release_notes]
--   [Native plugin API documentation][native_api]
-
 [unity]:http://www.unity3d.com
 [unity_forums]:http://forum.unity3d.com/
 [unity_answers]:http://answers.unity3d.com/index.html
-
+[unity_low_level_api]: Unity:unity_low_level_api
+[unity_getting_started]: Unity:unity_getting_started
 [unity_on_osx]: Unity:unity_on_osx
 [unity_on_windows]: Unity:unity_on_windows
 [unity_on_android]: Unity:unity_on_android
 [unity_on_ios]: Unity:unity_on_ios
-[unity_getting_started]: Unity/unity_getting_started
-[unity_scripts]: Unity/unity_scripts
+[unity_getting_started]: Unity:unity_getting_started
+[unity_scripts]: Unity:unity_scripts
 [marker_about]: Marker_Training:marker_about
-
-[native_api]:http://www.artoolworks.com/support/doc/artoolkit5/apiref-ARWrapper/html/_a_r_tool_kit_wrapper_exported_a_p_i_8h.html
 
 [helicopter]:/File:UnityHelicopter.png "wikilink"
 

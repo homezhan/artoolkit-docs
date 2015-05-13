@@ -1,4 +1,5 @@
 #ARToolKit for Unity on Android
+To get started with using ARToolKit on Android, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
 -   You must have a Unity Pro with Android Pro license to be able to export projects from Unity that use the ARToolKit for Unity plugins.
@@ -56,18 +57,12 @@ com/artoolworks/ar/unity/UnityARPlayerActivity.class`
 See the following image for how to select the classes.
 ![Selecting Classes for Export][unity_export_3]
 
-Once the jar has been exported, place it in your Unity project at path
-`Assets/Plugins/Android/UnityARPlayer.jar`
+Once the jar has been exported, place it in your Unity project at path `Assets/Plugins/Android/UnityARPlayer.jar`
 
 ###Errata
-Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a defect in the handling of
-compressed resources inside .jar files embedded in .apks limits the size
-of compressed resources to as little as 1.0 megabyte (although this can
-be higher on some variants of the 2.2 OS series, depending on the device
-manufacturer). This imposes a limitation on the size of the NFT datasets
-which can be used if targeting Android 2.2 to 1.0 megabyte. This
-limitation was removed in Android OS 2.3.
+Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a defect in the handling of compressed resources inside .jar files embedded in .apks limits the size of compressed resources to as little as 1.0 megabyte (although this can be higher on some variants of the 2.2 OS series, depending on the device manufacturer). This imposes a limitation on the size of the NFT datasets which can be used if targeting Android 2.2 to 1.0 megabyte. This limitation was removed in Android OS 2.3.
 
+[unity_getting_started]: Unity:unity_getting_started
 [android_player_settings]:http://docs.unity3d.com/Manual/class-PlayerSettingsAndroid.html "Unity - Manual: Android Player Settings"
 [player_settings]:/File:Unity_Player_settings_menu.png "wikilink"
 [player_settings_id]:/File:Unity_Player_settings_Android_bundle_ID.png "wikilink"

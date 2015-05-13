@@ -31,7 +31,7 @@ ARToolKit allows for dynamic AR scenes with more than one marker in Unity. All m
 -   ARController - Manages the overall initialisation, setup, running and shutdown of ARToolKit. Singleton.
 -   AROrigin - Represents the center of the ARToolKit world and is the root of the scene. Normally can be placed at {0, 0, 0}.
 -   ARTrackedObject - Represents the marker as tracked in space. Content relevant to the marker will be attached to this parent.
--   ARCamera
+-   ARCamera - Associates a Unity Camera to the AR content. Allows it to be rendered.
 
 ###1 - ARController
 Create an object to hold the AR configuration objects, ARController and ARMarker. In the example projects, we have named this "ARToolKit". Drag an ARController onto this object.
@@ -78,7 +78,7 @@ Start with the ARTrackedObject you want to augment. This object will act as pare
 
 ![Setting the rotation on the scene root to orient the marker flat on the ground layer.][rotating]
 
-Add a cube to the rotated GameObject. This will be the initial simple scene. Set the scale to `0.08, 0.08, 0.08`, and position to `0, 0.04, 0`, to sit on the marker correctly.
+Add a cube to the rotated GameObject. This will be the initial simple scene. Set the scale to `{0.08, 0.08, 0.08}`, and position to `{0, 0.04, 0}`, to sit on the marker correctly.
 
 Select the new group you created and ensure it is assigned to the foreground layer created earlier (applying the change to all children when prompted).
 
@@ -100,10 +100,15 @@ By default the plugin operates in meters. The default marker size is therefore 0
 ###Deployment Notes
 If you are not using NFT markers, be sure to remove any NFT datasets from the StreamingAssets folder before final build to avoid unwanted extra disk usage. The same convention goes for traditional template markers, as well- We suggest you remove them if you do not plan to use them.
 
+##Next Steps
+Read up on [the scripts of ARToolKit][unity_scripts] in Unity. Also check out our [low-level API][unity_low_level_api].
+
 [marker_about]: Marker_Training:marker_about
 [marker_train]: Marker_Training:marker_train
 [config_camera_calibration]: Configuration:config_camera_calibration
 [marker_nft_train]: Marker_Training:marker_nft_train
+[unity_scripts]: Unity:unity_scripts
+[unity_low_level_api]: Unity:unity_low_level_api
 
 [menu_screenshot]:/File:Unity_import_package.png "wikilink"
 [import_all]:/File:Unity_import_ARToolKit_2012-06.png "wikilink"
