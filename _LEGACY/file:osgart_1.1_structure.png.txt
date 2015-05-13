@@ -1,1 +1,0 @@
-osgART 1.1 structure

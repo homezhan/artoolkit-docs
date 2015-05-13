@@ -1,2 +1,0 @@
-1.  REDIRECT [Running the nftSimple
-    example](/Running_the_nftSimple_example "wikilink")
