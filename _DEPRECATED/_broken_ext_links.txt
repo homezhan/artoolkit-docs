@@ -40,9 +40,5 @@ Configuration
 Training
 Advanced
 iOS
-
-In Progress:
 Unity
-
-Undone:
-Android
+Android - Revisit
