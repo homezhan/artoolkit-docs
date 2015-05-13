@@ -63,7 +63,8 @@ The ARCamera script associates a camera to the AR content. Add this to a camera 
 
 ##Gizmos
 Markers are visually represented within the Unity editor so that you can scale and position your content accordingly.
-[Marker Gizmo][gizmo]
+![Marker Gizmo][gizmo]
 
-[gizmo]:/File:MarkerGizmo.png "wikilink"
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[artoolkit_panel]: :artoolkitpanel_1.png
+[gizmo]: :markergizmo_1.png
+[marker_panel]: :markerpanel_1.png

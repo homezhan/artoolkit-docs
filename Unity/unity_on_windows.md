@@ -2,6 +2,7 @@
 To get started with using ARToolKit on Windows, first visit our [Getting Started][unity_getting_started] guide.
 
 ##Requirements
+
 -   You must have a Unity Pro license to be able to the ARToolKit plugin..
 -   ARToolKit for Unity has a set of dependent DLLs which you must include along with any standalone app built for Windows. Please see below under "Deployment" for more detail.
 
@@ -36,7 +37,6 @@ See [Deploying an ARToolKit Application on Windows][general_deploy_application].
 
 
 [unity_getting_started]: Unity:unity_getting_started
-[config_video_capture]: Configuration:config_video_capture "wikilink"
-[general_deploy_application]: general_deploy_application
-[winds_camera]:/File:ARToolKit_for_Unity_Windows_WinDS_second_camera.png "wikilink"
-[Category:ARToolKit for Unity](/Category:ARToolKit_for_Unity "wikilink")
+[config_video_capture]: Configuration:config_video_capture
+[general_deploy_application]: :general_deploy_application
+[winds_camera]: :artoolkit_for_unity_windows_winds_second_camera_1.png

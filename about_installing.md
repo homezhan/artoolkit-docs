@@ -29,7 +29,7 @@ ARToolKit includes a variety of examples demonstrating ARToolKit programming tec
 ## Beginning your own development
 In beginning your own development, it is recommended that you create your own project outside the ARToolKit folder, and treat ARToolKit as an external SDK. However, it is also perfectly permissible to begin by modifying one or more of the example applications or source files. ARToolKit is supplied with project files for each supported platform. The project files allow you to [rebuild ARToolKit from source][building], and act as examples of how to structure your own application builds (e.g. required link libraries).
 
-[repo]:asdf
+[repo]: https://github.com/artoolkit
 [building]: Advanced_Topics:build_artoolkit
 [setting_env]: general_environment_variables
 [tutorial_1_first_scene]: Examples:example_simplelite
