@@ -105,36 +105,35 @@ Quaternion orientation = ARUtilityFunctions.QuaternionFromMatrix(pose);
 
 ##Connecting Markers to the Scene
 
-### Using an ARCamera
+###Using an ARCamera
 A simple means of connecting a single `ARMarker` (which might represent either a single pictorial or barcode square marker, a multi- square marker set, or an NFT marker) to the Unity scene is to use the `ARCamera` script. This script must be attached to a Unity Camera object.
 
 The `ARCamera` is associated with an `ARMarker` by setting `ARCamera` Marker Tag to the same value as the desired `ARMarker` Tag. When the `ARMarker` appears and is tracked, the `ARCamera`'s Unity Camera draws its' view at the same pose relative to its parent as the real camera to the real marker, and when the ARMarker disappears, the Camera's output is hidden. By putting game objects into layers, and setting the culling mask of the camera to display only the layer with desired objects, this allows content to be easily shown/hidden in concert with a marker.
 
-`<csharp>
-// Generally, you should use a tag or other means to identify the camera you want to modify.
-Camera[] Cameras = FindObjectsOfType(typeof(Camera)) as Camera[];
-myCamera = Cameras[0];
-// Set the culling mask for this camera to identify the layers you want to be shown/hidden. Do this before adding the ARCamera. 
-myARForegroundLayer = 9;
-// 0-based index, so 9 = user layer 2.
-myCamera.cullingMask = 1\<\< myARForegroundLayer;
-myCamera.AddComponent("ARCamera") as ARCamera;
-</csharp>`
+<csharp>
+    // Generally, you should use a tag or other means to identify the camera you want to modify.
+    Camera[] Cameras = FindObjectsOfType(typeof(Camera)) as Camera[];
+    myCamera = Cameras[0];
+    // Set the culling mask for this camera to identify the layers you want to be shown/hidden. Do this before adding the ARCamera. 
+    myARForegroundLayer = 9;
+    // 0-based index, so 9 = user layer 2.
+    myCamera.cullingMask = 1\<\< myARForegroundLayer;
+    myCamera.AddComponent("ARCamera") as ARCamera;
+</csharp>
 
 Configuring the ARCamera:
-`<csharp>
-myARCamera = myCamera.GetComponent<ARCamera>();
-myARCamera.MarkerTag = "myMarker1";
-// As set in example above.
-</csharp>`
+<csharp>
+    myARCamera = myCamera.GetComponent<ARCamera>();
+    myARCamera.MarkerTag = "myMarker1";
+    // As set in example above.
+</csharp>
 
 To allow control other aspects of GameObjects than their visibility, you can connect your GameObject to the `ARCamera`'s `eventReceiver` property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
-
-`<csharp>
-// All optional. OnMarkerFound(ARMarker marker);
-OnMarkerTracked(ARMarker marker);
-OnMarkerLost(ARMarker marker);
-</csharp>`
+<csharp>
+    // All optional. OnMarkerFound(ARMarker marker);
+    OnMarkerTracked(ARMarker marker);
+    OnMarkerLost(ARMarker marker);
+</csharp>
 
 The `ARCamera`'s projection and viewport are set during AR startup. At present, it is not possible to add an `ARCamera` after `StartAR()` has been called, unless you modify ARController.cs and change `ConfigureForegroundCameras()` and `ConfigureViewports()` from private to public methods.
 

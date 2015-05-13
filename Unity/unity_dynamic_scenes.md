@@ -5,6 +5,7 @@ ARToolKit for Unity allows for dynamic AR scenes with more than one marker. Prev
 layer, and relations between content attached to different markers (e.g. physics) is much simpler.
 
 These three new or changed components work together to provide a superset of the functionality previously provided by ARCamera:
+
 -   `AROrigin`
 -   `ARTrackedObject`
 -   `ARCamera`
