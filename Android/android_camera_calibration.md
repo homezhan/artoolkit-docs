@@ -25,9 +25,9 @@ Finally, set up your camera. A calibration file is only valid for one focus sett
 
 [Click here to read detailed directions on the calibration procedure for ARToolKit for Desktop][calibrating_camera]
 
-1.   Before beginning, print out the calibration chessboard pattern and affix it to a flat surface. See the [setup][setup] documentation for more information.
+1.   Before beginning, print out the calibration chessboard pattern and affix it to a flat surface. See the [setup][calibrating_camera] documentation for more information.
 2.   After launching the app, you can use the Settings menu to choose the camera and resolution to be calibrated. To access the Settings menu, press the hardware menu button on the device or use the menu button on the Action Bar at the top of the screen (on Android devices without a hardware menu button).
-3.   Collect calibration images. See [capturing calibration images][capturing] for more information.
+3.   Collect calibration images. See [capturing calibration images][calibrating_camera] for more information.
 4.   Once all images have been collected, the calibration data will be calculated, and when this is complete the results will be shown on-screen.
 5.   The calibration data is automatically uploaded.
 
@@ -45,6 +45,4 @@ No personally identifying data is transmitted or stored during as part of the pr
 
 [chessboard]:/File:Calibration_chessboard.pdf "wikilink"
 [chessboard_screen]:/File:Chessboard_ready_for_calibration.JPG "wikilink"
-[calibrating_camera]:/Calibrating_your_camera "wikilink"
-[setup]:/Calibrating_your_camera#Setting_up "wikilink"
-[capturing]:/Calibrating_your_camera#Capturing_calibration_images "wikilink"
+[calibrating_camera]: Configuration:config_camera_calibration "wikilink"

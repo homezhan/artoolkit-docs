@@ -50,9 +50,9 @@ Next, invoke an export jar operation in Eclipse (File-\>Export...)
 ![Exporting a JAR 2][unity_export_2]
 
 The correct classes must be exported. This includes:
-`com/artoolworks/ar/base/NativeInterface.class
-com/artoolworks/ar/unity/CameraSurface.class
-com/artoolworks/ar/unity/UnityARPlayerActivity.class`
+`org/artoolkot/ar/base/NativeInterface.class
+org/artoolkot/ar/unity/CameraSurface.class
+org/artoolkot/ar/unity/UnityARPlayerActivity.class`
 
 See the following image for how to select the classes.
 ![Selecting Classes for Export][unity_export_3]

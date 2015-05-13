@@ -31,6 +31,9 @@ http://www.artoolworks.com/support/forum/
 unity_low_level_api.md
 http://www.artoolworks.com/support/doc/artoolkit5/apiref-ARWrapper/html/_a_r_tool_kit_wrapper_exported_a_p_i_8h.html
 
+android_examples.md
+http://www.artoolworks.com/support/doc/artoolkit4/apiref/arosg_h/index.html
+
 Done directories:
 Examples
 Configuration
