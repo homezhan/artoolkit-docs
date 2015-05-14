@@ -105,7 +105,7 @@ The ARToolKit Unity plugin supports both monocular and stereo see-through render
 
 To use the optical calibration results in ARToolKit for Unity, the parameters file must be renamed and moved into the correct location inside your Unity project. The correct location is inside a folder at path `Assets/Resources/ardata/optical` inside your Unity project. Unlike on other platforms or renderers, the file name must end with the suffix ".bytes" for Unity to recognize it. E.g. If your parameters file is named "optical_param.dat", rename it to "optical\_param.bytes" and drop it into this folder. The first part of the filename can be named to help you identify the parameters.
 
-![ARToolkit for Unity optical parameters file location.][ARToolKit_for_Unity_optical_parameters_file_location]
+![ARToolKit for Unity optical parameters file location.][ARToolKit_for_Unity_optical_parameters_file_location]
 
 Once the parameters file is in this location, optical mode should be enabled in the "ARCamera" component in your Unity project. A popup will show a list of all available ".bytes" files in the `Assets/Resources/ardata/optical` folder. Select the preferred parameters file.
 

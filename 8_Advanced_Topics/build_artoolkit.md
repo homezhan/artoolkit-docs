@@ -1,4 +1,4 @@
-#Building ARToolkit from Source
+#Building ARToolKit from Source
 *If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit.* Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
 
 ##Required Software / Source Packages
@@ -56,7 +56,7 @@ External dependencies for building ARToolKit from source include all the depende
 ##Post-Compilation Steps
 
 ###Verifying the Compilation
-ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its source code can be found on the page [ARToolkit Tutorial 1: First Simple ARToolKit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
+ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After compiling, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its source code can be found on the page [ARToolKit Tutorial 1: First Simple ARToolKit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
 
 #### Windows:
 simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin directory. Alternately, you can run it from the command line:

@@ -1,4 +1,4 @@
-# Installing ARToolkit
+# Installing ARToolKit
 The ARToolKit distribution is supplied as pre-built binaries for each platform, plus source code for most of the SDK libraries and utilities, full source for the examples, and documentation.
 
 You, of course, are always welcome to [clone the source code][repo] and [build it yourself][building], as well.
@@ -24,7 +24,7 @@ Once unpacked, to set the [ARTOOLKIT5_ROOT so that other software can find ARToo
 </pre>
 
 ## Verifying the Installation
-ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After installation, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its sourcecode can be found on the page [ARToolkit Tutorial 1: First Simple ARToolkit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
+ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After installation, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its sourcecode can be found on the page [ARToolKit Tutorial 1: First Simple ARToolSit Scene][tutorial_1_first_scene]. More detailed information about the techniques demonstrated in each example can be found on the page [ARToolKit Examples][examples].
 
 ## Beginning your own development
 In beginning your own development, it is recommended that you create your own project outside the ARToolKit folder, and treat ARToolKit as an external SDK. However, it is also perfectly permissible to begin by modifying one or more of the example applications or source files. ARToolKit is supplied with project files for each supported platform. The project files allow you to [rebuild ARToolKit from source][building], and act as examples of how to structure your own application builds (e.g. required link libraries).

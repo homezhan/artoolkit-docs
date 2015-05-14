@@ -1,4 +1,4 @@
-#Configuring Video Capture in ARToolkit
+#Configuring Video Capture in ARToolKit
 ARToolKit includes libARvideo, a cross-platform library which captures video from a variety of different sources. In general, most users of ARToolKit who have a single webcam attached to their system will never delve into the workings of this library. However, the module or modules inside this library generally allow for a degree of configuration to control parameters of the capture sources with which they interface.
 
 ##Changing Video Configuration

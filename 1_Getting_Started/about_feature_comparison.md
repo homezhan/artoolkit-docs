@@ -1,4 +1,4 @@
-# ARToolkit Feature Comparison
+# ARToolKit Feature Comparison
 ARToolKit v2.x and ARToolKit v5.x, while sharing a small subset of features, are vastly different. The latter represents nearly 8 years of further development of the former.
 
 As well as obvious feature differences, the changes cover a wide variety of less obvious areas, including fundamental algorithms, internal design (modularity, reuse), optimisation, external API design, connections to third-party systems, documentation and developer experience

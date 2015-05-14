@@ -1,4 +1,4 @@
-#ARToolkit for iOS
+#ARToolKit for iOS
 ARToolKit for iOS runs under [several modern versions][ios_system_support] of Apple's iOS operating system, including iPhone, iPad, and iPod Touch devices. This page holds links to resources of special interest for developers working with ARToolKit on the iOS operating system and devices.
 
 This document is meant to be a supplement to the existing configuration documentation, such as [calibrating your camera][config_camera_calibration], [configuring video capture][config_video_capture], as well as training [NFT][marker_nft_training] and [traditional][marker_training] markers.

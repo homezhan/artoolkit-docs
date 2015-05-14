@@ -1,4 +1,4 @@
-# ARToolkit Documentation
+# ARToolKit Documentation
 
 Welcome to the ARToolKit community!
 
