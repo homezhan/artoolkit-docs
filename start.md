@@ -73,7 +73,7 @@ ARToolKit supports both video and optical see-through augmented reality. Video s
 
 [about_installing]: 1_Getting_Started:about_installing
 [config_video_capture]: 2_Configuration:config_video_capture
-[camera_calibration]: 2_Configuration:camera_calibration
+[camera_calibration]: 2_Configuration:config_camera_calibration
 [marker_training]: 3_Marker_Training:marker_training
 [marker_nft_training]: 3_Marker_Training:marker_nft_training
 [marker_about]: 3_Marker_Training:marker_about

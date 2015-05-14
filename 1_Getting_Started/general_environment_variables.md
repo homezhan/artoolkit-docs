@@ -1,7 +1,7 @@
 # Setting an Environment Variable
 Environment variables can be used to specify configuration information to software.
 
-## Set an Environment Variable for a Single Command Ahell
+## Set an Environment Variable for a Single Command Shell
 An environment variable can be set temporarily in a single shell, and will only affect applications launched from that shell. Once the shell is closed (e.g. on a logout or reboot) the environment variable is removed.
 
 ### Windows
