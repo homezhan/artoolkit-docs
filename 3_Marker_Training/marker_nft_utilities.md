@@ -8,10 +8,8 @@ The checkResolution tool supplied with ARToolKit can help in determining the req
 1.  Obtain the NFT image to be tracked in printed form. ![Pinball NFT Sample][Pinball_NFT_sample_printed_with_hand]
 2.  Print a single standard ARToolKit "Hiro" marker and trim excess paper around the outside. The Hiro marker can be printed at any size; 40 mm is a good size (approximately 2 inches). ![Hire marker on paddle][Hiro_marker_on_paddle_40mm]
 3.  Connect your camera and run from a terminal / command prompt.
-    -   Mac OS X/Linux:
-        <pre>./checkResolution</pre>
-    -   Windows:
-        <pre>checkResolution.exe</pre>
+    -   Mac OS X/Linux: `./checkResolution`
+    -   Windows: `checkResolution.exe
 
 You will be prompted to enter the size of the Hiro marker. E.g. if printed at 40 mm size, enter `40`.
 
@@ -30,22 +28,50 @@ Be sure to use a camera running at the same frame size as will be used in the on
 
 ###Keyboard / Mouse Controls
 Below is a table of keyboard / mouse controls for using checkResolution:
-<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-<tbody><tr>
-<th>Key </th><th> Function
-</th></tr>
-<tr>
-<td> esc
-</td><td> Quit program
-</td></tr>
-<tr>
-<td> 1
-</td><td> Decrease binarization threshold
-</td></tr>
-<tr>
-<td> 2
-</td><td> Increase binarization threshold.
-</td></tr></tbody></table>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
+            <tbody>
+                <tr>
+                    <th>
+                        Key
+                    </th>
+                    <th>
+                        Function
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        esc
+                    </td>
+                    <td>
+                        Quit program
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        Decrease binarization threshold
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        Increase binarization threshold.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
 
 ##dispFeatureSet
 dispFeatureSet displays trained NFT datasets by overlaying representations of the data points on the source images.
@@ -118,11 +144,11 @@ See [Training NFT to a new surface][marker_nft_training] for more information on
 
 [marker_nft_training]: 3_Marker_Training:marker_nft_training
 
-[Pinball_NFT_sample_printed_with_hand]: /Pinball_NFT_sample_printed_with_hand.JPG
-[Hiro_marker_on_paddle_40mm]: /Hiro_marker_on_paddle_40mm.jpg 
-[CheckResolution_pinball_marker_mid-distance]: /CheckResolution_pinball_marker_mid-distance.png
-[CheckResolution_pinball_marker_close-distance]: /CheckResolution_pinball_marker_close-distance.png
-[CheckResolution_pinball_marker_far-distance]: /CheckResolution_pinball_marker_far-distance.png
+[Pinball_NFT_sample_printed_with_hand]: :Pinball_NFT_sample_printed_with_hand_1.JPG
+[Hiro_marker_on_paddle_40mm]: :Hiro_marker_on_paddle_40mm_1.jpg 
+[CheckResolution_pinball_marker_mid-distance]: :CheckResolution_pinball_marker_mid-distance_1.png
+[CheckResolution_pinball_marker_close-distance]: :CheckResolution_pinball_marker_close-distance_1.png
+[CheckResolution_pinball_marker_far-distance]: :CheckResolution_pinball_marker_far-distance_1.png
 
 [ARToolKit_NFT_-_dispFeatureSet_terminal]: /ARToolKit_NFT_-_dispFeatureSet_terminal.png
 [ARToolKit_NFT_-_dispFeatureSet]: /ARToolKit_NFT_-_dispFeatureSet.png
