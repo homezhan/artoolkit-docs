@@ -65,10 +65,10 @@ Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a de
 
 [unity_getting_started]: 6_Unity:unity_getting_started
 [android_player_settings]:http://docs.unity3d.com/Manual/class-PlayerSettingsAndroid.html "Unity - Manual: Android Player Settings"
-[player_settings]: :unity_player_settings_menu_1.png
-[player_settings_id]: :unity_player_settings_android_bundle_id_1.png
-[android_manifest_id]: :artoolkit_for_unity_android_manifest_bundle_id_1.png
-[compile_setup]: :unityarplayer_compile_setup_1.png
-[unity_export_1]: :unityarplayer_export_1_1.png
-[unity_export_2]: :unityarplayer_export_2_1.png
-[unity_export_3]: :unityarplayer_export_3_1.png
+[player_settings]: :unity_player_settings_menu.png
+[player_settings_id]: :unity_player_settings_android_bundle_id.png
+[android_manifest_id]: :artoolkit_for_unity_android_manifest_bundle_id.png
+[compile_setup]: :unityarplayer_compile_setup.png
+[unity_export_1]: :unityarplayer_export_1.png
+[unity_export_2]: :unityarplayer_export_2.png
+[unity_export_3]: :unityarplayer_export_3.png

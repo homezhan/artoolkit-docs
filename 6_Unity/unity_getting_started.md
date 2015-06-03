@@ -110,12 +110,12 @@ Read up on [the scripts of ARToolKit][unity_scripts] in Unity. Also check out ou
 [unity_scripts]: 6_Unity:unity_scripts
 [unity_low_level_api]: 6_Unity:unity_low_level_api
 
-[menu_screenshot]: :unity_import_package_1.png
-[import_all]: :unity_import_artoolkit_2012-06_1.png
-[editor_screenshot]: :artoolkit_for_unity_scripts_1.png
-[arcontroller_setup]: :unity_drag_artoolkit_script_onto_empty_gameobject_1.png
+[menu_screenshot]: :unity_import_package.png
+[import_all]: :unity_import_artoolkit_2012-06.png
+[editor_screenshot]: :artoolkit_for_unity_scripts.png
+[arcontroller_setup]: :unity_drag_artoolkit_script_onto_empty_gameobject.png
 [layer]:http://unity3d.com/support/documentation/Components/Layers.html
-[edit_layers]: :unity_-_edit_layers_1.jpg
-[name_layers]: :unity_-_ar_layers_1.jpg
-[rotating]: :artoolkit_for_unity_-_setting_scene_root_rotation_1.png
-[nft_options]: :artoolkit_for_unity_-_nft_options_1.png
+[edit_layers]: :unity_-_edit_layers.jpg
+[name_layers]: :unity_-_ar_layers.jpg
+[rotating]: :artoolkit_for_unity_-_setting_scene_root_rotation.png
+[nft_options]: :artoolkit_for_unity_-_nft_options.png

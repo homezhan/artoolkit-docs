@@ -45,6 +45,6 @@ To reduce the glare, patterns can be made from more non-reflective material. For
 
 To reduce shadows, we recommend using omnidirectional lighting (lighting conditions where light falls on the patterns from all directions).
 
-[diagram]: :diagram_1.jpg
+[diagram]: :diagram.jpg
 [marker_barcode]: 3_Marker_Training:marker_barcode
 [marker_training]: 3_Marker_Training:marker_training

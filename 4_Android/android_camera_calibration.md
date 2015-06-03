@@ -44,6 +44,6 @@ As well as the calibration file itself, the following information is transmitted
 
 No personally identifying data is transmitted or stored during as part of the process. Additionally, the data is uploaded via a secure HTTPS connection.
 
-[chessboard]:/File:Calibration_chessboard.pdf "wikilink"
-[chessboard_screen]: :chessboard_ready_for_calibration_1.jpg
-[calibrating_camera]: 2_Configuration:config_camera_calibration "wikilink"
+[chessboard]:/File:Calibration_chessboard.pdf
+[chessboard_screen]: :chessboard_ready_for_calibration.jpg
+[calibrating_camera]: 2_Configuration:config_camera_calibration

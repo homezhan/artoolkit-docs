@@ -137,9 +137,9 @@ Of course, alignment between virtual and real objects is desirable for video see
 [example_optical]: 7_Examples:example_optical
 [interpupillary_distance]: https://en.wikipedia.org/wiki/Interpupillary_distance
 
-[optical_calibration_pattern]: :optical_calibration_pattern_1.png
-[performing_optical_calibration]: :performing_optical_calibration_1.png
-[optical_calibration_view]: :Ootical_calibration_view_1.png
-[ARToolKit_for_Unity_optical_parameters_file_location]: :artoolkit_for_unity_optical_parameters_file_location_1.png
-[ARToolKit_for_Unity_optical_mode_enabled]: :artoolkit_for_unity_optical_mode_enabled_1.png
-[ARToolKit_for_Unity_stereo_optical_cameraL]: :artoolkit_for_unity_stereo_optical_cameral_1.png
+[optical_calibration_pattern]: :optical_calibration_pattern.png
+[performing_optical_calibration]: :performing_optical_calibration.png
+[optical_calibration_view]: :Ootical_calibration_view.png
+[ARToolKit_for_Unity_optical_parameters_file_location]: :artoolkit_for_unity_optical_parameters_file_location.png
+[ARToolKit_for_Unity_optical_mode_enabled]: :artoolkit_for_unity_optical_mode_enabled.png
+[ARToolKit_for_Unity_stereo_optical_cameraL]: :artoolkit_for_unity_stereo_optical_cameral.png

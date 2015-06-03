@@ -137,13 +137,13 @@ If calibrating a stereo camera, calibrate each eye separately first, saving the 
 [2]: /Calibration_chessboard.pdf
 [3]: 8_Advanced_Topics:config_camera_stereo_tracking
 
-[Beginning_calibration_with_the_chessboard]: :beginning_calibration_with_the_chessboard_1.jpg
-[Chessboard_ready_for_calibration]: :chessboard_ready_for_calibration_1.jpg
-[Calibration_example_OK_1]: :calibration_example_ok_1_1.jpg
-[Calibration_example_not_OK]: :calibration_example_not_ok_1.jpg
-[example OK 1]: :calibration_example_ok_1_1.jpg
-[example OK 2]: :calibration_example_ok_2_1.jpg
-[example OK 3]: :calibration_example_ok_3_1.jpg
-[example OK 4]: :calibration_example_ok_4_1.jpg
-[example OK 5]: :calibration_example_ok_5_1.jpg
-[example OK 6]: :calibration_example_ok_6_1.jpg
+[Beginning_calibration_with_the_chessboard]: :beginning_calibration_with_the_chessboard.jpg
+[Chessboard_ready_for_calibration]: :chessboard_ready_for_calibration.jpg
+[Calibration_example_OK_1]: :calibration_example_ok_1.jpg
+[Calibration_example_not_OK]: :calibration_example_not_ok.jpg
+[example OK 1]: :calibration_example_ok_1.jpg
+[example OK 2]: :calibration_example_ok_2.jpg
+[example OK 3]: :calibration_example_ok_3.jpg
+[example OK 4]: :calibration_example_ok_4.jpg
+[example OK 5]: :calibration_example_ok_5.jpg
+[example OK 6]: :calibration_example_ok_6.jpg

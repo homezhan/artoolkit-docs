@@ -38,4 +38,4 @@ See [Deploying an ARToolKit Application on Windows][general_deploy_application].
 [unity_getting_started]: 6_Unity:unity_getting_started
 [config_video_capture]: 2_Configuration:config_video_capture
 [general_deploy_application]: 1_Getting_Started:general_deploy_application
-[winds_camera]: :artoolkit_for_unity_windows_winds_second_camera_1.png
+[winds_camera]: :artoolkit_for_unity_windows_winds_second_camera.png

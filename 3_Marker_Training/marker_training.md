@@ -103,6 +103,6 @@ If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAI
 [2]: http://www.roarmot.co.nz/ar/
 [3]: http://flash.tarotaro.org/blog/2009/07/12/mgo2/
 
-[Hiro_marker]: :hiro_marker_1.png
-[Markerdimensions]: :markerdimensions_1.png
-[Mkpatt]: :mkpatt_1.jpeg
+[Hiro_marker]: :hiro_marker.png
+[Markerdimensions]: :markerdimensions.png
+[Mkpatt]: :mkpatt.jpg

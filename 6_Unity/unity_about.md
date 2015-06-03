@@ -50,4 +50,4 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 [unity_scripts]: 6_Unity:unity_scripts
 [marker_about]: 3_Marker_Training:marker_about
 
-[helicopter]: :unityhelicopter_1.png
+[helicopter]: :unityhelicopter.png

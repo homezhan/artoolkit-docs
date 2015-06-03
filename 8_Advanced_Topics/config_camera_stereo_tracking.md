@@ -158,4 +158,4 @@ The help text is reproduced here:
 [config_camera_calibration]: 2_Configuration:config_camera_calibration
 [config_video_capture]: 2_Configuration:config_video_capture
 
-[calib_stereo_screen]: /Calib_stereo_screen.png
+[calib_stereo_screen]: /calib_stereo_screen.png

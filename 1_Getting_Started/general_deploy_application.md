@@ -49,4 +49,4 @@ ARToolKit Professional for OS X has dependency on some .dylibs. At the time of w
 ![Code signing dylibs in Xcode.][dylibs]
 
 [innosetup]: http://www.jrsoftware.org/isinfo.php
-[dylibs]: :artoolkit_xcode_code_sign_dylibs_1.png
+[dylibs]: :artoolkit_xcode_code_sign_dylibs.png

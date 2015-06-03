@@ -19,5 +19,5 @@ If trying to reduce the size of data files included with your application, pay p
 -   Compress all sound files.
 -   Reduce number of polygons in models.
 
-[show_package_contents]: :arapp_-_show_package_contents_1.png
+[show_package_contents]: :arapp_-_show_package_contents.png
 [ios_device_compatibility]:https://developer.apple.com/library/ios/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html

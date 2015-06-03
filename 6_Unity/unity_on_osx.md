@@ -19,6 +19,6 @@ A workaround is to manually copy the StreamingAssets folder into the bundle. To 
 
 
 [unity_getting_started]: 6_Unity:unity_getting_started
-[show_pacakge_contents]: :unity_player_os_x_show_pacakge_contents_1.png
-[streamingassets_folder]: :unity_os_x_streamingassets_folder_1.png
-[dragging_streamingassets_folder]: :unity_os_x_dragging_streamingassets_folder_1.png
+[show_pacakge_contents]: :unity_player_os_x_show_pacakge_contents.png
+[streamingassets_folder]: :unity_os_x_streamingassets_folder.png
+[dragging_streamingassets_folder]: :unity_os_x_dragging_streamingassets_folder.png

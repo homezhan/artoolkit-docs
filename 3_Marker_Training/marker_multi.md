@@ -108,7 +108,7 @@ Compare this to the example above, and it can be seen that for marker 01 on the 
 
 [marker_about]: 3_Marker_Training:marker_about
 [marker_barcode]: 3_Marker_Training:marker_barcode
-[Example_multimarker_barcode]: :example_multimarker_barcode_1.jpg
-[Example_multimarker_cube]: :example_multimarker_cube_1.jpg
-[Example_multimarker_template]: :example_multimarker_template_1.jpg
-[Cube_marker_axes]: :cube_marker_axes_1.png
+[Example_multimarker_barcode]: :example_multimarker_barcode.jpg
+[Example_multimarker_cube]: :example_multimarker_cube.jpg
+[Example_multimarker_template]: :example_multimarker_template.jpg
+[Cube_marker_axes]: :cube_marker_axes.png

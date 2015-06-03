@@ -99,7 +99,7 @@ By putting game objects into layers, and setting the culling mask of the camera 
     // Generally, you should use a tag or other means to identify the camera you want to modify.
     Camera[] Cameras = FindObjectsOfType(typeof(Camera)) as Camera[];
     myCamera = Cameras[0];
-    // Set the culling mask for this camera to identify the layers you want to be shown/hidden. Do this before adding the ARCamera. 
+    // Set the culling mask for this camera to identify the layers you want to be shown/hidden. Do this before adding the ARCamera.
     myARForegroundLayer = 9;
     // 0-based index, so 9 = user layer 2.
     myCamera.cullingMask = 1\<\< myARForegroundLayer;
@@ -128,6 +128,6 @@ Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call t
 Full API documentation for libARWrapper's simplified C-based API is available on our website][c_docs].
 
 [unity_getting_started]: 6_Unity:unity_getting_started
-[functional_schematic]: :artoolkit_for_unity_functional_schematic_1.png
+[functional_schematic]: :artoolkit_for_unity_functional_schematic.png
 [broadcast_message]: http://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html
 [c_docs]: http://www.artoolkit.org

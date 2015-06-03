@@ -112,14 +112,14 @@ The easiest means of testing NFT datasets you have trained in live tracking is t
 [example_nftsimple]: 7_Examples:example_nftsimple
 [forum]: http://www.artoolworks.com/support/forum/
 
-[3]: http://www.artoolworks.com/support/library/images/f/f8/pinball.jpg
+[3]: :pinball.jpg
 
-[NFT_example_KPM_measuring_image_with_rule]: :nft_example_kpm_measuring_image_with_rule_1.jpg
-[NFT_example_KPM_image_size_photoshop]: :nft_example_kpm_image_size_photoshop_1.jpg
-[Glueing_marker_to_backing_board]: :glueing_marker_to_backing_board_1.jpg
-[NFT_example_genTexData_010]: :nft_example_gentexdata_010_1.png
-[NFT_example_genTexData_020]: :nft_example_gentexdata_020_1.png
-[NFT_example_genTexData_030]: :nft_example_gentexdata_030_1.png
-[NFT_example_genTexData_040]: :nft_example_gentexdata_040_1.png
-[NFT_example_genTexData_050]: :nft_example_gentexdata_050_1.png
-[NFT_example_genTexData_060]: :nft_example_gentexdata_060_1.png
+[NFT_example_KPM_measuring_image_with_rule]: :nft_example_kpm_measuring_image_with_rule.jpg
+[NFT_example_KPM_image_size_photoshop]: :nft_example_kpm_image_size_photoshop.jpg
+[Glueing_marker_to_backing_board]: :glueing_marker_to_backing_board.jpg
+[NFT_example_genTexData_010]: :nft_example_gentexdata_010.png
+[NFT_example_genTexData_020]: :nft_example_gentexdata_020.png
+[NFT_example_genTexData_030]: :nft_example_gentexdata_030.png
+[NFT_example_genTexData_040]: :nft_example_gentexdata_040.png
+[NFT_example_genTexData_050]: :nft_example_gentexdata_050.png
+[NFT_example_genTexData_060]: :nft_example_gentexdata_060.png

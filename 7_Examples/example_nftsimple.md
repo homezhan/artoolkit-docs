@@ -32,4 +32,4 @@ The tracking should rapidly pick up the image. Once the image is recognized, the
 [1]: 2_Configuration:config_video_capture
 [2]: 2_Configuration:config_camera_calibration
 
-[NFT_example_KPM_holding_webcam]: :nft_example_kpm_holding_webcam_1.jpg
+[NFT_example_KPM_holding_webcam]: :nft_example_kpm_holding_webcam.jpg

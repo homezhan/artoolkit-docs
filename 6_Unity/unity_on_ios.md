@@ -41,4 +41,4 @@ For reference, the complete list of iOS frameworks and libraries required for co
 [ios_supported_systems]: 5_iOS:ios_supported_systems
 [unity_getting_started]: 6_Unity:unity_getting_started
 
-[accelerate_screenshot]: :unity_ios_-_add_accelerate.framework_1.png
+[accelerate_screenshot]: :unity_ios_-_add_accelerate.framework.png

@@ -36,6 +36,7 @@ check\_id reads standard multi-marker configuration files, which can be edited w
 The initial mode is to display the distortion-corrected normal color camera image. In the top-left of the window, the current thresholding mode (and threshold, if applicable) is displayed. Also, if a valid multi-marker set was loaded from Data/checkidMarkerConfig.dat, then additional indication will show whether robust multi-marker tracking is on or off.
 
 check\_id has a few modes which can be selected from the keyboard.
+
 <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
 <tbody><tr>
 <th>Key </th><th> Function
@@ -110,4 +111,4 @@ The help text is reproduced here:
 [marker_about]: 3_Marker_Training:marker_about
 [marker_barcode]: 3_Marker_Training:marker_barcode
 [marker_multi]: 3_Marker_Training:marker_multi
-[Check_id_cutoff_phases_v4]: :check_id_cutoff_phases_v4.5.0_1.png
+[Check_id_cutoff_phases_v4]: :check_id_cutoff_phases_v4.5.0.png

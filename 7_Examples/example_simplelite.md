@@ -366,4 +366,4 @@ At this stage, have a play with the simpleLite code. When you are ready, come ba
 [config_video_capture]: 2_Configuration:config_video_capture
 [about_installing]: 1_Getting_Started:about_installing
 
-[SimpleLite320x240Mac]: :simplelite320x240mac_1.png
+[SimpleLite320x240Mac]: :simplelite320x240mac.png
