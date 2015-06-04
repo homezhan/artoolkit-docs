@@ -19,6 +19,7 @@ Some more examples:
 - A dummy test source: aw-rgb,bpp=24 ! identity name=artoolkit sync=true ! fakesink
 
 Further interesting reading concerning GStreamer and webcam control:
+
 - http://www.oz9aec.net/index.php/gstreamer/345-a-weekend-with-gstreamer
 - http://www.oz9aec.net/index.php/gstreamer/367-webcam-pixel-formats-and-gstreamer-caps-filters.
 - http://benlau.blog.opensource.hk/2008/09/gstreamer-pipeline-description.html

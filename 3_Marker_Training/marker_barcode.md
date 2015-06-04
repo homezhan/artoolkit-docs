@@ -16,26 +16,13 @@ The barcode dimension is set by the values `AR_PATT_SIZE2` and `AR_PATT_SAMPLE_N
 
 In general, it is better to use the smallest pattern size possible, as this helps the patterns to be recognized more easily at a greater distance. This table shows the number of barcodes possible with each pattern size:
 
-<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-<tbody><tr>
-<th> AR_PATT_SIZE2 </th><th> Number of barcodes possible
-</th></tr>
-<tr>
-<td>3 </td><td>64
-</td></tr>
-<tr>
-<td>4 </td><td>8 192
-</td></tr>
-<tr>
-<td>5 </td><td>4 194 304
-</td></tr>
-<tr>
-<td>6 </td><td>8 589 934 592
-</td></tr>
-<tr>
-<td>n </td><td>2^(n*n - 3)
-</td></tr>
-</tbody></table>
+| AR_PATT_SIZE2 | Number of barcodes possible |
+|---------------|-----------------------------|
+| 3             | 64                          |
+| 4             | 8 192                       |
+| 5             | 4 194 304                   |
+| 6             | 8 589 934 592               |
+| n             | `2^(n*n - 3)`               |
 
 ##2D-Barcode Markers as Multi-markers
 2D-barcode markers are the default format for [multi-marker sets][marker_multi], since they offer such radical performance improvements when using multi-marker sets.

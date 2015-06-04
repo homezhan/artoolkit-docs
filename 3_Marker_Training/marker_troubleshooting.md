@@ -37,37 +37,16 @@ The initial mode is to display the distortion-corrected normal color camera imag
 
 check\_id has a few modes which can be selected from the keyboard.
 
-<table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-<tbody><tr>
-<th>Key </th><th> Function
-</th></tr>
-<tr>
-<td>&nbsp;? or /
-</td></tr>
-<tr>
-<td> q or [esc]
-</td><td> Quit program.
-</td></tr>
-<tr>
-<td> d
-</td><td> Activate / deactivate debug mode.
-</td></tr>
-<tr>
-<td> a
-</td><td> Toggle between available threshold modes.
-</td></tr>
-<tr>
-<td> - and +
-</td><td> Switch to manual threshold mode, and adjust threshhold up/down by 5.
-</td></tr>
-<tr>
-<td> r
-</td><td> Toggle robust multi-marker mode on/off.
-</td></tr>
-<tr>
-<td> c
-</td><td> Change arglDrawMode and arglTexmapMode.
-</td></tr></tbody></table>
+| Key        | Function                                                             |
+|------------|----------------------------------------------------------------------|
+| ? or /     |                                                                      |
+| q or [esc] | Quit program.                                                        |
+| d          | Activate / deactivate debug mode.                                    |
+| a          | Toggle between available threshold modes.                            |
+| - and +    | Switch to manual threshold mode, and adjust threshhold up/down by 5. |
+| r          | Toggle robust multi-marker mode on/off.                              |
+| c          | Change arglDrawMode and arglTexmapMode.                              |
+
 
 check_id begins processing each frame by performing the thresholding and square-recognition steps of ARToolKit's processing. These are the first and most basic steps in the detection of a marker and calculation of marker pose. We refer to "square-like" regions because at the earliest stages of ARToolKit processing, many regions in the incoming camera image can have shapes that approximate that of a marker. ARToolKit examines each of these shapes, performing various tests to check contrast, match the region to a pattern or to a barcode, to check that the region is planar, and so on. Only when all these tests have passed is the a marker ID returned and a pose-estimate calculated. check_id outlines all fully-identified markers with a red outline, and draws the pattern ID near the centre of the marker.
 

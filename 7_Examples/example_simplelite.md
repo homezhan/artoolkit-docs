@@ -21,30 +21,17 @@ To demonstrate in detail how to develop an application, we will step through the
 The file we will be looking at is simpleLite.c. This program simply consists of a main routine and several graphics drawing routines.
 
 The functions which correspond to the six application steps previously described are shown in Table 1. The functions corresponding to steps 2 through 5 are called within the Idle() function.
-<table border="1" cellspacing="0">
-<tbody><tr>
-<th> ARToolKit Step </th><th> Functions
-</th></tr>
-<tr>
-<td> 1. Initialize the video grabbing from the camera and load the marker(s) </td><td> setupCamera and setupMarker
-</td></tr>
-<tr>
-<td> 2. Grab a video input frame </td><td> arVideoGetImage (called in mainLoop)
-</td></tr>
-<tr>
-<td> 3. Detect the markers </td><td> arDetectMarker (called in mainLoop)
-</td></tr>
-<tr>
-<td> 4. Calculate camera transformation </td><td> arGetTransMat (called in mainLoop)
-</td></tr>
-<tr>
-<td> 5. Draw the virtual objects </td><td> Display
-</td></tr>
-<tr>
-<td> 6. Close the application down </td><td> Quit
-</td></tr>
-</tbody><caption> <b>Table 1: Function calls and code that corresponds to the ARToolKit applications steps.</b>
-</caption></table>
+
+######Table 1: Function calls and code that corresponds to the ARToolKit applications steps.
+
+| ARToolKit Step                                                          | Functions                            |
+|-------------------------------------------------------------------------|--------------------------------------|
+| 1. Initialize the video grabbing from the camera and load the marker(s) | setupCamera and setupMarker          |
+| 2. Grab a video input frame                                             | arVideoGetImage (called in mainLoop) |
+| 3. Detect the markers                                                   | arDetectMarker (called in mainLoop)  |
+| 4. Calculate camera transformation                                      | arGetTransMat (called in mainLoop)   |
+| 5. Draw the virtual objects                                             | Display                              |
+| 6. Close the application down                                           | Quit                                 |
 
 The most important functions in the program related to AR are main, setupCamera, setupMarker, mainLoop, Display, and cleanup. In the remainder of this section we will explain the key pieces of code in these functions.
 

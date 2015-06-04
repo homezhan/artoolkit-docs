@@ -29,55 +29,18 @@ Be sure to use a camera running at the same frame size as will be used in the on
 
 ###Keyboard / Mouse Controls
 Below is a table of keyboard / mouse controls for using checkResolution:
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <table rules="all" style="margin:1em 1em 1em 0; border:solid 1px #AAAAAA; border-collapse:collapse;empty-cells:show;" border="2" cellpadding="3" cellspacing="4">
-            <tbody>
-                <tr>
-                    <th>
-                        Key
-                    </th>
-                    <th>
-                        Function
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        esc
-                    </td>
-                    <td>
-                        Quit program
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        Decrease binarization threshold
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        Increase binarization threshold.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
-</html>
+
+| Key | Function                         |
+|-----|----------------------------------|
+| esc | Quit program                     |
+| 1   | Decrease binarization threshold  |
+| 2   | Increase binarization threshold. |
 
 ##dispFeatureSet
 dispFeatureSet displays trained NFT datasets by overlaying representations of the data points on the source images.
 
 Usage:
+
 <pre>
     ./dispFeatureSet <filename>
       -fset     Show fset features.
