@@ -134,7 +134,7 @@ To use your new calibration file, just replace the default camera_para.dat file 
 ## Further Reading - Stereo Camera Calibration
 If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of [inter-ocular calibration][3].
 
-[2]: /Calibration_chessboard.pdf
+[2]: http://artoolkit.org/docs/Calibration_chessboard.pdf
 [3]: 8_Advanced_Topics:config_camera_stereo_tracking
 
 [Beginning_calibration_with_the_chessboard]: :beginning_calibration_with_the_chessboard.jpg
