@@ -5,8 +5,7 @@ This section of the ARToolKit support library describes the port of ARToolKit to
 
 For application development, Android offers a rich [SDK][sdk] and development tools, based around the Java programming language. While Java is sufficient for the majority of applications, the JNI framework (Java Native Interface) can be used to implement parts of a Java application in C/C++. The [NDK][ndk] (Native Development Kit) provides the necessary tools, headers and libraries to take advantage of JNI on Android. There are two major motivations for using native code: to potentially increase performance, and to reuse existing C/C++ libraries. In the case of porting ARToolKit to Android, both of these motivations come into play.
 
-This guide covers the [structure][2] of ARToolKit and how to use it to develop your own augmented reality applications on Android. The SDK offers several different development paths, depending on the developer’s preference for Java or native coding. A certain amount of prior knowledge of Android development is essential, and assumed.
-
+The first section, *ARToolKit's SDK Structure* link below, covers the structure of ARToolKit and how to use it to develop your own augmented reality applications on Android. The SDK offers several different development paths, depending on the developer’s preference for Java or native coding. A certain amount of prior knowledge of Android development is essential, and assumed.
 
 ##Index
 

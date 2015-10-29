@@ -1,14 +1,20 @@
-#simpleLite - First Example
-Among the variety of example applications that are bundled with ARToolKit, simpleLight is the most straight-forward. When you [install ARToolKit][about_installing], you can find it with the other example applications in the `bin` directory. More examples, and explanations of their techniques can be found from the sidebar category "Examples".
+#simpleLite - The First Example Application to Look At
+Among the variety of example applications that are bundled with ARToolKit, simpleLight is the most straight-forward. The application is an example of traditional template marker tracking. It uses very simple marker embedded with a blank (white)  marker image. When you [install ARToolKit][about_installing], you can find it with the other example applications in the `bin` directory. More examples, and explanations of their techniques can be found from the sidebar category "Examples".
 
-##Running simpleLite
-Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. It is recommended you do this when you install a new version of ARToolKit.
+###What To Expect From From simpleLite
+After executing the application, the device's webcam is activated and scans the captured video stream for the preconfigured marker mentioned above. When the marker is recognized within the webcam's view, simpleLite tracks and superimposes a multi-colored, three dimensional, cube onto the marker's video image. The cube is tracked, aligned and affixed to the displayed video stream.
+
+###Simple ARToolKit Testing Using simpleLite
+Running the simpleLight example application is one of the most straight-forward ways to test that your ARToolKit SDK installation is functioning correctly. It is recommended you do this when you install a new version of ARToolKit SDK.
+
+##Executing simpleLite
+Before starting the simpleLight application, print out the marker file using a high printer resolution or quality settings and using the A4 or Letter paper size setting. Also set the printer settings to scale the image to fit, scaling up the image to its maximum size on the paper, keeping a square aspect ratio (1:1). The marker file to print: `[ARToolKit root]/doc/patterns/Blank pattern.png`.
 
 ### Windows:
-simpleLite can be opened by double-clicking its icon in the `%ARTOOLKIT5_ROOT%\bin` directory or from the same directory from the command line (cmd.exe) by entering `simpleLite.exe`.
+simpleLite can be opened by double-clicking its icon in the `[ARToolKit root]\bin` directory or from the same directory from the command line (cmd.exe) by entering `simpleLite.exe`.
 
 ### Mac OS X:
-Bundled applications are generated for the examples. Open the "bin" directory in the Finder and double-click the "simpleLite" example app.
+Bundled applications are generated for the examples. Open the `[ARToolKit root]/bin` directory in the Finder and double-click the `simpleLite.app` example app.
 
 ### Linux:
 The simpleLite application can be launched from a terminal window by entering `./simpleLite` from its directory.
@@ -352,5 +358,4 @@ At this stage, have a play with the simpleLite code. When you are ready, come ba
 [config_camera_calibration]: 2_Configuration:config_camera_calibration
 [config_video_capture]: 2_Configuration:config_video_capture
 [about_installing]: 1_Getting_Started:about_installing
-
 [SimpleLite320x240Mac]: :simplelite320x240mac.png
