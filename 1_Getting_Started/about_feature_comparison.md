@@ -40,7 +40,7 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 ##Video Input Focus
 * Modular video input system (multiple video sources per platform, able to be selected at runtime)
 * iOS video support
-* Windows MediaFoundation support
+* Windows Media Foundation support
 * Windows DirectShow support
 * Windows FlyCapture SDK support (for Point Grey cameras)
 * Windows DVCam support
@@ -65,7 +65,7 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * User-selectable floating point precision
 * Hand-tuned ARM assembly in performance critical sections
 * Optimised pathway for YUV video streams
-* Multi-threading used throughout.
+* Multithreading used throughout
 
 ##New Languages and APIs
 * C++
@@ -80,5 +80,5 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * Support for chroma-keying of video streams
 
 ##Developer Experience
-* Full support for latest developer environments, including Xcode 6.x for iOS and OS X, Visual Studio 2013 for Windows, and Eclipse for Android.
+* Full support for latest developer environments, including Xcode 6.x for iOS and OS X, Visual Studio 2013 for Windows, and Eclipse for Android
 * Vastly improved documentation, including new and improved reference documentation for over 350 API calls, as well as detailed guides and tutorials
