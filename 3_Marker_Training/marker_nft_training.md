@@ -1,79 +1,79 @@
-# Training NFT to a New Surface
-ARToolKit NFT tracks from natural features of planar textured surfaces (e.g. photos and documents). The current implementation of the tracking algorithm requires that the visual appearance of the surface is known in advance. Thus, in advance we have to *train* the system to the appearance of a particular surface that we want to use for tracking. The output of this training is a set of data that can be used for realtime tracking in our application.
+# Training ARToolKit Natural Feature Tracking (NFT) to Recognize and Track an Image
+ARToolKit NFT is able to recognize and track natural features of photos and documents, specifically, **planar textured surfaces**. However, to accomplish this, ARToolKit NFT requires that the visual appearance of the surface is known in advance. Thus,  the system has to be *trained* with a surface in advance to recognize and track the surface. The output of this training is a set of data that can be used for realtime tracking in application using the ARToolKit SDK.
 
 The following constraints apply to surfaces which can be used with ARToolKit NFT.
 
 -   The surfaces to be tracked must be supplied as a rectangular image.
 -   The images must be supplied in jpeg format.
--   The surface must be textured and have a reasonable amount of fine detail (i.e. it must have a low degree of [self-similarity][self-similarity] and high spatial-frequency). Images with large areas of single flat color will not track well (if at all) since no unique features will be able to be identified in the interior of the areas of flat color, and images that are blurred or have soft detail will similarly not track well.
+-   The surface must be textured and have a reasonable amount of fine detail and sharp edges (a low degree of [self-similarity][self-similarity] and high spatial-frequency). Images with large areas of single flat color, that are blurred or have soft detail will not track well, if at all. In such images, it's difficult to locate distinct feature points.
 -   Larger or higher resolution images (more pixels) will allow the extraction of feature points at higher levels of detail, and thus will track better when the camera is closer to the image, or when a higher resolution camera is used.
 
-The ARToolKit NFT 2.0 tracker does not impose any additional constraints. For increased efficiency and robustness, you are allowed to [use fiducial markers along with NFT markers as part of the dataset][marker_nft_fiducial_markers], which utilizes the NFT 1.0 tracker.
+The ARToolKit NFT 2.0 tracker, opposed to the NFT 1.0 tracker, does not require augmenting the image with [fiducial markers][marker_nft_fiducial_markers]  to implement NFT tracking. But, for increased efficiency and robustness, fiducial markers can be used along with NFT markers as part of the dataset when using the NFT 2.0 tracker.
 
-##Producing a Good NFT Image
-The NFT tracker works by looking for a known dataset, which is a representative descriptor of the image you want to track. This section will guide you to producing a high-quality image for NFT.
+##Typical Workflow Summary for Training an Image to be NFT Recognized and Tracked
 
-Summary: A typical workflow for producing NFT markers proceeds thus:
+1.  If the image to be recognized and tracked is hardcopy, the image must be scanned or camera captured into a jpeg formatted soft-copy image file. A high-resolution, high-quality soft-copy image forms the basis for locating feature points and generating the *trained* dataset. 
+2.  The resulting soft-copy image is used as input to the NFT training applications.
+3.  Produce and prepare the final hardcopy image that is recognized and tracked.
 
-1.  A high-resolution image which is to form the basis of the marker is obtained. If the source texture is on paper, it must be scanned. The image is saved in jpeg format.
-2.  The resulting image is fed into the NFT training applications.
-3.  If the image is to be printed, print on a good-quality color printer, on low-gloss paper, to produce the final image which will be tracked.
+A good example of an NFT image is "[pinball.jpg][3]" (found under the path: [downloaded ARToolKit SDK root directory]/doc/Marker images).
 
-A good example of an NFT image is "[pinball.jpg][3]".
+###Producing a High-Resolution, High-Quality Soft-Copy Image for NFT Training
+The NFT tracker works by looking for a known feature points defined by a dataset, which is a representative descriptor of the image you want to track. This section will guide you to producing a high-quality soft-copy image for NFT tracking.
 
-Whether starting from a pre-existing print, or a digital image, the considerations for resolution and target size are the same:
+Care must be taken to ensure that the image supplied to the training tools is not too big (wasteful of memory, disk and CPU during tracking) and not too small (of insufficient detail to allow tracking when the camera is close to the image). Whether starting from a pre-existing print, or a soft-copy image, the considerations for resolution and target size are the same:
 
-1.  What is the physical size of the printed material? I.e., what is the width and height in inches or millimeters? Measure this accurately with a ruler. Common paper sizes include A4 (210 mm x 297 mm) and US Letter (8.5 inches x 11 inches, or 215.9 mm x 279.4mm). ![Measuring the size with a millimeter rule. Measure the part that corresponds exactly to your source image. Don't include the border.][NFT_example_KPM_measuring_image_with_rule]
-2.  How close to the camera will the printed image be when in use? This relates to the required *resolution*, commonly expressed as pixels or dots per inch (DPI).Most laser printers produce 300dpi black and white images, while color printers usually use a dot-screen at 150 dpi (although they may advertise higher resolutions, almost all use a 150dpi resolution). To help answer the resolution question, use the "[checkResolution][marker_nft_utilities]" tool supplied with ARToolKit. Once you have determined the maximum resolution required, return to this page.
+1.  What is the physical size of the printed material? I.e., what is the width and height in inches or millimeters? Measure this accurately with a ruler. Common paper sizes include A4 (210mmX297mm) and US Letter (8.5 inchesX11inches, or 215.9mmX279.4mm). ![Measuring the size with a millimeter rule. Measure the part that corresponds exactly to your source image. Don't include the border.][NFT_example_KPM_measuring_image_with_rule]
+2.  When NFT tracking, how close to the camera will the printed image be when in use? This relates to the required *resolution*, commonly expressed as pixels or dots per inch (DPI). Most laser printers produce 300dpi black and white images, while color printers usually use a dot-screen at 150dpi (although they may advertise higher resolutions, almost all use a 150dpi resolution). To help answer the resolution question, use the "[checkResolution][marker_nft_utilities]" tool supplied with ARToolKit (found under the path: [downloaded ARToolKit SDK root directory]/bin). Once you have determined the maximum resolution required, return to this page.
 
-For example, borderless A4 at 150dpi is 1240 pixels wide and 1754 pixels tall. Borderless US Letter at 150dpi is 1275 pixels wide and 1650 pixels tall. ![If producing from digital artwork at 1:1 scale, you can use image size from that artwork. Example here is from Adobe Photoshop.][NFT_example_KPM_image_size_photoshop]
+For example, borderless A4 at 150dpi is 1240pixels wide and 1754pixels tall. Borderless US Letter at 150dpi is 1275pixels wide and 1650pixels tall. If producing from digital artwork at 1:1 scale, you can use image size from that artwork. ![Example here is from Adobe Photoshop.][NFT_example_KPM_image_size_photoshop]
 
-If you have the measurements in millimeters, you can convert to inches by dividing by 25.4 (i.e. there are 25.4 millimeters in one inch).
+If the measurements are in millimeters, you can convert to inches by dividing by 25.4 millimeters per inch:
 <pre>
-    inches = millimeters / 25.4
+    inches = millimeters / 25.4 millimeters per inch
 </pre>
 
-###Using a Physical Print
-In many cases, it may be simplest to start with a physical print of the tracked surface. This might be also be best if:
+####Using a Hardcopy Image Source
+In many cases, it may be simplest to start with a hardcopy image of the surface to be tracked. Further considerations for starting with a hardcopy image:
 
--   You are augmenting the pages of a book, magazine, or other printed material for which you do not have the design artwork.
--   You have digital artwork, but the physical print differs considerably in brightness, color or tone.
+-   Augmenting the pages of a book, magazine, or other printed material for which you do not have the source design artwork.
+-   Digital artwork's prints differs considerably in brightness, color or tone than its soft-copy counterpart.
 
-If using a scanner or camera that needs a "resolution" setting, you can just directly use the maximum resolution calculated by the checkResolution tool.
+If using a scanner or camera that needs a "resolution" setting, you can just directly use the maximum resolution calculated by the *checkResolution* tool (found under the path: [downloaded ARToolKit SDK root directory]/bin).
 
-If using a scanner or camera that calculates in terms of image width and height, multiply the resolution calculated by the physical width and height: `width in pixels = width in inches x dots per inch` and  `height in pixels = height in inches x dots per inch`
+If using a scanner or camera that expresses resolution in terms of *dots per inch*, calculate the required pixel resolution. The calculation:
 
-If using a scanner or camera that requires a "megapixels" setting, calculate the required width and height in pixels (above) and then multiply these together and divide by 1,000,000. E.g. 640x480 = 0.3 megapixels.
+    width in pixels = width in inches * dots per inch
+    height in pixels = height in inches * dots per inch
+
+If using a scanner or camera that requires a "megapixels" setting, calculate the required width and height in pixels (above) , then multiply these together and divide the result by 1,000,000. Example:
+
+    640 width in pixels * 480 height in pixels = 307,200 pixels of resolution
+    307,200 pixels / 1,000,000 pixels/megapixel = ~0.31 megapixels of resolution
 
 After scanning or photography is completed, check that the resulting digital image is not blurred and has sufficient contrast. Washed-out blurry images work very poorly in the NFT training process.
 
-###Using Digital Artwork
-Producing the digital image for tracking from pre-existing digital artwork is simple. Care must be taken, however, to ensure that the image supplied to the training tools is not too big (wasteful of memory, disk and CPU during tracking) and not too small (of insufficient detail to allow tracking when the camera is close to the image.).
+#####Using a Hardcopy Image Sourced from Digital Artwork Soft-Copy
+Using soft-copy digital artwork as input to the training process versus using the printed hardcopy of the digital art can result in significant differences in trained features that will reduce the robustness of the tracking of the final hardcopy surface. Also, if the scale of the artwork soft-copy used in the training process differs from the scale of the final hardcopy surface used for tracking, misleading tracking can result. Therefore, it's recommended to start the training process by printing the digital artwork soft-copy and use the resulting printed hardcopy as the eventual input soft-copy image for the training process.
 
-After printing your digital artwork, check that the print is the correct size. A scaled print will still track, but will give scaled (and potentially misleading) tracking results (distance from camera etc.). Also, check that the print matches the artwork in terms of contrast, absence of print defects etc. Differences between the digital artwork and the physical print will reduce the robustness of the tracking, as some of the trained features may not be present on the print.
+Producing the digital image for tracking from pre-existing digital artwork is simple. First print the digital artwork referring to the two previous sections.
+After printing your digital artwork, check that the print is the correct size. Also, check that the print matches the artwork in terms of contrast, absence of print defects, etc.
 
-##Physical Print Properties
-Whether working from supplied printed material or a print from digital artwork, eventually the user needs an actual surface to hold in front of the camera.
+###Generating an NFT Dataset from the Digital Image - the Training Steps
+Now that you have an image you wish to use with NFT, you must create the dataset (train the image). Surface training uses [utilities][marker_nft_utilities] included in the ARToolKit package. These utilities must be run from the command line. On Linux / OS X open a terminal window and cd to the bin directory. On Windows, this means you must open a “cmd” console and cd to the bin directory.
 
-It is important that the physical print is kept as flat as possible. Small amounts of curvature can be coped with by the tracker to some degree, but flat is best. Where possible, the print should be on or affixed to a physical prop that keeps it flat.
-
-![Glue printed pages to a flat surface using a dry glue. Take care not to distort the printed paper when affixing.][Glueing_marker_to_backing_board]
-
-For Example: If you were printing a label to be attached to a product, the label should be applied to a flat area of the product. The curved surface of a bottle or can would not be suitable, and alternatives could include the packaging holding the bottle or can, or on a flat label or tag attached to the product. If mounting in a book, surfaces should be printed on heavy card and bound with board-book, ring or spiral binding. If used as an unbound card, affix to the card with a dry glue (e.g. a glue stick or an industrial dry adhesive).
-
-##Decide on the Image Set Resolutions
+####Training Step 1: Decide on the Image Set Resolutions
 Most of the operation of the training utility programs proceeds without much input from the user, but there is one important decision required prior to starting the training utility; that is selecting the resolutions at which features of the image will be extracted. (Generally, features are extracted at three or more resolutions to cope with the fact that dots in the image will appear at different resolution to the software depending on how close or far away the camera is from the image.)
 
 For a typical webcam operating at VGA (640x480) resolution and tracking at handheld-distance from the surface, a range of resolutions between 20 dpi and 120 dpi is a good starting point. If using a higher-resolution webcam or tracking much closer to the surface, higher resolutions will be required. *Note: that there is no point in using resolutions higher than the actual resolution of the final printed surface!*
 
-The utility program "[checkResolution][marker_nft_utilities]" can help with the decision of what values to use as minimum and maximum resolutions.
+The utility application "[checkResolution][marker_nft_utilities]" (found under the path: [downloaded ARToolKit SDK root directory]/bin) can help with the decision of what values to use as minimum and maximum resolutions.
 
 After completing a training pass, it will pay to come back to the choice of image set resolutions and experiment with different minimum and maximum resolutions. The choice depends greatly on the way in which you intend to use ARToolKit for tracking, and your source images.
 
 If you have further questions, you should ask questions to the ARToolKit community on the [forum][forum].
 
-##Generating an NFT dataset from the Digital Image
-Now that you have an image you wish to use with NFT, you must create the dataset (train the image). Surface training uses [utilities][marker_nft_utilities] included in the ARToolKit package. These utilities must be run from the command line. On Linux / OS X open a terminal window and cd to the bin directory. On Windows, this means you must open a “cmd” console and cd to the bin directory.
+####Training Step 2: Generating an NFT Dataset from the Digital Image
 
 The same NFT dataset generation tools are shared between all supported ARToolKit desktop and mobile platforms. Dataset generation is performed using a single integrated tool ""[genTexData][marker_nft_utilities]"".
 
@@ -95,7 +95,7 @@ You may be prompted for the source image resolution, as well as the range of res
 
 ![When generation of tracking data is complete, the utility will save the ".fset" and ".fset2" files to disk alongside the .jpeg. Training is then complete.][NFT_example_genTexData_060]
 
-###Testing the Dataset
+####Training Step 3: Testing the Dataset
 Once the image set and feature sets have been generated, you can use the [dispImageSet and dispFeatureSet][marker_nft_utilities] utilities to examine the output of the training process.
 
 By examining the output of dispFeatureSet, you can immediately see a number of things about the image used:
@@ -105,6 +105,15 @@ By examining the output of dispFeatureSet, you can immediately see a number of t
 -   Some areas with fine detail but low contrast will be quite "noisy", with a slight adjustment of the image size or other training parameters resulting in these features not being chosen.
 
 The easiest means of testing NFT datasets you have trained in live tracking is to run them using the [nftSimple example][example_nftsimple] program.
+
+###Producing and Preparing the Final Hardcopy Image that is Recognized and Tracked
+Whether working from supplied printed material or a print from digital artwork, eventually the user needs an actual surface to hold in front of the camera to recognize and track the trained image.
+
+ The soft-copy image is printed using a high-quality color printer, on low-gloss paper. It is important that the image surface is kept as flat as possible. Small amounts of curvature can be coped with by the tracker to some degree, but flat is best. Where possible, the print should be on or affixed to a physical prop that keeps it flat.
+
+![Glue printed pages to a flat surface using a dry glue. Take care not to distort the printed paper when affixing.][Glueing_marker_to_backing_board]
+
+For Example: If you were printing a label to be attached to a product, the label should be applied to a flat area of the product. The curved surface of a bottle or can would not be suitable, and alternatives could include the packaging holding the bottle or can, or on a flat label or tag attached to the product. If mounting in a book, surfaces should be printed on heavy card and bound with board-book, ring or spiral binding. If used as an unbound card, affix to the card with a dry glue (e.g. a glue stick or an industrial dry adhesive).
 
 [self-similarity]: https://en.wikipedia.org/wiki/Self-similarity
 [marker_nft_fiducial_markers]: 3_Marker_Training:marker_nft_fiducial_markers
