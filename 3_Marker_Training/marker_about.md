@@ -22,7 +22,7 @@ While vision-based tracking is exciting in enabling so many applications, there 
 Naturally the virtual objects will only appear when the marker being tracked is in camera view. This may limit the size or movement of the virtual objects. It also means that if users cover up, from the camera's view, part of the marker with an obstruction, the composited virtual model disappears. Also, if the marker borders are moved outside the camera's view, the marker will be clipped, no longer having four corners. As a result, recognition will fail. 
 
 ###Range
-There are also range issues in optical tracking, since as markers are move further away from the camera, the markers occupy fewer pixels in the camera's view and results in having insufficient detail for recognition, tracking and identification. The larger the physical marker image the further away the marker image can be detected and so the greater the track-ability of the marker.
+There are also range issues in optical tracking, since as markers are move further away from the camera, the markers occupy fewer pixels in the camera's view and results in having insufficient detail for recognition, tracking and identification. The larger the physical embedded marker pattern, the further away the embedded marker pattern can be detected and so the greater the track-ability of the marker.
 
 Table 1 shows some typical maximum ranges for square markers of different sizes. These results were gathered by scanning square markers of increasing size, placing them perpendicular to the camera and increasing the distance between the camera and marker until the marker is no longer recognized.
 
