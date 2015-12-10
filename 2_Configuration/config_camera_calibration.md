@@ -64,7 +64,7 @@ The help text is reproduced here:
       -cornerx=n: specify the number of corners on chessboard in X direction.
       -cornery=n: specify the number of corners on chessboard in Y direction.
       -imagenum=n: specify the number of images captured for calibration.
-      -pattwidth=n: specify the square width in the chessbaord.
+      -pattwidth=n: specify the square width in the chessboard.
       -h -help --help: show this message
 </pre>
 
@@ -87,7 +87,7 @@ When the camera can clearly see all the intermediate corners, the X marks turn R
 If some of the corners are obscured by the edges of the camera frame, or poor lighting or reflection, the crosses will be GREEN, and no calibration image can be captured until the optical conditions are changed.
 ![A poor view of the calibration board, NOT ready to capture.][Calibration_example_not_OK]
 
-Once you have an image with all red crosses, you can press the space bar on the keyboard. The image will be captured, and the locations of the X points will be printed to the terminal window, and the counter will increment.
+Once you have an image with all red crosses, you can press the spacebar on the keyboard. The image will be captured, and the locations of the X points will be printed to the terminal window, and the counter will increment.
 
 In order to obtain a good calibration for the camera, it is important to obtain images of the calibration board at a variety of angles to the camera lens. The images below give examples of the configurations of the calibration board you should try to obtain. Note that these involve holding the camera at different angles to the board, including upside-down:
 ![Calibration example OK 1][example OK 1]
@@ -122,7 +122,7 @@ Err[10]: 0.385920[pixel]
 Filename[camera_para.dat]:
 </pre>
 
-If the calibration data is good, there should be very low estimated error in each image: hopefully, less than 1 pixel. *Error greater than 2 pixels indicates a poor calibration, and it should be abandoned and restarted.*
+If the calibration data is good, there should be very low estimated error in each image: hopefully, less than 1 pixel. *Errors greater than 2 pixels indicates a poor calibration, and it should be abandoned and restarted.*
 
 At this point, you can press return or enter on the keyboard to save the data in a file named "camera_para.dat".
 

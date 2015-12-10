@@ -43,7 +43,7 @@ The ARController script will handle the creation and management of the AR tracki
 ![Choose "Edit layers..." in Unity.][edit_layers]
 ![Choose two of the User layers and give them appropriate names.][name_layers]
 
-You should now be able to run the scene and see the live video. The developer can choose how the input video's aspect ratio is treated in respect to the display's aspect ratio. If they do not match, such as 4:3 video on a 16:10 screen, then the developer can choose either to stretch the video (which will introduce distortion), or use less of the screen (which will introduce empty bars). Any bars will have the color of the background clearing camera which always renders to the entire screen.
+You should now be able to run the scene and see the live video. The developer can choose how the input video's aspect ratio is treated in respect to the display's aspect ratio. If they do not match, such as 4:3 video on a 16:10 screen, then the developer can choose either to stretch the video (which will introduce distortion), or use less of the screen (which will introduce empty bars). Empty bars will have the color of the background clearing camera which always renders to the entire screen.
 
 -   Fill screen: Possibly stretch the rendering and introduce distortion.
 -   Maintain video aspect ratio (bars): Correct rendering, but bars at edges if the video is more square than display, or at top and bottom if display is more square than video.

@@ -39,7 +39,7 @@ or for a 64-bit executable:
 
 You might need to adjust the above if the path to your standalone's .exe is a subfolder of {app}.
 
-Additionally, if you use the QuickTime support included in ARvideo, you should obtain the redistributable installer for QuickTime from Apple via the Apple Developer Support.
+Additionally, if you use the QuickTime support included in ARvideo, you should obtain the redistributable installer for QuickTime from Apple via Apple Developer Support.
 
 ##OS X
 

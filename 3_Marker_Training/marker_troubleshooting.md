@@ -20,7 +20,7 @@ On Windows, type:
 
 check_id should launch and open a video window.
 
-If you also wish to display pose-estimates errors, OR you wish to check recognition of template markers, you will need to define a multi-marker configuration file first. By default, check\_id reads it's multimarker configuration from up to two multimarker configuration files specified on the command line. You can test (for example) using the pre-supplied file `Data/cubeMarkerConfig.dat` (which is set to track the cube marker whose image is supplied in PDF form in `doc/patterns/Cubes/cube00-05-a4.pdf` or `/doc/patterns/Cubes/cube00-05-latter.pdf`) using the following launch syntax.
+If you also wish to display pose-estimates errors or wish to check recognition of template markers, you will need to define a multi-marker configuration file first. By default, check\_id reads its multimarker configuration from up to two multimarker configuration files specified on the command line. You can test (for example) using the pre-supplied file `Data/cubeMarkerConfig.dat` (which is set to track the cube marker whose image is supplied in PDF form in `doc/patterns/Cubes/cube00-05-a4.pdf` or `/doc/patterns/Cubes/cube00-05-latter.pdf`) using the following launch syntax.
 On Linux / OS X, type:
 <pre>
     ./check_id Data/cubeMarkerConfig.dat

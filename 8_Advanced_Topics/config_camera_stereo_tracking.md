@@ -116,7 +116,7 @@ Calibration requires the capturing of a series of images with both cameras. In t
 
 If some of the corners are obscured by the edges of the camera frame, or poor lighting or reflection, the crosses will be GREEN, and no calibration image can be captured until the optical conditions are changed.
 
-Once you have an image with all red crosses, you can press the space bar on the keyboard. The image will be captured, and the locations of the X points will be printed to the terminal window, and the counter will increment.
+Once you have an image with all red crosses, you can press the spacebar on the keyboard. The image will be captured, and the locations of the X points will be printed to the terminal window, and the counter will increment.
 
 In order to obtain a good calibration for the cameras, it is important to obtain images of the calibration board at a variety of angles to the camera lenses.
 

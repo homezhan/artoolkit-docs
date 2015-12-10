@@ -3,7 +3,7 @@ ARToolKit for iOS runs under [several modern versions][ios_system_support] of Ap
 
 This document is meant to be a supplement to the existing configuration documentation, such as [calibrating your camera][config_camera_calibration], [configuring video capture][config_video_capture], as well as training [NFT][marker_nft_training] and [traditional][marker_training] markers.
 
-There are [additional functions availible to the iOS camera][ios_camera] in ARToolKit, including high-res image capture. Additionally, it is easy to [include movies in your AR scene][ios_movie_textures]. For more general information, you can read about [reducing your iOS app size][ios_reducing_size], or see [how ARToolKit can integrate with iOS with the ARApp example][example_arapp].
+There are [additional functions available to the iOS camera][ios_camera] in ARToolKit, including high-res image capture. Additionally, it is easy to [include movies in your AR scene][ios_movie_textures]. For more general information, you can read about [reducing your iOS app size][ios_reducing_size], or see [how ARToolKit can integrate with iOS with the ARApp example][example_arapp].
 
 ##Index
 

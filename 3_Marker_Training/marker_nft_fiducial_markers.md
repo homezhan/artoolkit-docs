@@ -53,7 +53,7 @@ The tracking in this application is initialized by the appearance of a marker. O
 
 For more information continue to the page [Running the nftSimple example][2]
 
-A more complex example, showing the use of 2D barcode markers outside the NFT surface can be downloaded [here][3].
+A more complex example, showing the use of 2D-barcode markers outside the NFT surface can be downloaded [here][3].
 
 [marker_about]: 3_Marker_Training:marker_about
 [1]: 3_Marker_Training:marker_nft_training

@@ -11,7 +11,7 @@ All data captured in this app goes into the ARToolKit lens calibration data serv
 
 
 ##How it Works
-The calibration pattern consists of a grid of black and white squares surrounded by a white border. Due do how camera lenses work, when straight lines are viewed through the camera lens, they will naturally bend in accordance to the hemisphere of the lens itself. The ["ARToolKit Camera Calibrator" app][playstore] locates the corners of the squares and then measures the spacing between the corners and uses this information to calculate the lens distortion. The more images captured, and the more angles they are captured from, the lower the error in the distortion measurement. For this reason, in this app we capture 10 images.
+The calibration pattern consists of a grid of black and white squares surrounded by a white border. Due to how camera lenses work, when straight lines are viewed through the camera lens, they will naturally bend in accordance to the hemisphere of the lens itself. The ["ARToolKit Camera Calibrator" app][playstore] locates the corners of the squares and then measures the spacing between the corners and uses this information to calculate the lens distortion. The more images captured, and the more angles they are captured from, the lower the error in the distortion measurement. For this reason, in this app we capture 10 images.
 
 ###Get and Print the Pattern
 1.   Download the calibration chessboard in [A4][patterna4] or [US Letter][patternus] size.
@@ -23,7 +23,7 @@ The calibration pattern consists of a grid of black and white squares surrounded
 When preparing your environment for calibrating your camera, there are a couple of best practices to keep in mind:
 
 -   Since the chessboard pattern is assumed to be flat, *make sure that the chessboard pattern lays completely flat*.
-    -   We recommend you firmly affix the chessboard to a flat surface (such as a table or piece of acryllic) using spray adhesive or double-sided tape. Very thick cardstock also works well.
+    -   We recommend you firmly affix the chessboard to a flat surface (such as a table or piece of acrylic) using spray adhesive or double-sided tape. Very thick card stock also works well.
 -   Make sure that the chessboard pattern is in a well-lit area, and is not obscured or occluded in any way.
 
 
@@ -37,9 +37,9 @@ The device you are using may have multiple cameras (such as front and back), as 
 First and foremost, we recommend checking the "Force landscape display" checkbox, as you will be moving the phone around at many angles, and swapping layout is not recommended.
 
 ####Choosing Which Resolution(s) to Calibrate
-Choosing which resolution(s) to calibrate against can be somewhat difficult. Practically every camera maker uses a different camera module, which in turn has different video modes. *There is no resolution guaranteed to be availible on all Android devices. That being said, 320x240 (4:3) is avalible on most devices.*
-![The resolution selections availible on a Google Nexus 5.][resolutions]
-The good news is that it's not the resolution that matters as much as the aspect ratio. Therefore, we recommend you capture one resolution of each aspect ratio for the camera on your device. The most common standard aspect ratios are 4:3, 3:2, and 16:9. We recommend you calibrate for each of these three aspect ratios, if availible.
+Choosing which resolution(s) to calibrate against can be somewhat difficult. Practically every camera maker uses a different camera module, which in turn has different video modes. *There is no resolution guaranteed to be available on all Android devices. That being said, 320x240 (4:3) is available on most devices.*
+![The resolution selections available on a Google Nexus 5.][resolutions]
+The good news is that it's not the resolution that matters as much as the aspect ratio. Therefore, we recommend you capture one resolution of each aspect ratio for the camera on your device. The most common standard aspect ratios are 4:3, 3:2, and 16:9. We recommend you calibrate for each of these three aspect ratios, if available.
 
 ####Why Calibrate the Front Camera?
 Because some AR applications actually make use of the front camera! If your application uses the front camera, or you want to do a good service, we recommend you follow the above resolution recommendations for the front camera also.
@@ -65,7 +65,7 @@ Capturing these images involves holding the camera at different angles to the bo
 ###Finishing Up
 Once you've captured all 10 images, the screen will display "Calculating camera parameters...". Once it has finished it will display your results, like so:
 [The results for a calibration captured on a Google Nexus 5.][results]
-This screen displays the minimum, maximum, and average error from the frames captured. *In general, having an error threshold below 1.0 is good. If your standard error is above 5 on a non-HD resolution, we recommend you complete the calibration again, beign careful with camera focus, chessboard flex, and lighting.*
+This screen displays the minimum, maximum, and average error from the frames captured. *In general, having an error threshold below 1.0 is good. If your standard error is above 5 on a non-HD resolution, we recommend you complete the calibration again, being careful with camera focus, chessboard flex, and lighting.*
 
 Congratulations! You've calibrated your camera! We recommend you go and calibrate for the rest of the recommended aspect ratios, listed above.
 

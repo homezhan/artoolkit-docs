@@ -1,5 +1,5 @@
 #Movie Textures on iOS
-ARToolKit natively supports realtime playback of movie files (including audio) in the augmented environment on iOS. Video can be manipulated in the scene, including being attached to a marker.
+ARToolKit natively supports real-time playback of movie files (including audio) in the augmented environment on iOS. Video can be manipulated in the scene, including being attached to a marker.
 
 A fully functional example named "ARAppMovie" is provided with ARToolKit for iOS.
 
@@ -21,7 +21,7 @@ For applications which use the VirtualEnvironment class, objects specified in ob
 
 VEObjectMovie loads and draws a movie file from the local file system as a video texture, using the MovieVideo class. It allows playback of MPEG4 video (with or without audio) in the virtual environment. Recommended maximum movie size is 512 pixels or less in both the vertical and horizontal dimensions.
 
-Without any scaling or offset, the movie object is sized so that its largest side is the equivalent of 80 drawing units (usually 80 millimetres). The origin of the object is the lower-left corner of the movie texture. Unrotated, the movie file will be placed in the x-y plane, with it's upper surface facing the +z axis. To position the movie differently, apply translation/rotation/scale factors in the VEObject configuration file.
+Without any scaling or offset, the movie object is sized so that its largest side is the equivalent of 80 drawing units (usually 80 millimeters). The origin of the object is the lower-left corner of the movie texture. Unrotated, the movie file will be placed in the x-y plane, with its upper surface facing the +z axis. To position the movie differently, apply translation/rotation/scale factors in the VEObject configuration file.
 
 ## MovieVideo class
 MovieVideo can be used directly when more complicated movie manipulation is required (for example, adjustment of the playback position, or user-interaction).

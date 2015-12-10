@@ -39,7 +39,7 @@ In many cases, it may be simplest to start with a physical print of the tracked 
 -   You are augmenting the pages of a book, magazine, or other printed material for which you do not have the design artwork.
 -   You have digital artwork, but the physical print differs considerably in brightness, color or tone.
 
-If using a scanner or camera that needs a "resolution" setting, you can just directly use the maximum resolution calculated by the checkResolution tool.
+If using a scanner or camera that needs a "resolution" setting, you can directly use the maximum resolution calculated by the checkResolution tool.
 
 If using a scanner or camera that calculates in terms of image width and height, multiply the resolution calculated by the physical width and height: `width in pixels = width in inches x dots per inch` and  `height in pixels = height in inches x dots per inch`
 

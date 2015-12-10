@@ -14,7 +14,7 @@ The first section, *ARToolKit's SDK Structure* link below, covers the structure 
 - [Developing with ARToolKitWrapper and ARBaseLib][android_developing]
 - [Native Development Information][android_native]
 - [Camera Preferences][android_preferences_activity]
-- [Using automatic online camera calibration retrieval][android_camera_calibration_service]
+- [Using Automatic Online Camera Calibration Retrieval][android_camera_calibration_service]
 - [ARToolKit Camera Calibration for Android][android_camera_calibration] - [View in Google Play Store][camera_calibration]
 - [Codex Interactivus for Android][example_codex_interactivus] - [View in Google Play Store][codex_interactivus]
 - [Advanced Device-Specific Setup - Epson Moverio BT-200][android_bt]

@@ -35,7 +35,7 @@ A working Android development environment is required, including the Eclipse IDE
 
 The SDK is currently tested predominantly on the Windows platform, and some build scripts are currently only provided as Windows batch files. However, these scripts are basic and their function should be clear and easy to replicate on other platforms.
 
-A printer is required to print out markers.
+A printer will be required to print out markers.
 
 Currently the libraries assume data files are present on the mobile device. Please copy the contents of the directory “Misc/copy to device SD card” to the device before running the examples. The SD card will need to be mounted to perform the copy, but needs to be unmounted before running the examples.
 
