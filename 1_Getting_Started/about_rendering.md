@@ -1,7 +1,7 @@
 #Graphics, Models, and Rendering
-ARToolKit includes support for loading models from the filesystem and rendering them in your scene. However, this aspect of your application is completely customisable. The support ranges from use of basic OpenGL drawing commands in some of the demos, through to high-quality rendering of a large variety of models via the OpenSceneGraph framework. Additionally, ARToolKit integrates with a wide variety of third-party rendering and game engines, including the popular Unity3D game engine via [ARToolKit for Unity][artk_unity].
+ARToolKit includes support for loading models from the filesystem and rendering them in your scene. However, this aspect of your application is completely customizable. The support ranges from use of basic OpenGL drawing commands in some of the demos, through to high-quality rendering of a large variety of models via the OpenSceneGraph framework. Additionally, ARToolKit integrates with a wide variety of third-party rendering and game engines, including the popular Unity3D game engine via [ARToolKit for Unity][artk_unity].
 
-ARToolKit for iOS and Android also include loading of static Wavefront .obj files (including materials) via **libEden**.
+ARToolKit for iOS and Android also includes loading of static Wavefront .obj files (including materials) via **libEden**.
 
 The rendering method used in the example applications in ARToolKit for Desktop is as follows:
 

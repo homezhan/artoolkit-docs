@@ -1,4 +1,4 @@
-# Using 2D Barcode Markers
+# Using 2D-Barcode Markers
 ARToolKit is well known for the appearance of its [markers][marker_about]: square markers with a black border, and with an arbitrary user-definable image in the interior. The "Hiro" marker used by default in the ARToolKit examples is an iconic example.
 
 Multiple markers can be used to represent different objects or coordinate systems in an AR application. Additionally, a pattern can perform an important function in calculating the orientation of a square marker, since a pattern, being rotationally asymmetric, distinguishes between the four possible orientations of a marker in two dimensional space (the marker plane).

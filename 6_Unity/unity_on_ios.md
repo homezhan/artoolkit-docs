@@ -4,7 +4,7 @@ To get started with using ARToolKit for Unity on iOS, first visit our [Getting S
 ##Requirements
 
 -   You must have a Unity Pro with iOS Pro license to be able to export projects from Unity that use the ARToolKit plugin.
--   You must be using a [iOS device listed on our supported systems page][ios_supported_systems].
+-   You must be using an [iOS device listed on our supported systems page][ios_supported_systems].
 
 ##Player Settings
 

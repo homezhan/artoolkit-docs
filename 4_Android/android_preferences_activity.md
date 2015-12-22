@@ -64,7 +64,7 @@ The suggested method of invoking the preferences activity is to make it availabl
     }
 </pre>
 
-This will use the menu resource provided by the ARBaseLib library. If you already have an options menu, you will most likely wantto incorporate the existing values from ARBaseLib's res/menu/options.xml.
+This will use the menu resource provided by the ARBaseLib library. If you already have an options menu, you will most likely want to incorporate the existing values from ARBaseLib's res/menu/options.xml.
 
 ###Using Preferences
 Once the user has actually chosen the preferences, you need to make sure you're actually using the choices, or that you're using the default values if no choice has yet been made. This code will typically be in a class which inherits from Surface and which implements CameraPreviewCallback. Take a look at the CameraSurface class in the native examples for example usage.
@@ -89,8 +89,8 @@ Code to attempt to configure the camera resolution:
 
 Don't forget that the chosen resolution may not be accepted by the camera, so don't assume that the camera preview buffers will be the preferred size. You should read back the actual size in use after setting the preferred value (e.g. when sizing buffers).
 
-##Customising
-The full source of CameraPreferencesActivity is provided and is easy to customise. The source refers to a number of resources, found at the following paths:
+##Customizing
+The full source of CameraPreferencesActivity is provided and is easy to customize. The source refers to a number of resources, found at the following paths:
 
 - ARBaseLib/res/drawable-hdpi/settings.png
 - ARBaseLib/res/drawable-mdpi/settings.png
@@ -99,7 +99,7 @@ The full source of CameraPreferencesActivity is provided and is easy to customis
 - ARBaseLib/res/values/strings.xml
 - ARBaseLib/xml/preferences.xml
 
-These resources are automatically available in any project referring to ARBaseLib. If you wish to customise these, you can override in your Activity by using the same resource ID with the new value.
+These resources are automatically available in any project referring to ARBaseLib. If you wish to customize these, you can override in your Activity by using the same resource ID with the new value.
 
 ##A Note on Camera Resolutions
 Take care when the user chooses camera resolutions. A camera resolution with a different aspect ratio to the aspect ratio of ARToolKit's [calibrated camera parameters][config_camera_calibration] (camera_para.dat or similar) will not track correctly!

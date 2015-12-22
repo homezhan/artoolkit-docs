@@ -1,5 +1,5 @@
-# Usng an Optical See-Through Display
-Traditionally, applications built on ARToolKit use a video feed on which augmentations are overlaid. ARToolKit also supports using optical see-through displays for augmented reality. Instead of rendering both the background camera feed and the augmentations, the optical see-through display renders the augmentations, and background is the world around you. Examples of higher-end see-though HMDs (head-mounted devices) include the DAQRI Smart Helmet and the Epson Moverio.
+# Using an Optical See-Through Display
+Traditionally, applications built on ARToolKit use a video feed on which augmentations are overlaid. ARToolKit also supports using optical see-through displays for augmented reality. Instead of rendering both the background camera feed and the augmentations, the optical see-through display renders the augmentations, and background is the world around you. Examples of higher-end see-through HMDs (head-mounted devices) include the DAQRI Smart Helmet and the Epson Moverio.
 
 If your see-through display is a stereo display (one display for each eye), you are able to render stereoscopically (providing depth) with an optical see-through display, rendering a different perspective for each eye. Regardless of whether you are using a monocular or stereo display, there is the benefit that there is no separation from the real world - You're not looking at the world around you put up on a screen..
 
@@ -14,18 +14,18 @@ For the most accurate registration, that is, alignment between your eyes, the au
 Before calibrating the displays themselves, you must first [calibrate your camera][2]. This is extra important when using a stereo display as any registration error (any offset in position between the real world object and its viewed position in the display) will be much more obvious when viewing stereoscopically, and will normally be perceived as the depth of the augmentation being incorrect.
 
 ###calib_optical
-The calib_optical utility is used to calibrate the displays tot he camera position. Calibration is done monocularly (one eye, one perspective at a time), and as such should be conducted for each eye in turn (run first for one eye with the other closed, and then vice-versa). You will use spacebar when required for most configuration actions. It is used as follows:
+The calib_optical utility is used to calibrate the displays to the camera position. Calibration is done monocularly (one eye, one perspective at a time), and as such should be conducted for each eye in turn (run first for one eye with the other closed, and then vice-versa). You will use spacebar when required for most configuration actions. It is used as follows:
 
 1.  With the HMD placed firmly on your head, run the calib\_optical application.
-2.  Press the space bar. A white crosshair should appear on-screen.
+2.  Press the spacebar. A white crosshair should appear on-screen.
 3.  Looking only through the eye being calibrated (i.e. with the other closed or covered), view calibration card roughly at arms length. ![A user performing optical calibration by lining up their eye position with the pattern][performing_optical_calibration]
 4.  Move the calibration card until a red or green square appears at the intersection of the white cross hairs. This means that the calibration card is in view of the head mounted camera and it’s pattern has been recognized.
 5.  Keeping the unused eye shut and the red or green square active move the calibration card and move your head to line up the white cross hairs with the intersection of the squares on the card. ![View in headset during optical calibration procedure][optical_calibration_view]
-6.  Press the space bar once the crosshairs are aligned with the squares' intersection. If the calibration parameters are captured the red or green square will change to the opposite color.
+6.  Press the spacebar once the crosshairs are aligned with the squares' intersection. If the calibration parameters are captured the red or green square will change to the opposite color.
 7.  Keeping the unused eye shut, move the calibration card as close as possible to your viewpoint while keeping the red or green square active and repeat steps 5 and 6.
 8.  After capturing a calibration point at arms length and close to the body, the cross hairs should change position – keeping your right eye shut repeat steps 3 through 7. There are 5 calibration positions so ten measurements are taken in total for one eye.
 
-If at any point you need to see the video-image (temporarily, e.g. to see if the camera is correctly focussed or has correct brightness or contrast) press the "o" key. While in this mode, you can press "d" to see the debug (binarized image) and "-" and "+" to adjust the binarization threshhold to get nice black and white borders on the pattern.
+If at any point you need to see the video-image (temporarily, e.g. to see if the camera is correctly focussed or has correct brightness or contrast) press the "o" key. While in this mode, you can press "d" to see the debug (binarized image) and "-" and "+" to adjust the binarization threshold to get nice black and white borders on the pattern.
 
 After taking ten measurements, the white cross hairs will disappear and the calibrated eye position will be printed out, looking something like this:
 <pre>
@@ -130,7 +130,7 @@ While optical see-through AR is an attractive ideal, in practice it is very diff
 
 Optical see-through calibration depends on accurately knowing the precise relationship of two optical apertures: the iris of the camera imaging the scene, and the iris of the eye of the user viewing the scene. We can estimate the relationship between the two by measuring the distance between the display being used to produce the imagery and the lens of the camera, but the position of the iris of the eye of the user and the display is not fixed. We can attempt to control this relationship by fixing the display very tightly in place on the user's head, but its position will differ by small amounts between sessions and between users. Even when accurate calibration has been achieved, a tiny shift in the position of the display relative to the user's eye can produce a significant offset in registration of objects in the scene. Unless using a headset which includes eye-tracking, accuracy of registration is limited.
 
-Of course, alignment between virtual and real objects is desirable for video see-through too, but in video see-through the users sees the virtual objects overlaid on the source image being used for tracking. There is minimal registration error between the video stream and the overlaid objects, and the misalignment of the video stream and the real scene behind and around it is much less noticeable to the user. This is one of the key reasons why video see-through display has become so widely used in AR research.
+Of course, alignment between virtual and real objects is desirable for video see-through too, but in video see-through the users see the virtual objects overlaid on the source image being used for tracking. There is minimal registration error between the video stream and the overlaid objects, and the misalignment of the video stream and the real scene behind and around it is much less noticeable to the user. This is one of the key reasons why video see-through display has become so widely used in AR research.
 
 [1]: http://www.cs.unc.edu/~azuma/azuma_AR.html
 [2]: 2_Configuration:config_camera_calibration

@@ -63,13 +63,13 @@ Next, we see the first AR-specific function call:
     // Hardware setup.
     //
 
-    if (!setupCamera(cparam_name, vconf, gARTThreshhold, &gARTCparam, &gARHandle, &gAR3DHandle)) {
+    if (!setupCamera(cparam_name, vconf, gARTThreshold, &gARTCparam, &gARHandle, &gAR3DHandle)) {
         fprintf(stderr, "main(): Unable to set up AR camera.\n");
         exit(-1);
     }
 </pre>
 
-setupCamera loads a file containing calibration parameters for a camera, opens a connection to the camera, sets some defaults (the binarization threshhold in this case) and starts grabbing frames. It records its settings into 3 variables which are passed in as parameters. In our case, we will store these parameters in global variables. setupCamera is explained more fully below.
+setupCamera loads a file containing calibration parameters for a camera, opens a connection to the camera, sets some defaults (the binarization threshold in this case) and starts grabbing frames. It records its settings into 3 variables which are passed in as parameters. In our case, we will store these parameters in global variables. setupCamera is explained more fully below.
 
 The next piece of code opens up a window for us to draw into. This code uses GLUT to open the window. Later, we will install some event handlers for the window, to handle redrawing, resizing etc.
 <pre>
@@ -115,7 +115,7 @@ Before entering a real-time tracking and drawing state, we need to initialize th
 
 setupCamera begins by opening a connection to the video camera from which images for tracking will be acquired, using `arVideoOpen()`. The parameter vconf, passed to arVideoOpen is a string that can be used to request some video configuration other than the default. The contents of the vconf string are dependent on the video library being used. More information can be found in [Configuring video capture in ARToolKit][3] At this point we also find out from the video camera library how big the images it will supply will be, and what pixel format will be used:
 <pre>
-    static int setupCamera(const char *cparam_name, char *vconf, int threshhold, ARParam *cparam, ARHandle **arhandle, AR3DHandle **ar3dhandle)
+    static int setupCamera(const char *cparam_name, char *vconf, int threshold, ARParam *cparam, ARHandle **arhandle, AR3DHandle **ar3dhandle)
     {
         ARParam         wparam;
         int             xsize, ysize;
@@ -162,13 +162,13 @@ Once the camera parameters are loaded, we adjust them to match the actual video 
         }
 </pre>
 
-We complete our setupCamera by setting up some defaults related to the tracking portion of ARToolKit. These include debug mode, the labelling threshhold, and the structure used to hold positions of detected patterns. Finally, we start the video library capturing frames, since we will soon be ready to process them:
+We complete our setupCamera by setting up some defaults related to the tracking portion of ARToolKit. These include debug mode, the labelling threshold, and the structure used to hold positions of detected patterns. Finally, we start the video library capturing frames, since we will soon be ready to process them:
 <pre>
         if (arSetDebugMode(*arhandle, AR_DEBUG_DISABLE) < 0) {
             fprintf(stderr, "setupCamera(): Error: arSetDebugMode.\n");
             return (FALSE);
         }
-        if (arSetLabelingThresh(*arhandle, threshhold) < 0) {
+        if (arSetLabelingThresh(*arhandle, threshold) < 0) {
             fprintf(stderr, "setupCamera(): Error: arSetLabelingThresh.\n");
             return (FALSE);
         }

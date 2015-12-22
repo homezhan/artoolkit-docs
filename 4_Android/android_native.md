@@ -13,7 +13,7 @@ The following SDKs and tools should be installed and configured correctly. These
 - [Android SDK][3]
 - [ADT Plugin for Eclipse][4]
 
-and these extras are required for building native code with the NDK in Eclipse:
+And these extras are required for building native code with the NDK in Eclipse:
 
 - CDT Plugin for Eclipse (install from within Eclipse).
 - [Android NDK][5]

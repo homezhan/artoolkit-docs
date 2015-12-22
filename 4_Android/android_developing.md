@@ -176,7 +176,7 @@ The ARSimpleNative example (and its accompanying native library ARWrapperNativeE
 ##Additional Notes
 
 ###Data Files
-Data files used by ARToolKit include [camera parameters][android_camera_calibration], files with lists of markers, marker [pattern files][marker_training], [NFT datasets][marker_nft_training], and 3D model files. Youget these files into your app's filesystem by placing them in folders inside your projects "assets" folder. When your app runs, you make a call to ARBaseLib's AssetHelper class to unpack them (preferably just once, from an Application subclass). AssetHelper moves the assets from your application's .apk file into the application's cache on the internal storage. On subsequent launches, the assets are used from cache, saving time. Also, if space on the device is short, Android can clear this cache automatically, or the user manually. Finally, if the app is uninstalled, this space is reclaimed.
+Data files used by ARToolKit include [camera parameters][android_camera_calibration], files with lists of markers, marker [pattern files][marker_training], [NFT datasets][marker_nft_training], and 3D model files. You get these files into your app's filesystem by placing them in folders inside your project’s "assets" folder. When your app runs, you make a call to ARBaseLib's AssetHelper class to unpack them (preferably just once, from an Application subclass). AssetHelper moves the assets from your application's .apk file into the application's cache on the internal storage. On subsequent launches, the assets are used from cache, saving time. Also, if space on the device is short, Android can clear this cache automatically, or the user manually. Finally, if the app is uninstalled, this space is reclaimed.
 
 *One rule needs to be observed: if the application's assets are changed, the "VersionCode" field (an integer) in the application's AndroidManifest.xml MUST be changed (usually incremented).*
 
@@ -217,7 +217,7 @@ In order to access the camera the application requires permissions which are set
 </pre>
 
 ###Application Configuration
-There is an issue where ARActivity initializes more than once when the orientation changes to landscape. To fix this set the configChanges field for the application in the AndroidManifest.xml file as shown:
+There is an issue where ARActivity initializes more than once when the orientation changes to landscape. To fix this, set the configChanges field for the application in the AndroidManifest.xml file as shown:
 <pre>
 <application
 android:icon="@drawable/icon"

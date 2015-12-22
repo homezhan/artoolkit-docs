@@ -1,7 +1,7 @@
 # ARToolKit Feature Comparison
 ARToolKit v2.x and ARToolKit v5.x, while sharing a small subset of features, are vastly different. The latter represents nearly 8 years of further development of the former.
 
-As well as obvious feature differences, the changes cover a wide variety of less obvious areas, including fundamental algorithms, internal design (modularity, reuse), optimisation, external API design, connections to third-party systems, documentation and developer experience
+As well as obvious feature differences, the changes cover a wide variety of less obvious areas, including fundamental algorithms, internal design (modularity, reuse), optimization, external API design, connections to third-party systems, documentation and developer experience
 
 ##Natural Feature Tracking
 Natural feature tracking is a major feature present in ARToolKit v5.x that is not present in v2.x
@@ -16,7 +16,7 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * Variable square pictorial marker (template) resolution
 * 2D barcode marker support
 * Error detection and correction in barcode markers (BCH coding)
-* Automatic binarisation threshold selection for square tracking
+* Automatic binarization threshold selection for square tracking
 * Pose estimate optimization using non-linear refinement
 * Robust pose estimator using M-estimation
 * Robust pose estimation from multi-square markers
@@ -27,7 +27,7 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * Web-based tools for barcode and NFT marker generation
 * On-device camera calibration app for Android which feeds into a distributed camera calibration database
 * Cloud-based distributed camera calibration database
-* On-device optical/stereo-optical calibration app for Android.
+* On-device optical/stereo-optical calibration app for Android
 * New tools for square marker testing
 
 ##Stereo and Optical See-Through Support
@@ -40,7 +40,7 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 ##Video Input Focus
 * Modular video input system (multiple video sources per platform, able to be selected at runtime)
 * iOS video support
-* Windows MediaFoundation support
+* Windows Media Foundation support
 * Windows DirectShow support
 * Windows FlyCapture SDK support (for Point Grey cameras)
 * Windows DVCam support
@@ -50,22 +50,22 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * JPEG sequence input module (e.g. from M-JPEG stream, or high-resolution images) support
 * Linux/OSX lib1394 input support
 * Android video support
-* Support for high-resolution still-image capture during live tracking on iOS.
+* Support for high-resolution still-image capture during live tracking on iOS
 
 ##Mobile Focus
-* Mobile-optimised (register size, memory usage)
+* Mobile-optimized (register size, memory usage)
 * OpenGL ES and ES 2.x support
 * Multi-platform mobile support
 * Automatic provision of camera calibration for Apple iOS devices.
-* Automatic provision of camera calibration data for Android devices via distributed camera calibration system.
+* Automatic provision of camera calibration data for Android devices via distributed camera calibration system
 * Integration with GPS and compass (iOS)
 
-##Optimisation and Internals
+##Optimization and Internals
 * Full 64-bit support
 * User-selectable floating point precision
 * Hand-tuned ARM assembly in performance critical sections
-* Optimised pathway for YUV video streams
-* Multi-threading used throughout.
+* Optimized pathway for YUV video streams
+* Multithreading used throughout
 
 ##New Languages and APIs
 * C++
@@ -80,5 +80,5 @@ Natural feature tracking is a major feature present in ARToolKit v5.x that is no
 * Support for chroma-keying of video streams
 
 ##Developer Experience
-* Full support for latest developer environments, including Xcode 6.x for iOS and OS X, Visual Studio 2013 for Windows, and Eclipse for Android.
+* Full support for latest developer environments, including Xcode 6.x for iOS and OS X, Visual Studio 2013 for Windows, and Eclipse for Android
 * Vastly improved documentation, including new and improved reference documentation for over 350 API calls, as well as detailed guides and tutorials
