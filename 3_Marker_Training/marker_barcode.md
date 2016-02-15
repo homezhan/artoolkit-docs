@@ -16,16 +16,16 @@ The barcode type is set via the function [arSetMatrixCodeType][arSetMatrixCodeTy
 
 The following table sets out the available number of barcodes:
 
-| Matrix code type               | Maximum number of markers  | Hamming distance |
-|--------------------------------|----------------------------|------------------|
-| AR_MATRIX_CODE_3x3             | 64                         | 0                |
-| AR_MATRIX_CODE_3x3_PARITY65    | 32                         | 1                |
-| AR_MATRIX_CODE_3x3_HAMMING63   | 8                          | 3                |
-| AR_MATRIX_CODE_4x4             | 8192                       | 0                |
-| AR_MATRIX_CODE_4x4_BCH_13_9_3  | 512                        | 3                |
-| AR_MATRIX_CODE_4x4_BCH_13_5_5  | 32                         | 5                |
-| AR_MATRIX_CODE_5x5             | 4194304                    | 0                |
-| AR_MATRIX_CODE_6x6             | 8589934592                 | 0                |
+| Matrix code type                     | Maximum number of markers  | Hamming distance |
+| ------------------------------------ | -------------------------- | ---------------- |
+| AR\_MATRIX\_CODE\_3x3                | 64                         | 0                |
+| AR\_MATRIX\_CODE\_3x3\_PARITY65      | 32                         | 1                |
+| AR\_MATRIX\_CODE\_3x3\_HAMMING63     | 8                          | 3                |
+| AR\_MATRIX\_CODE\_4x4                | 8192                       | 0                |
+| AR\_MATRIX\_CODE\_4x4\_BCH\_13\_9\_3 | 512                        | 3                |
+| AR\_MATRIX\_CODE\_4x4\_BCH\_13\_5\_5 | 32                         | 5                |
+| AR\_MATRIX\_CODE\_5x5                | 4194304                    | 0                |
+| AR\_MATRIX\_CODE\_6x6                | 8589934592                 | 0                |
 
 For example, the first row tells us that a 2D-barcode marker with a 3x3 matrix of squares yields 64 rotationally unique patterns that are associated with predetermined identifiers (IDs), but has no EDC capacity.
 
