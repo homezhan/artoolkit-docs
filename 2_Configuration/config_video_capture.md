@@ -9,13 +9,13 @@ Video configurations are passed to libARvideo in a standard way; as a c-string c
 
 The contents of the string are different for different capture sources because although libARvideo presents a standard API for passing video to other code (e.g. libAR, libARgsub_lite and libARgsub), there is custom code inside libARvideo for each capture source (e.g. QuickTime, DirectShow, libdc1394). The capture sources generally implement a variety of different approaches to video stream acquisition. So, the configuration parameters are different depending on the underlying capture module being used.
 
-The simplest way to specify the video configuration (without recompiling the example applications) is to create an [environment variable][general_environment_variables] `ARTOOLKIT5_CONFIG` with the video configuration you wish to use.
+The simplest way to specify the video configuration (without recompiling the example applications) is to create an [environment variable][general_environment_variables] `ARTOOLKIT5_VCONF` with the video configuration you wish to use.
 
 ####ARToolKit Utilities
 Some of the ARToolKit utilities (including [calib_camera][config_camera_calibration], [calib_stereo][config_camera_stereo_tracking] and check_id) accept video configuration(s) as command-line parameters. The desired configuration is passed after a parameter "--vconf" (or --vconfL or --vconfR for calib_stereo). Note that if the video configuration string includes spaces, it must be quoted to prevent the shell passing it as multiple parameters.
 
 ### Setting Configuration Programmatically
-Video configuration can also be passed to libARvideo programmatically (as the sole parameter to the arVideoOpen() call). When no string (NULL) or an empty string ("") is passed, libARvideo looks for an environment variable "ARTOOLKIT5_CONFIG" (as mentioned above) for the string. If this environment variable is not found, the video module will use a default configuration.
+Video configuration can also be passed to libARvideo programmatically (as the sole parameter to the arVideoOpen() call). When no string (NULL) or an empty string ("") is passed, libARvideo looks for an environment variable "ARTOOLKIT5_VCONF" (as mentioned above) for the string. If this environment variable is not found, the video module will use a default configuration.
 
 In most of the ARToolKit examples, the video configuration is specified in a string named "vconf". Do a search in your source editor for "vconf" to see this. So in most of the examples, editing the vconf string in the source code will change the video configuration being used.
 

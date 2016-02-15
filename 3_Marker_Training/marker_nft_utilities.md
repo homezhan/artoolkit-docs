@@ -44,7 +44,7 @@ Usage:
 <pre>
     ./dispFeatureSet <filename>
       -fset     Show fset features.
-      -fset2    Show fset2 features.
+      -fset3    Show fset3 features.
 </pre>
 
 After launching dispFeatureSet, the various image resolutions will be displayed on screen with the tracking features overlaid. The features used in continuous tracking are outlined by red boxes, and the features used in identifying the pages and initializing tracking are marked by green crosses.

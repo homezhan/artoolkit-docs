@@ -15,7 +15,11 @@ No personally identifying data is transmitted or stored during any part of the p
 The camera calibration service has a few requirements to use. Namely, internet.
 
 ###Library Linkage
-All apps running the camera calibration service depend on native library libcurl, and its dependencies libcrypto and libssl. Applications that link to ARBaseLib will automatically load these dependencies, but other examples not based on ARBaseLib must now add these loadLibrary calls, ideally in a subclass of Android.Application or Android.Activity:
+#### ARToolKit for Android v5.3.1 and later.
+All apps running the camera calibration service depend on native library libcurl. As of ARToolKit v5.3.1, libcurl and its dependencies libssl and libcrypto are supplied as a statically linked library. Applications that link to ARBaseLib or libARWrapper will automatically load these dependencies.
+
+#### ARToolKit for Android v4.x - v5.3
+All apps running the camera calibration service depend on native library libcurl. In ARToolKit v4.x - v5.3.0, libcurl and its dependencies libcrypto and libssl are supplied as dynamic libraries. Applications that link to ARBaseLib will automatically load these dependencies, but other examples not based on ARBaseLib must add these loadLibrary calls, ideally in a subclass of Android.Application or Android.Activity:
 <pre>
     System.loadLibrary("crypto");
     System.loadLibrary("ssl");
