@@ -17,7 +17,7 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows: GLUT 3.7.6 is included with ARToolKit.
     -   Mac OS X: included in OS.
     -   Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the MESA 3D libraries: [1][3]
--   OpenCV - Required to build calib_camera. OpenCV headers and libraries are provided with ARToolKit.
+-   OpenCV - Required to build calib_camera. We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the Configuration script with no). In this case you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. If you prefer building with clang  OpenCV headers and libraries are provided with ARToolKit but you need to install libc++-dev. Also all examples containing OpenSceneGraph are excluded from build. If you would like to use them you need to compile OpenSceneGraph with Clang and then build the examples manually.
 -   Video capture libraries.
     -   Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
         -   QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
