@@ -17,7 +17,11 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows: GLUT 3.7.6 is included with ARToolKit.
     -   Mac OS X: included in OS.
     -   Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the MESA 3D libraries: [1][3]
--   OpenCV - Required to build calib_camera. We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the Configuration script with no). In this case you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. If you prefer building with clang  OpenCV headers and libraries are provided with ARToolKit but you need to install libc++-dev. Also all examples containing OpenSceneGraph are excluded from build. If you would like to use them you need to compile OpenSceneGraph with Clang and then build the examples manually.
+-   OpenCV - Required to build calib_camera. 
+	- Generally OpenCV headers and libraries are provided with ARToolKit.
+	- On Linux you can choose between Clang and GNU compiler for building ARToolKit. 
+		- We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the *configuration script* with no). In this case you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. 
+		- If you prefer building with Clang, then the OpenCV headers and libraries are provided with ARToolKit and you need to install libc++-dev. Be aware that libARosg and some examples are excluded from this build because per default OpenSceneGraph comes compiled with GNU. If you would like to use them you need to compile OpenSceneGraph with Clang and then build libARosg and the examples manually.
 -   Video capture libraries.
     -   Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
         -   QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
@@ -31,7 +35,7 @@ External dependencies for building ARToolKit from source include all the depende
     -   Mac OS X: OpenVRML should be installed using the [Fink][8] packagemanager. Once fink is installed, the required command to install OpenVRML is `fink -b install openvrml6-dev openvrml-gl6-dev`. Alternately, a Universal binary build of OpenVRML-0.16.6 suitable for inclusion in application bundles can be downloaded from [here][9].
     -   Linux: Binary deb packages are available from [here][10].
 -   OpenSceneGraph (optional) - The ARToolKit OSG renderer requires OpenSceneGraph.
-    -   OSG version 2.6 or later is required, version 2.8.2 is recommended.
+    -   OSG version 2.6 or later is required, version 2.8.2 is recommended.
     -   Windows / Mac OS X: ARToolKit supplies binaries of [OSG][11]. ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation.
     -   Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).
 
@@ -51,7 +55,7 @@ External dependencies for building ARToolKit from source include all the depende
 
 ###Linux
 
--   Building proceeds with the usual steps `./configure; make` During the configure process, you will be asked to select video libraries to build against.
+-   Building proceeds with the usual steps `./Configure; make` During the configure process, you will be asked to select video libraries to build against.
 
 ##Post-Compilation Steps
 
