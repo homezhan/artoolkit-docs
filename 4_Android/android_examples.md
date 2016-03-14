@@ -3,23 +3,23 @@ ARToolKit includes a number of fully-working examples on Android that demonstrat
 
 The examples are divided into 3 sets.
 
-1.  Java-based: examples where all user-developed code is in Java, and is based on the provided ARBaseLib classes.
-2.  Mixed Java/C/C++: examples where user-developed code is split between the Java environment and native C/C++ (NDK) environment. Code can use the provided ARBaseLib java classes while also addressing ARToolKit in C/C++ via the libARWrapper C/C++ API.
-3.  C/C++-based: examples where most of the user-developed code is native C/C++ (NDK). These examples offer the greatest power to the AR developer and direct access to the full native ARToolKit API.
+1.  All Java-based: examples where all user-developed code is in Java, and is based on the provided ARBaseLib classes.
+2.  Mixed Java and native C/C++ using Android NDK: examples where user-developed code is split between the Java environment and native C/C++ environment. Code can use the provided ARBaseLib java classes while also addressing ARToolKit in C/C++ via the libARWrapper C/C++ API.
+3.  AR and rendering code in native C/C++ using Android NDK: examples where most of the user-developed code is native C/C++. These examples offer the greatest power to the AR developer and direct access to the full native ARToolKit API.
 
 The examples are as follows:
 
-##Java-based
+##All Java-based
 
 -   **ARSimple**: An example that extends the ARActivity class in ARBaseLib to create a simple augmented reality application.
 -   **ARSimpleInteraction**: An example that adds simple interaction to ARSimple.
 
-##Mixed Java/C/C++
+##Mixed Java and Native C/C++ Using Android NDK
 
 -   **ARSimpleNative**: An example that uses an additional native library to perform rendering in C rather than Java.
 -   **ARSimpleNativeCars**: An example that uses a native OBJ model loader.
 
-##AR and rendering code in C/C++
+##AR and Rendering Code in Native C/C++ Using Android NDK
 
 -   **ARNative**: An example that uses the ARToolKit libraries directly and renders with OpenGL.
 -   **ARNativeOSG**: An example that uses the ARToolKit libraries directly and loads and renders 3D model content using the advanced OpenSceneGraph framework.
