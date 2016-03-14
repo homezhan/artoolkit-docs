@@ -1,5 +1,5 @@
 #Get involved
-We have publicly available reposiories for everyone to contribute to. There is the main [ARToolKit5 repo](https://github.com/artoolkit/artoolkit5 "ARToolKit5 GitHub"), the [Unity integration] (https://github.com/artoolkit/arunity5 "ARToolKit5 for Unity") and the [JavaScript integration] (https://github.com/artoolkit/jsartoolkit5 "JSARToolKit5") to name the major ones. But there are also things happening in other repositories which might come public over time.
+We have publicly available repositories for everyone to contribute to. There is the main [ARToolKit5 repo](https://github.com/artoolkit/artoolkit5 "ARToolKit5 GitHub"), the [Unity integration] (https://github.com/artoolkit/arunity5 "ARToolKit5 for Unity") and the [JavaScript integration] (https://github.com/artoolkit/jsartoolkit5 "JSARToolKit5") to name the major ones. But there are also things happening in other repositories which might come public over time.
 To get involved there are a few steps you need to do and a few procedures that you should be aware of, but happen in the background. 
 
 ##Check out the source code
@@ -11,7 +11,7 @@ To get involved there are a few steps you need to do and a few procedures that y
   - Remember to re-sync (`git pull upstream`) against the remote master branch often.
 4. Do your work in whatever branch you want to in your fork.
   -  Try to keep your changes small, push your work remote (`git push`), and generate pull requests often. We want to avoid big bang pull requests. 
-  -  Also,sync your branch often with the ARToolKit repo. `git rebasing` your change set on top of the current master tip is always preferred over merging which may result in merge bubbles.
+  -  Also,sync your branch often with the ARToolKit repo. `git rebase` your change set on top of the current master tip is always preferred over merging which may result in merge bubbles.
 5. When all your work is done and pushed up, synchronize your branch with the ARToolKit master repository. To do so follow these steps:
 	1. Ensure that you have checked out the branch you would like to commit. You can verify this with: `git branch` and switch to your branch with `git checkout [BRANCH_NAME]` if needed.
 	2. Get changes from the original repo: `git fetch upstream`
