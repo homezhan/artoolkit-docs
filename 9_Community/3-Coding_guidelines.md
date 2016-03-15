@@ -1,5 +1,5 @@
 #Coding guidelines
-These is a set of coding guidelines which are mandatory to follow when contributing to ARToolKit.
+These is a set of coding guidelines which are mandatory to follow when contributing to ARToolKit. The guidelines main objective is source code formatting consistence and to optimize code readability. To this end, source code files should always be treated as a formal document.
 
 ##Indentation
 ARToolKit uses 4 spaces for indentation, not tabs.
@@ -22,9 +22,9 @@ if (x < 0) {
 And always used brackets even if the statement contains only one line of code:
 ```
 if (x < 0) {
-	negative(x);
+    negative(x);
 } else {
-	nonnegative(x);
+    nonnegative(x);
 }
 ```
 _Unlike Stroustrup or Allman style, 1TBS groups the logical start and end of control blocks with the actual logic statements that produce the control inflection. Also, it’s more compact._
@@ -58,7 +58,7 @@ should be updated to:
 ```
 if (flag) {
 ```
-###Pointer in C
+###Pointer declaration using C
 When declaring pointer data or a function that returns a pointer type, the preferred use of '*' is adjacent to the data name or function name and not adjacent to the type name. 
 Examples:
 ```
@@ -66,7 +66,7 @@ char *message;
 unsigned long long memparse(char *ptr, char **retptr);
 char *match_strdup(substring_t *s);
 ```
-###Pointer C++
+###Pointer declaration using C++
 For **C++** code however, generally the ‘*’ groups to the left:
 ```
 std::string* s;
