@@ -1,16 +1,17 @@
 # Join the community
-If you like ARToolKit and would like to make it even better join us on [GitHub](https://github.com/artoolkit/artoolkit5 "ARToolkit on GibHub"). 
+If you like ARToolKit and would like to make it even better join us on [GitHub](https://github.com/artoolkit/artoolkit5 "ARToolkit on GitHub"). 
 
 You can contribute all sorts of things:
-* Enhancement of ARToolKit codebase
-* Enhancement of JSARToolKit codebase
-* Enhancement of ARToolKit for Unity
+* Enhancing the ARToolKit codebase (Java, Objective C, C, C++)
+* Enhancing the JSARToolKit codebase (JavaScript)
+* Enhancing ARToolKit for Unity (C# scripting and C for plugins)
 * Code for specific plattforms
-* Enhacement of example projects
+* Enhancement of example projects
 * Your own example projects for:
   * Android
   * iOS
-  * Desktop (C++)
+  * Windows 10/8.1 or Mac OS X 9+ Desktop
+  * Windows Store Phone and Tablet 10/8.1
 
 To do so there are a few things you need to be aware of:
 1. [Get involved setup][get_involved]
