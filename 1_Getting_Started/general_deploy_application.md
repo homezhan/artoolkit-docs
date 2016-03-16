@@ -18,11 +18,9 @@ Once you have specified the other parts of your app which need to be installed, 
     Source: "{pf32}\redist\ARvideo.dll"; DestDir: "{app}"; Flags: ignoreversion
     Source: "{pf32}\redist\DSVL.dll"; DestDir: "{app}"; Flags: ignoreversion
     Source: "{pf32}\redist\pthreadVC2.dll"; DestDir: "{app}"; Flags: ignoreversion
-    Source: "{pf32}\redist\opencv_core2410.dll"; DestDir: "{app}"; Flags: ignoreversion
-    Source: "{pf32}\redist\opencv_flann2410.dll"; DestDir: "{app}"; Flags: ignoreversion
 
     [Run]
-    Filename: {app}\vcredist_x86.exe; Components: runtime; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing Visual Studio 2013 RunTime...
+    Filename: {app}\vcredist_x86.exe; Parameters: "/install /quiet /norestart"; StatusMsg: Installing Visual Studio 2013 RunTime...
 
 or for a 64-bit executable:
 
@@ -31,11 +29,9 @@ or for a 64-bit executable:
     Source: "{pf32}\redist64\ARvideo.dll"; DestDir: "{app}"; Flags: ignoreversion
     Source: "{pf32}\redist64\DSVL.dll"; DestDir: "{app}"; Flags: ignoreversion
     Source: "{pf32}\redist64\pthreadVC2.dll"; DestDir: "{app}"; Flags: ignoreversion
-    Source: "{pf32}\redist64\opencv_core2410.dll"; DestDir: "{app}"; Flags: ignoreversion
-    Source: "{pf32}\redist64\opencv_flann2410.dll"; DestDir: "{app}"; Flags: ignoreversion
 
     [Run]
-    Filename: {app}\vcredist_x64.exe; Components: runtime; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing Visual Studio 2013 RunTime...
+    Filename: {app}\vcredist_x64.exe; Parameters: "/install /quiet /norestart"; StatusMsg: Installing Visual Studio 2013 RunTime...
 
 You might need to adjust the above if the path to your standalone's .exe is a subfolder of {app}.
 
