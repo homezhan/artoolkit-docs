@@ -14,10 +14,6 @@ The camera aperture (the "shutter") is the third variable. Where the aperture is
 ### Logitech Cameras
 Logitech's cameras are a popular choice because of their relatively good quality/price ratio and their large range. The Quickcam range generally uses CMOS sensors, and the more expensive Quickcam Pro range, CCD sensors. Drawbacks of Logitech cameras include poor driver support on non-Windows platforms, and brain-amputated model naming; in one case, four radically different cameras produced over a period of 5 years have almost identical model names.
 
-ARToolKit recommends the QuickCam Pro for Notebooks (Logitech part number 960-000057) or similar for a consumer level webcam. It has good imaging quality, a small form-factor, and acceptable field-of-view for AR applications. [View more information on Logitech's website][1].
-
-![thumb][logitech_quickcam]
-
 ## Professional Imaging Cameras
 While consumer webcams provide satisfactory results in many types of AR application, for more demanding applications, professional camera equipment is in order. Professional camera equipment offers the following advantages over consumer webcams:
 
@@ -45,7 +41,7 @@ The range of industrial cameras by Point Grey has become the de-facto standard f
 -   Windows: The Point Grey WDM driver allows use of Point Grey cameras with the default WinDS video module, and the WinDSVL video input module, albeit without programmatic control of the parameters.
 -   Windows: The ARToolKit WinDF video module connects directly to the FlyCapture SDK allowing complete control over all camera parameters.
 -   Linux: The ARToolKit Linux Linux1394Cam video module has a variety of configuration options that support advanced features of Firewire (IEEE1394) cameras.'
--   Mac OS X: With a self-install install of [libdc1394][2] and a rebuild of the ARToolKit's libARvideo, the Linux1394Cam module can be used on Mac OS X.
+-   Mac OS X: With a self-install install of [libdc1394][1] and a rebuild of the ARToolKit's libARvideo, the Linux1394Cam module can be used on Mac OS X.
 
 #### Point Grey Firefly 2
 This is an IEEE-1394 camera mounted in a steel housing, which accepts a variety of standard mini-mount lenses.
@@ -63,13 +59,11 @@ This is an IEEE-1394 camera mounted in a steel housing, which accepts a variety 
 ![Point Grey Flea with manual focus variable aperture telephoto C-mount lens][point_grey_flea_manual_telephoto]
 
 ## Further reading
-Imaging systems are a fascinating and complex area. We highly recommend [Edmund Industrial Optics'][3] guide for background information and further reading in this area.
+Imaging systems are a fascinating and complex area. We highly recommend [Edmund Industrial Optics'][2] guide for background information and further reading in this area.
 
-[1]: http://www.logitech.com/index.cfm/notebook_products/webcams/devices/3055&cl=hk,en
-[2]: http://damien.douxchamps.net/ieee1394/libdc1394/
-[3]: http://www.edmundoptics.com/capabilities/imaging-optics/imaging-resource-guide/
+[1]: http://damien.douxchamps.net/ieee1394/libdc1394/
+[2]: http://www.edmundoptics.com/capabilities/imaging-optics/imaging-resource-guide/
 
-[logitech_quickcam]: :logitech_quickcam_pro_for_notebooks_960-000057_front.png
 [point_grey_housing_removed_front]: :point_grey_firefly_2_housing_removed_-_front.jpg
 [point_grey_housing_removed_rear]: :point_grey_firefly_2_housing_removed_-_rear.jpg
 [point_grey_flea_front_no_lens]: :point_grey_flea_-_front_no_lens.jpg
