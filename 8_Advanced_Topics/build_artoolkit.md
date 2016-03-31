@@ -34,9 +34,13 @@ External dependencies for building ARToolKit from source include all the depende
     -   Windows: OpenVRML-0.16.6 or later (for Visual Studio 2005) must be on the include and library path to rebuild ARvrml.lib. Suitable binaries of OpenVRML for Windows can be downloaded [here][7].
     -   Mac OS X: OpenVRML should be installed using the [Fink][8] packagemanager. Once fink is installed, the required command to install OpenVRML is `fink -b install openvrml6-dev openvrml-gl6-dev`. Alternately, a Universal binary build of OpenVRML-0.16.6 suitable for inclusion in application bundles can be downloaded from [here][9].
     -   Linux: Binary deb packages are available from [here][10].
--   OpenSceneGraph (optional) - The ARToolKit OSG renderer requires OpenSceneGraph.
+-   OpenSceneGraph (required for building examples) - The ARToolKit OSG renderer requires OpenSceneGraph.
     -   OSG version 2.6 or later is required, version 2.8.2 is recommended.
-    -   Windows / Mac OS X: ARToolKit supplies binaries of [OSG][11]. ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation.
+    -   Windows: ARToolKit supplies binaries of [OSG 3.0.1][11]
+    -   Mac OS X: ARToolKit supplies binaries of [OSG 3.2.2][12]
+    -   ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation:
+        -  Mac OS X: OSG_ROOT=/Library/Frameworks
+        -  Windows: OSG_ROOT=<Path to where you extracted OSG file to>
     -   Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).
 
 ##Compiling ARToolKit
@@ -94,4 +98,5 @@ simpleLite can be launched from a terminal window thus:
 [8]: http://www.finkproject.org/
 [9]: http://www.artoolworks.com/dist/openvrml/
 [10]: http://www.openvrml.org/
-[11]: http://www.artoolworks.com/dist/openscenegraph/
+[11]: http://www.artoolkit.org/dist/3rdparty/openscenegraph/3.0.1/
+[12]: http://www.artoolkit.org/dist/3rdparty/openscenegraph/3.2.x/
