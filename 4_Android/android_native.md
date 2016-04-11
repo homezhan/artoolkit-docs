@@ -4,9 +4,11 @@ The ARToolKit SDK package and the git cloned GitHub local repository of "artoolk
 ##Prerequisites
 Building native ARToolKit libraries requires a development environment capable of building native libraries for Android using the Android NDK (NDK 11+). Currently, ARToolKit actively supports the Android development systems of Mac OS X 9+ and Windows Desktop 8.1 and 10. However, there are those in the ARToolKit community who have successfully developed using Linux.
 
-*Note: This is by no means a comprehensive guide on how to setup an NDK development environment. If you need assistance in this area, please search online as there are many tutorials and articles covering this topic and it is outside the scope of this user guide.*
+>Note: This is by no means a comprehensive guide on how to setup an NDK development environment. If you need assistance in this area, please search online as there are many tutorials and articles covering this topic and it is outside the scope of this user guide.
+
 
 ---
+
 **Deprecated development tools and methods:**
 
 - Eclipse IDE
@@ -82,8 +84,8 @@ Both scripts utilize the Android NDK and toolchain through the `ndk-build` scrip
 
 To build, from the bash command-line (for Windows Desktop, this will be the Git bash shell), execute the "./build.sh" script file, without arguments. When "build.sh" completes without errors, there will be dependencies built for several Android ABIs here: 
 
-* Mac OS X: &lt;ARTK SDK or repo root&gt;android/*libs*
-* Windows Desktop: C:\\&lt;ARTK SDK or repo root&gt;\\android\\*libs*
+* Mac OS X: <ARTK SDK or repo root>android/*libs*
+* Windows Desktop: C:\\<ARTK SDK or repo root>\\android\\*libs*
 
 These are the ARToolKit binaries built for the various Android ABIs. The Android Studio example projects, that don't include native C/C++ source code, are populated with the content of the generated *libs* folder.
 
