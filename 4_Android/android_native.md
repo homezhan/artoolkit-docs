@@ -1,5 +1,5 @@
 #Android Native Development
-The ARToolKit SDK package and the git cloned GitHub local repository of "artoolkit5" includes prebuilt native libraries. It's advised that a local repository be used since downloaded package are rarely up-to-date. If you are not planning on altering any native code then you do not need to consult this section or install the Android NDK. On the other hand, if you want to implement part of your AR application in native code, then you will need to ARToolKit native C/C++ dependencies.
+The ARToolKit SDK package and the git cloned GitHub local repository of "artoolkit5" includes prebuilt native libraries. It's advised that a local repository be used since the downloaded SDK package is rarely up-to-date with the repository. If you are not planning on altering any native code then you do not need to consult this section or install the Android NDK. On the other hand, if you want to implement part of your AR application in native code, then you will need to ARToolKit native C/C++ dependencies.
 
 ##Prerequisites
 Building native ARToolKit libraries requires a development environment capable of building native libraries for Android using the Android NDK (NDK 11+). Currently, ARToolKit actively supports the Android development systems of Mac OS X 9+ and Windows Desktop 8.1 and 10. However, there are those in the ARToolKit community who have successfully developed using Linux.
@@ -11,17 +11,16 @@ The following SDKs and tools should be installed and configured correctly on one
 #####These are required for standard Android JDK development:
 
 - [Standard Edition Java Development Kit][1] 1.7 or greater
-- [Android SDK][2] (Downloaded with Android Studio IDE) 
-- for Mac OS X: default install path: *"/Users/<user>/Library/Android/sdk"*
-- for Windows Desktop: recommended install path: *"C:\Users\\<user>\\Android\\sdk"*
-
-- [Android Studio IDE][3] - version 1.5.x
+- [Android Studio IDE][3] - version 1.5.x or greater
+- [Android SDK][2] (Downloaded with Android Studio IDE)     
+> for Mac OS X: default install path: *"/Users/[username]/Library/Android/sdk"*    
+> for Windows Desktop: recommended install path: *"C:\Users\[username]\Android\sdk"*    
+- Android NDK - download and installation details described below
 
 #####Requirements for building native code with the NDK within or outside of the Android Studio IDE:
 
-- [Android NDK Preview][6] - The NDK that works with the Android Studio IDE.  Use the Android Studio IDE to download the NDK preview.
-- [Git distributed version control system and Git bash][7] - requirement for both Windows Desktop and Mac OS X, Git Bash is not applicable to Mac OS X
-
+- [Android NDK Preview][6] - The NDK that works with the Android Studio IDE.  Use the Android Studio IDE to download and setup the NDK preview requirements.
+- [Git distributed version control system and Git bash][7] - Git DVCS is a requirement for Windows Desktop and Mac OS X. Git bash is a requirement for Windows Desktop and is not applicable to Mac OS X.
 
 ######Deprecated development tools and methods:
 
@@ -46,24 +45,24 @@ When installing Git, from the Git setup wizard:
 
 ---
 
-Please try to ensure you have a working Android SDK and NDK environment before continuing. This, unfortunately, is not as easy as it sounds due the constantly evolving Android Studio tool set. Try the Hello-JNI tutorial available from [codelabs.developers.google.com][9].  Try implementing Hello-JNI app using NDK version 11+ for reasons explained below. Strive to use the latest and greatest  developers.android.com supported Gradle plugin (com.android.tools.build:gradle-experimental:x.x.x) and Gradle version (http://services.gradle.org/distributions/gradle-x.x-all.zip) combination. Depending on the supported combination of experimental Gradle plugin and Gradle version used, there are differing required source updates to the HelloAndroidJni modules' build.gradle file. Finally, once you create the new Hello-JNI Android Studio project and  module, reduce the complexity of the module by deleting the Test directory found under app/src/ in the Project pane.
+Please try to ensure you have a working Android SDK and NDK environment before continuing. This, unfortunately, is not as easy as it sounds due the constantly evolving Android Studio tool set. Try the Hello-JNI tutorial available from [codelabs.developers.google.com][9].  Try implementing Hello-JNI app using NDK version 11+ for reasons explained below. Strive to use the latest and greatest  developers.android.com supported Gradle plugin (com.android.tools.build:gradle-experimental:x.x.x) and Gradle version (http://services.gradle.org/distributions/gradle-x.x-all.zip) combination. Depending on the supported combination of experimental Gradle plugin and Gradle version used, there are differing required source updates to the HelloAndroidJni modules' build.gradle file.
+
+In the tutorial, the step #5 of the "Add JNI Code Into Project" chapter, the C/C++ jni function prototype and the "jni" directory may not be created by the IDE as the IDE is supposed to do. If the IDE fails to create both, it's important to manually create the directory, `jni`, here: `[module root]/src/main/`. Create and place the prototype C source file, `hello-android-jni.c`, in the `jni` directory. Add the required C source code as presented by step #5 of the tutorial.
+
+Finally, once you create the new Hello-JNI Android Studio project and module, reduce the complexity of the module by deleting the "Test" directory using the IDE found under `[module root: "app"]/src/` in the Project pane.
 
 Keep in mind that the tutorial is written for Android Studio executed on Linux or Mac OS X but Android Studio executed on Windows 10 will work as well.
 
-> Minor Android Studio for Windows Difference:
->
-> Step 2-7: In Android Studio: open "File" menu item, click to select "Settings...", open "Build, Execution, Deployment" twirl, open "Build Tools" twirl, open "Gradle" twirl, under "Project-level settings" group-box, ensure that "Use default gradle wrapper (recommended)" is selected.
+> `Minor Android Studio for Windows Difference:` Step #7 of the "Create Java Sample App" chapter, in Android Studio: open "File" menu item, click to select "Settings...", open "Build, Execution, Deployment" twirl, open "Build Tools" twirl, open "Gradle" twirl, under "Project-level settings" group-box, ensure that "Use default gradle wrapper (recommended)" is selected.
 
 For help with the Eclipse to Android Studio IDE transition, see the document https://github.com/artoolkit/artoolkit5/blob/master/AndroidStudioProjects/Docs/AS_Migration.pdf.
 
 ##Building Native Android Libraries
 To build using the Android NDK toolchain, placed in the downloaded NDK is a script file, for Mac OS X, named `ndk-build` or, for Windows Desktop, named `ndk-build.cmd.` When Android Studio is used to download and install the NDK, by default, the NDK is installed directly under the Android SDK root folder. Also, by default, the NDK root folder is named "ndk-bundle."
 
-> Note:
-> 
-> Due to the knife-edge roll of NDK version 11 by developers.android.com, it's recommended that ARToolKit Android developers download, install and use NDK version 11 or greater. Not doing so can result in link incompatibilities between your native libraries and their dependency on ARToolKit prebuilt native libraries. 
+> `Note:` Due to the knife-edge roll of NDK version 11 by developers.android.com, it's recommended that ARToolKit Android developers download, install and use NDK version 11 or greater. Not doing so can result in link incompatibilities between your native libraries and their dependency on ARToolKit prebuilt native libraries. 
 
-The next step after installing the Android SDK and NDK is to set some environment variables (recommended for both Mac OS X and Windows Desktop development environments). For Windows Desktop, the following can be defined as Windows system environment variables or exported by the Git bash shell's ".bash_profile" startup file.
+The next step after installing the Android SDK and NDK is to set some environment variables (recommended for both Mac OS X and Windows Desktop development environments). For Windows Desktop, the following can be defined as Windows system environment variables or exported by the Git bash shell's `.bash_profile` startup file.
 
 * Set ANDROID_HOME to indicate the path to root folder of the downloaded Android SDK.
 * Set NDK to indicate the path to root folder (most likely, "ndk-bundle") of the downloaded NDK. The ANDROID_HOME environment variable can be used to help define NDK.
@@ -78,17 +77,17 @@ Next, proceed to the "android" folder directly off the root folder of the ARTool
 
 Both scripts utilize the Android NDK and toolchain through the `ndk-build` script.
 
-To build, from the bash command-line (for Windows Desktop, this will be the Git bash shell), execute the "./build.sh" script file, without arguments. When "build.sh" completes without errors, there will be dependencies built for several Android ABIs here: 
+To build, from the bash command-line (for Windows Desktop, this will be the Git bash shell), execute the `./build.sh` script file, without arguments. When `build.sh` completes without errors, there will be dependencies built for several Android ABIs here: 
 
-* Mac OS X: <ARTK SDK or repo root>android/*libs*
-* Windows Desktop: C:\\<ARTK SDK or repo root>\\android\\*libs*
+* Mac OS X: /[ARTK SDK or repo root]/android/*libs*
+* Windows Desktop: C:\[ARTK SDK or repo root]\android\\*libs*
 
 These are the ARToolKit binaries built for the various Android ABIs. The Android Studio example projects, that don't include native C/C++ source code, are populated with the content of the generated *libs* folder.
 
-To build the Android Studio example app projects that do include native C/C++ source code and to build the project's C/C++ source, after executing the "./build" script file, execute "./build_native_examples.sh", without arguments. When "build_native_examples.sh" script completes without errors, the native Android Studio example projects are populated with the content of the generated *libs* folder. Using an actual example Android Studio project, "ARSimpleNativeProj," the *libs* folder is copied here:
+To build the Android Studio example app projects that do include native C/C++ source code and to build the project's C/C++ source, after executing the `./build` script file, execute `./build_native_examples.sh`, without arguments. When `build_native_examples.sh` script completes without errors, the native Android Studio example projects are populated with the content of the generated *libs* folder. Using an actual example Android Studio project, "ARSimpleNativeProj," the *libs* folder is copied here:
 
 ```
-<ARTK SDK or repo root>/AndroidStudioProjects/ARSimpleNativeProj/aRSimpleNative/src/main/
+[ARTK SDK or repo root]/AndroidStudioProjects/ARSimpleNativeProj/aRSimpleNative/src/main/
 ```
 
 Once the native dependencies are built and copied, open an Android Studio example project and build the project's Java source files. If all builds, deploy to an Android simulated device or a *real* development device. Note: the camera doesn't work on simulated devices so it's best to test with *real* devices.
@@ -96,7 +95,7 @@ Once the native dependencies are built and copied, open an Android Studio exampl
 To use the native ARToolKit binaries in your own Android application, you will need to copy the *libs* folder generated by the "build.sh" script to your Android application project folder using the following project offset:
 
 ```
-<Android Studio Project>/<module>/src/main
+[Android Studio Project root]/[module root]/src/main
 ```
 
 ---
