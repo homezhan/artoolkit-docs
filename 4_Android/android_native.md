@@ -6,18 +6,6 @@ Building native ARToolKit libraries requires a development environment capable o
 
 >Note: This is by no means a comprehensive guide on how to setup an NDK development environment. If you need assistance in this area, please search online as there are many tutorials and articles covering this topic and it is outside the scope of this user guide.
 
-
----
-
-**Deprecated development tools and methods:**
-
-- Eclipse IDE
-- ADT Plugin for Eclipse
-- Android NDK plugin for Eclipse
-- Cygwin
-
----
-
 The following SDKs and tools should be installed and configured correctly on one of the chosen supported development systems.
 
 #####These are required for standard Android JDK development:
@@ -33,6 +21,14 @@ The following SDKs and tools should be installed and configured correctly on one
 
 - [Android NDK Preview][6] - The NDK that works with the Android Studio IDE.  Use the Android Studio IDE to download the NDK preview.
 - [Git distributed version control system and Git bash][7] - requirement for both Windows Desktop and Mac OS X, Git Bash is not applicable to Mac OS X
+
+
+######Deprecated development tools and methods:
+
+- Eclipse IDE
+- ADT Plugin for Eclipse
+- Android NDK plugin for Eclipse
+- Cygwin
 
 ---
 
