@@ -6,12 +6,15 @@ Building native ARToolKit libraries requires a development environment capable o
 
 *Note: This is by no means a comprehensive guide on how to setup an NDK development environment. If you need assistance in this area, please search online as there are many tutorials and articles covering this topic and it is outside the scope of this user guide.*
 
-> Deprecated development tools and methods:
->  
-> - Eclipse IDE
-> - ADT Plugin for Eclipse
-> - Android NDK plugin for Eclipse
-> - Cygwin
+---
+**Deprecated development tools and methods:**
+
+- Eclipse IDE
+- ADT Plugin for Eclipse
+- Android NDK plugin for Eclipse
+- Cygwin
+
+---
 
 The following SDKs and tools should be installed and configured correctly on one of the chosen supported development systems.
 
@@ -19,8 +22,9 @@ The following SDKs and tools should be installed and configured correctly on one
 
 - [Standard Edition Java Development Kit][1] 1.7 or greater
 - [Android SDK][2] (Downloaded with Android Studio IDE) 
-  - for Mac OS X: default install path: *"/Users/&lt;user&gt;/Library/Android/sdk"*
-  - for Windows Desktop: recommended install path: *"C:\Users\\&lt;user&gt;\\Android\\sdk"*
+- for Mac OS X: default install path: *"/Users/<user>/Library/Android/sdk"*
+- for Windows Desktop: recommended install path: *"C:\Users\\<user>\\Android\\sdk"*
+
 - [Android Studio IDE][3] - version 1.5.x
 
 #####Requirements for building native code with the NDK within or outside of the Android Studio IDE:
@@ -44,11 +48,12 @@ When installing Git, from the Git setup wizard:
 
 ---
 
-Please try to ensure you have a working Android SDK and NDK environment before continuing. This, unfortunately, is not as easy as it sounds due the constantly evolving Android Studio tool set. Try the Hello-JNI tutorial available from [codelabs.developers.google.com][9].  Try implementing Hello-JNI app using NDK version 11+ for reasons explained below. Strive to use the latest and greatest  developers.android.com supported Gradle plugin (com.android.tools.build:gradle-experimental:x.x.x) and Gradle version (http=\://services.gradle.org/distributions/gradle-x.x-all.zip) combination. Depending on the supported combination of experimental Gradle plugin and Gradle version used, there are differing required source updates to the HelloAndroidJni modules' build.gradle file. Finally, once you create the new Hello-JNI Android Studio project and  module, reduce the complexity of the module by deleting the Test directory found under app/src/ in the Project pane.
+Please try to ensure you have a working Android SDK and NDK environment before continuing. This, unfortunately, is not as easy as it sounds due the constantly evolving Android Studio tool set. Try the Hello-JNI tutorial available from [codelabs.developers.google.com][9].  Try implementing Hello-JNI app using NDK version 11+ for reasons explained below. Strive to use the latest and greatest  developers.android.com supported Gradle plugin (com.android.tools.build:gradle-experimental:x.x.x) and Gradle version (http://services.gradle.org/distributions/gradle-x.x-all.zip) combination. Depending on the supported combination of experimental Gradle plugin and Gradle version used, there are differing required source updates to the HelloAndroidJni modules' build.gradle file. Finally, once you create the new Hello-JNI Android Studio project and  module, reduce the complexity of the module by deleting the Test directory found under app/src/ in the Project pane.
 
 Keep in mind that the tutorial is written for Android Studio executed on Linux or Mac OS X but Android Studio executed on Windows 10 will work as well.
 
-> Minor Android Studio for Windows Difference:<br/>
+> Minor Android Studio for Windows Difference:
+>
 > Step 2-7: In Android Studio: open "File" menu item, click to select "Settings...", open "Build, Execution, Deployment" twirl, open "Build Tools" twirl, open "Gradle" twirl, under "Project-level settings" group-box, ensure that "Use default gradle wrapper (recommended)" is selected.
 
 For help with the Eclipse to Android Studio IDE transition, see the document https://github.com/artoolkit/artoolkit5/blob/master/AndroidStudioProjects/Docs/AS_Migration.pdf.
