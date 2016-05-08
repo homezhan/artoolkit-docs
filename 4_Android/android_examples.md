@@ -13,6 +13,10 @@ The examples are as follows:
 
 -   **ARSimple**: An example that extends the ARActivity class in ARBaseLib to create a simple augmented reality application.
 -   **ARSimpleInteraction**: An example that adds simple interaction to ARSimple.
+-   **ARMulti**: An example that shows how to configure and usenmulti marker tracking.
+-   **ARDistanceOpenGLES20**: An example on how to measure the distance and draw a line between two markers. The line is drawn using OpenGL ES 2.0 library features.
+-   **ARMarkerDistance**: An example on how to measure the distance and draw a line between two markers. The lin is drawn using OpenGL ES 1.0 library features.
+-   **ARSimpleOpenGLES20**: Pretty much the same as ARSimple with the extension of using OpenGL ES 2.0 features for drawing and coloring the cube.
 
 ##Mixed Java and Native C/C++ Using Android NDK
 
@@ -21,7 +25,8 @@ The examples are as follows:
 
 ##AR and Rendering Code in Native C/C++ Using Android NDK
 
--   **ARNative**: An example that uses the ARToolKit libraries directly and renders with OpenGL.
+-   **ARNative**: An example that uses the ARToolKit libraries directly and renders with OpenGL ES 2.0.
+-   **ARNativeES1**: An example that uses the ARToolKit libraries directly and renders with OpenGL ES 1.0.
 -   **ARNativeOSG**: An example that uses the ARToolKit libraries directly and loads and renders 3D model content using the advanced OpenSceneGraph framework.
 -   **nftSimple**: An example that performs NFT (texture tracking) and renders with OpenGL.
 -   **nftBook**: An example that performs NFT (texture tracking) and loads and renders 3D model content using the advanced OpenSceneGraph framework.
