@@ -22,7 +22,7 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 
 It is not possible to target iOS or Mac OS X desktop using Unity on a Windows system. 
 
-It is also not possible to target Windows Desktop, Windows Store, Windows Phone or Windows Universal Platform on a Mac OS X system.
+It is also not possible to target Windows Store, Windows Phone or Windows Universal Platform on a Mac OS X system.
 
 ##Index
 
