@@ -8,20 +8,26 @@ ARWrapper is a native C++ shared library that exposes a small set of functions f
 
 The API documentation for ARWrapper can be found at `doc/apiref-ARWrapper/html/index.html` in the SDK.
 
-Assuming you start with a new Android application project in Eclipse, you will need to copy the built ARWrapper shared library into the project directory. Note that this step is performed automatically for the supplied ARToolKit Android example projects.
+To start a new Android application project in AndroidStudio, you will need to copy the built ARWrapper shared library into the project directory. Note that this step is performed automatically for the supplied ARToolKit Android example projects.
 
 ![250px][libs_directory]
 
 You can copy the entire libs directory from: `android/libs`
+Plase ensure that you run the build.sh and build_native.sh prior to copying the directory. Read the [Android Native Development][android_native] for more information.
 
 Note: There are subdirectories for each CPU architecture, including armeabi, armeabi-v7a, mips and x86. It is the same library built for different instruction sets. The appropriate version is automatically chosen at runtime.
 
 ##ARBaseLib
-ARBaseLib provides additional classes to simplify development. ARBaseLib is an Android library, meaning that it isn't an Android application itself, but can make use of the Android framework. Android applications can reference the library, and Eclipse will take care of including the necessary files when the APK is built and deployed. This allows reusable components to be placed in the library and used in many different examples and applications. To use ARBaseLib, add the ARBaseLib project to your Eclipse workspace, and in the Android properties of your application, add a library reference, as shown below:
+ARBaseLib provides additional classes to simplify development. ARBaseLib is an Android library, meaning that it isn't an Android application itself, but can make use of the Android framework. Android applications can reference the library, and AndroidStudio will take care of including the necessary files when the APK is built and deployed. This allows reusable components to be placed in the library and used in many different examples and applications. To use ARBaseLib, import the ARBaseLib as new module to your AndroidStudio project:
 
-![arbaselib_dialog][arbaselib_dialog]
+1. **File/Project Structure...**
+2. Add a new module with the **+** button at the top left of by pressing ⌘+N (OSX) Alt+Insert (Windows)
+3. Select **Import .JAR/.AAR Package** hit Next
+4. Select the file with the `...` on the right of the first text field. The ARBaseLib.aar file is located in $ARTOOLKIT5_ROOT/AndroidStuiodProjects/ARBaseLibProj/arBaseLib/build/outputs/aar/
+  - If it is not there open the project ARBaseLibProject separately with AndroidStudio and build it.
+5. Change the **Subproject name** to **aRBaseLib**
 
-API documentation for the classes in ARBaseLib can be found in the `EclipseProjects/ARBaseLib/doc` directory.
+API documentation for the classes in ARBaseLib can be found in the `AndroidStudioProjects/ARBaseLibProj/doc` directory.
 
 ##Development
 Referencing ARBaseLib gives the application access to several new classes. Some of the key ones are:
@@ -254,6 +260,7 @@ Rather than combining Android camera and OpenGL views to synthesize an AR view, 
 [android_camera_calibration]: 4_Android:android_camera_calibration
 [marker_training]: 3_Marker_Training:marker_training
 [marker_nft_training]: 3_Marker_Training:marker_nft_training
+[android_native]: 4_Android:android_native
 
 [artoolkitwrapper_arbaselib]: :artoolkitwrapper_arbaselib.png
 [libs_directory]: :libs_directory.png
