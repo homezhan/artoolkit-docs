@@ -31,12 +31,11 @@ Therefore, video capture requires coordination between corresponding libraries o
 ##SDK Requirements
 This SDK targets devices running Android 2.1 (Eclair) or later.
 
-A working Android development environment is required, including the Eclipse IDE and Android SDK. For native development, the Android NDK is also needed.
+A working Android development environment with AndroidStudio is required. For native development, the Android NDK is also needed. For more details about native development see [here][android_native]
 
-The SDK is currently tested predominantly on the Windows platform, and some build scripts are currently only provided as Windows batch files. However, these scripts are basic and their function should be clear and easy to replicate on other platforms.
+The SDK is currently tested predominantly on the Mac OSX platform, however we also support development with Windows. Not actively supported but also working is the development with ARToolKit and AndroidStudio on Linux.
 
 A printer will be required to print out markers.
 
-Currently the libraries assume data files are present on the mobile device. Please copy the contents of the directory “Misc/copy to device SD card” to the device before running the examples. The SD card will need to be mounted to perform the copy, but needs to be unmounted before running the examples.
-
 [1]: 4_Android:android_examples
+[android_native]: 4_Android:android_native
