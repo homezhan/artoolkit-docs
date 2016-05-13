@@ -1,56 +1,73 @@
 #Building ARToolKit from Source
-*If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit.* Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
+_If you have been supplied with pre-built ARToolKit binaries, you will not need to build ARToolKit from source. The instructions below apply only to users who wish to modify the internals of ARToolKit._ Source code and project files are supplied for all of ARToolKit. This allows you to not only see how the toolkit works, but also to modify its operation should you so wish.
 
 ##Required Software / Source Packages
-External dependencies for building ARToolKit from source include all the dependencies for building your own ARToolKit-based applications (as listed on page [Installing ARToolKit][about_installing] but also additional dependencies required to build the utilities and libraries. Where ARToolKit libraries require external DLLs, these are generally supplied with ARToolKit. Exceptions are listed below.
+External dependencies for building ARToolKit from source include all the dependencies for building your own ARToolKit-based applications (as listed on page [Installing ARToolKit][about_installing]) but also additional dependencies required to build the utilities and libraries. Where ARToolKit libraries require external DLLs, these are generally supplied with ARToolKit. Exceptions are listed below.
 
 ###A supported compiler/IDE
-- Windows: 
-  - Microsoft Visual Studio 2013 and Microsoft Visual Studio 2010 SP1 are supported. 
-  - The free Microsoft Visual Studio Express Edition will also work.
-- Mac OS X: 
-  - Xcode tools v5.1.1 under Mac OS X 10.9 or later is required. 
-  - Xcode 6 under Mac OS X 10.10 is recommended. These may be obtained free from [Apple][2].
--   Linux: 
-  -   GCC 4.4 is required. GCC 4.8 or later is recommended.
+
+* Windows: 
+* Microsoft Visual Studio 2013 and Microsoft Visual Studio 2010 SP1 are supported. 
+* The free Microsoft Visual Studio Express Edition will also work.
+
+* Mac OS X: 
+* Xcode tools v5.1.1 under Mac OS X 10.9 or later is required. 
+* Xcode 6 under Mac OS X 10.10 is recommended. These may be obtained free from [Apple][2].
+
+*   Linux: 
+*   GCC 4.4 is required. GCC 4.8 or later is recommended.
+
 
 ###OpenGL
+
 - Windows: OpenGL is provided as part of your graphic card diver.
+
 - Mac OS X: OpenGL is part of your OS X system.
+
 - Linux: Install `libgl1-mesa-dev` in order to be able to build ARToolKit.
 
 ###libjpeg
+
 -   Windows/Mac OS X: libjpeg headers and libraries are supplied with ARToolKit.
--   Linux: install package libjpeg-dev.
+
+-   Linux: install package `libjpeg-dev`.
 
 ###GLUT
-Required to build libARgsub and the utilities and examples.
-Note: libARgsub_lite provides equivalent functionality to libARgsub without requiring GLUT.
 
-- Windows: GLUT 3.7.6 is included with ARToolKit.
-- Mac OS X: included in OS.
-- Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the [MESA 3D libraries][3] (e.g. libgl1-mesa-dev)
+Required to build libARgsub and the utilities and examples. Note: libARgsub\_lite provides equivalent functionality to libARgsub without requiring GLUT.
 
-###OpenCV - Required to build calib_camera. 
+
+* Windows: GLUT 3.7.6 is included with ARToolKit.  
+
+* Mac OS X: included in OS.  
+
+* Linux: GLUT should be available in your distribution (e.g. packages freeglut3-dev and xorg-dev). Otherwise, GLUT is included in the [MESA 3D libraries][3] (e.g. libgl1-mesa-dev)  
+
+
+###OpenCV - Required to build calib_camera
+
 Generally OpenCV headers and libraries are provided with ARToolKit.
 
-- On Linux the provided OpenCV libraries are build using Clang compiler. Using `./Configuration make` to build you have the option to choose between Clang and GNU compiler for building ARToolKit. 
-		
-	- GNU: We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the *configuration script* with **no**). GNU is recommended because the OpenSceneGraph libraries provided by the package manager of your distribution are also build with GNU. However this leads to the result that you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. 
-	- Clang: If you prefer building with Clang, then the OpenCV headers and libraries are provided with ARToolKit and you need to install `libc++-dev`. Be aware that libARosg and some examples are excluded from this build because per default OpenSceneGraph comes compiled with GNU. If you would like to use them you need to compile OpenSceneGraph with Clang and then build libARosg and the examples manually.
+* On Linux the provided OpenCV libraries are build using Clang compiler. Using `./Configuration make` to build you have the option to choose between Clang and GNU compiler for building ARToolKit. 
 
-###Video capture libraries.
--   Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
-  -   QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
-  -   [Thomas Pintaric's DSVideoLib][6], which was the default video source for ARToolKit v2.x, is now LGPL licensed and may be used in proprietary software.
-  -   Point Grey's flycapture SDK (only for use with Point Grey Cameras).
-  -   Canon's HDCam64 camera control library (Canon HDCam64 users only).
--   Mac OS X: QuickTime v6.4 or later is required, and is included in all versions of Mac OS X \> 10.3. For systems with QuickTime 7 or later, QTKit is also used.
+* GNU: We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the _configuration script_ with **no**). GNU is recommended because the OpenSceneGraph libraries provided by the package manager of your distribution are also build with GNU. However this leads to the result that you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. 
+* Clang: If you prefer building with Clang, then the OpenCV headers and libraries are provided with ARToolKit and you need to install `libc++-dev`. Be aware that libARosg and some examples are excluded from this build because per default OpenSceneGraph comes compiled with GNU. If you would like to use them you need to compile OpenSceneGraph with Clang and then build libARosg and the examples manually.
 
--   Linux: Video4Linux, lib1394dc, or GStreamer is required. The corresponding packages required to be installed in your package manager are:
-  -    libv4l2-dev or libv4l-dev
-  -    libdc1394-22-dev (for lib1394 version 2.x) or libdc1394-13-dev (for lib1394 version 1.x)
-  - libgstreamer0.10-dev
+
+###Video capture libraries
+
+*  Windows: By default, on Windows ARToolKit's video library (libARvideo) uses Microsoft's DirectShow libraries. Unfortunately, this requires installation of the DirectX SDK and either the Windows SDK or the DirectShow package from the Microsoft Platform SDK to compile libARvideo. Please see the separate page [Building libARvideo][4]. Alternative video sources on Windows include:
+* QuickTime, either using the VideoDigitizer or movie files or streams. Please see the separate page [Building libARvideo][4].
+* [Thomas Pintaric's DSVideoLib][6], which was the default video source for ARToolKit v2.x, is now LGPL licensed and may be used in proprietary software.
+* Point Grey's flycapture SDK (only for use with Point Grey Cameras).
+* Canon's HDCam64 camera control library (Canon HDCam64 users only).
+
+* Mac OS X: QuickTime v6.4 or later is required, and is included in all versions of Mac OS X \> 10.3. For systems with QuickTime 7 or later, QTKit is also used.
+
+* Linux: Video4Linux, lib1394dc, or GStreamer is required. The corresponding packages required to be installed in your package manager are:
+* libv4l2-dev or libv4l-dev
+* libdc1394-22-dev (for lib1394 version 2.x) or libdc1394-13-dev (for lib1394 version 1.x)
+* libgstreamer0.10-dev
 
 ###OpenVRML (optional)
 If you would like to work with 3D models which are represented in a Virtual Reality Modeling Language (VRML) file then you need to install the OpenVRML SDK in order for ARToolKit to be able to render them. All the source code related to VRML is located in the ARvrml.lib.
@@ -60,15 +77,17 @@ If you would like to work with 3D models which are represented in a Virtual Real
 -   Linux: Binary deb packages are available from [here][10].
 
 ###OpenSceneGraph (OSG)
-In general you can find information about OpenSceneGraph (OSG) and what it does on their [website][13]. ARToolKit uses some of the features provided by OGS [14]. All these features are available using the ARogs.lib. 
+In general you can find information about OpenSceneGraph (OSG) and what it does on their [website][13]. ARToolKit uses some of the features provided by [OSG][14]. All these features are available using the ARosg.lib. 
 In general you need to install OSG on Mac and Windows when you like to build the complete ARToolKit project. On Linux you can choose in the `./Configure` step if you would like to use OSG. ARToolKit requires version 2.6 or later, version 2.8.2 is recommended.
 
--   Windows: ARToolKit supplies binaries of [OSG 3.0.1][11]
--   Mac OS X: ARToolKit supplies binaries of [OSG 3.2.2][12]
--   ARToolKit uses the [environment variable][setting_env] OSG_ROOT to find your OpenSceneGraph installation:
-  -  Mac OS X: OSG_ROOT=/Library/Frameworks
-  -  Windows: OSG_ROOT="Path to where you extracted OSG files to"
--   Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).
+* Windows: ARToolKit supplies binaries of [OSG 3.0.1][11]
+* Mac OS X: ARToolKit supplies binaries of [OSG 3.2.2][12]
+* ARToolKit uses the [environment variable][setting_env] OSG\_ROOT to find your OpenSceneGraph installation:  
+* Mac OS X: OSG\_ROOT=/Library/Frameworks
+* Windows: OSG\_ROOT=_Path to where you extracted OSG files to_
+
+* Linux: OpenSceneGraph is available as a package for most Linux distributions (e.g. package libopenscenegraph-dev).  
+
 
 ##Compiling ARToolKit
 
@@ -105,18 +124,15 @@ simpleLite can be opened by double-clicking its icon in the ARToolKit4\\bin dire
 -   Bundled applications are generated for the examples. The utilities are generated as command-line tools. Both can be run in the Finder (with output in Console) or from within Xcode or a Terminal window.
 
 #### Linux:
-simpleLite can be launched from a terminal window thus:
-<pre>
-./simpleLite
-</pre>
+simpleLite can be launched from a terminal window thus: `./simpleLite`
 
 ### Setting up the ARTOOLKIT5_ROOT environment variable
-[Click here to see how to set an environment variable.]
+[Click here to see how to set an environment variable][setting_env]
 
 [about_installing]: 1_Getting_Started:about_installing
 [tutorial_1_first_scene]: 7_Examples:example_simplelite
 [setting_env]: 1_Getting_Started:general_environment_variables
-[examples]:
+[examples]: 7_Examples:example_simplelite
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
 [4]: 8_Advanced_Topics:windows_building_libarvideo
