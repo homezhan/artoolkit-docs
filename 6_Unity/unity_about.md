@@ -13,9 +13,16 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 ##Requirements
 
 -   A webcam or other video source supported by ARToolKit.
--   Unity Pro v3.5.2f2 or later, for Mac OS X or Windows (development platform).
--   If deploying to Android, Unity Pro for Android.
--   If deploying to iOS, Unity Pro for iOS plus Apple's Xcode v4.2 or later.
+-   Unity v5.0 or later (tested with 5.2.3 and 5.3.4), for Mac OS X or Windows (development platform). Personal edition is sufficient. 
+-   If deploying for Android: Android build support to build a Unity app for the Android platform.
+-   If deploying for iOS: iOS build support to build a Unity app for the iOS platform plus Apple's Xcode v4.2 or later.
+
+
+**Important:**
+
+It is not possible to target iOS or Mac OS X desktop using Unity on a Windows system. 
+
+It is also not possible to target Windows Store, Windows Phone or Windows Universal Platform on a Mac OS X system.
 
 ##Index
 

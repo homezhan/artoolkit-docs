@@ -44,6 +44,7 @@ The ARTrackedObject generates the following events using Unity's SendMessage com
 
 -   void OnMarkerLost(ARMarker marker)
 -   void OnMarkerFound(ARMarker marker)
+-   void OnMarkerTracked(ARMarker marker)
 
 ## AROrigin
 Represents the center of the ARToolKit world and is the root of the scene. Normally can be placed at {0, 0, 0}, but you may move it elsewhere, if you wish. The ARCamera and every ARTrackedObject should be children to this object. This allows for a few benefits:
