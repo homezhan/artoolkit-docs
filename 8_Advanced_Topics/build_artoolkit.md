@@ -6,15 +6,15 @@ External dependencies for building ARToolKit from source include all the depende
 
 ###A supported compiler/IDE
 
-* Windows: 
-* Microsoft Visual Studio 2013 and Microsoft Visual Studio 2010 SP1 are supported. 
+* Windows:
+* Microsoft Visual Studio 2013 and Microsoft Visual Studio 2010 SP1 are supported.
 * The free Microsoft Visual Studio Express Edition will also work.
 
-* Mac OS X: 
-* Xcode tools v5.1.1 under Mac OS X 10.9 or later is required. 
+* Mac OS X:
+* Xcode tools v5.1.1 under Mac OS X 10.9 or later is required.
 * Xcode 6 under Mac OS X 10.10 is recommended. These may be obtained free from [Apple][2].
 
-*   Linux: 
+*   Linux:
 *   GCC 4.4 is required. GCC 4.8 or later is recommended.
 
 
@@ -48,9 +48,9 @@ Required to build libARgsub and the utilities and examples. Note: libARgsub\_lit
 
 Generally OpenCV headers and libraries are provided with ARToolKit.
 
-* On Linux the provided OpenCV libraries are build using Clang compiler. Using `./Configuration make` to build you have the option to choose between Clang and GNU compiler for building ARToolKit. 
+* On Linux the provided OpenCV libraries are build using Clang compiler. Using `./Configuration make` to build you have the option to choose between Clang and GNU compiler for building ARToolKit.
 
-* GNU: We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the _configuration script_ with **no**). GNU is recommended because the OpenSceneGraph libraries provided by the package manager of your distribution are also build with GNU. However this leads to the result that you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`. 
+* GNU: We recommend building ARToolKit with GNU gcc and g++ (answer fist question of the _configuration script_ with **no**). GNU is recommended because the OpenSceneGraph libraries provided by the package manager of your distribution are also build with GNU. However this leads to the result that you need to install the OpenCV libraries manually `sudo apt-get install libopencv-dev`.
 * Clang: If you prefer building with Clang, then the OpenCV headers and libraries are provided with ARToolKit and you need to install `libc++-dev`. Be aware that libARosg and some examples are excluded from this build because per default OpenSceneGraph comes compiled with GNU. If you would like to use them you need to compile OpenSceneGraph with Clang and then build libARosg and the examples manually.
 
 
@@ -77,7 +77,7 @@ If you would like to work with 3D models which are represented in a Virtual Real
 -   Linux: Binary deb packages are available from [here][10].
 
 ###OpenSceneGraph (OSG)
-In general you can find information about OpenSceneGraph (OSG) and what it does on their [website][13]. ARToolKit uses some of the features provided by [OSG][14]. All these features are available using the ARosg.lib. 
+In general you can find information about OpenSceneGraph (OSG) and what it does on their [website][13]. ARToolKit uses some of the features provided by [OSG][14]. All these features are available using the ARosg.lib.
 In general you need to install OSG on Mac and Windows when you like to build the complete ARToolKit project. On Linux you can choose in the `./Configure` step if you would like to use OSG. ARToolKit requires version 2.6 or later, version 2.8.2 is recommended.
 
 * Windows: ARToolKit supplies binaries of [OSG 3.0.1][11]
@@ -129,13 +129,13 @@ simpleLite can be launched from a terminal window thus: `./simpleLite`
 ### Setting up the ARTOOLKIT5_ROOT environment variable
 [Click here to see how to set an environment variable][setting_env]
 
-[about_installing]: 1_Getting_Started:about_installing
-[tutorial_1_first_scene]: 7_Examples:example_simplelite
-[setting_env]: 1_Getting_Started:general_environment_variables
-[examples]: 7_Examples:example_simplelite
+[about_installing]: ../1_Getting_Started/about_installing.md
+[tutorial_1_first_scene]: ../7_Examples/example_simplelite.md
+[setting_env]: ../1_Getting_Started/general_environment_variables.md
+[examples]: ../7_Examples/example_simplelite.md
 [2]: http://developer.apple.com/xcode/
 [3]: http://mesa3d.sourceforge.net/
-[4]: 8_Advanced_Topics:windows_building_libarvideo
+[4]: ../8_Advanced_Topics/windows_building_libarvideo.md
 [6]: http://sourceforge.net/projects/dsvideolib
 [7]: http://www.artoolworks.com/dist/openvrml/
 [8]: http://www.finkproject.org/
@@ -144,4 +144,4 @@ simpleLite can be launched from a terminal window thus: `./simpleLite`
 [11]: http://www.artoolkit.org/dist/3rdparty/openscenegraph/3.0.1/
 [12]: http://www.artoolkit.org/dist/3rdparty/openscenegraph/3.2.x/
 [13]: http://www.openscenegraph.org/
-[14]: 8_Advanced_Topics:osg_usage
+[14]: ../8_Advanced_Topics/osg_usage.md
