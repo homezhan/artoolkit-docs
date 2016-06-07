@@ -64,10 +64,10 @@ Imaging systems are a fascinating and complex area. We highly recommend [Edmund 
 [1]: http://damien.douxchamps.net/ieee1394/libdc1394/
 [2]: http://www.edmundoptics.com/capabilities/imaging-optics/imaging-resource-guide/
 
-[point_grey_housing_removed_front]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_firefly_2_housing_removed_-_front.jpg
-[point_grey_housing_removed_rear]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_firefly_2_housing_removed_-_rear.jpg
-[point_grey_flea_front_no_lens]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_flea_-_front_no_lens.jpg
-[point_grey_flea_rear_no_lens]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_flea_rear_no_lens.jpg
-[point_grey_flea_side_no_lens]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_flea_-_side_view_no_lens.jpg
-[point_grey_flea_manual_variable]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_flea_with_manual_focus_variable_aperture_c-mount_lens.jpg
-[point_grey_flea_manual_telephoto]: https://github.com/artoolkit/artoolkit-docs/tree/master/_media/point_grey_flea_with_manual_focus_variable_aperture_telephoto_c-mount_lens.jpg
+[point_grey_housing_removed_front]: ../../_media/point_grey_firefly_2_housing_removed_-_front.jpg
+[point_grey_housing_removed_rear]: ../../_media/point_grey_firefly_2_housing_removed_-_rear.jpg
+[point_grey_flea_front_no_lens]: ../../_media/point_grey_flea_-_front_no_lens.jpg
+[point_grey_flea_rear_no_lens]: ../../_media/point_grey_flea_rear_no_lens.jpg
+[point_grey_flea_side_no_lens]: ../../_media/point_grey_flea_-_side_view_no_lens.jpg
+[point_grey_flea_manual_variable]: ../../_media/point_grey_flea_with_manual_focus_variable_aperture_c-mount_lens.jpg
+[point_grey_flea_manual_telephoto]: ../../_media/point_grey_flea_with_manual_focus_variable_aperture_telephoto_c-mount_lens.jpg
