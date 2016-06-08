@@ -47,5 +47,5 @@ Options:
 
 If you want to change the markers, you can edit the file Data/markers.dat. If you want to change the content, edit the file Data/objects.dat.
 
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
-[config_optical_see-through]: 8_Advanced_Topics:config_optical_see-through
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration.md
+[config_optical_see-through]: ../8_Advanced_Topics/config_optical_see-through.md

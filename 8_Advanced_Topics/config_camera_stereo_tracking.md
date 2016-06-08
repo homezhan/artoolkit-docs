@@ -150,12 +150,12 @@ The help text is reproduced here:
     -h -help --help: show this message
 </pre>
 
-[marker_about]: 3_Marker_Training:marker_about
-[marker_barcode]: 3_Marker_Training:marker_barcode
-[marker_multi]: 3_Marker_Training:marker_multi
-[marker_nft_training]: 3_Marker_Training:marker_nft_training
-[about_hardware_selection]: Advanced:about_hardware_selection
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
-[config_video_capture]: 2_Configuration:config_video_capture
+[marker_about]: ../3_Marker_Training/marker_about.md
+[marker_barcode]: ../3_Marker_Training/marker_barcode.md
+[marker_multi]: ../3_Marker_Training/marker_multi.md
+[marker_nft_training]: ../3_Marker_Training/marker_nft_training.md
+[about_hardware_selection]: ./about_hardware_selection.md
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration.md
+[config_video_capture]: ../2_Configuration/config_video_capture.md
 
-[calib_stereo_screen]: /calib_stereo_screen.png
+[calib_stereo_screen]: ../_media/calib_stereo_screen.png

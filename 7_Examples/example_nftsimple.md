@@ -31,6 +31,6 @@ Once the application is running, point the camera at the image.
 
 The tracking should rapidly pick up the image. Once the image is recognized, the color cube will be drawn at the origin of the page's coordinate system.
 
-[1]: 2_Configuration:config_video_capture
-[2]: 2_Configuration:config_camera_calibration
-[NFT_example_KPM_holding_webcam]: :nft_example_kpm_holding_webcam.jpg
+[1]: ../2_Configuration/config_video_capture.md
+[2]: ../2_Configuration/config_camera_calibration.md
+[NFT_example_KPM_holding_webcam]: ../_media/nft_example_kpm_holding_webcam.jpg

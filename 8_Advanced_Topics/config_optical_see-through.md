@@ -133,13 +133,13 @@ Optical see-through calibration depends on accurately knowing the precise relati
 Of course, alignment between virtual and real objects is desirable for video see-through too, but in video see-through the users see the virtual objects overlaid on the source image being used for tracking. There is minimal registration error between the video stream and the overlaid objects, and the misalignment of the video stream and the real scene behind and around it is much less noticeable to the user. This is one of the key reasons why video see-through display has become so widely used in AR research.
 
 [1]: http://www.cs.unc.edu/~azuma/azuma_AR.html
-[2]: 2_Configuration:config_camera_calibration
-[example_optical]: 7_Examples:example_optical
+[2]: ../2_Configuration/config_camera_calibration.md
+[example_optical]: ../7_Examples/example_optical.md
 [interpupillary_distance]: https://en.wikipedia.org/wiki/Interpupillary_distance
 
-[optical_calibration_pattern]: :optical_calibration_pattern.png
-[performing_optical_calibration]: :performing_optical_calibration.png
-[optical_calibration_view]: :Ootical_calibration_view.png
-[ARToolKit_for_Unity_optical_parameters_file_location]: :artoolkit_for_unity_optical_parameters_file_location.png
-[ARToolKit_for_Unity_optical_mode_enabled]: :artoolkit_for_unity_optical_mode_enabled.png
-[ARToolKit_for_Unity_stereo_optical_cameraL]: :artoolkit_for_unity_stereo_optical_cameral.png
+[optical_calibration_pattern]: ../_media/optical_calibration_pattern.png
+[performing_optical_calibration]: ../_media/performing_optical_calibration.png
+[optical_calibration_view]: ../_media/Ootical_calibration_view.png
+[ARToolKit_for_Unity_optical_parameters_file_location]: ../_media/artoolkit_for_unity_optical_parameters_file_location.png
+[ARToolKit_for_Unity_optical_mode_enabled]: ../_media/artoolkit_for_unity_optical_mode_enabled.png
+[ARToolKit_for_Unity_stereo_optical_cameraL]: ../_media/artoolkit_for_unity_stereo_optical_cameral.png

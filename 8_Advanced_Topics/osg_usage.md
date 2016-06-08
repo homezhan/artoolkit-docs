@@ -1,4 +1,5 @@
-##OpenSceneGraph (OSG) usage
+#OpenSceneGraph (OSG) usage
+
 ARToolKit can use OpenSceneGraph to render 3D scenes. Access to OSG features are facilitated by the ARosg.lib component of the ARToolKit SDK. ARosg.lib is linked against OSG binaries. ARToolKit examples like simpleOSG use the ARosg.lib library to access OSG functions.
 
 ARToolKit currently uses the following OSG functions:
@@ -8,12 +9,12 @@ ARToolKit currently uses the following OSG functions:
 - Draw an OSG model
 - Enable/Disable lighting
 - Enable/Disable transparancy
-- Pause/Resume the animation 
+- Pause/Resume the animation
 - Set the projection matrix of an OSG model
 - Set front facing polygones (counter-clockwise (default) or clockwise)
 - Read/Set model pose (model-view matrix)
 - Read/Set local model pose (transformation matrix)
-- Enable/Disable 2D outlining of model boundary 
+- Enable/Disable 2D outlining of model boundary
 - Determination if a model is intersected by a line segment
 - Handle window reshape events
 - Handle mouse and keyboard interactions

@@ -18,4 +18,4 @@ The ARMarker class includes a class method to read marker definitions from a fil
 
 If you have any further questions about the design, or how the app fits together, please ask on the community forum (rather than by email) so that others can benefit from the answers.
 
-[ios_about]: 5_iOS:ios_about
+[ios_about]: ../5_iOS/ios_about.md
