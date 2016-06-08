@@ -19,7 +19,7 @@ The traditional template marker can be applied to several marker types of varyin
 While vision-based tracking is exciting in enabling so many applications, there are limitations which affect ARToolKit and other vision based systems.
 
 ###Occlusion
-Naturally the virtual objects will only appear when the marker being tracked is in camera view. This may limit the size or movement of the virtual objects. It also means that if users cover up, from the camera's view, part of the marker with an obstruction, the composited virtual model disappears. Also, if the marker borders are moved outside the camera's view, the marker will be clipped, no longer having four corners. As a result, recognition will fail. 
+Naturally the virtual objects will only appear when the marker being tracked is in camera view. This may limit the size or movement of the virtual objects. It also means that if users cover up, from the camera's view, part of the marker with an obstruction, the composited virtual model disappears. Also, if the marker borders are moved outside the camera's view, the marker will be clipped, no longer having four corners. As a result, recognition will fail.
 
 ###Range
 There are also range issues in optical tracking, since as markers are move further away from the camera, the markers occupy fewer pixels in the camera's view and results in having insufficient detail for recognition, tracking and identification. The larger the physical embedded marker pattern, the further away the embedded marker pattern can be detected and so the greater the track-ability of the marker.
@@ -50,6 +50,6 @@ To reduce the glare, markers should be constructed of or over non-reflective sur
 
 To reduce shadows, we recommend using omnidirectional lighting (lighting conditions where light falls on the markers from all directions).
 
-[diagram]: :diagram.jpg
-[marker_barcode]: 3_Marker_Training:marker_barcode
-[marker_training]: 3_Marker_Training:marker_training
+[diagram]: ../_media/diagram.jpg
+[marker_barcode]: ./marker_barcode.md
+[marker_training]: ./marker_training.md

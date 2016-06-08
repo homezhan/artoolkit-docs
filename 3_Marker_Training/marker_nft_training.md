@@ -12,7 +12,7 @@ The ARToolKit NFT tracker, does not require augmenting the image with [fiducial 
 
 ##Typical Workflow Summary for Training an Image to be NFT Recognized and Tracked
 
-1.  If the image to be recognized and tracked is hardcopy, the image must be scanned or camera captured into a jpeg formatted soft-copy image file. A high-resolution, high-quality soft-copy image forms the basis for locating feature points and generating the *trained* dataset. 
+1.  If the image to be recognized and tracked is hardcopy, the image must be scanned or camera captured into a jpeg formatted soft-copy image file. A high-resolution, high-quality soft-copy image forms the basis for locating feature points and generating the *trained* dataset.
 2.  The resulting soft-copy image is used as input to the NFT training applications.
 3.  Produce and prepare the final hardcopy image that is recognized and tracked.
 
@@ -29,9 +29,9 @@ Care must be taken to ensure that the image supplied to the training tools is no
 For example, borderless A4 at 150 dpi is 1240 pixels wide and 1754 pixels tall. Borderless US Letter at 150 dpi is 1275 pixels wide and 1650 pixels tall. If producing from digital artwork at 1:1 scale, you can use image size from that artwork. ![Example here is from Adobe Photoshop.][NFT_example_KPM_image_size_photoshop]
 
 If the measurements are in millimeters, you can convert to inches by dividing by 25.4 millimeters per inch:
-<pre>
+```
     inches = millimeters / 25.4 millimeters per inch
-</pre>
+```
 
 ####Using a Hardcopy Image Source
 In many cases, it may be simplest to start with a hardcopy image of the surface to be tracked. Further considerations for starting with a hardcopy image:
@@ -116,19 +116,19 @@ Whether working from supplied printed material or a print from digital artwork, 
 For Example: If you were printing a label to be attached to a product, the label should be applied to a flat area of the product. The curved surface of a bottle or can would not be suitable, and alternatives could include the packaging holding the bottle or can, or on a flat label or tag attached to the product. If mounting in a book, surfaces should be printed on heavy card and bound with board-book, ring or spiral binding. If used as an unbound card, affix to the card with a dry glue (e.g. a glue stick or an industrial dry adhesive).
 
 [self-similarity]: https://en.wikipedia.org/wiki/Self-similarity
-[marker_nft_fiducial_markers]: 3_Marker_Training:marker_nft_fiducial_markers
-[marker_nft_utilities]: 3_Marker_Training:marker_nft_utilities
-[example_nftsimple]: 7_Examples:example_nftsimple
+[marker_nft_fiducial_markers]: ./marker_nft_fiducial_markers.md
+[marker_nft_utilities]: ./marker_nft_utilities.md
+[example_nftsimple]: ../7_Examples/example_nftsimple.md
 [forum]: http://www.artoolworks.com/support/forum/
 
-[3]: :pinball.jpg
+[3]: ../_media/pinball.jpg
 
-[NFT_example_KPM_measuring_image_with_rule]: :nft_example_kpm_measuring_image_with_rule.jpg
-[NFT_example_KPM_image_size_photoshop]: :nft_example_kpm_image_size_photoshop.jpg
-[Glueing_marker_to_backing_board]: :glueing_marker_to_backing_board.jpg
-[NFT_example_genTexData_010]: :nft_example_gentexdata_010.png
-[NFT_example_genTexData_020]: :nft_example_gentexdata_020.png
-[NFT_example_genTexData_030]: :nft_example_gentexdata_030.png
-[NFT_example_genTexData_040]: :nft_example_gentexdata_040.png
-[NFT_example_genTexData_050]: :nft_example_gentexdata_050.png
-[NFT_example_genTexData_060]: :nft_example_gentexdata_060.png
+[NFT_example_KPM_measuring_image_with_rule]: ../_media/nft_example_kpm_measuring_image_with_rule.jpg
+[NFT_example_KPM_image_size_photoshop]: ../_media/nft_example_kpm_image_size_photoshop.jpg
+[Glueing_marker_to_backing_board]: ../_media/glueing_marker_to_backing_board.jpg
+[NFT_example_genTexData_010]: ../_media/nft_example_gentexdata_010.png
+[NFT_example_genTexData_020]: ../_media/nft_example_gentexdata_020.png
+[NFT_example_genTexData_030]: ../_media/nft_example_gentexdata_030.png
+[NFT_example_genTexData_040]: ../_media/nft_example_gentexdata_040.png
+[NFT_example_genTexData_050]: ../_media/nft_example_gentexdata_050.png
+[NFT_example_genTexData_060]: ../_media/nft_example_gentexdata_060.png

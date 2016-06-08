@@ -26,11 +26,11 @@ By default, `ARController` implements the `Start()`, `Stop()`, and `Update()` Mo
 -   `StopAR()` - Stops tracking.
 
 By default, `StartAR()` is called during `Start()`. If you wish to override the auto-start, set the public property `AutoStartAR`
-<pre>
+```
     GameObject myARObject;
     ARController myARController = myARObject.GetComponent<ARMarker>();
     myARController.AutoStartAR = false;
-</pre>
+```
 and then you can manually invoke `StartAR()`/`StopAR()` at more appropriate times for your application.
 
 ###Adding, Removing, Finding and Querying Markers
@@ -38,7 +38,7 @@ The `ARMarker` script presents an abstraction of a marker for use in Unity.
 
 #### Adding a new marker
 To dynamically load a new marker for tracking, you should instantiate a GameObject somewhere in your scene, and attach an ARMarker to it. Usually all `ARMarker` instances are added to the same GameObject that holds the `ARController` instance:
-<pre>
+```
     GameObject myARObject;
     myMarker = myARObject.AddComponent("ARMarker") as ARMarker;
     // Configure
@@ -48,7 +48,7 @@ To dynamically load a new marker for tracking, you should instantiate a GameObje
     myMarker.PatternWidth = 0.08f;
     // In metres, i.e. 0.08 = 8cm, or 3.15"
     myMarker.Load();
-</pre>
+```
 
 You can take a look at the source for ARMarker to see the other options.
 
@@ -59,13 +59,13 @@ Here are some points to note when adding an ARMarker via a script:
 -   If you are using NFT markers OR multi-marker sets which refer to pattern files (not barcodes), you must ensure that the files which provide the marker data are available in the file system, normally in the deployed "StreamingAssets" folder inside your Unity project.
 
 #### Getting a List of All Markers
-<pre>
+```
     // Note that FindObjectsOfType is expensive; don't use every frame.
     ARMarker[] markers = FindObjectsOfType(typeof(ARMarker)) as ARMarker[];
-</pre>
+```
 
 #### Removing a Marker
-<pre>
+```
     // If you need to get a reference to it...
     GameObject myARObject;
     ARMarker myMarker = myARObject.GetComponent<ARMarker>();
@@ -73,10 +73,10 @@ Here are some points to note when adding an ARMarker via a script:
     Destroy(GetComponent(myMarker));
     // If you just want to disable it instead:
     myMarker.enabled = false;
-</pre>
+```
 
 #### Querying a Marker for its Visibility and Pose
-<pre>
+```
     ARMarker myMarker;
     if (myMarker.Visible) Debug.Log("Marker is visible.");
     // Pose is a 4x4 homogenous coordinate transform, in left-hand coordinates.
@@ -85,7 +85,7 @@ Here are some points to note when adding an ARMarker via a script:
     Matrix4x4 pose = myMarker.TransformationMatrix;
     Vec3 position = ARUtilityFunctions.PositionFromMatrix(pose);
     Quaternion orientation = ARUtilityFunctions.QuaternionFromMatrix(pose);
-</pre>
+```
 
 ##Connecting Markers to the Scene
 
@@ -95,7 +95,7 @@ A simple means of connecting a single ARMarker (which might represent either a s
 The ARTrackedObject is associated with an ARMarker by setting ARTrackedObject Marker Tag to the same value as the desired ARMarker Tag. When the ARMarker appears and is tracked, the ARCamera Unity Camera draws its view at the same pose relative to its parent by means of the ARTrackedObject as the real camera to the real marker, and when the ARMarker disappears, the Camera's output is hidden.
 
 By putting game objects into layers, and setting the culling mask of the camera to display only the layer with desired objects, this allows content to be easily shown/hidden in concert with a marker. Generally, all markers and their augmentations go on one layer, which we will call the foreground.
-<pre>
+```
     // Generally, you should use a tag or other means to identify the camera you want to modify.
     Camera[] Cameras = FindObjectsOfType(typeof(Camera)) as Camera[];
     myCamera = Cameras[0];
@@ -104,21 +104,21 @@ By putting game objects into layers, and setting the culling mask of the camera 
     // 0-based index, so 9 = user layer 2.
     myCamera.cullingMask = 1\<\< myARForegroundLayer;
     myCamera.AddComponent("ARCamera") as ARCamera;
-</pre>
+```
 
 Configuring the ARTrackedObject:
-<pre>
+```
     myARTrackedObject = arToolKitRoot.GetComponent<ARTrackedObject>();
     myARTrackedObject.MarkerTag = "myMarker1";
     // As set in example above.
-</pre>
+```
 
 To allow control over aspects of GameObjects other than their visibility, you can connect your GameObject to the ARTrackedObject's eventReceiver property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
 <csharp>
     // All optional. OnMarkerFound(ARMarker marker);
     OnMarkerTracked(ARMarker marker);
     OnMarkerLost(ARMarker marker);
-</pre>
+```
 
 The ARCamera's projection and viewport are set during AR startup. At present, it is not possible to add an ARCamera after `StartAR()` has been called, unless you modify ARController.
 

@@ -84,14 +84,14 @@ No personally identifying data is transmitted or stored during as part of the pr
 [playstore]:https://play.google.com/store/apps/details?id=com.artoolworks.ar.utils.calib_camera
 [patterna4]: http://artoolkit.org/docs/Calibration%20chessboard%20(A4).pdf
 [patternus]: http://artoolkit.org/docs/Calibration%20chessboard%20(US%20Letter).pdf
-[print_dialog]: :print_dialog.png
-[play_store]: :play_store.png
-[menu]: :menu.png
-[resolutions]: :resolutions.png
-[cameras]: :cameras.png
-[paper]: :paper.png
-[beginning]: :beginning.png
-[good_bad]: :good_bad.png
-[framed1]: :framed1.png
-[framed2]: :framed2.png
-[results]: :results.png
+[print_dialog]: ../_media/print_dialog.png
+[play_store]: ../_media/play_store.png
+[menu]: ../_media/menu.png
+[resolutions]: ../_media/resolutions.png
+[cameras]: ../_media/cameras.png
+[paper]: ../_media/paper.png
+[beginning]: ../_media/beginning.png
+[good_bad]: ../_media/good_bad.png
+[framed1]: ../_media/framed1.png
+[framed2]: ../_media/framed2.png
+[results]: ../_media/results.png

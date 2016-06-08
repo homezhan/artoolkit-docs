@@ -10,25 +10,25 @@ check\_id does not solve problems with camera calibration. You still need to hav
 ### Starting check\_id
 If you wish to examine only the recognition of the code on barcode markers, no configuration of check\_id is necessary. check\_id is launched from the command line.
 On Linux / OS X, type:
-<pre>
+```
     ./check_id
-</pre>
+```
 On Windows, type:
-<pre>
+```
     check_id.exe
-</pre>
+```
 
 check_id should launch and open a video window.
 
 If you also wish to display pose-estimates errors or wish to check recognition of template markers, you will need to define a multi-marker configuration file first. By default, check\_id reads its multimarker configuration from up to two multimarker configuration files specified on the command line. You can test (for example) using the pre-supplied file `Data/cubeMarkerConfig.dat` (which is set to track the cube marker whose image is supplied in PDF form in `doc/patterns/Cubes/cube00-05-a4.pdf` or `/doc/patterns/Cubes/cube00-05-latter.pdf`) using the following launch syntax.
 On Linux / OS X, type:
-<pre>
+```
     ./check_id Data/cubeMarkerConfig.dat
-</pre>
+```
 On Windows, type:
-<pre>
+```
     check_id.exe Data/cubeMarkerConfig.dat
-</pre>
+```
 
 check\_id reads standard multi-marker configuration files, which can be edited with a text editor. In such a file, you declare the names of attern files and/or barcode ID numbers, the size of each marker, and the offset and orientation of the marker relative to the origin of the multi-marker set. If you specify only template (pattern) markers in the config file, check\_id will automatically select command-line option `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR`. Similarly, only barcode markers will result in use of `--patternDetectionMode AR_MATRIX_CODE_DETECTION`, or a mix of template and barcode markers (usually an undesirable mode) will result in use of `--patternDetectionMode AR_TEMPLATE_MATCHING_COLOR_AND_MATRIX`.
 
@@ -59,16 +59,16 @@ Not all cutoff phases are applicable to all markers. For example, the phases who
 ###Changing check_id's Default Settings
 The size of the marker border, and the pattern type settings can be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default settings.
 On Linux / OS X, type:
-<pre>
+```
     ./check_id --help
-</pre>
+```
 On Windows, type:
-<pre>
+```
     check_id.exe --help
-</pre>
+```
 
 The help text is reproduced here:
-<pre>
+```
     Usage: ./check_id [options] \[Multimarker config. file [Multimarker config. file 2]]
     Options:
       --vconf <video parameter for the camera>
@@ -85,9 +85,9 @@ The help text is reproduced here:
                  AR_MATRIX_CODE_DETECTION AR_TEMPLATE_MATCHING_COLOR_AND_MATRIX
                  AR_TEMPLATE_MATCHING_MONO_AND_MATRIX
       -h -help --help: show this message
-</pre>
+```
 
-[marker_about]: 3_Marker_Training:marker_about
-[marker_barcode]: 3_Marker_Training:marker_barcode
-[marker_multi]: 3_Marker_Training:marker_multi
-[Check_id_cutoff_phases_v4]: :check_id_cutoff_phases_v4.5.0.png
+[marker_about]: ./marker_about,md
+[marker_barcode]: ./marker_barcode.md
+[marker_multi]: ./marker_multi.md
+[Check_id_cutoff_phases_v4]: ../_media/check_id_cutoff_phases_v4.5.0.png

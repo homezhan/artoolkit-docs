@@ -13,14 +13,14 @@ You do not need to do a single line of scripting to begin working with ARToolKit
 ##Requirements
 
 -   A webcam or other video source supported by ARToolKit.
--   Unity v5.0 or later (tested with 5.2.3 and 5.3.4), for Mac OS X or Windows (development platform). Personal edition is sufficient. 
+-   Unity v5.0 or later (tested with 5.2.3 and 5.3.4), for Mac OS X or Windows (development platform). Personal edition is sufficient.
 -   If deploying for Android: Android build support to build a Unity app for the Android platform.
 -   If deploying for iOS: iOS build support to build a Unity app for the iOS platform plus Apple's Xcode v4.2 or later.
 
 
 **Important:**
 
-It is not possible to target iOS or Mac OS X desktop using Unity on a Windows system. 
+It is not possible to target iOS or Mac OS X desktop using Unity on a Windows system.
 
 It is also not possible to target Windows Store, Windows Phone or Windows Universal Platform on a Mac OS X system.
 
@@ -47,14 +47,14 @@ It is also not possible to target Windows Store, Windows Phone or Windows Univer
 [unity]:http://www.unity3d.com
 [unity_forums]:http://forum.unity3d.com/
 [unity_answers]:http://answers.unity3d.com/index.html
-[unity_low_level_api]: 6_Unity:unity_low_level_api
-[unity_getting_started]: 6_Unity:unity_getting_started
-[unity_on_osx]: 6_Unity:unity_on_osx
-[unity_on_windows]: 6_Unity:unity_on_windows
-[unity_on_android]: 6_Unity:unity_on_android
-[unity_on_ios]: 6_Unity:unity_on_ios
-[unity_getting_started]: 6_Unity:unity_getting_started
-[unity_scripts]: 6_Unity:unity_scripts
-[marker_about]: 3_Marker_Training:marker_about
+[unity_low_level_api]: ./unity_low_level_api.md
+[unity_getting_started]: ./unity_getting_started.md
+[unity_on_osx]: ./unity_on_osx.md
+[unity_on_windows]: ./unity_on_windows.md
+[unity_on_android]: ./unity_on_android
+[unity_on_ios]: ./unity_on_ios.md
+[unity_getting_started]: ./unity_getting_started.md
+[unity_scripts]: ./unity_scripts.md
+[marker_about]: ../3_Marker_Training/marker_about.md
 
-[helicopter]: :unityhelicopter.png
+[helicopter]: ../_media/unityhelicopter.png

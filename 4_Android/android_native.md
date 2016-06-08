@@ -61,7 +61,7 @@ For help with the Eclipse to Android Studio IDE transition, see the document [[h
 ##Building Native Android Libraries
 To build using the Android NDK toolchain, placed in the downloaded NDK is a script file, for Mac OS X, named `ndk-build` or, for Windows Desktop, named `ndk-build.cmd.` When Android Studio is used to download and install the NDK, by default, the NDK is installed directly under the Android SDK root folder. Also, by default, the NDK root folder is named "ndk-bundle."
 
-> Note: Due to the knife-edge roll of NDK version 11 by developers.android.com, it's recommended that ARToolKit Android developers download, install and use NDK version 11 or greater. Not doing so can result in link incompatibilities between your native libraries and their dependency on ARToolKit prebuilt native libraries. 
+> Note: Due to the knife-edge roll of NDK version 11 by developers.android.com, it's recommended that ARToolKit Android developers download, install and use NDK version 11 or greater. Not doing so can result in link incompatibilities between your native libraries and their dependency on ARToolKit prebuilt native libraries.
 
 The next step after installing the Android SDK and NDK is to set some environment variables (recommended for both Mac OS X and Windows Desktop development environments). For Windows Desktop, the following can be defined as Windows system environment variables or exported by the Git bash shell's `.bash_profile` startup file.
 
@@ -70,7 +70,7 @@ The next step after installing the Android SDK and NDK is to set some environmen
 * Set NDK to the same path as ANDROID\_NDK\_ROOT. `NDK=$ANDROID_NDK_ROOT`
 * Set PATH to include a path to the `ndk-build[.cmd]` script file, that is, the path to the root folder of the NDK. The NDK environment variable can be used to help define the added path.
 
-Then, for both Mac OS X and Windows Desktop, re-source the command-line shell so that updated environment variables are seen by subsequent command-line shells. 
+Then, for both Mac OS X and Windows Desktop, re-source the command-line shell so that updated environment variables are seen by subsequent command-line shells.
 
 Next, proceed to the "android" folder directly off the root folder of the ARToolKit SDK or local repository. There are two script files that are used on both the Mac OS X and Windows Desktop development environments:
 
@@ -79,7 +79,7 @@ Next, proceed to the "android" folder directly off the root folder of the ARTool
 
 Both scripts utilize the Android NDK and toolchain through the `ndk-build` script.
 
-To build, from the bash command-line (for Windows Desktop, this will be the Git bash shell), execute the `./build.sh` script file, without arguments. When `build.sh` completes without errors, there will be dependencies built for several Android ABIs here: 
+To build, from the bash command-line (for Windows Desktop, this will be the Git bash shell), execute the `./build.sh` script file, without arguments. When `build.sh` completes without errors, there will be dependencies built for several Android ABIs here:
 
 * Mac OS X: `/[ARTK SDK or repo root]/android/libs`
 * Windows Desktop: `C:\[ARTK SDK or repo root]\android\libs`
@@ -118,4 +118,4 @@ The provided ARToolKit Android Studio projects do not yet fully drive the native
 [9]: https://codelabs.developers.google.com/codelabs/android-studio-jni/index.html?index=..%2F..%2Findex#0
 [10]: http://developer.android.com/ndk/guides/abis.html
 
-[android_developing]: 4_Android:android_developing
+[android_developing]: ./android_developing.md

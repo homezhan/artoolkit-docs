@@ -12,16 +12,16 @@ If you are upgrading to a newer version, it is generally safe to install over th
 
 ## Mac OS X / Linux
 The SDK is supplied as an archive file (.tar.gz or .zip file) which need only be unpacked to a location of your choice (we recommend `~/SDKs/`). Drop the archive into your chosen location. In OS X, all you have to do is double-click the archive to unpackage it. In Linux, use the following command in your terminal:
-<pre>
+```
     tar xzvf ARToolKit5-bin-*.tar.gz
-</pre>
+```
 
 Once unpacked, to set the [ARTOOLKIT5_ROOT so that other software can find ARToolKit][setting_env], open a Terminal window, and run the script artoolkit5-setenv:
-<pre>
+```
     // Example assumes ARToolKit is in ~/SDKs/
     cd ~/SDKs/ARToolKit5/
     ./share/artoolkit5-setenv
-</pre>
+```
 
 ## Verifying the Installation
 ARToolKit includes a variety of examples demonstrating ARToolKit programming techniques. After installation, the executables for these applications can be found in the `bin` directory inside your ARToolKit directory. Running the simpleLight example is one of the most straight-forward ways to test that your ARToolKit installation is functioning correctly. An explanation of simpleLight, including how to run it, and its sourcecode can be found on the page [ARToolKit Tutorial 1: First Simple ARToolKit Scene][tutorial_1_first_scene].
@@ -30,9 +30,9 @@ ARToolKit includes a variety of examples demonstrating ARToolKit programming tec
 When beginning your own development, it is recommended that you create your own project outside the ARToolKit folder, and treat ARToolKit as an external SDK. However, it is also perfectly permissible to begin by modifying one or more of the example applications or source files. ARToolKit is supplied with project files for each supported platform. The project files allow you to [rebuild ARToolKit from source][building], and act as examples of how to structure your own application builds (e.g. required link libraries).
 
 [repo]: https://github.com/artoolkit
-[building]: 8_Advanced_Topics:build_artoolkit
-[setting_env]: 1_Getting_Started:general_environment_variables
-[tutorial_1_first_scene]: 7_Examples:example_simplelite
+[building]: ../8_Advanced_Topics/build_artoolkit.md
+[setting_env]: ./general_environment_variables.md
+[tutorial_1_first_scene]: ../7_Examples/example_simplelite.md
 [3]: http://developer.apple.com/xcode/
 [4]: http://www.apple.com/quicktime/download/
 [5]: http://www.artoolworks.com/dist/openscenegraph/

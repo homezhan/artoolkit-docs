@@ -39,17 +39,17 @@ For the Android or iOS version of calib_camera, build and deploy the Android Stu
 Run the calib_camera application executable from the command prompt. Change the directory to the path: [downloaded ARToolKit SDK root directory]/bin.
 
 OS X or Linux command-line, type:
-<pre>
+```
     ./calib_camera
-</pre>
+```
 
 Windows command-line, type:
-<pre>
+```
     calib_camera.exe
-</pre>
+```
 
 You will see output similar to this in your terminal:
-<pre>
+```
     CHESSBOARD_CORNER_NUM_X = 7
     CHESSBOARD_CORNER_NUM_Y = 5
     CHESSBOARD_PATTERN_WIDTH = 30.000000
@@ -57,7 +57,7 @@ You will see output similar to this in your terminal:
     Video parameter:
     Using default video config.
     Image size (x,y) = (640,480)
-</pre>
+```
 
 At this point, you should see the image from the camera appear.
 
@@ -151,15 +151,15 @@ To use your new calibration file, just replace the default camera_para.dat file 
 If calibrating a stereo camera, calibrate each eye separately first, saving the parameters, then run the program calib_stereo to perform the final step of [inter-ocular calibration][3].
 
 [2]: http://artoolkit.org/docs/Calibration_chessboard.pdf
-[3]: 8_Advanced_Topics:config_camera_stereo_tracking
+[3]: ../8_Advanced_Topics/config_camera_stereo_tracking.md
 
-[Beginning_calibration_with_the_chessboard]: :beginning_calibration_with_the_chessboard.jpg
-[Chessboard_ready_for_calibration]: :chessboard_ready_for_calibration.jpg
-[Calibration_example_OK_1]: :calibration_example_ok_1.jpg
-[Calibration_example_not_OK]: :calibration_example_not_ok.jpg
-[example OK 1]: :calibration_example_ok_1.jpg
-[example OK 2]: :calibration_example_ok_2.jpg
-[example OK 3]: :calibration_example_ok_3.jpg
-[example OK 4]: :calibration_example_ok_4.jpg
-[example OK 5]: :calibration_example_ok_5.jpg
-[example OK 6]: :calibration_example_ok_6.jpg
+[Beginning_calibration_with_the_chessboard]: ../_media/beginning_calibration_with_the_chessboard.jpg
+[Chessboard_ready_for_calibration]: ../_media/chessboard_ready_for_calibration.jpg
+[Calibration_example_OK_1]: ../_media/calibration_example_ok_1.jpg
+[Calibration_example_not_OK]: ../_media/calibration_example_not_ok.jpg
+[example OK 1]: ../_media/calibration_example_ok_1.jpg
+[example OK 2]: ../_media/calibration_example_ok_2.jpg
+[example OK 3]: ../_media/calibration_example_ok_3.jpg
+[example OK 4]: ../_media/calibration_example_ok_4.jpg
+[example OK 5]: ../_media/calibration_example_ok_5.jpg
+[example OK 6]: ../_media/calibration_example_ok_6.jpg

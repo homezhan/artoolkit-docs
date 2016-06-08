@@ -10,7 +10,7 @@ The checkResolution tool supplied with ARToolKit can help in determining the req
 2.  Print a single standard ARToolKit "Hiro" marker and trim excess paper around the outside. The Hiro marker can be printed at any size; 40 mm is a good size (approximately 2 inches). ![Hire marker on paddle][Hiro_marker_on_paddle_40mm]
 3.  Connect your camera and run from a terminal / command prompt.
     -   Mac OS X/Linux: `./checkResolution`
-    -   Windows: `checkResolution.exe
+    -   Windows: `checkResolution.exe`
 
 You will be prompted to enter the size of the Hiro marker. E.g. if printed at 40 mm size, enter `40`.
 
@@ -41,11 +41,11 @@ dispFeatureSet displays trained NFT datasets by overlaying representations of th
 
 Usage:
 
-<pre>
+```
     ./dispFeatureSet <filename>
       -fset     Show fset features.
       -fset3    Show fset3 features.
-</pre>
+```
 
 After launching dispFeatureSet, the various image resolutions will be displayed on screen with the tracking features overlaid. The features used in continuous tracking are outlined by red boxes, and the features used in identifying the pages and initializing tracking are marked by green crosses.
 
@@ -56,9 +56,9 @@ After launching dispFeatureSet, the various image resolutions will be displayed 
 dispImageSet displays compressed image pyramids.
 
 Usage:
-<pre>
+```
     ./dispImageSet <filename>
-</pre>
+```
 
 After launching dispImageSet, the various image resolutions will be displayed on screen (shrunk/zoomed as necessary to fit on screen). Press spacebar to view the images, or esc when you're done.
 
@@ -69,7 +69,7 @@ After launching dispImageSet, the various image resolutions will be displayed on
 genTexData performs training of NFT datasets from a supplied JPEG-format source image.
 
 Usage:
-<pre>
+```
     ./genTexData <filename>
         -level=n
              (n is an integer in range 0 (few) to 4 (many). Default 2.'
@@ -89,11 +89,11 @@ Usage:
              x is one of: DEBUG, INFO, WARN, ERROR. Default is INFO.
         -exitcode=<path>
         --help -h -?  Display this help
-</pre>
+```
 
 ## Operating Example
 Exit codes:
-<pre>
+```
 E_NO_ERROR = 0
 E_BAD_PARAMETER = 64
 E_INPUT_DATA_ERROR = 65
@@ -102,18 +102,18 @@ E_BACKGROUND_OPERATION_UNSUPPORTED = 69
 E_DATA_PROCESSING_ERROR = 70
 E_UNABLE_TO_DETACH_FROM_CONTROLLING_TERMINAL = 71
 E_GENERIC_ERROR = 255
-</pre>
+```
 
 See [Training NFT to a new surface][marker_nft_training] for more information on NFT datasets.
 
-[marker_nft_training]: 3_Marker_Training:marker_nft_training
-[Pinball_NFT_sample_printed_with_hand]: :pinball_nft_sample_printed_with_hand.jpg
-[Hiro_marker_on_paddle_40mm]: :hiro_marker_on_paddle_40mm.jpg
-[CheckResolution_pinball_marker_mid-distance]: :checkresolution_pinball_marker_mid-distance.png
-[CheckResolution_pinball_marker_close-distance]: :checkresolution_pinball_marker_close-distance.png
-[CheckResolution_pinball_marker_far-distance]: :checkresolution_pinball_marker_far-distance.png
-[ARToolKit_NFT_-_dispFeatureSet_terminal]: :artoolkit_nft_-_dispfeatureset_terminal.png
-[ARToolKit_NFT_-_dispFeatureSet]: :artoolkit_nft_-_dispfeatureset.png
+[marker_nft_training]: ./marker_nft_training.md
+[Pinball_NFT_sample_printed_with_hand]: ../_media/pinball_nft_sample_printed_with_hand.jpg
+[Hiro_marker_on_paddle_40mm]: ../_media/hiro_marker_on_paddle_40mm.jpg
+[CheckResolution_pinball_marker_mid-distance]: ../_media/checkresolution_pinball_marker_mid-distance.png
+[CheckResolution_pinball_marker_close-distance]: ../_media/checkresolution_pinball_marker_close-distance.png
+[CheckResolution_pinball_marker_far-distance]: ../_media/checkresolution_pinball_marker_far-distance.png
+[ARToolKit_NFT_-_dispFeatureSet_terminal]: ../_media/artoolkit_nft_-_dispfeatureset_terminal.png
+[ARToolKit_NFT_-_dispFeatureSet]: ../_media/artoolkit_nft_-_dispfeatureset.png
 
-[ARToolKit_NFT_-_dispImageSet_terminal]: :artoolkit_nft_-_dispimageset_terminal.png
-[ARToolKit_NFT_-_dispImageSet]: :artoolkit_nft_-_dispimageset.png
+[ARToolKit_NFT_-_dispImageSet_terminal]: ../_media/artoolkit_nft_-_dispimageset_terminal.png
+[ARToolKit_NFT_-_dispImageSet]: ../_media/artoolkit_nft_-_dispimageset.png

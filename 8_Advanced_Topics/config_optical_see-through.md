@@ -28,7 +28,7 @@ The calib_optical utility is used to calibrate the displays to the camera positi
 If at any point you need to see the video-image (temporarily, e.g. to see if the camera is correctly focussed or has correct brightness or contrast) press the "o" key. While in this mode, you can press "d" to see the debug (binarized image) and "-" and "+" to adjust the binarization threshold to get nice black and white borders on the pattern.
 
 After taking ten measurements, the white cross hairs will disappear and the calibrated eye position will be printed out, looking something like this:
-<pre>
+```
     ./calib_opticalCamera image size (x,y) = (640,480)
     Reading camera parameters from Data/camera_para.dat (distortion function version 3).
     *** Camera Parameter ***
@@ -86,7 +86,7 @@ After taking ten measurements, the white cross hairs will disappear and the cali
     0.00000 0.00000 0.00000 1.00000
     --------------------------------------
     Optical display parameters and eye to camera transformation matrix saved to file optical_param.dat.
-</pre>
+```
 
 You will note that a measurement of the calibration error is generated. The lower this value, the more accurate the calibration.
 

@@ -16,9 +16,9 @@ The example applications which inherit from ARActivity are:
 If your application falls into this category, you need add only the essential lines of code to register the CameraPreferencesActivity in your manifest. The behavior of providing the settings menu in response to the menu button is automatically provided by the ARActivity class. The preferences chosen by the user are automatically used in the CameraPreview class.
 
 Just add the following to your AndroidManifest.xml file:
-<pre>
+```
     <activity android:name="org.artoolkit.ar.base.camera.CameraPreferencesActivity"></activity>
-</pre>
+```
 
 ## Applications using Custom Activity Subclasses
 The example applications which use their own Activity and CameraSurface classes are:
@@ -33,26 +33,26 @@ If your application is based on one of these applications, a handful of changes 
 
 ###Initialize Preference Defaults
 Add the following code where it will be run once per install of Application, and prior to using any of the camera preferences. If you are subclassing `Application.onCreate()` (as all the examples do), put it into `Application.onCreate()`. If not subclassing Application, put it in your `Activity.onCreate()` method.
-<pre>
+```
     import android.preference.PreferenceManager;
     PreferenceManager.setDefaultValues(this, org.artoolkit.ar.base.R.xml.preferences, false);
-</pre>
+```
 
 ###Invoke Preferences Activity
 The suggested method of invoking the preferences activity is to make it available via your applications settings menu. This is quite straightforward. Add the following code to your Activity subclass:
-<pre>
+```
     import org.artoolkit.ar.base.camera.CameraPreferencesActivity;
     import android.view.Menu;
     import android.view.MenuInflater;
     import android.view.MenuItem;
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options, menu);
         return true;
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.settings) {
@@ -62,7 +62,7 @@ The suggested method of invoking the preferences activity is to make it availabl
             return super.onOptionsItemSelected(item);
         }
     }
-</pre>
+```
 
 This will use the menu resource provided by the ARBaseLib library. If you already have an options menu, you will most likely want to incorporate the existing values from ARBaseLib's res/menu/options.xml.
 
@@ -70,22 +70,22 @@ This will use the menu resource provided by the ARBaseLib library. If you alread
 Once the user has actually chosen the preferences, you need to make sure you're actually using the choices, or that you're using the default values if no choice has yet been made. This code will typically be in a class which inherits from Surface and which implements CameraPreviewCallback. Take a look at the CameraSurface class in the native examples for example usage.
 
 Code to open the correct camera chosen by the user:
-<pre>
+```
     import android.os.Build;
     import android.preference.PreferenceManager;
     Camera camera = null;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) camera = Camera.open(Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(callingContext).getString("pref_cameraIndex", "0")));
     else camera = Camera.open();
-</pre>
+```
 
 Code to attempt to configure the camera resolution:
-<pre>
+```
     String camResolution = PreferenceManager.getDefaultSharedPreferences(callingContext).getString("pref_cameraResolution", getResources().getString(R.string.pref_defaultValue_cameraResolution));
     String[] dims = camResolution.split("x", 2);
     Camera.Parameters parameters = camera.getParameters();
     parameters.setPreviewSize(Integer.parseInt(dims[0]),Integer.parseInt(dims[1]));
     camera.setParameters(parameters);
-</pre>
+```
 
 Don't forget that the chosen resolution may not be accepted by the camera, so don't assume that the camera preview buffers will be the preferred size. You should read back the actual size in use after setting the preferred value (e.g. when sizing buffers).
 
@@ -104,4 +104,4 @@ These resources are automatically available in any project referring to ARBaseLi
 ##A Note on Camera Resolutions
 Take care when the user chooses camera resolutions. A camera resolution with a different aspect ratio to the aspect ratio of ARToolKit's [calibrated camera parameters][config_camera_calibration] (camera_para.dat or similar) will not track correctly!
 
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration.md

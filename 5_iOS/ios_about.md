@@ -13,13 +13,13 @@ There are [additional functions available to the iOS camera][ios_camera] in ARTo
 -   [iOS Device & OS Version Support][ios_system_support]
 -   [ARApp - iOS Example][example_arapp]
 
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
-[config_video_capture]: 2_Configuration:config_video_capture
-[marker_nft_training]: 3_Marker_Training:marker_nft_training
-[marker_training]: 3_Marker_Training:marker_training
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration.md
+[config_video_capture]: ../2_Configuration/config_video_capture.md
+[marker_nft_training]: ../3_Marker_Training/marker_nft_training.md
+[marker_training]: ../3_Marker_Training/marker_training.md
 
-[ios_camera]: 5_iOS:ios_camera
-[ios_movie_textures]: 5_iOS:ios_movie_textures
-[ios_reducing_size]: 5_iOS:ios_reducing_size
-[ios_system_support]: 5_iOS:ios_system_support
-[example_arapp]: 7_Examples:example_arapp
+[ios_camera]: ./ios_camera.md
+[ios_movie_textures]: ./ios_movie_textures.md
+[ios_reducing_size]: ./ios_reducing_size.md
+[ios_system_support]: ./ios_system_support.md
+[example_arapp]: ../7_Examples/example_arapp.md

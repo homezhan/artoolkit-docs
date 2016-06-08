@@ -20,14 +20,14 @@ All apps running the camera calibration service depend on native library libcurl
 
 #### ARToolKit for Android v4.x - v5.3
 All apps running the camera calibration service depend on native library libcurl. In ARToolKit v4.x - v5.3.0, libcurl and its dependencies libcrypto and libssl are supplied as dynamic libraries. Applications that link to ARBaseLib will automatically load these dependencies, but other examples not based on ARBaseLib must add these loadLibrary calls, ideally in a subclass of Android.Application or Android.Activity:
-<pre>
+```
     System.loadLibrary("crypto");
     System.loadLibrary("ssl");
     System.loadLibrary("curl");
-</pre>
+```
 
 ###Manifest
-<pre>
+```
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -35,9 +35,9 @@ All apps running the camera calibration service depend on native library libcurl
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
     <uses-feature android:glEsVersion="0x00010100" />
-</pre>
+```
 
 ##How do I Contribute to the Service?
 Currently, the service is used exclusively on the Android platform through the [Camera Calibration App for Android][calib_app].
 
-[calib_app]: 4_Android:android_camera_calibration
+[calib_app]: ./android_camera_calibration.md

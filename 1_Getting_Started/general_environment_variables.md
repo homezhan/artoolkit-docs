@@ -6,19 +6,19 @@ An environment variable can be set temporarily in a single shell, and will only 
 
 ### Windows
 From a "cmd.exe" shell, use the 'set' command:
-<pre>
+```
 	set NAME=value
-</pre>
+```
 
 ### Mac OS X / Linux
 The syntax varies depending on the shell you're using. First, open a Terminal window, then if using bash (default on Linux and Mac OS X) type:
-<pre>
+```
     NAME=VALUE; export NAME
-</pre>
+```
 or if using csh or tcsh:
-<pre>
+```
     setenv NAME VALUE
-</pre>
+```
 
 ## Set an Environment Variable Persistently
 If you wish to retain an environment variable across shells and reboots etc., use this method:
@@ -44,18 +44,18 @@ On the left hand side of the window, you will see the environment variable name,
 1.   Environment variables can be set from a Terminal window.
 2.   From a terminal window, type the following lines, replacing "NAME" with the environment variable name and "VALUE" with its value:
 
-<pre>
+```
     echo "NAME=VALUE; export NAME" >> ~/.profile
     echo "setenv NAME VALUE" >> ~/.cshrc
     defaults write ~/.MacOSX/environment NAME -string "VALUE"; plutil -convert xml1 ~/.MacOSX/environment.plist
-</pre>
+```
 
 The first line sets the environment for users with users with sh or bash as their shell, the second for users with csh or tcsh as their shell, and the third for programs launched by the Finder (including Xcode).
 
 
-[windows_system_control_panel]: :windows_system_control_panel.png
-[windows_env_vars_button.png]: :windows_env_vars_button.png
-[windows_7_system_control_panel_1]: :windows_7_system_control_panel_1.png
-[windows_7_system_control_panel_2]: :windows_7_system_control_panel_2.png
-[windows_7_system_control_panel_3]: :windows_7_system_control_panel_3.png
-[windows_7_system_control_panel_4]: :windows_7_system_control_panel_4.png
+[windows_system_control_panel]: ../_media/windows_system_control_panel.png
+[windows_env_vars_button.png]: ../_media/windows_env_vars_button.png
+[windows_7_system_control_panel_1]: ../_media/windows_7_system_control_panel_1.png
+[windows_7_system_control_panel_2]: ../_media/windows_7_system_control_panel_2.png
+[windows_7_system_control_panel_3]: ../_media/windows_7_system_control_panel_3.png
+[windows_7_system_control_panel_4]: ../_media/windows_7_system_control_panel_4.png

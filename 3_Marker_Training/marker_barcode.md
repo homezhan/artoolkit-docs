@@ -40,7 +40,7 @@ The easiest way to use multi-markers in ARToolKit is to make a multi-marker data
 
 For more information on multi-markers, including their configuration, visit the [multi-marker page][marker_multi].
 
-[marker_about]: 3_Marker_Training:marker_about
-[marker_multi]: 3_Marker_Training:marker_multi
-[build_artoolkit]: 8_Advanced_Topics:build_artoolkit
+[marker_about]: ./marker_about.md
+[marker_multi]: ./marker_multi.md
+[build_artoolkit]: ../8_Advanced_Topics/build_artoolkit.md
 [arSetMatrixCodeType]: http://www.artoolworks.com/support/doc/artoolkit5/apiref/ar_h/index.html#//apple_ref/c/func/arSetMatrixCodeType

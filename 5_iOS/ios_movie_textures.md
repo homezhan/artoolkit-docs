@@ -33,4 +33,4 @@ Users of the MovieVideo class can listen for the NSNotification `MovieVideoPlayB
 ## Movies in libARvideo
 Video input via [libARvideo][config_video_capture] requires frames to be fetched via polling. A new parameter `AR_VIDEO_PARAM_IOS_ASYNC` can be queried to find out if frames are delivered asynchronously (CameraVideo) or must be fetched by polling (MovieVideo).
 
-[config_video_capture]: 2_Configuration:config_video_capture
+[config_video_capture]: ../2_Configuration/config_video_capture.md

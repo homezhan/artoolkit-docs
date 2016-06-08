@@ -35,43 +35,43 @@ In the utilities calib\_camera and calib\_stereo, you will find command-line opt
 
 E.g. to select the second video device on your system for use with calib\_camera:
 On Linux, type:
-<pre>
+```
     ./calib_camera --vconf "-device=GStreamer v4l2src device=/dev/video1 use-fixed-fps=false ! ffmpegcolorspace ! video/x-raw-rgb,bpp=24 ! identity name=artoolkit sync=true ! fakesink"
-</pre>
+```
 On OS X, type:
-<pre>
+```
     ./calib_camera --vconf "-device=QuickTime7 -source=1"
-</pre>
+```
 On Windows, type:
-<pre>
+```
     calib_camera.exe --vconf "-device=WinDS -devNum=2"
-</pre>
+```
 
 Similar options apply to calib\_stereo, except the parameters are named with L and R suffixes:
-<pre>
+```
     ./calib_camera --vconfL "left config" --vconfR "right config"
-</pre>
+```
 
 See [Configuring video capture][config_video_capture] for complete lists of video configuration options for each platform and video input module.
 
 ###Using calib_stereo
 calib\_stereo looks for the calibration information for each lens in the files Data/cparaL.dat and Data/cparaR.dat, for left and right cameras respectively. However, you can name these files as you wish, and just supply the pathnames to each using calib\_stereo's command-line parameters:
-<pre>
+```
     ./calib_stereo -cparaL=left calibration file -cparaR=right calibration file
-</pre>
+```
 
 Open a terminal / command prompt (on Mac OS X / Linux, open a Terminal window; on Windows, choose "Run" from the Start menu, type "cmd"). Then run the calib\_stereo program from that window.
 On Linux / OS X, type:
-<pre>
+```
     ./calib_stereo
-</pre>
+```
 On Windows, type:
-<pre>
+```
     calib_stereo.exe
-</pre>
+```
 
 Also supply any required video config and camera calibration file names. You will see output similar to this in your terminal:
-<pre>
+```
 ./calib_stereo --vconfL "-source=0" --vconfR "-source=1" -cparaL=quickcamvisionpromac.dat -cparaR=creativelivecamoptiapro.dat
 CHESSBOARD_CORNER_NUM_X = 7
 CHESSBOARD_CORNER_NUM_Y = 5
@@ -106,7 +106,7 @@ Distortion factor: k1=-0.0694990978, k2=0.0262184255, p1=0.0020496645, p2=0.0001
 0.00000 0.00000 1.00000 0.00000
 --------------------------------------
 Scaling 2880x1200 window by 0.600 to fit onto 1920x1080 screen (with 10% margin).
-</pre>
+```
 
 At this point, if everything has loaded OK and the cameras can be opened, you should see the images from the camera appear (side by side in a single window).
 
@@ -126,16 +126,16 @@ Once all the calibration images have been captured (10 by default), the stereo c
 If you need to, the size of the calibration squares, the number of intermediate corners in horizontal and vertical directions (i.e. the number of rows minus 1 and the number of columns minus 1), and the number of calibration images captured can all be adjusted from the command line. Running the utility with the `--help` option will show the various command-line options for adjusting the default calibration settings.
 
 On Linux / OS X, type:
-<pre>
+```
     ./calib_stereo --help
-</pre>
+```
 On Windows, type:
-<pre>
+```
     calib_stereo.exe --help
-</pre>
+```
 
 The help text is reproduced here:
-<pre>
+```
     Usage: ./calib_stereo [options]
     -cornerx=n: specify the number of corners on chessboard in X direction.
     -cornery=n: specify the number of corners on chessboard in Y direction.
@@ -148,7 +148,7 @@ The help text is reproduced here:
     --vconfL <video parameter for the Left camera>
     --vconfR <video parameter for the Right camera>
     -h -help --help: show this message
-</pre>
+```
 
 [marker_about]: ../3_Marker_Training/marker_about.md
 [marker_barcode]: ../3_Marker_Training/marker_barcode.md

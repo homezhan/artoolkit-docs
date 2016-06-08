@@ -3,7 +3,7 @@ Markers are the optical inputs to ARToolKit. [Square markers][marker_about] are 
 
 ![The Hiro marker][Hiro_marker]
 
-Square markers have only a few constraints. 
+Square markers have only a few constraints.
 
 -   They must be square.
 -   They must have a continuous border (generally either full black or pure white). And, with the marker in foreground, the background must be a contrasting color (generally, a dark versus a light color or shade). By default, the border thickness is 25% of the length of an edge of the marker.  
@@ -34,19 +34,19 @@ Training is done using the `mk_patt` utility found in ARToolKit SDK. Or, alterna
 ###Using mk_patt
 mk_patt is an easy to use utility for training new markers. Open a command-line session window (on Mac OS X / Linux, open a Terminal window, on Windows, choose "Run" from the Start menu, type "cmd").
 On Linux / OS X, type:
-<pre>
+```
     ./mk_patt
-</pre>
+```
 On Windows, type:
-<pre>
+```
     mk_patt.exe
-</pre>
+```
 
 You will see output similar to this in your terminal:
-<pre>
+```
     ./mk_patt
     Enter camera parameter filename(Data/camera_para.dat):
-</pre>
+```
 
 mk_patt prompts for a [camera calibration file][config_camera_calibration] (filename extension *.dat*). It's possible to use another tool that comes with ARToolKit SDK to calibrate your camera. The tool generates a calibration data file specific to the camera. If there is calibration data file available, enter the path.
 
@@ -58,9 +58,9 @@ At this point, the camera is activated:
 Point the camera directly at your marker. Try to align the camera so that the marker appears square on the screen and fills the camera's view. If ARToolKit has identified the marker, it will outline it with red and green lines.
 
 Rotate the marker so that the *red corner of the square is at the top-left corner of your marker*, then press the left mouse button (for left-handed mouse users, this may be the configured primary mouse button). The image will be captured, and in your terminal window you will see the prompt:
-<pre>
+```
 Enter filename:
-</pre>
+```
 
 Type a filename starting with "patt." prepended (by convention) followed by a unique pattern name and press return. If you don't want to save it, just press return to restart the video. That's it! You can train more patterns, or click the right mouse button (for left-handed mouse users, this may be the configured secondary mouse button) to exit the program.
 
@@ -101,16 +101,16 @@ If using large images, you may want to edit `#define`s `AR_SQUARE_MAX`, `AR_CHAI
 - Don't forget that markers can be color. Adding color to markers can enhance the AR application.
 - A common mistake is to try and use markers with too much fine detail in the pattern. By default, ARToolKit samples the pattern at only a resolution of 16x16 pixels, so if you're getting markers mistaken for each other or not recognized, check whether your markers appear similar to each other when the pattern graphic is scaled down to a 16x16 pixel image.
 
-[marker_about]: 3_Marker_Training:marker_about
-[marker_barcode]: 3_Marker_Training:marker_barcode
-[config_camera_calibration]: 2_Configuration:config_camera_calibration
-[example_simplelite]: 7_Examples:example_simplelite
+[marker_about]: ./marker_about.md
+[marker_barcode]: ./marker_barcode.md
+[config_camera_calibration]: ../2_Configuration/config_camera_calibration,md
+[example_simplelite]: ../7_Examples/example_simplelite.md
 [arsetpattratio]: http://www.artoolworks.com/support/doc/artoolkit4/apiref/ar_h/index.html#//apple_ref/c/func/arSetPattRatio
 
 [1]: http://en.wikipedia.org/wiki/Rotational_symmetry
 [2]: http://www.roarmot.co.nz/ar/
 [3]: http://flash.tarotaro.org/blog/2009/07/12/mgo2/
 
-[Hiro_marker]: :hiro_marker.png
-[Markerdimensions]: :markerdimensions.png
-[Mkpatt]: :mkpatt.jpg
+[Hiro_marker]: ../_media/hiro_marker.png
+[Markerdimensions]: ../_media/markerdimensions.png
+[Mkpatt]: ../_media/mkpatt.jpg

@@ -8,7 +8,7 @@ These are variants on the same algorithm:
 - arGetTransMatSquareCont enables optimizations in the pose estimate search when a previous valid pose (i.e. the pose from the last frame) is known. It basically begins the pose estimate search with the previous pose and is thus both significantly faster and affords greatly stability of the pose estimate from frame to frame. However, if no previous pose exists, or if there is likely to be significant change between the previous pose and the current pose (e.g. a significant amount of time has passed, or other means such as inertial tracking have been used to determine that significant inter-frame motion has occurred) then arGetTransMatSquare should be called for that frame instead.
 
 The sample tracking algorithm supplied with the ARToolKit examples displays a good usage strategy (code from simpleOSG.c, with extra commenting):
-<pre>
+```
     if (k != -1) {
         // Get the transformation between the marker and the real camera.
         //fprintf(stderr, "Saw object %d.\n", i);
@@ -24,7 +24,7 @@ The sample tracking algorithm supplied with the ARToolKit examples displays a go
     } else {
         gObjectData[i].visible = 0;
     }
-</pre>
+```
 
 ##Why isn’t my performance as good as your demos?
 ARToolKit works best with a controlled optical environment, in which the image acquired by the camera has a high signal-to-noise ratio, and when the properties of the optical environment are well known; when the lighting is bright (so the camera gain is low, and depth of field is good), when the camera is a good quality camera (with a CMOS sensor, with a large sensor surface, and with good lenses with good light-gathering properties), and when the camera has been accurately calibrated. If any of these requirements can't be met, performance will be less than the ideal case, but in most cases still usable. See [about hardware selection here][about_hardware_selection]

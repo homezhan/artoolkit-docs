@@ -49,16 +49,16 @@ One final piece of explanation before we begin. In simpleLite, we use just one o
 The main routine of simpleLite performs a number of setup tasks for the application. We will step through its code explaining the AR-specific functionality. The code in main() plus two setup functions called by main corresponds to step 1 in the table above.
 
 The first piece of AR specific code is near the top of main, where we declare some variables that will be used to set up the application:
-<pre>
+```
     char *cparam_name = "Data/camera_para.dat";
     char *vconf = "";
     char *patt_name  = "Data/patt.hiro";
-</pre>
+```
 
 In this block, we define the pathname of the [camera parameter file][config_camera_calibration] the application will use, the [video capture library configuration string][config_video_capture], and the name of the marker pattern file the application will load and try to recognize.
 
 Next, we see the first AR-specific function call:
-<pre>
+```
     // ----------------------------------------------------------------------------
     // Hardware setup.
     //
@@ -67,12 +67,12 @@ Next, we see the first AR-specific function call:
         fprintf(stderr, "main(): Unable to set up AR camera.\n");
         exit(-1);
     }
-</pre>
+```
 
 setupCamera loads a file containing calibration parameters for a camera, opens a connection to the camera, sets some defaults (the binarization threshold in this case) and starts grabbing frames. It records its settings into 3 variables which are passed in as parameters. In our case, we will store these parameters in global variables. setupCamera is explained more fully below.
 
 The next piece of code opens up a window for us to draw into. This code uses GLUT to open the window. Later, we will install some event handlers for the window, to handle redrawing, resizing etc.
-<pre>
+```
     // ----------------------------------------------------------------------------
     // Library setup.
     //
@@ -88,12 +88,12 @@ The next piece of code opens up a window for us to draw into. This code uses GLU
         glutInitWindowSize(prefWidth, prefHeight);
         glutCreateWindow(argv[0]);
     }
-</pre>
+```
 
 The code uses the value of a variable "prefWindowed" to decide whether to open a window, or whether to use fullscreen mode. Other variables prefWidth, prefHeight, prefDepth and prefRefresh are read to decide how many pixels wide and tall, what colour bit depth to use, and whether to change the refresh rate of the display. In simpleLite, these preferences are simply held in static variables defined near the top of main.c, but you could easily extend the example to load and save these preferences from and to a file, and allow the user to change them.
 
 Next, now that we have a window from GLUT, we initialize the OpenGL part of our application. In this case, we are using the ARgsub_lite library to manage the interaction between the ARToolKit video capture and tracking, and OpenGL. At this point we also print out some debugging information in the user's console (or command line window), showing the startup parameters for the application. As well, we reset ARToolKit's timer (which can be used to keep track of frame rates).
-<pre>
+```
     // Setup ARgsub_lite library for current OpenGL context.
     if ((gArglSettings = arglSetupForCurrentContext(gARHandle)) == NULL) {
         fprintf(stderr, "main(): arglSetupForCurrentContext() returned error.\n");
@@ -102,7 +102,7 @@ Next, now that we have a window from GLUT, we initialize the OpenGL part of our 
     debugReportMode(gARHandle, gArglSettings);
     glEnable(GL_DEPTH_TEST);
     arUtilTimerReset();
-</pre>
+```
 
 The third major part of ARToolKit initialization is to load one or more markers which the camera should track. Information about the markers has previously been recorded into marker pattern files using the mk_patt utility (called "marker training"), so now we can load these files. In simpleLite, we will just use one marker, the default Hiro marker. The task of loading this marker and telling ARToolKit to track it is performed by the function called `setupMarker()`.
 
@@ -114,7 +114,7 @@ Before entering a real-time tracking and drawing state, we need to initialize th
 - the camera characteristics of the video camera being used.
 
 setupCamera begins by opening a connection to the video camera from which images for tracking will be acquired, using `arVideoOpen()`. The parameter vconf, passed to arVideoOpen is a string that can be used to request some video configuration other than the default. The contents of the vconf string are dependent on the video library being used. More information can be found in [Configuring video capture in ARToolKit][3] At this point we also find out from the video camera library how big the images it will supply will be, and what pixel format will be used:
-<pre>
+```
     static int setupCamera(const char *cparam_name, char *vconf, int threshold, ARParam *cparam, ARHandle **arhandle, AR3DHandle **ar3dhandle)
     {
         ARParam         wparam;
@@ -137,12 +137,12 @@ setupCamera begins by opening a connection to the video camera from which images
             fprintf(stderr, "setupCamera(): Camera is using unsupported pixel format.\n");
             return (FALSE);
         }
-</pre>
+```
 
 Next we deal with the structures that ARToolKit uses to hold its model of the camera's parameters. These parameters are generated by the camera calibration process. (Covered in the next chapter.) The camera parameter file is loaded with the call to arParamLoad, with the path to the file being passed in a c-string as a parameter.
 
 Once the camera parameters are loaded, we adjust them to match the actual video image size being supplied by the video library, and then initialize a few necessary ARToolKit structures that depend on the camera parameters:
-<pre>
+```
         // Load the camera parameters, resize for the window and init.
         if (arParamLoad(cparam_name, 1, &wparam) < 0) {
             fprintf(stderr, "setupCamera(): Error loading parameter file %s for camera.\n", cparam_name);
@@ -160,10 +160,10 @@ Once the camera parameters are loaded, we adjust them to match the actual video 
             fprintf(stderr, "setupCamera(): Error: arSetPixelFormat.\n");
             return (FALSE);
         }
-</pre>
+```
 
 We complete our setupCamera by setting up some defaults related to the tracking portion of ARToolKit. These include debug mode, the labelling threshold, and the structure used to hold positions of detected patterns. Finally, we start the video library capturing frames, since we will soon be ready to process them:
-<pre>
+```
         if (arSetDebugMode(*arhandle, AR_DEBUG_DISABLE) < 0) {
             fprintf(stderr, "setupCamera(): Error: arSetDebugMode.\n");
             return (FALSE);
@@ -185,10 +185,10 @@ We complete our setupCamera by setting up some defaults related to the tracking 
         return (TRUE);
 
     }
-</pre>
+```
 
 The second major part of ARToolKit setup is to load pattern files for each of the patterns we wish to detect. In simpleLite, we will only track one pattern, the basic "Hiro" pattern. setupMarker creates a list of patterns for ARToolKit to track, and loads the Hiro pattern into it. Loading multiple patterns can be seen in the simpleVRML example, and is covered in a later chapter of the documentation.
-<pre>
+```
     static int setupMarker(const char *patt_name, int *patt_id, ARHandle *arhandle, ARPattHandle **pattHandle)
     {
 
@@ -209,29 +209,29 @@ The second major part of ARToolKit setup is to load pattern files for each of th
     return (TRUE);
 
     }
-</pre>
+```
 
 ##mainLoop
 This is the routine where the bulk of the ARToolKit function calls are made and it contains code corresponding to steps 2 through 5 of the required application steps.
 
 First a new video frame is requested using the function arVideoGetImage. If the function returns non-NULL, a new frame has been captured, and the return value points to the buffer containing the frame's pixel data, so we save it in a global variable.
-<pre>
+```
     // Grab a video frame.
     if ((image = arVideoGetImage()) != NULL) {
         gARTImage = image;  // Save the fetched image.
         gCallCountMarkerDetect++; // Increment ARToolKit FPS counter.
-</pre>
+```
 
 Every time a new frame has been acquired, it needs to be searched for markers. This is accomplished by a call to the function arDetectMarker(), passing in the pointer to the new frame, and an ARHandle. The ARHandle holds the ARToolKit marker detection settings and also stores the results of the marker detection.
-<pre>
+```
         // Detect the markers in the video frame.
         if (arDetectMarker(gARHandle, gARTImage) < 0) {
             exit(-1);
         }
-</pre>
+```
 
 The results of the marker detection process can now be examined in detail, to check whether they match the IDs of the marker(s) we loaded earlier. Of course, in simpleLite, we only need to check for one marker, the Hiro marker. We use a value known as the marker confidence to make sure that we have got the Hiro marker and not a marker with a different pattern.
-<pre>
+```
         // Check through the marker_info array for highest confidence
         // visible marker matching our preferred pattern.
         k = -1;
@@ -241,12 +241,12 @@ The results of the marker detection process can now be examined in detail, to ch
                 else if (gARHandle->markerInfo[j].cf > gARHandle->markerInfo[k].cf) k = j; // Higher confidence marker detected.
             }
         }
-</pre>
+```
 
 At the end of this loop, if k has been modified, then we have found the marker containing the Hiro pattern, so the last task we ask ARToolKit to perform on the marker is to retrieve its position and orientation (its "pose") relative to the camera. The pose is stored in an AR3DHandle structure, which we conveniently prepared earlier (in setupCamera)!
 
 If the marker is not found, we also note that fact, because if no markers are found, we should not try to draw any 3D objects in the frame. (Drawing is discussed below).
-<pre>
+```
         if (k != -1) {
             // Get the transformation between the marker and the real camera into gPatt_trans.
             err = arGetTransMatSquare(gAR3DHandle, &(gARHandle->markerInfo[k]), gPatt_width, gPatt_trans);
@@ -254,12 +254,12 @@ If the marker is not found, we also note that fact, because if no markers are fo
         } else {
             gPatt_found = FALSE;
         }
-</pre>
+```
 
 Finally, since we have a new video frame, we request that the operating system call our Display function:
-<pre>
+```
     glutPostRedisplay();
-</pre>
+```
 
 ##Display
 
@@ -275,19 +275,19 @@ In the display function, we do several steps:
 4.  Draw objects on top of any active markers (using the OpenGL camera).
 
 Step 1: Clear the screen and draw the most recent frame from the camera as a video background:
-<pre>
+```
     // Select correct buffer for this context.
     glDrawBuffer(GL_BACK);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear the buffers for new frame.
 
     arglDispImage(gARTImage, &gARTCparam, 1.0, gArglSettings);  // zoom = 1.0.
     gARTImage = NULL;
-</pre>
+```
 
 The video image is then displayed on screen. This can either be an unwarped image, or an image warped to correct for camera distortions. Unwarping the camera's distorted image helps the virtual 3D objects appear in the correct place on the video frame.
 
 Step 2: Set up the OpenGL camera projection to match the calibrated ARToolKit camera parameters.
-<pre>
+```
     // Projection transformation.
     arglCameraFrustumRH(&gARTCparam, VIEW_DISTANCE_MIN, VIEW_DISTANCE_MAX, p);
     glMatrixMode(GL_PROJECTION);
@@ -296,19 +296,19 @@ Step 2: Set up the OpenGL camera projection to match the calibrated ARToolKit ca
 
     // Viewing transformation.
     glLoadIdentity();
-</pre>
+```
 
 The call to arglCameraFrustumRH converts the camera parameters stored in gARTCparam into an OpenGL projection matrix p, which is then loaded directly, setting the OpenGL camera projection. With this, the field-of-view, etc. of the real camera will be exactly matched in the scene.
 
 Step 3: Check whether we have any active markers, and if so, position the OpenGL camera view for each one to place the coordinate system origin onto the marker.
-<pre>
+```
     if (gPatt_found) {
 
         // Calculate the camera position relative to the marker.
         // Replace VIEW_SCALEFACTOR with 1.0 to make one drawing unit equal to 1.0 ARToolKit units (usually millimeters).
         arglCameraViewRH(gPatt_trans, m, VIEW_SCALEFACTOR);
         glLoadMatrixd(m);
-</pre>
+```
 
 arglCameraViewRH converts the marker transformation (saved in mainLoop) into an OpenGL modelview matrix. These sixteen values are the position and orientation values of the real camera, so using them to set the position of the virtual camera causes any graphical objects to be drawn to appear exactly aligned with the corresponding physical marker.
 
@@ -322,7 +322,7 @@ If you are drawing directly onto a marker, remember not to draw in the -z part o
 
 ##cleanup
 The cleanup function is called to stop ARToolKit and release resources used by it, in a clean manner:
-<pre>
+```
     static void cleanup(void) {
         arglCleanup(gArglSettings);
         arPattDetach(gARHandle);
@@ -332,7 +332,7 @@ The cleanup function is called to stop ARToolKit and release resources used by i
         arDeleteHandle(gARHandle);
         arVideoClose();
     }
-</pre>
+```
 
 Cleanup steps are generally performed in reverse order to setup steps. NB: your application may have to perform other cleanup steps, but these are the ones required by ARToolKit.
 

@@ -56,14 +56,14 @@ A multimarker configuration file is structured as follows:
 
 ###Example
 If we examine the first marker definition in the example multimarker set bin/Data/cubeMarkerConfig.dat, we see these lines:
-<pre>
+```
     \#marker 1
     00
     40.0
     1.0000  0.0000  0.0000    0.0000
     0.0000  1.0000  0.0000    0.0000
     0.0000  0.0000  1.0000    0.0000
-</pre>
+```
 
 Following the above guide, we see that this uses barcode pattern 0 and the marker is 40 mm wide. The transformation matrix is the identity matrix, i.e. marker 0's origin is co-located with the origin of the multimarker set, and the axes are co-aligned.
 
@@ -71,21 +71,21 @@ Following the above guide, we see that this uses barcode pattern 0 and the marke
 If we consider the transformation matrix of individual markers, the first three columns are a rotation matrix which represent the rotation of the marker with respect to the origin of the multimarker set. This is the standard 3x3 rotation matrix familiar in computer graphics or linear algebra. The fourth column is the offset from the origin of the multimarker set to the origin (the centre) of this the individual marker.
 
 So for example, if marker 0 in the example was rotated by angle theta about the X axis then the matrix would change to:
-<pre>
+```
     1.0000 0.0000 0.0000 0.0000
     0.0000 cos(theta) -sin(theta) 0.0000
     0.0000 sin(theta) cos(theta) 0.0000
-</pre>
+```
 
 As a further example, consider marker 01 in the cube example. Its definition is:
-<pre>
+```
     \#marker 2
     01
     40.0
     1.0000  0.0000  0.0000    0.0000
     0.0000  0.0000  1.0000   30.0000
     0.0000 -1.0000  0.0000  -30.0000
-</pre>
+```
 
 This tells us that the origin of marker 01 is offset +30 mm in the direction of the multimarker set's y axis, and -30 mm in the direction of the multimarker set's z axis. Finally, it is rotated by -90 degrees (in a right-hand sense) around the multimarker set's positive x axis.
 
@@ -93,22 +93,22 @@ This tells us that the origin of marker 01 is offset +30 mm in the direction of 
 Let `R[1-0]` be a 4x4 matrix where the first three rows are the values specified in configuration file, and the fourth row is the row vector `{0, 0, 0, 1}`. Then when `R[1-0]` is applied to a point vector in the marker coordinate system `p[1]`, it transforms it into a point vector expressed in the multimarker coordinate system `p[0]`, i.e. `p[0] = R[1-0] • p[1]` (where • is the normal matrix multiplication operator).
 
 ####A Visual Explanation
-In the image below, the red arrows denote the x, y and z axes of the multimarker coordinate system, aligned with marker 0. The blue arrows denote unit vectors `n̂``, `ô` and `â`, aligned with the `x`, `y`, and `z` axes of the marker 1 coordinate system. The green arrow denotes `p`, a vector extending from the origin of the multimarker coordinate system to the origin of of the marker 1 coordinate system. The transform matrix for marker 1 can then be considered 4 column vectors expressing the projection of `n̂``, `ô`, `â` and `p` onto `x`, `y`, and `z`.
+In the image below, the red arrows denote the x, y and z axes of the multimarker coordinate system, aligned with marker 0. The blue arrows denote unit vectors `n̂`, `ô` and `â`, aligned with the `x`, `y`, and `z` axes of the marker 1 coordinate system. The green arrow denotes `p`, a vector extending from the origin of the multimarker coordinate system to the origin of of the marker 1 coordinate system. The transform matrix for marker 1 can then be considered 4 column vectors expressing the projection of `n̂`, `ô`, `â` and `p` onto `x`, `y`, and `z`.
 
 The matrix is thus:
-<pre>
+```
     n[x] o[x] a[x] p[x]
     n[y] o[y] a[y] p[y]
     n[z] o[z] a[z] p[z]
-</pre>
+```
 
-Compare this to the example above, and it can be seen that for marker 01 on the cube, `n̂`` is aligned with the `x` axis (no change), `ô` points completely in the direction of `-z`, and `â` points completely in the direction of `+y`.
+Compare this to the example above, and it can be seen that for marker 01 on the cube, `n̂` is aligned with the `x` axis (no change), `ô` points completely in the direction of `-z`, and `â` points completely in the direction of `+y`.
 
 ![Cube marker axes][Cube_marker_axes]
 
-[marker_about]: 3_Marker_Training:marker_about
-[marker_barcode]: 3_Marker_Training:marker_barcode
-[Example_multimarker_barcode]: :example_multimarker_barcode.jpg
-[Example_multimarker_cube]: :example_multimarker_cube.jpg
-[Example_multimarker_template]: :example_multimarker_template.jpg
-[Cube_marker_axes]: :cube_marker_axes.png
+[marker_about]: ./marker_about.md
+[marker_barcode]: ./marker_barcode.md
+[Example_multimarker_barcode]: ../_media/example_multimarker_barcode.jpg
+[Example_multimarker_cube]: ../_media/example_multimarker_cube.jpg
+[Example_multimarker_template]: ../_media/example_multimarker_template.jpg
+[Cube_marker_axes]: ../_media/cube_marker_axes.png

@@ -55,16 +55,16 @@ For more information continue to the page [Running the nftSimple example][2]
 
 A more complex example, showing the use of 2D-barcode markers outside the NFT surface can be downloaded [here][3].
 
-[marker_about]: 3_Marker_Training:marker_about
-[1]: 3_Marker_Training:marker_nft_training
-[2]: 7_Examples:example_nftsimple
+[marker_about]: ./marker_about.md
+[1]: ./marker_nft_training.md
+[2]: ../7_Examples/example_nftsimple.md
 [3]: http://www.artoolworks.com/support/attachments/ARToolKikt%20NFTv1%20sample%20dataset%20(map%20of%20Christchurch%2C%20NZ).zip
 
-[magicland3_embedded_fiducial]: :magicland3_embedded_fiducial.png
-[example_2]: :nft_example_2.jpg
-[example_3]: :nft_example_3.jpg
-[butterworth_modified_for_marker]: :nft_example_mrs_butterworths_modified_for_marker.jpg
-[butterworth_marker]: :nft_example_mrs_butterworths_marker.jpg
-[butterworth_with_marker]: :nft_example_mrs_butterworths_with_marker.jpg
-[butterworth_modified_highlighted]: :nft_example_mrs_butterworths_modified_for_marker_area_highlighted.jpg
-[butterworth_modified_tracked]: :nft_example_mrs_butterworths_modified_for_marker_tracked_area.jpg
+[magicland3_embedded_fiducial]: ../_media/magicland3_embedded_fiducial.png
+[example_2]: ../_media/nft_example_2.jpg
+[example_3]: ../_media/nft_example_3.jpg
+[butterworth_modified_for_marker]: ../_media/nft_example_mrs_butterworths_modified_for_marker.jpg
+[butterworth_marker]: ../_media/nft_example_mrs_butterworths_marker.jpg
+[butterworth_with_marker]: ../_media/nft_example_mrs_butterworths_with_marker.jpg
+[butterworth_modified_highlighted]: ../_media/nft_example_mrs_butterworths_modified_for_marker_area_highlighted.jpg
+[butterworth_modified_tracked]: ../_media/nft_example_mrs_butterworths_modified_for_marker_tracked_area.jpg

@@ -43,14 +43,14 @@ A FrameLayout is used to hold the views because children of a FrameLayout are st
 ![view_layers][view_layers]
 
 ARActivity must be subclassed to be used. Abstract methods need to be overridden in the subclass to provide ARActivity with the objects it needs to work with. The first object is a FrameLayout, mentioned above, which will contain the camera and OpenGL views.
-<pre>
+```
     protected abstract FrameLayout supplyFrameLayout();
-</pre>
+```
 
 To include a FrameLayout in the activity’s view hierarchy, edit the layout XML file for the activity. For example, the following layout includes a FrameLayout called mainLayout, set to be 640x480 pixels. mainLayout can be retrieved like any other view, via findViewById(), and returned from supplyFrameLayout(). Note that the actual view hierarchy may be much more complicated than the one presented here – you are free to place the AR FrameLayout within a more interesting GUI.
 
 main.xml from ARSimple:
-<pre>
+```
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/topLayout"
@@ -65,15 +65,15 @@ main.xml from ARSimple:
             android:layout_height="480px"/>
 
     </LinearLayout>
-</pre>
+```
 
 The second required object is a renderer for displaying the AR scene. The renderer must inherit from ARRenderer, another class in ARBaseLib.
-<pre>
+```
     protected abstract ARRenderer supplyRenderer();
-</pre>
+```
 
 The source code from the ARSimple example activity is shown below. It implements both the necessary functions.
-<pre>
+```
     package org.artoolkit.ar.samples.ARSimple;
 
     import org.artoolkit.ar.base.ARActivity; import
@@ -109,22 +109,22 @@ The source code from the ARSimple example activity is shown below. It implements
             return (FrameLayout)this.findViewById(R.id.mainLayout);     
         }
     }
-</pre>
+```
 
 ARRenderer is a baseclass for renderers of AR scenes. It is essentially a standard Android GLSurfaceView.Renderer, but adds some custom code and some methods which should be overridden by the subclass.
-<pre>
+```
     protected abstract void configureARScene();
-</pre>
+```
 
 This method is called on the renderer once initialization is complete. At this point, markers can be added, for example.
-<pre>
+```
     public void draw(GL10 gl);
-</pre>
+```
 
 This method is called when the rendering should be updated. ARActivity automatically only refreshes the renderer when the ARToolKit tracking has been updated. ARRenderer also performs checks to see that marker detection is up and running before calling draw. This ensures the ARToolKit projection matrix and markers are ready to be used during the rendering pass.
 
 The source code from the SimpleRenderer used in the ARSimple example is shown below. When the configuration method is called, it adds a marker, recording its ID for later use. When the draw method is called, the ARToolKit object is used to retrieve the projection matrix, and query and retrieve tracking information for the loaded marker. OpenGL functions are then used to apply the matrices and display a cube on the marker (using a Cube utility class from ARBaseLib).
-<pre>
+```
     package org.artoolkit.ar.samples.ARSimple;
 
     import javax.microedition.khronos.opengles.GL10; import
@@ -173,7 +173,7 @@ The source code from the SimpleRenderer used in the ARSimple example is shown be
             }
         }
     }
-</pre>
+```
 
 Clearly much more complicated rendering can be achieved through more advanced OpenGL calls, or the use of a third-party rendering engine. The OpenGL rendering can occur in either Java or native C/C++, or even a combination of the two.
 
@@ -187,7 +187,7 @@ Data files used by ARToolKit include [camera parameters][android_camera_calibrat
 *One rule needs to be observed: if the application's assets are changed, the "VersionCode" field (an integer) in the application's AndroidManifest.xml MUST be changed (usually incremented).*
 
 The [ARToolKit for Android examples][1] provide working example code. The following code (from ARSimple's ARSimpleApplication.java class) demonstrates the unpacking of one folder, "Data" into the cache on the filesystem.
-<pre>
+```
     // Here we do one-off initialization which should apply to all activities
     // in the application.
     protected void initializeInstance() {
@@ -198,7 +198,7 @@ The [ARToolKit for Android examples][1] provide working example code. The follow
         AssetHelper assetHelper = new AssetHelper(getAssets());        
         assetHelper.cacheAssetFolder(getInstance(), "Data");
     }
-</pre>
+```
 
 ###Loading Markers
 The method to add a marker takes a marker configuration string, which is simply a semicolon-separated list of fields that describe the marker to load. The syntax is:
@@ -210,26 +210,26 @@ Example: `single;/sdcard/AR/Data/patt.hiro;80`
 -   For multi markers: `multi;path_to_multi_config_file`
 
 Example: `multi;/sdcard/AR/Data/multi/marker.dat`
-<pre>
+```
     int markerID = ARToolKit.getInstance().addMarker("single;/sdcard/AR/Data/patt.hiro;80");
-</pre>
+```
 
 ###Application Permissions
 In order to access the camera the application requires permissions which are set in the AndroidManifest.xml file. Ensure these are set correctly.
-<pre>
+```
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-</pre>
+```
 
 ###Application Configuration
 There is an issue where ARActivity initializes more than once when the orientation changes to landscape. To fix this, set the configChanges field for the application in the AndroidManifest.xml file as shown:
-<pre>
+```
 <application
 android:icon="@drawable/icon"
 android:label="@string/app_name"
 android:configChanges="keyboardHidden|orientation" >
-</pre>
+```
 
 ##Developing directly with ARToolKit
 For developers who want more control and direct access to ARToolKit functions, the core ARToolKit modules are available as static libraries:
@@ -255,15 +255,15 @@ The ARNative example (and its accompanying native library libARNative) demonstra
 
 Rather than combining Android camera and OpenGL views to synthesize an AR view, ARNative uses texture mapping to display the video background, using standard ARToolKit functions. However, the camera preview surface must still be placed in the activity’s view hierarchy to permit video capture. The preview can be hidden from view under the OpenGL surface however.
 
-[1]: 4_Android:android_examples
+[1]: ./android_examples.md
 
-[android_camera_calibration]: 4_Android:android_camera_calibration
-[marker_training]: 3_Marker_Training:marker_training
-[marker_nft_training]: 3_Marker_Training:marker_nft_training
-[android_native]: 4_Android:android_native
+[android_camera_calibration]: ./android_camera_calibration.md
+[marker_training]: ../3_Marker_Training/marker_training.md
+[marker_nft_training]: ../3_Marker_Training/marker_nft_training.md
+[android_native]: ./android_native.md
 
-[artoolkitwrapper_arbaselib]: :artoolkitwrapper_arbaselib.png
-[libs_directory]: :libs_directory.png
-[arbaselib_dialog]: :arbaselib_dialog.png
-[view_layers]: :view_layers.png
-[artoolkit_direct]: :artoolkit_direct.png
+[artoolkitwrapper_arbaselib]: ../_media/artoolkitwrapper_arbaselib.png
+[libs_directory]: ../_media/libs_directory.png
+[arbaselib_dialog]: ../_media/arbaselib_dialog.png
+[view_layers]: ../_media/view_layers.png
+[artoolkit_direct]: ../_media/artoolkit_direct.png
