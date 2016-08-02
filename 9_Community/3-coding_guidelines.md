@@ -112,4 +112,7 @@ Functions are not just for readability; they represent a logically distinct unit
 ##Other C++ style
 Refer to the very well thought-out [Google C++ style guide](https://google.github.io/styleguide/cppguide.html) except where it conflicts with the above guidance.
 
+##Other Java style
+Refer to the Android [Code Style for Contributors](http://source.android.com/source/code-style.html) except where it conflicts with the above guidance.
+
     
