@@ -114,6 +114,8 @@ Configuring the ARTrackedObject:
 ```
 
 To allow control over aspects of GameObjects other than their visibility, you can connect your GameObject to the ARTrackedObject's eventReceiver property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
+
+```
 <csharp>
     // All optional. OnMarkerFound(ARMarker marker);
     OnMarkerTracked(ARMarker marker);
