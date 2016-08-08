@@ -116,7 +116,6 @@ Configuring the ARTrackedObject:
 To allow control over aspects of GameObjects other than their visibility, you can connect your GameObject to the ARTrackedObject's eventReceiver property. When the marker appears, is tracked, or disappears, these methods in the eventReceiver or any of its children are called via Unity's [BroadcastMessage][broadcast_message] system.
 
 ```
-<csharp>
     // All optional. OnMarkerFound(ARMarker marker);
     OnMarkerTracked(ARMarker marker);
     OnMarkerLost(ARMarker marker);
@@ -127,7 +126,7 @@ The ARCamera's projection and viewport are set during AR startup. At present, it
 ##Using the Low-Level Plugin Interface
 Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call the API defined by the native plugin, libARWrapper. You are free to make calls to this API too.
 
-Full API documentation for libARWrapper's simplified C-based API is available on our website][c_docs].
+Full API documentation for libARWrapper's simplified C-based API is available on our [website][c_docs].
 
 [unity_getting_started]: ../6_Unity/unity_getting_started.md
 [functional_schematic]: ../_media/artoolkit_for_unity_functional_schematic.png
