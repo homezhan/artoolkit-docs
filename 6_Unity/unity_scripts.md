@@ -55,17 +55,18 @@ Represents the center of the ARToolKit world and is the root of the scene. Norma
 ##ARCamera
 The ARCamera script associates a camera to the AR content. Add this to a camera under the AROrigin.
 
-[details]: 2_Configuration:config_video_capture "wikilink"
-[unity_getting_started]: 6_Unity:unity_getting_started
-[artoolkit_panel]:/File:ARToolKitPanel.png "wikilink"
-[marker_panel]:/File:MarkerPanel.png "wikilink"
-[camera_panel]:/File:TrackedCameraPanel.png "wikilink"
-[unity_low_level_api]: 6_Unity:unity_low_level_api
-
 ##Gizmos
 Markers are visually represented within the Unity editor so that you can scale and position your content accordingly.
 ![Marker Gizmo][gizmo]
 
-[artoolkit_panel]: :artoolkitpanel.png
-[gizmo]: :markergizmo.png
-[marker_panel]: :markerpanel.png
+[details]: ../2_Configuration/config_video_capture.md
+[unity_getting_started]: ../6_Unity/unity_getting_started.md
+
+[artoolkit_panel]: ../_media/ARToolKitPanel.png
+[marker_panel]: ../_media/MarkerPanel.png
+[camera_panel]: ../_media/TrackedCameraPanel.png
+[unity_low_level_api]: ../6_Unity/unity_low_level_api.md
+
+[artoolkit_panel]: ../_media/artoolkitpanel.png
+[gizmo]: ../_media/markergizmo.png
+[marker_panel]: ../_media/markerpanel.png

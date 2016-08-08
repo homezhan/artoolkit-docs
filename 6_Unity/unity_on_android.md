@@ -63,12 +63,12 @@ Once the jar has been exported, place it in your Unity project at path `Assets/P
 ###Errata
 Why is NFT only API 9 and above? On Android OS releases v2.2.x and earlier, a defect in the handling of compressed resources inside .jar files embedded in .apks limits the size of compressed resources to as little as 1.0 megabyte (although this can be higher on some variants of the 2.2 OS series, depending on the device manufacturer). This imposes a limitation on the size of the NFT datasets which can be used if targeting Android 2.2 to 1.0 megabyte. This limitation was removed in Android OS 2.3.
 
-[unity_getting_started]: 6_Unity:unity_getting_started
+[unity_getting_started]: ../6_Unity/unity_getting_started.md
 [android_player_settings]:http://docs.unity3d.com/Manual/class-PlayerSettingsAndroid.html "Unity - Manual: Android Player Settings"
-[player_settings]: :unity_player_settings_menu.png
-[player_settings_id]: :unity_player_settings_android_bundle_id.png
-[android_manifest_id]: :artoolkit_for_unity_android_manifest_bundle_id.png
-[compile_setup]: :unityarplayer_compile_setup.png
-[unity_export_1]: :unityarplayer_export_1.png
-[unity_export_2]: :unityarplayer_export_2.png
-[unity_export_3]: :unityarplayer_export_3.png
+[player_settings]: ../_media/unity_player_settings_menu.png
+[player_settings_id]: ../_media/unity_player_settings_android_bundle_id.png
+[android_manifest_id]: ../_media/artoolkit_for_unity_android_manifest_bundle_id.png
+[compile_setup]: ../_media/unityarplayer_compile_setup.png
+[unity_export_1]: ../_media/unityarplayer_export_1.png
+[unity_export_2]: ../_media/unityarplayer_export_2.png
+[unity_export_3]: ../_media/unityarplayer_export_3.png

@@ -127,7 +127,7 @@ Ultimately, all AR-related functions in ARToolKit for Unity's C\# scripts call t
 
 Full API documentation for libARWrapper's simplified C-based API is available on our website][c_docs].
 
-[unity_getting_started]: 6_Unity:unity_getting_started
-[functional_schematic]: :artoolkit_for_unity_functional_schematic.png
+[unity_getting_started]: ../6_Unity/unity_getting_started.md
+[functional_schematic]: ../_media/artoolkit_for_unity_functional_schematic.png
 [broadcast_message]: http://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html
 [c_docs]: http://www.artoolkit.org

@@ -18,7 +18,7 @@ A workaround is to manually copy the StreamingAssets folder into the bundle. To 
 3.  Drag that folder into the "Contents" folder of the built application package. ![Dragging contents into StreamingAssets folder.][dragging_streamingassets_folder]
 
 
-[unity_getting_started]: 6_Unity:unity_getting_started
-[show_pacakge_contents]: :unity_player_os_x_show_pacakge_contents.png
-[streamingassets_folder]: :unity_os_x_streamingassets_folder.png
-[dragging_streamingassets_folder]: :unity_os_x_dragging_streamingassets_folder.png
+[unity_getting_started]: ../6_Unity/unity_getting_started.md
+[show_pacakge_contents]: ../_media/unity_player_os_x_show_pacakge_contents.png
+[streamingassets_folder]: ../_media/unity_os_x_streamingassets_folder.png
+[dragging_streamingassets_folder]: ../_media/unity_os_x_dragging_streamingassets_folder.png
